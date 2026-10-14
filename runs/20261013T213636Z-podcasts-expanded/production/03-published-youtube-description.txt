@@ -1,0 +1,29 @@
+This edition of Harness Notes argues that the highest-leverage thing to build right now is an evidence layer — logs that can reconstruct a historical decision — and that staged autonomy should be gated on independent sampling rather than a falling override rate. Read the full article for the detailed reasoning and limitations; all sources, including the AI Engineer talks, the Jellyfish data, the X-AgentRed paper and the EU AI Act guidance, are linked below.
+
+Read the full article: https://jacquelinepan.substack.com/p/what-to-build-next-state-ownership
+
+Sources (numbers match the on-screen references):
+[1] https://www.youtube.com/watch?v=3ZlQk4-knWM&t=768s
+
+[2] https://arize.com/blog/eu-ai-act-compliance-ai-agents
+
+[3] https://www.youtube.com/watch?v=-a2oTS9J67U&t=755s
+https://www.youtube.com/watch?v=-a2oTS9J67U&t=778s
+
+[4] https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=212s
+https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=264s
+
+[5] https://www.youtube.com/watch?v=gDRCpTMCqEU&t=107s
+https://www.youtube.com/watch?v=gDRCpTMCqEU&t=158s
+
+[6] https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=187s
+https://www.youtube.com/watch?v=gDRCpTMCqEU&t=289s
+https://www.youtube.com/watch?v=-a2oTS9J67U&t=778s
+
+[7] https://simonwillison.net/2026/Oct/12/web-edit
+
+[8] https://arxiv.org/abs/2610.13886
+
+[9] https://podcasters.spotify.com/pod/show/mlops/episodes/AWS-Has-16-000-APIs--Can-MCP-Handle-It-e3pgb4a
+
+As of 2026-10-13. AI-generated voice and presentation made with Google Vids. Sources and script reviewed by a human editor.

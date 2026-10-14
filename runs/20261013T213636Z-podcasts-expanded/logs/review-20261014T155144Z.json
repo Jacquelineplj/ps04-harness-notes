@@ -1,0 +1,98 @@
+{
+  "review_id": "c67a0c15e80c4821f91956c5066a8f671598c9fbe34f64006a57d0795825caef",
+  "passed": true,
+  "issues": [
+    {
+      "piece_id": "01",
+      "artifact": null,
+      "severity": "warning",
+      "message": "1 quote(s) were normalised to the retained wording; verify they still support the claims"
+    },
+    {
+      "piece_id": "01",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "1 quote(s) were normalised to the retained wording; verify they still support the claims"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "03",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    }
+  ],
+  "as_of_date": "2026-10-13",
+  "checked_at": "2026-10-14T15:46:48Z",
+  "stats": {
+    "errors": 0,
+    "warnings": 5,
+    "evidence_refs": 41,
+    "publishers_per_piece": {
+      "01": [
+        "arize",
+        "arxiv",
+        "huggingface",
+        "latent-space",
+        "microsoft"
+      ],
+      "02": [
+        "arize",
+        "arxiv",
+        "huggingface",
+        "microsoft",
+        "thoughtworks"
+      ],
+      "03": [
+        "ai-engineer",
+        "arize",
+        "arxiv",
+        "mlops-community",
+        "simon-willison"
+      ]
+    },
+    "kinds_cited": [
+      "feed",
+      "podcast",
+      "youtube"
+    ],
+    "article_words": {
+      "01": 870,
+      "02": 895,
+      "03": 896
+    },
+    "narration_words": {
+      "01": 644,
+      "02": 750,
+      "03": 746
+    },
+    "perspectives_per_piece": {
+      "01": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "02": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "03": [
+        "commercial",
+        "practitioner",
+        "research"
+      ]
+    }
+  }
+}

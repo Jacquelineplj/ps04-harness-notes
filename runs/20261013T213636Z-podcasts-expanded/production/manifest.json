@@ -1,0 +1,43 @@
+{
+  "produced_on": "2026-10-14",
+  "tool": "Google Vids",
+  "presentation": "AI-generated voiceover with source-reference cards; piece 01 opens with an AI avatar",
+  "voice": "Nyla (piece 01 opening avatar: Finley)",
+  "visibility": "unlisted",
+  "delivery": "Substack web updates only; subscriber email/app delivery disabled",
+  "pieces": [
+    {
+      "piece_id": "01",
+      "substack_url": "https://jacquelinepan.substack.com/p/the-harness-grew-up-what-changed",
+      "youtube_url": "https://youtu.be/4qUEXjaZM4Q",
+      "google_vids_url": "https://docs.google.com/videos/d/104U7-O2XqQhVBz8bTUlIKZKgiHg4AS2I3_B-j2ZdIYU/edit",
+      "duration_seconds": 289.0,
+      "youtube_description_file": "01-published-youtube-description.txt",
+      "article_contains_companion_link": true
+    },
+    {
+      "piece_id": "02",
+      "substack_url": "https://jacquelinepan.substack.com/p/which-claims-held-up-harnesses-judges",
+      "youtube_url": "https://youtu.be/bVXnraPti3g",
+      "google_vids_url": "https://docs.google.com/videos/d/1HvRHvdQBzDQhJV7Zhy3x2qVB7o0NZKR5-pa6qnds_Tk/edit",
+      "duration_seconds": 258.9,
+      "youtube_description_file": "02-published-youtube-description.txt",
+      "article_contains_companion_link": true
+    },
+    {
+      "piece_id": "03",
+      "substack_url": "https://jacquelinepan.substack.com/p/what-to-build-next-state-ownership",
+      "youtube_url": "https://youtu.be/pKNdJ5zOlJA",
+      "google_vids_url": "https://docs.google.com/videos/d/1w7XDVkvy3ATG4vptgL5jNGO17b6WBTFOqMqKo3bNRJ4/edit",
+      "duration_seconds": 292.2,
+      "youtube_description_file": "03-published-youtube-description.txt",
+      "article_contains_companion_link": true
+    }
+  ],
+  "technical_demo": {
+    "youtube_url": "https://youtu.be/Xtke0Tbz18g",
+    "visibility": "unlisted",
+    "duration_seconds": 279.3484,
+    "presentation": "AI-narrated rendered evidence cards; captures artifacts before second-run approval"
+  }
+}

@@ -1,0 +1,27 @@
+A skeptical read of this month's agent-harness evidence — Naresh Jain's harness experiment, ThinkingBox's reliability split, the pre-registered snapshot result, Arize on LLM judges, and MC-EvoBench on self-improvement — and why the apparent disagreement about harness cost is really one conditional. Read the full article for the complete argument and caveats; all sources are linked below.
+
+Read the full article: https://jacquelinepan.substack.com/p/which-claims-held-up-harnesses-judges
+
+Sources (numbers match the on-screen references):
+[1] https://martinfowler.com/articles/are-harnesses-worth-the-cost.html
+
+[2] https://martinfowler.com/articles/are-harnesses-worth-the-cost.html
+
+[3] https://huggingface.co/blog/microsoft/thinkingbox
+
+[4] https://huggingface.co/blog/microsoft/thinkingbox
+
+[5] https://arxiv.org/abs/2610.13841
+
+[6] https://arize.com/blog/does-being-rude-to-ai-work
+
+[7] https://arize.com/blog/how-to-test-agent-tool-descriptions-with-harbor-and-phoenix
+https://arize.com/blog/does-being-rude-to-ai-work
+
+[8] https://arxiv.org/abs/2610.13829
+
+[9] https://martinfowler.com/articles/are-harnesses-worth-the-cost.html
+https://arxiv.org/abs/2610.13841
+https://devblogs.microsoft.com/agent-framework/from-specialist-agents-to-distributed-skills-over-mcp
+
+As of 2026-10-13. AI-generated voice and presentation made with Google Vids. Sources and script reviewed by a human editor.

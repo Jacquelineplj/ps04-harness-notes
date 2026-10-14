@@ -1,0 +1,26 @@
+A dated, evidence-linked look at what actually changed in agent harness engineering this month — Anthropic's dynamic workflows, Microsoft's distributed skills and Foundry isolation, and the measured results from ThinkingBox, RATED, the sandbox-snapshot paper and Arize. Read the full article for the complete argument and caveats; all sources are linked below.
+
+Read the full article: https://jacquelinepan.substack.com/p/the-harness-grew-up-what-changed
+
+Sources (numbers match the on-screen references):
+[1] https://latent.space/p/claude-dynamic-workflows
+
+[2] https://latent.space/p/claude-dynamic-workflows
+
+[3] https://devblogs.microsoft.com/agent-framework/from-specialist-agents-to-distributed-skills-over-mcp
+
+[4] https://huggingface.co/blog/microsoft/thinkingbox
+
+[5] https://arxiv.org/abs/2610.13889
+
+[6] https://arxiv.org/abs/2610.13841
+
+[7] https://arize.com/blog/how-to-test-agent-tool-descriptions-with-harbor-and-phoenix
+
+[8] https://latent.space/p/claude-dynamic-workflows
+https://huggingface.co/blog/microsoft/thinkingbox
+https://arxiv.org/abs/2610.13841
+
+[9] https://devblogs.microsoft.com/agent-framework/foundry-hosted-agent-isolation-with-microsoft-agent-framework
+
+As of 2026-10-13. AI-generated voice and presentation made with Google Vids. Sources and script reviewed by a human editor.

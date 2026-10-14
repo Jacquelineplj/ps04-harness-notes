@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-10-14T22:06:46Z",
+  "series": [
+    {
+      "piece_id": "01",
+      "article_status": 200,
+      "article_contains_video_link": true,
+      "youtube_oembed_status": 200,
+      "youtube_title": "The Harness Grew Up: What Changed in Agent Engineering This Month"
+    },
+    {
+      "piece_id": "02",
+      "article_status": 200,
+      "article_contains_video_link": true,
+      "youtube_oembed_status": 200,
+      "youtube_title": "Which Claims Held Up: Harnesses, Judges, and the Gap Between Passing and Working"
+    },
+    {
+      "piece_id": "03",
+      "article_status": 200,
+      "article_contains_video_link": true,
+      "youtube_oembed_status": 200,
+      "youtube_title": "What To Build Next: State Ownership, Staged Autonomy, and the Audit Trail You Don't Have Yet"
+    }
+  ],
+  "technical_demo_oembed_status": 200
+}

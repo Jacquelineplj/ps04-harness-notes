@@ -8,8 +8,8 @@
   "replay_of": null,
   "status": "ready_for_production",
   "started_at": "2026-10-13T21:36:36Z",
-  "elapsed_seconds": 16280.0,
-  "summarized_at": "2026-10-14T02:07:57Z",
+  "elapsed_seconds": 88191.0,
+  "summarized_at": "2026-10-14T22:06:27Z",
   "counts": {
     "discovered": 74,
     "discovered_by_kind": {
@@ -195,14 +195,14 @@
     },
     "store_list": {
       "status": "completed",
-      "finished_at": "2026-10-14T02:07:56Z",
+      "finished_at": "2026-10-14T22:06:27Z",
       "elapsed_seconds": 0.0,
       "input_count": 0,
       "output_count": 76,
       "errors": 0,
       "cost_usd": 0.0,
       "cost_is_estimate": false,
-      "receipts": 7
+      "receipts": 13
     },
     "filter_items": {
       "status": "completed",
@@ -261,14 +261,14 @@
     },
     "check_content": {
       "status": "completed",
-      "finished_at": "2026-10-14T02:07:56Z",
+      "finished_at": "2026-10-14T22:06:27Z",
       "elapsed_seconds": 0.0,
       "input_count": 3,
       "output_count": 1,
       "errors": 0,
       "cost_usd": 0.0,
       "cost_is_estimate": false,
-      "receipts": 8
+      "receipts": 14
     },
     "create_series": {
       "status": "completed",
@@ -283,25 +283,25 @@
     },
     "prepare_package": {
       "status": "completed",
-      "finished_at": "2026-10-14T02:07:56Z",
+      "finished_at": "2026-10-14T22:06:27Z",
       "elapsed_seconds": 0.0,
       "input_count": 6,
       "output_count": 15,
       "errors": 0,
       "cost_usd": 0.0,
       "cost_is_estimate": false,
-      "receipts": 2
+      "receipts": 5
     },
     "run": {
       "status": "completed",
-      "finished_at": "2026-10-14T02:07:56Z",
-      "elapsed_seconds": 0.0,
+      "finished_at": "2026-10-14T22:06:27Z",
+      "elapsed_seconds": 1.0,
       "input_count": null,
       "output_count": null,
       "errors": 0,
       "cost_usd": null,
       "cost_is_estimate": null,
-      "receipts": 3
+      "receipts": 6
     }
   },
   "models": {
@@ -359,7 +359,7 @@
     "matches_current_review": true
   },
   "package": {
-    "packaged_at": "2026-10-14T02:07:56Z",
+    "packaged_at": "2026-10-14T22:06:27Z",
     "pieces": [
       "01",
       "02",
@@ -369,25 +369,25 @@
   "published_links": {
     "01": {
       "substack_url": "https://jacquelinepan.substack.com/p/the-harness-grew-up-what-changed",
-      "youtube_url": null
+      "youtube_url": "https://youtu.be/4qUEXjaZM4Q"
     },
     "02": {
       "substack_url": "https://jacquelinepan.substack.com/p/which-claims-held-up-harnesses-judges",
-      "youtube_url": null
+      "youtube_url": "https://youtu.be/bVXnraPti3g"
     },
     "03": {
       "substack_url": "https://jacquelinepan.substack.com/p/what-to-build-next-state-ownership",
-      "youtube_url": null
+      "youtube_url": "https://youtu.be/pKNdJ5zOlJA"
     }
   },
-  "remaining_manual_actions": [
-    "Produce each video in Google Vids or HeyGen from package/NN-video-script.md (Visual/On-screen text/Narration per scene); an avatar is optional. Export MP4.",
-    "Publish each package/NN-article.md on Substack with shareable (free) access; keep the Sources section and the AI-assistance line.",
-    "Upload each video to YouTube (public or unlisted) using package/NN-youtube-description.txt as the description; add the Substack link to it.",
-    "Add the YouTube link to the corresponding Substack article.",
-    "Fill substack_url and youtube_url for every piece in package/publication_links.json; rerun `bash run.sh --package RUN_DIR` to refresh the summary (links are preserved)."
-  ],
+  "remaining_manual_actions": [],
   "notes": [
     "counts are null for stages that did not run and 0 for measured empty results"
-  ]
+  ],
+  "publication_status": {
+    "status": "published",
+    "verified_at": "2026-10-14T22:06:46Z",
+    "evidence": "production/manifest.json",
+    "notes": "External production and publication completed after pipeline packaging. Manual handoff actions reconciled from anonymous checks and browser publication confirmations."
+  }
 }
