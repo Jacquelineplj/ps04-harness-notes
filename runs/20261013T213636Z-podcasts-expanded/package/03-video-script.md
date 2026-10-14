@@ -1,0 +1,118 @@
+# What To Build Next: State Ownership, Staged Autonomy, and the Audit Trail You Don't Have Yet
+
+**Runtime target:** ~4 minutes (about 610 narration words)
+
+---
+
+## 1. Hook
+
+**Visual:** Title card on dark background. Below it, three small icons in a row: a log file, a ladder, a dollar sign.
+
+**On-screen text:** Ship the record before you ship the autonomy.
+
+**Narration:** Here's the argument in one breath: the thing your harness most needs this month isn't a smarter loop, it's evidence by default. Log enough to reconstruct a decision after the fact, and gate autonomy on measured override behaviour rather than on a demo that passed. The useful accident is that the cheapest version of regulatory compliance and the most useful version of agent debuggability turn out to be the same build.
+
+---
+
+## 2. The logging schema, arrived at twice
+
+**Visual:** Quote card. "Calling the model again later may produce a different answer." Attribution line: Paden Gayle, AI Engineer talk, 13 October 2026, at 12:49.
+
+**On-screen text:** Prompt. Version. Config. Output. Reviewer. Action.
+
+**Narration:** Paden Gayle, speaking at an AI Engineer event about deploying agents inside a bank, said about twelve and a half minutes in that teams should preserve the input prompts, the model version, the configuration, the output, the reviewer and the action — explicitly because calling the model again later may produce a different answer, so you preserve what actually happened. [1] That's a reproducibility argument, not a compliance one.
+
+---
+
+## 3. The same list, from the regulator's side
+
+**Visual:** Split slide. Left: "Gayle — reproducibility." Right: "Arize — EU AI Act." A bracket joining them labelled "same schema." Date badge: 2 December 2027.
+
+**On-screen text:** Same schema. Two reasons. One build.
+
+**Narration:** Arize, in a practical engineering guide published this month, frames nearly the same list as regulatory work: most EU AI Act high-risk obligations are things you build — automatic logs, six months of retention, human oversight, post-market monitoring — and they take effect on the second of December, 2027. [2] Worth naming the incentive: Arize sells the tracing stack it positions as the compliance evidence. We read the convergence as real anyway, because the requirement is identical whether a regulator or a debugging engineer is asking. If your traces record what the agent did but not the version and configuration that produced it, you have a log, not a record. [1]
+
+---
+
+## 4. The ladder, and the trap at the top
+
+**Visual:** Four-rung ladder graphic: shadow, supervised draft, exception ensemble, exceptions only. The top rung highlighted red.
+
+**On-screen text:** A falling override rate is not proof.
+
+**Narration:** Michele Grant's talk sketches a four-stage autonomy ladder — shadow running, supervised draft, exception ensemble, then exceptions only. The interesting part is the warning on the top rung. Around twelve and a half minutes in, she argues that once humans review only exceptions, your biggest vulnerability is what the agent failed to flag — and that a falling override rate does not automatically mean the agent improved. It can equally mean the depth of review has slipped. [3] Her instrument is independent sampling, because the override rate alone cannot tell those apart. She presents this as a framework, with no measured outcome from running it.
+
+---
+
+## 5. Tokens are cheap — conditionally
+
+**Visual:** Simple bar chart described: one bar at 2.5% labelled AI, one at 97.5% labelled salary. Caption: Jellyfish, August 2026 data.
+
+**On-screen text:** AI ≈ 2.5% of cost per merged PR.
+
+**Narration:** Steve Jamison of Jellyfish presented workflow data joined with AI telemetry showing AI at roughly two and a half percent of the intelligence cost of producing a merged pull request, with dollar cost per merged PR falling twenty-six percent over a year across eighty-three percent of companies studied. [4] Read straightforwardly, that's an argument for spending more on tokens.
+
+---
+
+## 6. The constraint
+
+**Visual:** Quote card: "Count everyone whose work exists because of AI." Attribution: Soukaïna Abelhad, AI Engineer talk, 13 October 2026.
+
+**On-screen text:** Operators. Reviewers. Trainers. Escalation. Rework.
+
+**Narration:** Soukaïna Abelhad's due-diligence talk supplies the brake. She argues the honest denominator must count everyone whose work exists because of AI — operators, reviewers, trainers, escalation and rework — and she separates work that is merely "AI attributed" from genuinely autonomous completion. [5] We think these two findings bound each other: the case for spending more on tokens holds only to the degree that the human verification burden it displaces is counted honestly, and exception-only review is precisely the regime that makes that burden hard to observe. [6]
+
+---
+
+## 7. Three things to watch
+
+**Visual:** Three stacked rows with source badges — "Simon Willison, 12 Oct", "arXiv, 9 Oct", "MLOps Community podcast, 28 Sep".
+
+**On-screen text:** Secrets. Composition. Tool surface.
+
+**Narration:** Three things next quarter. Simon Willison published a small web editor served over Tailscale on the twelfth of October, specifically so he could edit a credentials file without round-tripping those credentials through the LLM — a narrow workaround that signals a missing harness primitive. [7] Second, the X-AgentRed paper, posted to arXiv on the ninth, reports one-point-seven-seven times the harmful path rate of STAC and nearly three times its tool coverage across four frontier agents, with harm emerging from benign requests composing across services. [8] If that replicates, per-tool permission prompts are the wrong unit of control. Third, on the MLOps Community podcast, about thirty minutes in, an AWS practitioner notes AWS has something like sixteen thousand APIs — far too many to model as tools — pushing toward code-mode execution that he concedes is genuinely hard to review. [9]
+
+---
+
+## 8. Takeaway and the honest limit
+
+**Visual:** Closing slide, three bullets. Faded panel at bottom reading "Unmeasured: does the evidence layer pay back for low-consequence agents?"
+
+**On-screen text:** Build the record first. Then raise the ladder.
+
+**Narration:** So: capture prompt, version, configuration, output and reviewer action on every run. [1] Stage autonomy deliberately and instrument it with independent sampling rather than trusting the override rate. [3] And treat token-cost optimism as conditional on counting the humans it displaces. [6] Here's the honest limit. Grant's ladder and Abelhad's checks are practitioner frameworks with no quantitative validation attached. The Jellyfish numbers are observational vendor telemetry. The AI Act guidance is vendor-authored, and Arize itself notes the deadlines have already moved once. [2] And the strongest objection is one nothing here answers: heavy evidence infrastructure is a real cost, and for low-consequence agents it may never pay back. Nobody we found has measured that break-even. The full article and every source are linked in the description.
+
+---
+
+**Description:** This edition of Harness Notes argues that the highest-leverage thing to build right now is an evidence layer — logs that can reconstruct a historical decision — and that staged autonomy should be gated on independent sampling rather than a falling override rate. Read the full article for the detailed reasoning and limitations; all sources, including the AI Engineer talks, the Jellyfish data, the X-AgentRed paper and the EU AI Act guidance, are linked below.
+
+---
+*Estimated runtime: 5.0 minutes at 150 words per minute. As of 2026-10-13. AI-assisted script from reviewed sources; the presenter may be an AI avatar.*
+
+## Sources
+
+- **[1]** (source claim) A practitioner speaking on deployment in regulated environments advises preserving the input prompts, model version, configuration, output, reviewer and action, because re-calling the model later may produce a different answer.
+  - ai-engineer, *Deploying AI Inside a Bank Is Not an Engineering Problem — Paden Gayle, Applied AI Engineers* (2026-10-13), at 12:49: [https://www.youtube.com/watch?v=3ZlQk4-knWM&t=768s](https://www.youtube.com/watch?v=3ZlQk4-knWM&t=768s) — "preserve the input prompts model version configuration output reviewer action that lets us reconstruct the historical decision. Calling the model again later may produce a different answer. So we preserve what actually happened. A reviewer can then expect that supporting record. So now we can take a look to see like..."
+- **[2]** (reported fact) The EU AI Act's high-risk obligations, which Arize summarises as largely engineering work including automatic logs, six months of retention, human oversight and post-market monitoring, take effect on 2 December 2027.
+  - arize, *EU AI Act compliance for AI agents: a practical engineering guide* (2026-10-13): [https://arize.com/blog/eu-ai-act-compliance-ai-agents](https://arize.com/blog/eu-ai-act-compliance-ai-agents) — "Most high-risk obligations are engineering work. Automatic logs, six months of retention, human oversight, post-market monitoring, incident handling, and explanations of decisions are things you build. Most of them are already good practice for running agents in production."
+  - arize, *EU AI Act compliance for AI agents: a practical engineering guide* (2026-10-13): [https://arize.com/blog/eu-ai-act-compliance-ai-agents](https://arize.com/blog/eu-ai-act-compliance-ai-agents) — "The high-risk deadline is 2 December 2027, and transparency duties already apply. The dates have moved once already because the work is hard to put in place. Start now rather than betting on another move."
+- **[3]** (source claim) A practitioner proposes a four-stage autonomy ladder and warns that at the exceptions-only stage the biggest vulnerability is what the agent failed to flag, and that a falling override rate may indicate review depth has slipped rather than improvement.
+  - ai-engineer, *The Agent Works. Does Anyone Trust It? — Michele Grant, Leading at Scale* (2026-10-13), at 12:36: [https://www.youtube.com/watch?v=-a2oTS9J67U&t=755s](https://www.youtube.com/watch?v=-a2oTS9J67U&t=755s) — "the claims. Then we have stage four, where it's exceptions only. The analyst reviews only high-risk anomalies supported by periodic independent sampling. Pay close attention to stage four, however, because once humans only look at exceptions, your biggest vulnerability"
+  - ai-engineer, *The Agent Works. Does Anyone Trust It? — Michele Grant, Leading at Scale* (2026-10-13), at 12:59: [https://www.youtube.com/watch?v=-a2oTS9J67U&t=778s](https://www.youtube.com/watch?v=-a2oTS9J67U&t=778s) — "is what the agent failed to flag. So I advise tracking mis material issues through independent sampling, monitoring error severity and watching your override rate carefully. A falling override rate does not automatically mean the agent is getting smarter. It can also mean the depth of review has slipped."
+- **[4]** (reported fact) Jellyfish reports from engineering workflow data joined with AI telemetry that AI is about 2.5% of the intelligence cost of producing a merged PR, and that the dollar cost of a merged PR fell 26% over a year across 83% of companies studied.
+  - ai-engineer, *Tokens Are the Cheap Part — Steve Jamison, Jellyfish* (2026-10-13), at 3:33: [https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=212s](https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=212s) — "What you pay your engineers plus what you pay for AI. Put them together in one cost bucket. AI is about 2 and 1/2% of the cost to produce another unit of merged code. Salary is the other 97 and 1/2%. This is in line with other reported figures, and this data is from August 2026."
+  - ai-engineer, *Tokens Are the Cheap Part — Steve Jamison, Jellyfish* (2026-10-13), at 4:25: [https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=264s](https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=264s) — "time is factored in, and some level of quality gates has been cleared. What That decline in cost per merged PR includes a 60x increase in AI costs over the same time frame. The change is nearly universal, too. 83% of the companies we studied showed a drop in cost per PR. What does this tell us? The additional throug..."
+- **[5]** (source claim) A due-diligence practitioner argues that automation claims must net out everyone whose work exists because of AI — operators, reviewers, trainers, escalation and rework — and distinguishes 'AI attributed' from genuinely autonomous completion.
+  - ai-engineer, *What Technical Due Diligence Finds When the Deck Says “70% Automated” — Soukaïna Abelhad* (2026-10-13), at 1:48: [https://www.youtube.com/watch?v=gDRCpTMCqEU&t=107s](https://www.youtube.com/watch?v=gDRCpTMCqEU&t=107s) — "with it as well. So in diligence, ask for the company's own 18-month theory. Put workload volume next to the fully loaded human labor. Count everyone whose work exists because of AI, for example, operators, reviewer reviewers, trainers, escalation and rework. If human labor tracks workload volume, the deck has descr..."
+  - ai-engineer, *What Technical Due Diligence Finds When the Deck Says “70% Automated” — Soukaïna Abelhad* (2026-10-13), at 2:38: [https://www.youtube.com/watch?v=gDRCpTMCqEU&t=158s](https://www.youtube.com/watch?v=gDRCpTMCqEU&t=158s) — "humans, or approved by humans, or no human intervention. Finance already has a useful term for the last one. It's called straight-through processing. Define it as a complete end-to-end without human intervention inside a boundary you name. So, does the boundary here end when the code was drafted, or when the pull re..."
+- **[6]** (our inference) The case for spending more on tokens and the case for staged autonomy constrain each other: cost-per-unit-of-work improvements only hold if the human verification burden they displace is counted honestly, which is precisely what exception-only review makes hard to observe.
+  - ai-engineer, *Tokens Are the Cheap Part — Steve Jamison, Jellyfish* (2026-10-13), at 3:08: [https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=187s](https://www.youtube.com/watch?v=U7ZYBCcdJPg&t=187s) — "isn't just another tool, it's intelligence. This intelligence dramatically changes how much each dev can produce. That's why we need to think about its cost differently. Not off to the side as overhead, but it's part of what it takes to produce each PR. We're going to call this intelligence costs of a PR."
+  - ai-engineer, *What Technical Due Diligence Finds When the Deck Says “70% Automated” — Soukaïna Abelhad* (2026-10-13), at 4:50: [https://www.youtube.com/watch?v=gDRCpTMCqEU&t=289s](https://www.youtube.com/watch?v=gDRCpTMCqEU&t=289s) — "7. So, the warning existed, but the process did not turn it into a gate. So, even when a claim survives those check, it still has to survive the economics. So, start with eligible workflow value. Apply actual adoption, straight-through process success, and accepted quality. Then, subtract the cost of AI, human"
+  - ai-engineer, *The Agent Works. Does Anyone Trust It? — Michele Grant, Leading at Scale* (2026-10-13), at 12:59: [https://www.youtube.com/watch?v=-a2oTS9J67U&t=778s](https://www.youtube.com/watch?v=-a2oTS9J67U&t=778s) — "is what the agent failed to flag. So I advise tracking mis material issues through independent sampling, monitoring error severity and watching your override rate carefully. A falling override rate does not automatically mean the agent is getting smarter. It can also mean the depth of review has slipped."
+- **[7]** (reported fact) Practitioners are already building narrow harness workarounds to keep secrets out of model context, such as a separate web editor over Tailscale so credentials never round-trip through the LLM.
+  - simon-willison, *web-edit 0.1a0* (2026-10-12): [https://simonwillison.net/2026/Oct/12/web-edit](https://simonwillison.net/2026/Oct/12/web-edit) — "I was working on a project from my phone using Codex Remote when I found myself wanting to edit a credentials file without round-tripping those credentials through the LLM itself."
+- **[8]** (reported fact) Watch red-teaming of cross-service tool compositions: X-AgentRed reports 1.77x the harmful path rate of STAC and 2.99x its tool coverage across four frontier agents, suggesting harmful outcomes arise from benign requests composing across services.
+  - arxiv, *X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems* (2026-10-09): [https://arxiv.org/abs/2610.13886](https://arxiv.org/abs/2610.13886) — "Across four frontier agentic models, X-AgentRed achieves \(1.77\times\) the harmful path rate of STAC and explores a more diverse set of tools, yielding \(2.99\times\) the tool coverage on average."
+- **[9]** (source claim) Watch the MCP tool-surface problem: a practitioner reports AWS has roughly 16,000 APIs, too many to model as tools, pushing them toward code-mode execution that is itself hard for humans to review.
+  - mlops-community, *AWS Has 16,000 APIs. Can MCP Handle It?* (2026-09-28), at 30:48: [https://podcasters.spotify.com/pod/show/mlops/episodes/AWS-Has-16-000-APIs--Can-MCP-Handle-It-e3pgb4a](https://podcasters.spotify.com/pod/show/mlops/episodes/AWS-Has-16-000-APIs--Can-MCP-Handle-It-e3pgb4a) — "those ones that are not exposed on that first glance. Have you seen any creative ways? I know that Cloudflare got popular, whatever, when they, I think they were calling it. Did they're like code mode? Yeah, yeah, yeah. With the two tools. Yeah, so it's a really interesting time in figuring out like what is the righ..."
+  - mlops-community, *AWS Has 16,000 APIs. Can MCP Handle It?* (2026-09-28), at 15:01: [https://podcasters.spotify.com/pod/show/mlops/episodes/AWS-Has-16-000-APIs--Can-MCP-Handle-It-e3pgb4a](https://podcasters.spotify.com/pod/show/mlops/episodes/AWS-Has-16-000-APIs--Can-MCP-Handle-It-e3pgb4a) — "is the user verification of what's gonna happen. Like when you're having your agent talking to AWS, like you wanna be careful, you know? You wanna probably review like what the agent is gonna go do on your infrastructure. And so the Python code that gets written for code mode is honestly like hard to review. Like, y..."

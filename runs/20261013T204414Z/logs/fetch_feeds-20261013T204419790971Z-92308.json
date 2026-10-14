@@ -1,0 +1,70 @@
+{
+  "stage": "fetch_feeds",
+  "status": "completed",
+  "run_dir": "runs/20261013T204414Z",
+  "input_count": 10,
+  "output_count": 49,
+  "started_at": "2026-10-13T20:44:14Z",
+  "finished_at": "2026-10-13T20:44:19Z",
+  "elapsed_seconds": 5.0,
+  "tools": [
+    "httpx",
+    "feedparser"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "sources": {
+      "simonwillison-blog": {
+        "status": "ok",
+        "candidates": 8
+      },
+      "latent-space-newsletter": {
+        "status": "ok",
+        "candidates": 5
+      },
+      "mcp-blog": {
+        "status": "ok",
+        "candidates": 1
+      },
+      "openai-news": {
+        "status": "ok",
+        "candidates": 4
+      },
+      "huggingface-blog": {
+        "status": "ok",
+        "candidates": 6
+      },
+      "arxiv-agent-harness": {
+        "status": "ok",
+        "candidates": 6
+      },
+      "ms-agent-framework-blog": {
+        "status": "ok",
+        "candidates": 4
+      },
+      "arize-blog": {
+        "status": "ok",
+        "candidates": 5
+      },
+      "martinfowler": {
+        "status": "ok",
+        "candidates": 5
+      },
+      "deepmind-blog": {
+        "status": "ok",
+        "candidates": 5
+      }
+    },
+    "counters": {
+      "entries_seen": 2415,
+      "skipped_media_enclosure": 0,
+      "skipped_beyond_lookback": 31,
+      "skipped_no_link": 0
+    },
+    "failed_sources": 0,
+    "simulated": false
+  }
+}

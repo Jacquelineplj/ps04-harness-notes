@@ -1,0 +1,37 @@
+{
+  "stage": "select_items",
+  "status": "completed",
+  "run_dir": "runs/20261013T230227Z-policy-v2",
+  "input_count": 67,
+  "output_count": 67,
+  "started_at": "2026-10-13T23:02:57Z",
+  "finished_at": "2026-10-13T23:07:47Z",
+  "elapsed_seconds": 290.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-sonnet-5",
+      "calls": 12,
+      "input_tokens": 442190,
+      "output_tokens": 30144,
+      "cost_usd": 1.0824536,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 1.082454,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {
+    "decisions": {
+      "accept": 30,
+      "reject": 36,
+      "defer": 1
+    },
+    "batches": 12,
+    "failed_batches": 0,
+    "fallback_decisions": 0
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "stage": "select_items",
+  "status": "completed",
+  "run_dir": "runs/20261013T213636Z-podcasts-expanded",
+  "input_count": 67,
+  "output_count": 67,
+  "started_at": "2026-10-13T22:44:10Z",
+  "finished_at": "2026-10-13T22:48:42Z",
+  "elapsed_seconds": 272.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-sonnet-5",
+      "calls": 12,
+      "input_tokens": 436490,
+      "output_tokens": 30074,
+      "cost_usd": 1.0727381,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 1.072738,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {
+    "decisions": {
+      "accept": 27,
+      "reject": 33,
+      "defer": 7
+    },
+    "batches": 12,
+    "failed_batches": 0,
+    "fallback_decisions": 0
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 0.44,
+    "end_seconds": 26.6,
+    "text": "Hey, what's up? I'm Alex. I work on dots for Mobile. dots are always-on proactive agents that just take [bleep] off your plate. Previously, you could only claim a dot on desktop and web, but you can now set up dots on mobile as well. It'll be available on both iOS and Android. And honestly, very, very easy to set up. We designed it so that basically it sets itself up. So all you have to do is open the ChatGPT app. In the top left corner, you'll see"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 26.6,
+    "end_seconds": 48.86,
+    "text": "an entry point that says Meet dot. Once you hit that button, it'll basically create a thread with your dot. From there, your dot just gets to work. It might ask you for calendar access. It might ask you to connect your email. Highly recommend connecting both calendar and email because it just gives your dot more context. The more context that your dot has, the more it can kind of take off your plate. The other thing you can do with your dot is actually personalize it."
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 48.86,
+    "end_seconds": 76.3,
+    "text": "You can give it a name. You can give it an avatar. So let's go ahead and do that. I'm going to name my dot Blossie. And there's a couple options to choose from. I can do an avatar or I can use my Codex Pet. I'm actually going to create a custom avatar. All right, so my favorite color is blue. I'm going to make him blue. I'm going to keep things simple for now, so no accessories. But yep, this is Blossie. So your dot also has access"
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 76.3,
+    "end_seconds": 102.08,
+    "text": "to its own computer, and it also has access to your computer, which is really cool for doing complex tasks like coding, prototyping, et cetera. So let's give Blossie a call and see if we can prototype something quickly. Hey, Alex. Good evening. What's on your mind? Hey, Blossie. Can you actually prototype me an iOS widget so that you can live on my home screen? I want the widget to have your avatar, your name, and then also like a short status on what you're working on."
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 103.0,
+    "end_seconds": 127.4,
+    "text": "Let me check on that. Just to like kick off a Codex thread and start building it, while you do that, also just check Slack to see if anybody else is working on this widget. I want to make sure I'm collaborating with the right people. Good call. Brian Somerset and Gavin Nelson are the folks to sync with. They're already pushing toward a widget MVP. Awesome. Why don't you just, can you like get me into a Slack thread with them? And also when you're done"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 127.4,
+    "end_seconds": 152.6,
+    "text": "with the prototype, send me a screenshot so I can give you some comments. Yeah, on it. I'll loop you in with Brian and Gavin and get you a screenshot as soon as it's ready. I'm on that same prototype thread and I'll draft a Slack reply tagging them for you to approve. All right. Awesome. Thank you. Cool. Just going to let Blossie cook for a little bit. Going to check back in when I'm back home in front of my computer on the latest progress."
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 152.92,
+    "end_seconds": 163.12,
+    "text": "If you're watching this video right now on your phone, switch over to the ChatGPT app and get your dot set up. Can't wait to see what you build with your dot. See ya."
+  }
+]

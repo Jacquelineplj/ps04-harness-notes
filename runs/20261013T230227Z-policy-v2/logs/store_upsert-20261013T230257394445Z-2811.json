@@ -1,0 +1,26 @@
+{
+  "stage": "store_upsert",
+  "status": "completed",
+  "run_dir": "runs/20261013T230227Z-policy-v2",
+  "input_count": 65,
+  "output_count": 65,
+  "started_at": "2026-10-13T23:02:28Z",
+  "finished_at": "2026-10-13T23:02:57Z",
+  "elapsed_seconds": 29.0,
+  "tools": [
+    "sqlite3"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "changes": {
+      "new": 0,
+      "changed": 0,
+      "unchanged": 65
+    },
+    "run_id": "20261013T230227Z-policy-v2",
+    "evidence_db": "data/evidence/evidence.sqlite"
+  }
+}

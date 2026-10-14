@@ -1,0 +1,548 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 4.53,
+    "end_seconds": 28.53,
+    "text": "Okay, we're very excited to be here today is open AI Dev Day. We're the first podcast after last year. We have Ari here who leads the product and engineering team for computer use agents. Before we kick in and dive deep on computer use, you want to give a quick recap? What was announced? What's the quick slew of announcements you guys had today? Yeah. Yeah, it was a super exciting day. We just got out of the keynote. It was really sick."
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 29.25,
+    "end_seconds": 57.05,
+    "text": "There were a bunch of computer use announcements that I think are worth thinking about. We have of Dots, which is the new sort of personal assistant product. And that has some really exciting computer use features. There's GBD 6.1 Sol, which is this amazing new model that I think is particularly great for computer use because of the cost and speed advantages. I think we shared that it's a fifth of the cost as Astra and a seventh of the cost"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 57.05,
+    "end_seconds": 80.47,
+    "text": "if you're looking at computer use specifically, which is really amazing. Sorry, there were so many things I'm trying to sort through it. And the API. Agents API, which now has computer use in it, which is really cool, because now developers can build on the same computer use that is part of Codex and ChatGVT. And then there were some demos of our existing computer use features like app shots, where you can take the context of something you're doing"
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 80.47,
+    "end_seconds": 104.99,
+    "text": "on your computer and bring it into Codex and ChatGVT really fast. And then native computer use on your Mac, where Roman had it taking screenshots of his app automatically, and he could do other things on his computer while computer use was using his applications. So he had a really exciting keynote. And not to mention the decisions API. Decisions API. Off the bat, are they all the same model? Like, this is the same data set. They're still two different models."
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 104.99,
+    "end_seconds": 134.57,
+    "text": "Like, basically, is computer use using decisions API or are they like kind of separate? So what's really cool about the decisions API is it has all these new capabilities. It does inference in parallel. It doesn't have reasoning. It's a smaller model than the ones we use for computer use. And so those capabilities make it really fast. They also make it a little bit less good at doing long horizon sophisticated tasks."
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 135.33,
+    "end_seconds": 159.69,
+    "text": "And so I think I would say it's still an open area of research for how we bring those approaches together. But yeah, I'm really excited to see what people build with the distance API. One of the interesting things is Dots now have attached personal computers. So it seems like they're very much more persistent. You've been using them for a while. How should people push the bounds? Like what should people aim for? What should they try? Personally, right now I use it"
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 159.69,
+    "end_seconds": 186.09,
+    "text": "for a lot of customer service. Like, oh, this was wrong. I don't wanna sign in. I don't wanna authenticate, find whatever and just get it fixed. How should we push further? What should people try? Dots are a really cool product because each dot has access to its own Linux virtual computer in the cloud, which is different from our other products. Traditionally, we have access to a browser in the cloud, or it has access to your own computer,"
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 186.09,
+    "end_seconds": 207.85,
+    "text": "but now you get your own entire Linux computer in the cloud. And so we can run full desktop applications. And it can also use a web browser. And so, yeah, I think the powerful thing about computer use and the reason why I think it's so exciting is because it makes it so that the agent can do anything you as a person can do because all the software in the world was designed for humans. And now agents can use that same software."
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 207.85,
+    "end_seconds": 229.13,
+    "text": "And you can delegate to the agent. So yeah, like anything that you would do on a computer, you can ask a dot to do. Yeah, I think what particularly useful is going to really depend on who the end user is and what's valuable in their life. But yeah, I would just start by thinking about one of the things that you spend time on. And how could you delegate those to an agent? Yeah, a lot of flight booking and shopping."
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 229.13,
+    "end_seconds": 256.97,
+    "text": "and honestly even like playing a game or whatever. Totally. Yeah, I don't know. For me, something I did recently, I've been working on, I subscribed to a meal prep service because I was trying to like eat healthy, you know? And I really liked this meal prep service I found because it lets me customize the meals I order to like a high degree of granularity so I can say like, I want this many grams of chicken and this many grams of rice. But it was so complicated,"
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 256.97,
+    "end_seconds": 280.69,
+    "text": "it took me two hours to do an order And I found that I could ask computer use to do it for me and it did it in 15 minutes. So I actually saved two hours. It both did it eight times faster than I could and it saved me two hours on GP 6.1 Sol. So those are the kinds of tasks that I feel like are really powerful. As a creator I can tell you automatically, immediately my number one use case is automating YouTube."
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 280.69,
+    "end_seconds": 304.25,
+    "text": "Because YouTube doesn't expose a lot of things via API. And you have to just put it in a VM and just run it for like, let's say their A-B testing feature or making community posts, none of this is available by API because they hate developers. Anyway, so. I've heard that from our developer experience team too. They use it with YouTube a lot. Yeah, it's really awesome. So I wanna draw for, you know, let's say, I wanna get a little bit spicy."
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 304.25,
+    "end_seconds": 328.49,
+    "text": "One of our, the leading AI podcast, our friends, is famous for saying that computer use hasn't advanced in the last two years. Yeah. Which is a very interesting statement. And I think you are one of the best people in the world to talk about this, like how things have progressed. Yeah, you know, they said that a few months ago, I think, and I hope they have a different perspective now because computer use is like 180 degrees different than it was. He's a tough guy, it's impressed."
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 328.49,
+    "end_seconds": 356.37,
+    "text": "Yeah, okay. Well, you know, you worked on it. You've like basically spent your whole career working on like some kind of computer automation, right? Like shortcuts at Apple, and then Sky, and then joining OpenAI. Can you draw like what your through line is for like what is driving you And what you, what wasn't possible back then maybe, like what your sort of milestones were. I guess to add on to that as a follow up question, what's the major change from using Codex computer use"
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 356.37,
+    "end_seconds": 382.25,
+    "text": "from like last week to today? Is it model? Is it dots? Is it harness? So all the history plus, what really just changed in today's announcements? Yeah. On the through line, I guess I've always been excited about automation and helping people automate tasks, because then you can like save time in your life and focus on things that are more important to you than operating a computer very infricately. And so yeah, that was why we worked on some of those products that was at Apple before."
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 382.25,
+    "end_seconds": 406.81,
+    "text": "We made a company called Sky. We ended up joining OpenAI, which is really exciting. And I think something that was special. You have to hack around Apple until Apple was fine. We'll just hire you and you can just work on your inside. It was a cool place to get to work. What was really interesting looking back at Sky is we were working on computer use there as well. And the models were so much less capable. And now the models just in the last one year"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 406.81,
+    "end_seconds": 435.39,
+    "text": "have become extraordinarily capable of computer use. I think the biggest delta that I see is before they could reliably start tasks, but then they would run into problems and now they're really good at debugging, they're really good at trying again, introspecting what is and isn't working. And I think we've also brought the computer use, the computer use field itself has moved forward. I think we're using more techniques. Now computer use often writes code. So if you actually look at it in Codex and you expand the"
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 435.39,
+    "end_seconds": 463.73,
+    "text": "tool calls manually, you can see that it's not just doing one action at a time. It's actually writing JavaScript code that it executes, that the computer executes to perform sometimes many actions at once, which is a great speed up and great capability. We use more accessibility sort of multimodal interfaces. So the model may use screenshots. It may use accessibility. It may use playwright. It can use a lot of different mechanisms based on the task at hand. And then, yeah, the model acceleration has been just amazing."
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 463.73,
+    "end_seconds": 493.21,
+    "text": "So yeah, what's different today? I think we're making computers better all the time. So I think just one day's difference is probably a little bit less consequential than even the past month or the past two months. But yeah, I think the computers in dot is really exciting as well as the new model that we came out with. On the keynote, Tijol was mentioning 7x improvements in computer use speed a lot better on a few benchmarks."
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 493.45,
+    "end_seconds": 517.65,
+    "text": "How do you guys think about measuring it? Computer use is one of those things where, as you say, it's improvements over time. Is it harness, is it model, is it post-training? How do you guys look at it internally about measuring how good it is? And what were the changes with the new model? We actually have a bunch of different ways of measuring it, some of which are on different permutations and configurations of the harness. It's a bit of a complicated story"
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 517.65,
+    "end_seconds": 545.49,
+    "text": "because our production products have some more safety checks. And those are configured differently based on the needs of the task at hand. So there's a lot of ways to measure it. But I think regardless of how we measure it, we find pretty consistent gains. And those gains are sometimes in the harness and sometimes in the model. And yeah, I was really excited by this result that GPT 6.1 is even more cost-effective for computer use"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 545.49,
+    "end_seconds": 573.13,
+    "text": "and then its baseline cost improvement as compared to Astra. It's like really cool to see. Yeah. I mean, one of the visuals I really liked from the live stream was that you're sort of improving the Pareto frontier of your curve. And there was a lot of talking about how you're improving it together with the harness. Yeah. Give some examples of aha moments that you had, whether it's on like model driving the harness, harness driving the model, whatever. I don't mean to repeat myself,"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 573.13,
+    "end_seconds": 592.37,
+    "text": "but I think like introducing more modalities been really powerful. One more specific example of that is in the past I think we saw a lot of computer use products had to spend a lot of time like scrolling, you know, so it would like take a screenshot, it would try to do something, it would be like, oh I gotta like scroll down to the next page of results and then it would take a screenshot and then"
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 592.37,
+    "end_seconds": 616.31,
+    "text": "it would try to do something, it would scroll down again. And so I think with accessibility and other direct access to the DOM and other things like that, now the language model can actually see an entire page or an entire application, it can write code that can do multiple steps at once. So I think those have been probably the biggest single aha moments. There's a lot of tiny ones that are less exciting in comparison, but actually we do find also that a lot of"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 616.31,
+    "end_seconds": 642.97,
+    "text": "speed improvements are driven by a lot of little paper cuts that we got to go in and interest. Yeah. A lot of really hard engineering. Yeah. App shots in general, I think people don't quite get the difference because there's like a nice visual in Codex when you take an app shot, but they don't maybe they had the difference that you are able to actually drive each button and you have each text in a very optimal representation. Yeah, exactly. Yeah, it's kind of fun actually."
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 642.97,
+    "end_seconds": 663.57,
+    "text": "If you want to be like really nerdy about it, you can go into Codex, take an app shot by hitting the two command keys. So you grab the content from whatever app you're working with, bring it into the Codex or chat, you'll be chat and then if you click on the attachment and you click on this like little tiny button in the top right, You can see the raw text and you see the raw accessibility representation. And yeah, we've put a lot of work into..."
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 663.57,
+    "end_seconds": 687.05,
+    "text": "Just dumping everything out. Dumping it out but also making it token efficient, doing it efficiently. There's like a bit of an art to it. And it turns out that the same technology that was invented for humans who maybe have accessibility needs, who want to use a screen reader technology, that technology is really helpful for them to be able to use computers. It's also really helpful for LLMs to be able to use computers. So that's been really fun to get to work on."
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 687.05,
+    "end_seconds": 707.73,
+    "text": "So context, I feel like a lot of people don't understand app shots. They don't even know it's a feature. It's when you double hit command, it pulls in what looks like a screenshot. And you're like, oh, have I opened up just a screenshot and thrown it in? No, it's actually pulling all the metadata, all the code, everything. Yeah, exactly. Yeah, so it's like, if you take a screenshot of a web page that has a link, the screenshot doesn't include where the link goes."
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 707.73,
+    "end_seconds": 736.33,
+    "text": "It doesn't include maybe you take a screenshot of your calendar that event titles are truncated. But when you take an app shot, It gives the language model full context about everything, and that lets it do much more. Yeah. For those who want to see more, Jason Liu, I invited him to do a full workshop on this at AI Engineer. Amazing. You did a great job. I have a broader vision question on computer use agents. So your example of take a screenshot, scroll page,"
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 736.33,
+    "end_seconds": 764.97,
+    "text": "take a screenshot is where we were. Today they can automate a lot. What are the bottlenecks? Is it models? Is it harnesses? where do you see it going in like two years? Do you see it just running for hours? How do we get there? Any predictions on where computer use goes? Yeah, I mean, I think what's really crazy that I think, the teams accomplished over the past couple of months is that now computer use is like faster at accomplishing tasks than like the average human,"
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 764.97,
+    "end_seconds": 794.33,
+    "text": "probably in most cases. And I think that the next frontier is to have computer use be like literally superhuman in its performance where it actually is as fast or faster at using software than expert computer users like us. And I think that'll be really consequential and exciting when that happens, because I think we'll be able to all of a sudden build products that provide just much more real time experiences. And I think it'll also, lowering the barrier to entry"
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 794.33,
+    "end_seconds": 821.57,
+    "text": "of the activation energy, I suppose, of using computer use, I think will make us start to default to doing certain things in agents that we've become accustomed to doing manually. And I think that's exciting also, because it'll save us a ton of time. And I think there are a lot of different little paper cuts in bottlenecks that are sort of standing in the way of that. I think that there is, yeah, there's things on the model side. There's things on the inference side."
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 821.57,
+    "end_seconds": 848.21,
+    "text": "There's things on the harness side. There's things in the representation. We find that as computer use gets faster, we're increasingly bottlenecked by just the speed of doing an operation. like for example, you know, a non-trivial amount of time in our benchmarks of computer use tasks is actually like, like, let's say you're automating a task on door-dot-com. Like a lot of the time is actually waiting for door-dot-com itself to load, you know? Yeah, then you just write a wait and then you execute the wait. Yeah, totally."
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 848.21,
+    "end_seconds": 871.73,
+    "text": "And you wanna get, actually it's actually really important that you get that, like, you want as little delay as possible between when it finally finishes loading and when you go and trigger the LM to the next action, which is actually itself a statistical science. like an event driven way maybe to do that. When possible you want to be event driven. And JavaScript has load events for, the web browser has load events for web navigation, but there's other types of events that actually"
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 871.73,
+    "end_seconds": 896.37,
+    "text": "really can't be event driven. So there's a lot of complexity. The one that comes to mind is like chatting with customer service. Yeah. Replies could take 30 seconds, could take three minutes. Oh right. I have dealt with so many bots with Codex. It's great, but I also wonder if the other side knows that they're talking to a bot, because I'm like answering in complete sentences, like I'm capitalizing. That's hilarious. Like I'm giving full reference numbers and everything like it's clearly too good. I don't care."
+  },
+  {
+    "segment_id": "s-0036",
+    "start_seconds": 896.37,
+    "end_seconds": 919.21,
+    "text": "Like I'm just like trying to get my support. I've prompted it to like, you know, don't pretend you're a bot. Be very annoyed human, short one-liners like push it, do all this. I'd also tell it while you're waiting for responses like use sub agents to research better ways to figure out what we need. Nice. It's just like human little intervention. That's awesome. I also feel like half the time it's a bot on the other end. So now you've got the bots talking to each other."
+  },
+  {
+    "segment_id": "s-0037",
+    "start_seconds": 919.21,
+    "end_seconds": 948.57,
+    "text": "I will also say, one milestone of computer use that we're at now is, three, four years ago we were scared of hooking up LLMs to the web and to our devices. And now I'm having it configure DNS for me. I'm having it pay my bills. And really like tens of thousands of dollars of stuff I'm just sending it over and yoloing with computer use. And what's the worst thing that can happen?"
+  },
+  {
+    "segment_id": "s-0038",
+    "start_seconds": 948.57,
+    "end_seconds": 971.87,
+    "text": "So that's all really good. I think now that you've obviously, you also have to dog food your own products and all these things. Now that you've sort of released this in API, what are some pitfalls or tips that you want to tell developers because they're about to, I guess, encounter all this firsthand? First of all, I'm just really excited that we brought computer use into the Agents API. I think this is really great because obviously a lot of developers"
+  },
+  {
+    "segment_id": "s-0039",
+    "start_seconds": 971.87,
+    "end_seconds": 995.59,
+    "text": "are building applications that want to be able to work with third party websites and services. And so computer use has this universality to it. It can work with anything. So now all of a sudden developers can build using the same computer use implementation that we're building on. I think there's great work to be done if you want to build your own computer use harness, but it's hard. And also we train our models on our computer use harness so there is an advantage to"
+  },
+  {
+    "segment_id": "s-0040",
+    "start_seconds": 995.59,
+    "end_seconds": 1018.59,
+    "text": "using the one that's in distribution for the model. There actually might be a speed and cost and accuracy advantage. So I think it's really great for people to get to build on top of that. And yeah, I think kind of to the point that you were making, I think we're all sort of still in the process and maybe some of us are ahead of many people in the world of getting comfortable with this technology and trusting it."
+  },
+  {
+    "segment_id": "s-0041",
+    "start_seconds": 1018.59,
+    "end_seconds": 1043.61,
+    "text": "And so I think it's incumbent on us to sort of build that trust over time by making sure we're building things that are reliable, by building the right kinds of safety checks, by asking for the user's consent before doing something consequential, like making a payment by asking, you know, maybe depending on the application, making sure you're only letting it access the websites or applications that it actually needs for the task. So that's, I think, something important to think about."
+  },
+  {
+    "segment_id": "s-0042",
+    "start_seconds": 1043.61,
+    "end_seconds": 1067.43,
+    "text": "But yeah, I'd really encourage people to try the new agents API, build all kinds of cool stuff on it. We'd love to hear your feedback if, you know, depending on how it goes. Have you seen any changes in the way it affects dev workflows? So one of the things with dots is, you know, you're seeing it in Slack, you're seeing people use voice and build. The example Roman showed of change this app and send me screenshots along the way and all this. Yeah."
+  },
+  {
+    "segment_id": "s-0043",
+    "start_seconds": 1067.43,
+    "end_seconds": 1094.25,
+    "text": "Is anything that you're seeing there an adoption about how people are using computer use for coding workflows? Any tips people should take from that? One of my favorite use cases for computers actually and one that we see a lot in the wild is computer use letting the agent actually test the software that the agent has built, which is far more consequential than it sounds. Because traditionally, you know, you'd build something in Codex and then Codex builds it"
+  },
+  {
+    "segment_id": "s-0044",
+    "start_seconds": 1094.25,
+    "end_seconds": 1116.39,
+    "text": "for you and then you have to test it and you are now like QA for the agent, right? So with computer use, you can complete the software development life cycle where the agent can build software, it can test it. So I have a lot of fun, you know, building stuff, having the agent test it by the time it comes to me, it's already working. I have extra fun because sometimes I'm like developing computer use itself and"
+  },
+  {
+    "segment_id": "s-0045",
+    "start_seconds": 1116.39,
+    "end_seconds": 1138.99,
+    "text": "So now I have a computer use agent that's using my computer use agent that's using something else. So yeah, I really think this is a super powerful class for you guys. I have a visual play test skill that I've developed that really catches a lot of design issues. Nice. That normally when you just look at code, you wouldn't really pick it up. It's also really good for cloning apps, though if you're using a shitty SAS and you want to kill this SAS, you just clone it"
+  },
+  {
+    "segment_id": "s-0046",
+    "start_seconds": 1138.99,
+    "end_seconds": 1162.95,
+    "text": "screen by screen by screen. And obviously, computer users can completely drive everything, take screenshots, note it down, and then clone everything with Codex. It's really cool. But yeah, thanks for all your progress. I think that is our time. This is not the last that we're gonna talk. Yeah, cool. This has been really fun. Thank you guys for having me. All right. All right. Okay, we're a strict cutoff. We're just gonna dive right in. Let's do it. Yeah. Okay, so Nekunj, we're very excited to have you."
+  },
+  {
+    "segment_id": "s-0047",
+    "start_seconds": 1162.95,
+    "end_seconds": 1188.39,
+    "text": "You've shipped a lot on the API side, like we just talked about with RE. You can now build with computer use agents. Anything you wanna highlight the API side of changes and introduce yourself a little on what you do? Yeah, for sure. I lead product for the API team, been here for roughly three years, been working on launch and models. I feel like that's just been like a thing, constant thing throughout my time here at OpenAI."
+  },
+  {
+    "segment_id": "s-0048",
+    "start_seconds": 1188.39,
+    "end_seconds": 1216.87,
+    "text": "And with every new model, we try to like basically work super closely with the post-training team, the research team to figure out what's new in it. And then we like expose those capabilities in the API. So that's like the basic way of putting it. And if you just look at everything that's new with GPT6, the cool new capabilities that we launched were firstly, async function calling. So what do you see with like, like a lot of the things that you're seeing in like codecs"
+  },
+  {
+    "segment_id": "s-0049",
+    "start_seconds": 1216.87,
+    "end_seconds": 1246.69,
+    "text": "and dots and everything is that tool calls take so long that you don't have to like pause the model's execution while the tool is running. So you could just like kick off a tool call, keep running, keep reasoning, and then check back in. So we launched async tool calling, we launched mid-turn steering. So now you can inject messages while the model is reasoning in the middle. So as your tool call finishes, you can put in that instructions. And that's also partially a model alignment capability."
+  },
+  {
+    "segment_id": "s-0050",
+    "start_seconds": 1246.69,
+    "end_seconds": 1269.39,
+    "text": "They have to train in the ability to train. Exactly. Yeah. I feel like we've had it in the app. You could always, as it's reasoning, you could steer. Yes. It wasn't the best. It's gotten much better. Yeah. I'm excited to see how it does this. Yeah, and our main goal in the API is to put things in the API once it's trained into the harness, and so we kind of wait for that moment until it's good enough."
+  },
+  {
+    "segment_id": "s-0051",
+    "start_seconds": 1269.39,
+    "end_seconds": 1297.05,
+    "text": "And a lot of that is actually being powered by WebSockets, which we launched a few, I wanna say months ago. And so WebSockets just opens this whole bi-directional communication thing with the model. This is not the GP live thing I'm just talking about, GPT-6, and you can do all these async tool calling, is increasing, injecting messages. So it's a really fun API to work on, I think, really enjoying. This is why we are the engineering podcast because we get to talk about WebSockets."
+  },
+  {
+    "segment_id": "s-0052",
+    "start_seconds": 1297.05,
+    "end_seconds": 1326.35,
+    "text": "This also pairs very well with UltraFast, right? That is now, I think, for the first time ever available in the API. Yes. Which is basically the theoretical fastest speed you can ever get, frontier intelligence. Yeah, yeah. It's been so exciting to work on that project. I think before I go into the API, the most fun part of UltraFast has been just watching the inference team cook with Astra. Like they're just like constantly having these like codecs agents running, trying to like squeeze out more performance."
+  },
+  {
+    "segment_id": "s-0053",
+    "start_seconds": 1326.35,
+    "end_seconds": 1349.75,
+    "text": "And I would say like at least for a couple of months, a lot of it was focused on efficiency and driving the cause down, which is how we like were able to cut the Luna price by like 80%. It was like a lot of that was driven by like all the inference improvements they landed. And then now they've like shifted gears towards like, how can we make this run as fast as possible? And so ultra fast has just been amazing to see on a model"
+  },
+  {
+    "segment_id": "s-0054",
+    "start_seconds": 1349.75,
+    "end_seconds": 1378.15,
+    "text": "like Astra to go that fast has been really cool. And yeah, WebSockets is like, actually it was like, the first time we launched WebSockets, it was for a GBD 5.3 Codex Spark, which is, can't believe we named a model that, but that's what we launched it for. And obviously it helps so much because you got to have the tool called, you got to really reduce the overhead of going back and forth with tools. And so WebSockets is awesome for that. Yeah."
+  },
+  {
+    "segment_id": "s-0055",
+    "start_seconds": 1378.15,
+    "end_seconds": 1401.77,
+    "text": "It's always cute to see, like, I have my reset usage limit, and then I have my spark usage limit that I never use. Yeah. Like, it's there if I want it. I think it's gone. Finally. It's gone. I know it's gone. So yeah. You're slowly killing off all the old ones. That is a great week. I mean, it was the first time we had Frontier Intelligence at extreme speeds. People really liked it. Yeah. So yeah. So that's how it comes back. Yeah."
+  },
+  {
+    "segment_id": "s-0056",
+    "start_seconds": 1401.77,
+    "end_seconds": 1429.65,
+    "text": "5.3 spark is explicitly attributed to Cerebrus. You guys are not confirming or denying that ultrafast is related to Cerebrus, but people are, I'll just say that people do care and are wondering about it. And you have your own silicon as well. Elephant in the room, decision models, decision API. We were the first podcast to do a big jev deep dive with Diogo and I also featured him at AI engineer. How quickly did you see jev and go like,"
+  },
+  {
+    "segment_id": "s-0057",
+    "start_seconds": 1429.65,
+    "end_seconds": 1459.49,
+    "text": "Yeah, we see huge props to Diogo and the Jeff team for really inspiring the whole segment in the market. Like, obviously, Jeff comes out, everyone's losing their minds over it. Our users are hitting us up. But also, our internal teams are like, we need a much faster classification system. We can, I don't want to get ahead of some of the dots features that are going to come, but you're going to see some cool, really snappy"
+  },
+  {
+    "segment_id": "s-0058",
+    "start_seconds": 1459.49,
+    "end_seconds": 1488.21,
+    "text": "fast things built on top of the Decisions API. But, yeah, props to Jeff for inspiring this whole thing. Obviously, a bunch of people at OpenAI get nerd-snipe by that, and they're like, how can we make this work? We're not going to train a new model. Like four weeks ago, this was not a new development. No, no, no. This is like, wow, Jeff inspired. I think you're officially the first frontier lab to clone and adopt this. I feel like OpenAI is such a strong hacker culture,"
+  },
+  {
+    "segment_id": "s-0059",
+    "start_seconds": 1488.21,
+    "end_seconds": 1515.85,
+    "text": "and people are just like, they get excited about things. And so Guy from Inference, this one awesome guy from the Infer team are like, this is amazing. We're gonna hack on it. They build a prototype, it works, and now we're just hill climbing on latency and trying to make this as fast as possible. And we wanna launch it in the coming days. So as soon as we hit our latency target, we'll try to get this out. It's interesting, at the same time of hacker culture,"
+  },
+  {
+    "segment_id": "s-0060",
+    "start_seconds": 1515.85,
+    "end_seconds": 1541.01,
+    "text": "you also, as Sam said, like 99% one of the most reliable APIs with, I think probably the most usage, which is your team directly. How should people see Decisions API? I feel like a lot of people saw Jeff, heard the buzz, haven't built with it. You're making it very mainstream. What should people see it as? How should they use it? Yeah, I think the main use cases we've seen is like really fast classification. All"
+  },
+  {
+    "segment_id": "s-0061",
+    "start_seconds": 1541.01,
+    "end_seconds": 1566.97,
+    "text": "the computer use demos have been amazing and really cool. I think there will be limitations of course in terms of having Astra write like a JavaScript script to control your computer versus having Luna pick one action at a time. I think it's not going to be at the same intelligence level but maybe there's some computer use task that this is good enough for. So excited to see that come through. The other cool prototype I've seen internally"
+  },
+  {
+    "segment_id": "s-0062",
+    "start_seconds": 1566.97,
+    "end_seconds": 1595.77,
+    "text": "is people hooking it up with GPRI live. So GPRI live is our bi-directional real-time API and it's built on this model of front-end models and back-end models. So GPD Live is this like super fast. Yeah, thinker thing. So GPD Live is the talker, super fast, really good at delegation, and you have something like Astra sitting at the back. But tool calling has always felt like really slow in GPD Live."
+  },
+  {
+    "segment_id": "s-0063",
+    "start_seconds": 1595.77,
+    "end_seconds": 1622.77,
+    "text": "So people have been putting together these tool calling demos of GPD Live controlling a computer. and just feels like so much more snappy and natural. So I'm kind of excited to see what people do with Live and with Luna on Decisions API. So that'll be pretty exciting. So I want to iron this out for people, especially from the product side, because a lot of people have been putting out Jeff clones. There's been about 100 in the last two weeks. Oh, really? That's amazing."
+  },
+  {
+    "segment_id": "s-0064",
+    "start_seconds": 1622.77,
+    "end_seconds": 1651.85,
+    "text": "I'll get in the first place. But like they can clone a Jeff API, which is honestly structured outputs, which Open AI was first to. So like, I think let's iron out for people, what is a decision model? As far as like, what is importance? It is not just latency, it's not just structured output, right? Because I could just have Luna, as the decision model is priced the same as Luna, right? Have turned off reasoning and then have structured output. Do I have a Jeff?"
+  },
+  {
+    "segment_id": "s-0065",
+    "start_seconds": 1651.85,
+    "end_seconds": 1680.05,
+    "text": "No, right? And that's the real- There's a confidence there. Yeah, totally. I think the way that, so we haven't trained like a new model for this. We're building this purely on top of the same Luna weights that we have. So yeah, this is really just Luna. And on top of that, what you're doing is you're constraining. So structured output is a big part of it. You are really optimizing the inference stack to get very fast on DTFT."
+  },
+  {
+    "segment_id": "s-0066",
+    "start_seconds": 1680.05,
+    "end_seconds": 1709.01,
+    "text": "And because you can have multiple questions, what you do is you basically run those in parallel. As a batch. Yeah, you run those as a batch. All sorts of inference techniques people are working on to try to make it as fast as possible. But I'd say at least our implementation of it at the start and this first version is zero-shotting this on top of Luna to see how it goes. And obviously you wanna put it out there. This is opening as classic iterative deployment thing."
+  },
+  {
+    "segment_id": "s-0067",
+    "start_seconds": 1709.01,
+    "end_seconds": 1734.57,
+    "text": "Put it out there, see what people think, and then we'll make more model improvements as needed. So yeah, that's the syntepia. Yeah, and obviously as a benefit you have vision, they don't have vision, right? That's true. Yeah, yeah, yeah, like we get it for free with Luna. Yeah, I do think that like, you know, some of the innovations, it sounds like it's still to come if it's still the same Luna ways, which is like the confidence stuff and calibration"
+  },
+  {
+    "segment_id": "s-0068",
+    "start_seconds": 1734.57,
+    "end_seconds": 1757.45,
+    "text": "is something that we've talked about on the podcast with benchmarking calibration. Because basically the whole point is that RLHF kind of collapses you towards what you want to hear. Yeah. But like not actually like what the amount of confidence is. Yeah, yeah, totally. I mean, you're to see how it, uh, it bands out. You maybe, maybe this like going to be, these are going to be like the key areas where we may have to like hill climb, uh, with the, with the future model release."
+  },
+  {
+    "segment_id": "s-0069",
+    "start_seconds": 1757.45,
+    "end_seconds": 1785.81,
+    "text": "But, um, yeah. And then architecture wise, the other thing that's in the debate, obviously you, nobody knows because Jeff doesn't talk about it, but the, the two speculations are one, maybe diffusion model instead of autoregressive. Uh, but you, you're able to achieve the parallel generation in, in, in your way. And then the other one is some mech and terp type thing. that you're analyzing the activations and then just outputting the weights. Which you guys have all done the research on this. People have speculated."
+  },
+  {
+    "segment_id": "s-0070",
+    "start_seconds": 1785.81,
+    "end_seconds": 1813.13,
+    "text": "There have been demos on both of these as well. I think Gemini shared a Gemini diffusion, Gemini diffusion on a Jav style output. And inter people have also pulled out inter from the middle layer, but this is all speculations. It's just like, what are you trying to aim for? Because you can achieve the API. Everyone can achieve the API. It's actually pretty trivial. But like then there's the speed, then there's the accuracy, then there's the other calibration features. I don't know what else."
+  },
+  {
+    "segment_id": "s-0071",
+    "start_seconds": 1813.13,
+    "end_seconds": 1839.17,
+    "text": "Yeah, yeah, no, totally. It's so cool that this whole space has been kicked off now and people are going to do so much cool stuff and everyone's going to learn from each other. And yeah, I'm excited about it. I feel like being on the platform team, a lot of your job is to empower builders. What do you think people should build with Decisions API and also computer use agents? Any stuff that you've been building with internally that you think really opens up after the new change?"
+  },
+  {
+    "segment_id": "s-0072",
+    "start_seconds": 1839.17,
+    "end_seconds": 1868.09,
+    "text": "Yeah. Okay, let's think. Decisions API, use cases internally have been pretty obvious. Like the user ops team was like jumping on it. We were like, we're going to classify all of our support tickets. What else came up? Obviously, there was like the really cool GP live demos. I'm sure like the Codex app team might like pick this up and try to do something cool with it. So, you know, like this whole thing started like a week ago. So it's like very, very early and one week."
+  },
+  {
+    "segment_id": "s-0073",
+    "start_seconds": 1868.09,
+    "end_seconds": 1897.33,
+    "text": "There was a big push in eval.zlm as a judge having really low latency there. Right. Yeah. Yeah. That'll be interesting to see. And then with the Agents API, we have, we're basically like having a bunch of first party products like at OpenAI built fully on top of it. We've had the codec security stuff that just went out, that's fully built on top of the agents API. We have sort of the,"
+  },
+  {
+    "segment_id": "s-0074",
+    "start_seconds": 1897.33,
+    "end_seconds": 1922.41,
+    "text": "we're having like a meetings type of thing launching today. I think it was like a demo. Do you remember like the plugin extensions when Sam was showing it, there was like a demo for like, you're in a calendar, you can sort of like, have your meeting notes like, like drop into a Zoom call, a granola type thing. Yeah. And so all of that stuff is like fully built on top of the agents API. And yeah, I'm just excited to see, like we're just getting this out"
+  },
+  {
+    "segment_id": "s-0075",
+    "start_seconds": 1922.41,
+    "end_seconds": 1949.07,
+    "text": "and let's see what people build on top of it. I think you showed it off very well. The whole edit spaces, pages, collaborate, add in your dot, like that's a lot. So there's a lot of inspiration people can go through. Yeah, yeah, all possible with Astro, you know? Like things just move so fast now, like people go from idea to execution so quickly. It's amazing. Is there something that you want people to focus on to give you feedback. Like what, like, you know, maybe you're,"
+  },
+  {
+    "segment_id": "s-0076",
+    "start_seconds": 1950.11,
+    "end_seconds": 1974.93,
+    "text": "you're just putting this out there and you want, and there's like a fork in the road and you want developers to help you decide. So I think agents API and decisions API, they're like, these are our newest products, would love like any and all feedback on that to figure out where to take them. I think over here, we're like very open on responses API, which is sort of like our workhorse over here. Like really focused on performance right now"
+  },
+  {
+    "segment_id": "s-0077",
+    "start_seconds": 1974.93,
+    "end_seconds": 2002.45,
+    "text": "And the performance comes in two main ways. First is just latency. We've been rewriting the whole responses API extract to make it as fast as possible from a DTFT perspective, DVD perspective. That continues to be a main area of focus for us. The second thing we've been trying to do is really go deep on caching, particularly with these personal agents that are basically a single thread that just goes on and on forever."
+  },
+  {
+    "segment_id": "s-0078",
+    "start_seconds": 2002.45,
+    "end_seconds": 2026.97,
+    "text": "We've been trying to really up our game on caching. We provide now guarantees of cash hits within 30 minutes. We're actually, for one of our users, we just launched a much longer cache window. So we have a 12-hour caching guarantee that we offer so that you have guaranteed cache hits for a little over a year. Is that a public API? Not yet. That's in preview. We're going to try to get that out to everyone as soon as possible."
+  },
+  {
+    "segment_id": "s-0079",
+    "start_seconds": 2026.97,
+    "end_seconds": 2050.33,
+    "text": "But just pay a little bit more for the cache, right? and we guarantee cash reads for a much longer period. So even if your instinct thread, for example, like you just do something on it and then come back to it like three to four hours later, you're still getting the caching performance out of it. And you cut the post there quite a bit too, right? With the new model 95% cheaper. Oh yeah, that's right. Yeah, we're like driving on cash reads, yeah."
+  },
+  {
+    "segment_id": "s-0080",
+    "start_seconds": 2050.33,
+    "end_seconds": 2076.29,
+    "text": "For builders, they should implement because it's significantly cheaper. Yeah, yeah. building your apps with like to be very cash aware and sort of like use our prompt diagnostics or cash diagnostics tool to figure out like where things are dropping off and so the caching part is like really important. Yeah I also want to talk about pre-warming we have that in the API now so like if you know that"
+  },
+  {
+    "segment_id": "s-0081",
+    "start_seconds": 2076.29,
+    "end_seconds": 2103.67,
+    "text": "hey I'm gonna get a cash like I'm sorry I'm gonna get this prompt I just want to pre-warm the cache, pay the cache write fee right now, and then have it ready to go for the next 30 minutes for whenever. And it can spawn many instances of that thread. Exactly. Yeah, you can just keep going and have tons of that. Yeah, just keep us as a problem there. And so yeah, I'm very excited about getting feedback on the low-level performance things"
+  },
+  {
+    "segment_id": "s-0082",
+    "start_seconds": 2103.67,
+    "end_seconds": 2128.59,
+    "text": "so that we can keep making responses API the most performant and reliable way to build on top of an LLM. And then you basically have our new products where I'm just looking for any and all feedback. Yeah, just use that. So yeah, just tell us what to say. Define our roadmap for us please. I think for me, the caching thing great, obviously very needed, but at the end of the day, you're still bumping out against a million token contacts,"
+  },
+  {
+    "segment_id": "s-0083",
+    "start_seconds": 2128.59,
+    "end_seconds": 2156.99,
+    "text": "and that's probably not going to change for the foreseeable future. Like you still need good compression. What is the best practice there? Yeah, totally. So firstly, OpenAI has its own proprietary compression, which is in the API. Yes, agent's API. You decide for us, right? Yeah, exactly. So in the agents API, it comes built into the harness. And if you're in responses API, there's two ways of doing it. One is what we call server side compaction, which"
+  },
+  {
+    "segment_id": "s-0084",
+    "start_seconds": 2156.99,
+    "end_seconds": 2184.47,
+    "text": "is you basically tell responses API that if you ever hit this threshold of tokens, just auto compact it and go back or reduce the context being used. The second way is slash compact, which is if you want full control. So you can slash compact it anytime, have your own logic on when to like. It's not EJI. Yeah. Yeah. But it is the manual over. Yeah. It is the manual way and I don't know,"
+  },
+  {
+    "segment_id": "s-0085",
+    "start_seconds": 2184.47,
+    "end_seconds": 2213.43,
+    "text": "but a lot of the big coding agents like to do it manually. If you look at the Codex implementation of it in the open source codex harness, you can see that they use slash compact and do it. There's also new compaction techniques that we are working on. Some of them you will be able to see in the codex harness. It's already implemented in the codex harness, and so they're some file-based systems that we are experimenting with."
+  },
+  {
+    "segment_id": "s-0086",
+    "start_seconds": 2213.43,
+    "end_seconds": 2236.67,
+    "text": "Yeah, lots of cool stuff going on around in compaction as well. Cool. We're running out of time. I think you've talked a lot about performance and talked a lot about the new APIs that you're launching. Can you give us any other hints as to things that you're interested in as far as the future of the platform is concerned? We're obviously at a very low level. I used to work at Stripe before this,"
+  },
+  {
+    "segment_id": "s-0087",
+    "start_seconds": 2236.67,
+    "end_seconds": 2264.23,
+    "text": "and at Stripe a lot of the game was building these higher-level primitives and products on top of the core payments primitives. And I'm always curious about what the best way of doing that is in AI. And I think we've had a couple of attempts at that. We had launched the systems API way back in the day and wasn't really the right fit. We're sort of going off with this agents API and it gives you the codex harness."
+  },
+  {
+    "segment_id": "s-0088",
+    "start_seconds": 2264.23,
+    "end_seconds": 2290.19,
+    "text": "But what's the right amount of flexibility to give in that? That's an open question. how it should be like have memory walls and like all of these like higher level like API objects to to take away also like to to abstract away more like storage concepts like this is like a whole like there's a whole space that I'm like very curious about figuring out how we design. I think"
+  },
+  {
+    "segment_id": "s-0089",
+    "start_seconds": 2290.19,
+    "end_seconds": 2315.83,
+    "text": "a lot of things in AI are just have a low level API primitive and see an example harness and go and have your coding agent implement that. But how much of that do we build into the API is like a constant question that I'm thinking about. Yeah. So I don't know, folks have thoughts on that. If anyone has ideas, it would be super interesting to hear. Yeah. The analogy I always bring back to and there is, you're building an AI cloud, right?"
+  },
+  {
+    "segment_id": "s-0090",
+    "start_seconds": 2315.83,
+    "end_seconds": 2342.39,
+    "text": "Like, which is something that Sam said a year ago. And it's almost like you're doing the AWS invention, and you have to do, okay, this is EC2, and this is S3. And this is like, but you're doing the AI native versions of each of these. There are a lot of analogies. So you're pre-warming caches for stuff that you know. And it's nice that it's all exposed to builders because it just opens up ways that you can build new things. Yeah, absolutely. Okay. Awesome. Thank you guys."
+  },
+  {
+    "segment_id": "s-0091",
+    "start_seconds": 2342.39,
+    "end_seconds": 2343.07,
+    "text": "Thank you. Yeah."
+  }
+]

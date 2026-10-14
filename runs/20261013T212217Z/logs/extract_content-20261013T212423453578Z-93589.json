@@ -1,0 +1,87 @@
+{
+  "stage": "extract_content",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 69,
+  "output_count": 60,
+  "started_at": "2026-10-13T21:23:30Z",
+  "finished_at": "2026-10-13T21:24:23Z",
+  "elapsed_seconds": 53.0,
+  "tools": [
+    "httpx",
+    "trafilatura",
+    "yt-dlp",
+    "faster-whisper (small)",
+    "pymupdf"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [
+    {
+      "message": "unprocessable: insufficient_text: 789 chars via html",
+      "item_id": "feed:1ce341749cd1d883",
+      "url": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 540 chars via html",
+      "item_id": "feed:79fb31c209812beb",
+      "url": "https://simonwillison.net/2026/Oct/12/datasette-ports"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 747 chars via html",
+      "item_id": "feed:d3612ff459da8b57",
+      "url": "https://simonwillison.net/2026/Oct/10/python-actions"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 761 chars via html",
+      "item_id": "feed:51b6227273006399",
+      "url": "https://simonwillison.net/2026/Oct/10/the-new-york-times"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 443 chars via html",
+      "item_id": "feed:04d6208c687016cf",
+      "url": "https://latent.space/p/nyc2026"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/higgsfield-longer-videos-voice: HTTP 403 for https://openai.com/index/higgsfield-longer-videos-voice",
+      "item_id": "feed:8d45898e533e591d",
+      "url": "https://openai.com/index/higgsfield-longer-videos-voice"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/sophos: HTTP 403 for https://openai.com/index/sophos",
+      "item_id": "feed:570fe3204556675e",
+      "url": "https://openai.com/index/sophos"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/asana-browser-agent: HTTP 403 for https://openai.com/index/asana-browser-agent",
+      "item_id": "feed:9bf93d58cc35db99",
+      "url": "https://openai.com/index/asana-browser-agent"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/oracle: HTTP 403 for https://openai.com/index/oracle",
+      "item_id": "feed:db7b9e6fe248e314",
+      "url": "https://openai.com/index/oracle"
+    }
+  ],
+  "extra": {
+    "counters": {
+      "reused": 19,
+      "fetched": 50,
+      "caption_items": 1,
+      "whisper_items": 0,
+      "media_downloaded": 0,
+      "transcribed_seconds": 0.0,
+      "unprocessable": 5,
+      "failed": 4,
+      "thin": 2,
+      "malformed_lines": 0,
+      "duplicates": 0
+    },
+    "mode": "live",
+    "retain_media": true,
+    "whisper_model": "small",
+    "max_transcribe_seconds": 3600,
+    "cost_basis": "local compute only"
+  }
+}

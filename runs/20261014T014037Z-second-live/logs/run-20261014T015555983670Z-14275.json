@@ -1,0 +1,21 @@
+{
+  "stage": "run",
+  "status": "completed",
+  "run_dir": "runs/20261014T014037Z-second-live",
+  "input_count": null,
+  "output_count": null,
+  "started_at": "2026-10-14T01:40:37Z",
+  "finished_at": "2026-10-14T01:55:55Z",
+  "elapsed_seconds": 918.0,
+  "tools": [],
+  "models": [],
+  "cost_usd": null,
+  "cost_is_estimate": null,
+  "errors": [],
+  "extra": {
+    "mode": "live",
+    "exit_code": 0,
+    "collect_exit": 0,
+    "series_exit": 0
+  }
+}

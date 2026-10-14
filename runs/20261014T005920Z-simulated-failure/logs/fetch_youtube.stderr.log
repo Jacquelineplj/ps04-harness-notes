@@ -1,0 +1,176 @@
+[youtube:tab] Extracting URL: https://www.youtube.com/@aiDotEngineer/videos
+[youtube:tab] @aiDotEngineer/videos: Downloading webpage
+[download] Downloading playlist: AI Engineer - Videos
+[youtube:tab] Playlist AI Engineer - Videos: Downloading 15 items
+[download] Downloading item 1 of 15
+[download] Downloading item 2 of 15
+[download] Downloading item 3 of 15
+[download] Downloading item 4 of 15
+[download] Downloading item 5 of 15
+[download] Downloading item 6 of 15
+[download] Downloading item 7 of 15
+[download] Downloading item 8 of 15
+[download] Downloading item 9 of 15
+[download] Downloading item 10 of 15
+[download] Downloading item 11 of 15
+[download] Downloading item 12 of 15
+[download] Downloading item 13 of 15
+[download] Downloading item 14 of 15
+[download] Downloading item 15 of 15
+[download] Finished downloading playlist: AI Engineer - Videos
+[youtube] Extracting URL: https://www.youtube.com/watch?v=gDRCpTMCqEU
+[youtube] gDRCpTMCqEU: Downloading webpage
+[youtube] gDRCpTMCqEU: Downloading visionos player API JSON
+[youtube] gDRCpTMCqEU: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=U7ZYBCcdJPg
+[youtube] U7ZYBCcdJPg: Downloading webpage
+[youtube] U7ZYBCcdJPg: Downloading visionos player API JSON
+[youtube] U7ZYBCcdJPg: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=-a2oTS9J67U
+[youtube] -a2oTS9J67U: Downloading webpage
+[youtube] unable to extract yt initial data; please report this issue on  https://github.com/yt-dlp/yt-dlp/issues?q= , filling out the appropriate issue template. Confirm you are on the latest version using  yt-dlp -U
+[youtube] Incomplete data received in embedded initial data; re-fetching using API.
+[youtube] -a2oTS9J67U: Downloading initial data API JSON
+[youtube] -a2oTS9J67U: Downloading visionos player API JSON
+[youtube] -a2oTS9J67U: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=3ZlQk4-knWM
+[youtube] 3ZlQk4-knWM: Downloading webpage
+[youtube] 3ZlQk4-knWM: Downloading visionos player API JSON
+[youtube] 3ZlQk4-knWM: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=Fe4aSMXsOZ4
+[youtube] Fe4aSMXsOZ4: Downloading webpage
+[youtube] Fe4aSMXsOZ4: Downloading visionos player API JSON
+[youtube] Fe4aSMXsOZ4: Downloading m3u8 information
+fetch_youtube: ai-engineer-youtube: 5 candidates
+[youtube:tab] Extracting URL: https://www.youtube.com/@anthropic-ai/videos
+[youtube:tab] @anthropic-ai/videos: Downloading webpage
+[download] Downloading playlist: Anthropic - Videos
+[youtube:tab] Playlist Anthropic - Videos: Downloading 12 items
+[download] Downloading item 1 of 12
+[download] Downloading item 2 of 12
+[download] Downloading item 3 of 12
+[download] Downloading item 4 of 12
+[download] Downloading item 5 of 12
+[download] Downloading item 6 of 12
+[download] Downloading item 7 of 12
+[download] Downloading item 8 of 12
+[download] Downloading item 9 of 12
+[download] Downloading item 10 of 12
+[download] Downloading item 11 of 12
+[download] Downloading item 12 of 12
+[download] Finished downloading playlist: Anthropic - Videos
+[youtube] Extracting URL: https://www.youtube.com/watch?v=UxJZrCFzTHY
+[youtube] UxJZrCFzTHY: Downloading webpage
+[youtube] UxJZrCFzTHY: Downloading visionos player API JSON
+[youtube] UxJZrCFzTHY: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=P1zBiAQU1IA
+[youtube] P1zBiAQU1IA: Downloading webpage
+[youtube] P1zBiAQU1IA: Downloading visionos player API JSON
+[youtube] P1zBiAQU1IA: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=iF5IWjOWcA4
+[youtube] iF5IWjOWcA4: Downloading webpage
+[youtube] iF5IWjOWcA4: Downloading visionos player API JSON
+[youtube] iF5IWjOWcA4: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=rKV5JcALQoQ
+[youtube] rKV5JcALQoQ: Downloading webpage
+[youtube] rKV5JcALQoQ: Downloading visionos player API JSON
+[youtube] rKV5JcALQoQ: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=j2knrqAzYVY
+[youtube] j2knrqAzYVY: Downloading webpage
+[youtube] j2knrqAzYVY: Downloading visionos player API JSON
+[youtube] j2knrqAzYVY: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=INGOC6-LLv0
+[youtube] INGOC6-LLv0: Downloading webpage
+[youtube] INGOC6-LLv0: Downloading visionos player API JSON
+[youtube] INGOC6-LLv0: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=D4XTefP3Lsc
+[youtube] D4XTefP3Lsc: Downloading webpage
+[youtube] D4XTefP3Lsc: Downloading visionos player API JSON
+[youtube] D4XTefP3Lsc: Downloading m3u8 information
+fetch_youtube: anthropic-youtube: 0 candidates
+[youtube:tab] Extracting URL: https://www.youtube.com/@LangChain/videos
+[youtube:tab] @LangChain/videos: Downloading webpage
+[download] Downloading playlist: LangChain - Videos
+[youtube:tab] Playlist LangChain - Videos: Downloading 12 items
+[download] Downloading item 1 of 12
+[download] Downloading item 2 of 12
+[download] Downloading item 3 of 12
+[download] Downloading item 4 of 12
+[download] Downloading item 5 of 12
+[download] Downloading item 6 of 12
+[download] Downloading item 7 of 12
+[download] Downloading item 8 of 12
+[download] Downloading item 9 of 12
+[download] Downloading item 10 of 12
+[download] Downloading item 11 of 12
+[download] Downloading item 12 of 12
+[download] Finished downloading playlist: LangChain - Videos
+[youtube] Extracting URL: https://www.youtube.com/watch?v=oVKGKdIAgtg
+[youtube] oVKGKdIAgtg: Downloading webpage
+[youtube] oVKGKdIAgtg: Downloading visionos player API JSON
+[youtube] oVKGKdIAgtg: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=XcsspzECTKA
+[youtube] XcsspzECTKA: Downloading webpage
+[youtube] XcsspzECTKA: Downloading visionos player API JSON
+[youtube] XcsspzECTKA: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=Xe7c-7jyp28
+[youtube] Xe7c-7jyp28: Downloading webpage
+[youtube] Xe7c-7jyp28: Downloading visionos player API JSON
+[youtube] Xe7c-7jyp28: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=S3l7U7gOsyY
+[youtube] S3l7U7gOsyY: Downloading webpage
+[youtube] S3l7U7gOsyY: Downloading visionos player API JSON
+[youtube] S3l7U7gOsyY: Downloading m3u8 information
+fetch_youtube: langchain-youtube: 4 candidates
+[youtube:tab] Extracting URL: https://www.youtube.com/@OpenAI/videos
+[youtube:tab] @OpenAI/videos: Downloading webpage
+[download] Downloading playlist: OpenAI - Videos
+[youtube:tab] Playlist OpenAI - Videos: Downloading 9 items
+[download] Downloading item 1 of 9
+[download] Downloading item 2 of 9
+[download] Downloading item 3 of 9
+[download] Downloading item 4 of 9
+[download] Downloading item 5 of 9
+[download] Downloading item 6 of 9
+[download] Downloading item 7 of 9
+[download] Downloading item 8 of 9
+[download] Downloading item 9 of 9
+[download] Finished downloading playlist: OpenAI - Videos
+[youtube] Extracting URL: https://www.youtube.com/watch?v=G-9Y2xNiDKQ
+[youtube] G-9Y2xNiDKQ: Downloading webpage
+[youtube] G-9Y2xNiDKQ: Downloading visionos player API JSON
+[youtube] G-9Y2xNiDKQ: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=IZXv6a78NDw
+[youtube] IZXv6a78NDw: Downloading webpage
+[youtube] IZXv6a78NDw: Downloading visionos player API JSON
+[youtube] IZXv6a78NDw: Downloading m3u8 information
+[youtube] Extracting URL: https://www.youtube.com/watch?v=p5KxBTUncoE
+[youtube] p5KxBTUncoE: Downloading webpage
+[youtube] p5KxBTUncoE: Downloading visionos player API JSON
+[youtube] p5KxBTUncoE: Downloading m3u8 information
+fetch_youtube: openai-youtube: 3 candidates
+[youtube:tab] Extracting URL: https://www.youtube.com/@LatentSpacePod/videos
+[youtube:tab] @LatentSpacePod/videos: Downloading webpage
+[download] Downloading playlist: Latent Space - Videos
+[youtube:tab] Playlist Latent Space - Videos: Downloading 6 items
+[download] Downloading item 1 of 6
+[download] Downloading item 2 of 6
+[download] Downloading item 3 of 6
+[download] Downloading item 4 of 6
+[download] Downloading item 5 of 6
+[download] Downloading item 6 of 6
+[download] Finished downloading playlist: Latent Space - Videos
+[youtube] Extracting URL: https://www.youtube.com/watch?v=BHiYomkfoGQ
+[youtube] BHiYomkfoGQ: Downloading webpage
+[youtube] BHiYomkfoGQ: Downloading visionos player API JSON
+[youtube] BHiYomkfoGQ: Downloading m3u8 information
+[info] Testing format 616
+[hlsnative] Downloading m3u8 manifest
+[hlsnative] Total fragments: 842
+[download] Destination: /var/folders/wl/mx3m_wtd53q3pcb_5pmtvxx80000gn/T/tmpfsphkcmw.tmp
+[download] Download completed
+[youtube] Extracting URL: https://www.youtube.com/watch?v=zlD-CkLVKtU
+[youtube] zlD-CkLVKtU: Downloading webpage
+[youtube] zlD-CkLVKtU: Downloading visionos player API JSON
+[youtube] zlD-CkLVKtU: Downloading m3u8 information
+fetch_youtube: latent-space-youtube: 2 candidates

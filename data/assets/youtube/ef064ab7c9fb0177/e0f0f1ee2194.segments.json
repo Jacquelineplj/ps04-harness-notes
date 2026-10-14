@@ -1,0 +1,212 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 2.56,
+    "end_seconds": 31.16,
+    "text": "Go-live proves that a system exists, but it doesn't prove the people behind the work will actually use it. Or that it will ever deliver a single dollar from the deal model. I am Michelle Grant, creator of Leading at Scale, and the question every enterprise is confronting right now is the agent works, does anyone trust it? I have spent over 20 years in enterprise"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 29.52,
+    "end_seconds": 58.4,
+    "text": "transformation and more than a decade leading M&A integrations across media, tech, and consumer goods. On those deals, trust was not something we crossed our fingers and hoped for after launch. We engineered it before day one through early change management and risk management."
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 55.04,
+    "end_seconds": 83.44,
+    "text": "So, when the platform went live, the teams on the ground actually relied on it. AI agents demand the exact same muscle. An agent earns trust when it delivers the value the business budgeted for while staying strictly within the company's approved risk appetite,"
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 78.76,
+    "end_seconds": 106.08,
+    "text": "policies, and regulatory guardrails. In my experience, leadership gets there by answering three straightforward questions. What value does it create? Who is on the hook for it? And what evidence gives it permission to run with greater autonomy? The moment an agent steps out of a"
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 103.44,
+    "end_seconds": 132.6,
+    "text": "sandbox and into a core business workflow, the entire test changes. A pilot tests whether the software functions, but daily operations is where we test whether it creates value within the controls set by leadership. Established AI risk frameworks give you strong principles. What they do not give you is how to"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 129.28,
+    "end_seconds": 158.84,
+    "text": "apply these principles to each agent. For every agent, leadership has to decide four things. What is it permitted to do? Who owns it? What evidence it records and what triggers an escalation. That work is not an engineering task. We find it is an executive operating mandate."
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 154.64,
+    "end_seconds": 182.8,
+    "text": "And today, I'll show you how to meet it. Let us ground this in a real-world scenario. Picture a $15 billion acquisition targeting 400 million in net synergies. The deal has already closed and the integration efforts are now underway. The integration management office, which"
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 179.08,
+    "end_seconds": 207.16,
+    "text": "we'll also refer to as the IMO today, is driving the synergy roadmap across 40 workstreams. Covering everything from rationalizing vendor contracts to consolidating ERP systems. And every single initiative has a business owner accountable for its bottom-line savings. Every week,"
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 204.56,
+    "end_seconds": 233.84,
+    "text": "analysts in the IMO are going to reconcile the numbers against the general ledger. As they track down status from all 40 leads, they're also comparing actuals against the plan, then finally assembling the executive deck for the steering committee. Which is going to include the CFO, the chief risk officer,"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 231.04,
+    "end_seconds": 260.44,
+    "text": "business unit heads, and the integration lead. The engineering team builds an agent automate that first draft. The agent then ingest the weekly updates, reconciles the ledger, runs variance math against the plan, and flags the initiatives that are falling behind. Everything looks good, and they decide to run a four-week pilot."
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 258.04,
+    "end_seconds": 287.36,
+    "text": "The agent's drafts match the analyst reports line for line. So, we can say that the tech works. Now, the question is, what value does that steering committee need before they can trust it to run the business? First, the steering committee need a written value case agreed upon before the agent ever"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 284.72,
+    "end_seconds": 314.4,
+    "text": "touches production data. In our example, that comes down to three specific metrics. First, let's look at cycle time. If that weekly report is five business days to compile right now, you're going to want to set a far target such as two days. Your second metric will be analyst capacity. If four analysts spend half of their"
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 312.44,
+    "end_seconds": 339.88,
+    "text": "week building this deck, that is 80 hours a week the agent gives back. That time counts as value only when the integration lead assigns it to the workstreams that are behind on their synergy targets and need help getting back on track. Then, you only count that value after"
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 337.0,
+    "end_seconds": 365.76,
+    "text": "netting out the compute, licensing, and human review cost of running the agent. Your third metric is the most important one, detection time. That is how long it takes from the first sign of a slip in the data to the moment the steering committee sees it. Cutting the report from five days to two days does not guarantee that the"
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 362.52,
+    "end_seconds": 390.4,
+    "text": "committee sees that slip any sooner. The agent class to catch it and the value case measures that directly. Every single metric requires a pre-deployment baseline. If the IMO cannot state the baseline today, do not deploy. If you can't measure where you started, you can never prove the agent moved the needle."
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 389.24,
+    "end_seconds": 418.92,
+    "text": "Next, the steering committee needs to know who owns the risk the agent creates. We are going to apply the three lines model to the agent. In the first line, management owns the controls. The integration lead is the accountable executive. She owns the agent's output exactly the way she owned the manual data."
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 416.36,
+    "end_seconds": 443.32,
+    "text": "In the second line, risk and compliance oversee the agent and challenge how to run it. How deep they go depends on the agent's exposure. An internal draft scrubbed by a senior analyst warrants a very different review standard than an autonomous agent publishing figures straight to the board."
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 440.36,
+    "end_seconds": 469.48,
+    "text": "In the third line, internal audit provides assurance deciding based on material risk when and how the agent enters the annual audit plan. The agent also needs one employee assigned to oversee it every day. In our example, that is the senior analyst. He reviews the draft before it reaches the committee."
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 467.4,
+    "end_seconds": 494.0,
+    "text": "Her role requires four specific capabilities. She has to first understand the operational boundaries. She has to interpret its output with context. She must have the authority to override or reverse it. And she needs clear kill switch to shut it down safely this ticket it behaves unexpectedly."
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 494.2,
+    "end_seconds": 522.08,
+    "text": "Accountability also means defining where the agent's authority stops. I document this in a one-page policy called the human work standard. For every fork in the process, it maps the decision, the human role authorized to make it. The required evidence and the escalation path."
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 518.6,
+    "end_seconds": 548.0,
+    "text": "These decisions exist at every tier. The senior analyst decides whether a variance is an accounting timing difference or a real cash shortfall. The work stream lead decides how to remediate that shortfall. And the integration lead is going to decide whether to formally flag an initiative as at risk to the steering committee."
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 544.28,
+    "end_seconds": 573.32,
+    "text": "The agent prepares the analysis behind every one of those decisions and it stops there. The person who makes the decision owns the consequence. So keeping these decisions with your team does not slow the agent down. It can go into use while each role keeps its authority. The one reason to delight delay"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 570.64,
+    "end_seconds": 597.4,
+    "text": "deployment is a decision with no assigned owner. This means if leadership has not agreed who declares an initiative off track, the agent's flights lead to no action. The third question is where the engineers in this room come in."
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 594.12,
+    "end_seconds": 623.92,
+    "text": "The evidence for greater autonomy comes from how the agent is built. I look for three artifacts. The first is an auditable decision log. For every workstream the agent evaluates, it records the raw data ingested, the tool calls executed, the prompt, and the mono versions. Output generated along with the human"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 622.28,
+    "end_seconds": 650.12,
+    "text": "sign-off. Two engineering choices make that log airtight. First, your core math and reconciliation rules must run in deterministic, finance-approved code, not generated as conversational prose from an LLM. Second, treat the model's written summary as a helpful explanation, not"
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 648.88,
+    "end_seconds": 678.68,
+    "text": "proof. Your real proof lives in the telemetry. What records were pulled? What deterministic tools ran? And who signed the review? If reported savings do not match the general ledger, agent does not touch the number. It flags the discrepancy and roots it up. The second artifact is the model"
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 676.4,
+    "end_seconds": 705.88,
+    "text": "inventory record. This captures the accountable executive, data lineage, dependencies across source systems, validation results, escalation path, and the kill switch run book. Most importantly, it documents your regression triggers, which are any updates to our current"
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 702.4,
+    "end_seconds": 731.8,
+    "text": "base model or source API that require full revalidation before running in production again. Your third artifact, this is going to be the autonomy scorecard. The steering committee uses it to grant autonomy in four stages. [clears throat] Stage one is shadow mode. The analyst built the report as they do today."
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 729.24,
+    "end_seconds": 757.48,
+    "text": "The agent runs right alongside them and the team compares the two. Stage two is the supervised draft. The agent compiles the first draft and the senior analyst reviews every single line item. Stage three is the exception ensemble, where the analyst reviews lag initiatives plus a random sample of"
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 755.64,
+    "end_seconds": 782.16,
+    "text": "the claims. Then we have stage four, where it's exceptions only. The analyst reviews only high-risk anomalies supported by periodic independent sampling. Pay close attention to stage four, however, because once humans only look at exceptions, your biggest vulnerability"
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 778.96,
+    "end_seconds": 806.4,
+    "text": "is what the agent failed to flag. So I advise tracking mis material issues through independent sampling, monitoring error severity and watching your override rate carefully. A falling override rate does not automatically mean the agent is getting smarter. It can also mean the depth of review has slipped."
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 803.28,
+    "end_seconds": 832.08,
+    "text": "So independent sampling tells you which one of these you are seeing. The scorecard puts those control metrics side by side with your value metrics, cycle time, analyst hours deployed, and your detection time. And with that single page view, the steering committee can make clean, efficient, data-backed decisions to either promote the agent, hold it"
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 830.64,
+    "end_seconds": 859.64,
+    "text": "where it is, step it back, or down to supervised review stage. So, let's come back to the three questions. Ask them of every agent you build, fund, or govern. What value does it create? Who is accountable for it? And what evidence permits it to operate"
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 857.28,
+    "end_seconds": 886.56,
+    "text": "with autonomy? In our M&A example today, the agent did not magically create the 400 million in synergies. Procurement, supply chain, and operating leaders captured that value through the gritty work of integration. But what the agent delivers is clear. Verified evidence weeks ahead of schedule, giving leadership the runway intervene"
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 884.16,
+    "end_seconds": 902.84,
+    "text": "while the deal's synergies can still be captured. Building an agent that works is just the first step. Answering those three questions is what earns it the trust to run at scale. Thank you."
+  }
+]

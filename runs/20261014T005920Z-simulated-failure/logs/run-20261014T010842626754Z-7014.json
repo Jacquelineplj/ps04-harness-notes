@@ -1,0 +1,21 @@
+{
+  "stage": "run",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261014T005920Z-simulated-failure",
+  "input_count": null,
+  "output_count": null,
+  "started_at": "2026-10-14T00:59:20Z",
+  "finished_at": "2026-10-14T01:08:42Z",
+  "elapsed_seconds": 562.0,
+  "tools": [],
+  "models": [],
+  "cost_usd": null,
+  "cost_is_estimate": null,
+  "errors": [],
+  "extra": {
+    "mode": "live",
+    "exit_code": 1,
+    "collect_exit": 1,
+    "series_exit": null
+  }
+}

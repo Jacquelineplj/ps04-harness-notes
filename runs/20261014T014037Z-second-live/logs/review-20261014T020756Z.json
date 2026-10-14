@@ -1,0 +1,102 @@
+{
+  "review_id": "d80442f42353367539000c26cc34f6746a0067cb6e0a659e48198a8fcbe15bc2",
+  "passed": true,
+  "issues": [
+    {
+      "piece_id": "01",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "1 quote(s) were normalised to the retained wording; verify they still support the claims"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "1 claim(s) were dropped during brief validation for lack of locatable evidence"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "03",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    }
+  ],
+  "as_of_date": "2026-10-14",
+  "checked_at": "2026-10-14T02:00:19Z",
+  "stats": {
+    "errors": 0,
+    "warnings": 5,
+    "evidence_refs": 37,
+    "publishers_per_piece": {
+      "01": [
+        "arize",
+        "arxiv",
+        "huggingface",
+        "latent-space",
+        "simon-willison",
+        "thoughtworks"
+      ],
+      "02": [
+        "ai-engineer",
+        "arxiv",
+        "dwarkesh",
+        "huggingface",
+        "microsoft",
+        "thoughtworks"
+      ],
+      "03": [
+        "ai-engineer",
+        "arize",
+        "huggingface",
+        "latent-space",
+        "microsoft",
+        "mlops-community",
+        "thoughtworks"
+      ]
+    },
+    "kinds_cited": [
+      "feed",
+      "podcast",
+      "youtube"
+    ],
+    "article_words": {
+      "01": 873,
+      "02": 890,
+      "03": 873
+    },
+    "narration_words": {
+      "01": 614,
+      "02": 659,
+      "03": 732
+    },
+    "perspectives_per_piece": {
+      "01": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "02": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "03": [
+        "commercial",
+        "practitioner",
+        "research"
+      ]
+    }
+  }
+}

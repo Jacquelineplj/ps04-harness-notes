@@ -1,0 +1,3 @@
+{"item_id": "feed:95b84c19524261fb", "version_id": "50101511886234985fb5f9359e6bd91a24275812eb4af26e7091ce4c1ad233b7", "reason": "outside_window", "detail": "2026-08-22 is before window start 2026-09-14"}
+{"item_id": "feed:dd3085f3c1c43466", "version_id": "cbf5fc302c66e1c2499a4e5c8b2e9aea559d437e5ae7623bd3fb9b625d019b2f", "reason": "outside_window", "detail": "2026-09-04 is before window start 2026-09-14"}
+{"item_id": "podcast:93444c3366986657", "version_id": "3c64f6af21a65c8329e8177e6fd19947ef00a3166cf70416bf2e99f6724f0caf", "reason": "outside_window", "detail": "2026-09-10 is before window start 2026-09-14"}

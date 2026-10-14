@@ -1,0 +1,23 @@
+{
+  "stage": "check_content",
+  "status": "completed",
+  "run_dir": "runs/20261014T014037Z-second-live",
+  "input_count": 3,
+  "output_count": 1,
+  "started_at": "2026-10-14T01:55:55Z",
+  "finished_at": "2026-10-14T01:55:55Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "python"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "passed": true,
+    "errors": 0,
+    "warnings": 9,
+    "review_id": "3d558a063faceb30c3e83b8480a471aee0e491c24dc32d77e5a8878682327337"
+  }
+}

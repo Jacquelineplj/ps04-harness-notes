@@ -1,0 +1,84 @@
+Foundry hosted agent isolation exposes two independent controls. User isolation identifies whose data may be used. At the same time, Foundry hosted session isolation identifies where code and files continue to live.
+For each control, Foundry can resolve the value or the application can provide it. Therefore, the available choices support direct callers, trusted middle tiers, application-managed sessions, and shared session pools.
+While Foundry hosted agents are generally available in Microsoft Foundry, the AgentServer SDKs and the Microsoft Agent Framework Foundry hosting packages for .NET and Python are still in pre-release versions.
+| Control | Represents | Available choices |
+|---|---|---|
+| User isolation | The user represented by the current request | The caller’s Microsoft Entra identity, or a delegated identity supplied by a trusted middle tier |
+| Foundry hosted session isolation | The VM-isolated sandbox, represented by agent_session_id | A session created on the first request, or an existing session ID supplied by the application |
+A Foundry hosted session is not a conversation. A conversation contains message and tool-call history. A Foundry hosted session contains sandbox compute and persisted files.
+For direct access, Foundry resolves the user from the caller’s Microsoft Entra token. However, for applications that authenticate their own users, a trusted middle tier can send a stable delegated identity on each request.
+Moreover, the delegated identity is independent from the Foundry hosted session ID. Therefore, separate user conversations can use separate sandboxes or share a sandbox selected by the middle tier.
+.NET
+using Microsoft.Agents.AI;
+using Microsoft.Agents.AI.Foundry;
+ChatClientAgentSession userConversationSession =
+    await agent.CreateFoundryHostedAgentSessionAsync(
+        /* hostedSessionId: foundryHostedSessionId, */
+        userIdentity: userIdentity);
+await agent.RunAsync(
+    "Analyze the uploaded files.",
+    userConversationSession);
+string? delegatedUserIdentity =
+    userConversationSession.FoundryHostedAgentUserIdentity;
+Python
+await agent.run(
+    "Analyze the uploaded files.",
+    session=user_conversation_session,
+    client_kwargs={
+        "extra_headers": {
+            "x-ms-user-identity": user_identity,
+        }
+    },
+)
+In .NET, Agent Framework stores the delegated identity with the AgentSession. Reusing or restoring that session sends the same identity on every run. In Python, the current API forwards the delegated identity with each call.
+Moreover, the delegated identity value is opaque to Agent Framework. In addition, the trusted middle tier owns the mapping between its authenticated application user and that value. The per-user isolation guide explains the required permission and security model.
+When a request has no agent_session_id, Foundry creates a Foundry hosted session and returns its ID. However, an application can also create a session through the Foundry project client and provide the returned ID.
+.NET – Creating a session with the Foundry project client
+using Azure.AI.Projects;
+using Azure.AI.Projects.Agents;
+ProjectAgentSession foundryHostedSession =
+    await projectClient.AgentAdministrationClient.CreateSessionAsync(
+        agentName,
+        new VersionRefIndicator(agentVersion));
+string foundryHostedSessionId =
+    foundryHostedSession.AgentSessionId;
+Python – Creating a session with the Foundry project client
+from azure.ai.projects.models import VersionRefIndicator
+foundry_hosted_session = await project_client.agents.create_session(
+    agent_name,
+    version_indicator=VersionRefIndicator(
+        agent_version=agent_version,
+    ),
+)
+foundry_hosted_session_id = (
+    foundry_hosted_session.agent_session_id
+)
+Agent Framework stores the service-created or application-provided ID on its own AgentSession. In addition, the Agent Framework object does not create the remote Foundry hosted session. Therefore, later calls with that object send the attached ID and reach the same persisted $HOME, uploaded files, and working state.
+.NET – Using a Foundry-assigned or application-provided Foundry hosted session
+using Microsoft.Agents.AI;
+using Microsoft.Agents.AI.Foundry;
+ChatClientAgentSession session =
+    await agent.CreateFoundryHostedAgentSessionAsync(
+        /* hostedSessionId: foundryHostedSessionId
+           Omit this argument for Foundry to assign the ID
+           on the first invocation. */);
+await agent.RunAsync("Analyze the uploaded files.", session);
+string? resolvedFoundryHostedSessionId =
+    session.FoundryHostedAgentSessionId;
+Python – Using a Foundry-assigned or application-provided Foundry hosted session
+from agent_framework import AgentSession
+from agent_framework.foundry import (
+    FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY,
+)
+session = AgentSession()
+# Optional: attach an ID created through the Foundry project client.
+session.state[
+    FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY
+] = foundry_hosted_session_id
+await agent.run("Analyze the uploaded files.", session=session)
+foundry_hosted_session_id = session.state[
+    FOUNDRY_HOSTED_AGENT_SESSION_ID_KEY
+]
+For example, application-provided IDs support file upload before the first invocation, explicit lifecycle management, stable workload placement, and bounded session pools. Likewise, service-created IDs support on-demand session allocation.
+For example, in a pooled design, a middle tier maps users to a bounded set of Foundry hosted session IDs and sends the delegated identity with each request. At the same time, Foundry keeps response chains private by user, while the sandbox filesystem remains shared. Therefore, application-owned files, database rows, and caches can use both agent_session_id and user identity as their partition.
+The post Foundry hosted agent isolation with Microsoft Agent Framework appeared first on Microsoft Agent Framework.

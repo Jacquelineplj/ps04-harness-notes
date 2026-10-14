@@ -1,0 +1,28 @@
+{
+  "stage": "write_video_scripts",
+  "status": "completed",
+  "run_dir": "runs/20261014T014037Z-second-live",
+  "input_count": 3,
+  "output_count": 3,
+  "started_at": "2026-10-14T01:54:21Z",
+  "finished_at": "2026-10-14T01:55:55Z",
+  "elapsed_seconds": 94.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-opus-5",
+      "calls": 3,
+      "input_tokens": 28018,
+      "output_tokens": 8852,
+      "cost_usd": 0.46504599999999996,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 0.465046,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {}
+}

@@ -1,0 +1,28 @@
+{
+  "stage": "write_video_scripts",
+  "status": "completed",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 3,
+  "output_count": 3,
+  "started_at": "2026-10-13T21:33:59Z",
+  "finished_at": "2026-10-13T21:35:40Z",
+  "elapsed_seconds": 101.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-opus-5",
+      "calls": 3,
+      "input_tokens": 51658,
+      "output_tokens": 9129,
+      "cost_usd": 0.4745394,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 0.474539,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {}
+}

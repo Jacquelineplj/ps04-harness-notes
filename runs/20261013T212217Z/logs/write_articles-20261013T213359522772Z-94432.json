@@ -1,0 +1,33 @@
+{
+  "stage": "write_articles",
+  "status": "completed",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 3,
+  "output_count": 3,
+  "started_at": "2026-10-13T21:32:16Z",
+  "finished_at": "2026-10-13T21:33:59Z",
+  "elapsed_seconds": 103.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-opus-5",
+      "calls": 4,
+      "input_tokens": 97502,
+      "output_tokens": 8370,
+      "cost_usd": 0.6760630000000001,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 0.676063,
+  "cost_is_estimate": true,
+  "errors": [
+    {
+      "message": "piece 02 attempt 1: body is 954 words; target 600-900",
+      "severity": "warning"
+    }
+  ],
+  "extra": {}
+}

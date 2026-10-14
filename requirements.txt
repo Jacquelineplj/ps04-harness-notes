@@ -1,0 +1,23 @@
+# Collection and extraction
+feedparser>=6.0
+httpx>=0.27
+trafilatura>=1.12
+yt-dlp>=2026.1.1
+pymupdf>=1.24
+python-dateutil>=2.9
+
+# Transcription (CPU, decodes audio via PyAV, no system ffmpeg needed)
+faster-whisper>=1.1
+av>=11,<16  # PyAV 16+ changed av.open(); faster-whisper 1.2 needs the older signature
+
+# Optional model providers (the default provider is the Claude Code CLI)
+anthropic>=0.50
+openai>=1.50
+
+# Publishing helpers (optional): Substack HTML export, HeyGen API rendering, YouTube Data API upload
+markdown>=3.5
+google-api-python-client>=2.100
+google-auth-oauthlib>=1.2
+
+# Optional local video source cards and AI-narrated technical walkthrough (macOS say)
+pillow>=10

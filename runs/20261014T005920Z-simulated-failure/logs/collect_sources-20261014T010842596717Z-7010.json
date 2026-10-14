@@ -1,0 +1,36 @@
+{
+  "stage": "collect_sources",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261014T005920Z-simulated-failure",
+  "input_count": 66,
+  "output_count": 73,
+  "started_at": "2026-10-14T00:59:20Z",
+  "finished_at": "2026-10-14T01:08:42Z",
+  "elapsed_seconds": 562.0,
+  "tools": [
+    "jq",
+    "bash"
+  ],
+  "models": [],
+  "cost_usd": null,
+  "cost_is_estimate": null,
+  "errors": [
+    {
+      "message": "podcasts_collector_exit_1"
+    }
+  ],
+  "extra": {
+    "exit_codes": {
+      "feeds": 0,
+      "youtube": 0,
+      "podcasts": 1,
+      "extract": 0,
+      "upsert": 0,
+      "list": 0,
+      "filter": 0
+    },
+    "merged_candidates": 66,
+    "invalid_lines": 0,
+    "mode": "live"
+  }
+}

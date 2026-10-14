@@ -1,0 +1,244 @@
+An agent that answers a question is a starting point. An agent that completes useful work needs more: an interface users can interact with, memory beyond the current conversation, an appropriate environment for executing code, and a way to recover when work is interrupted.
+Recent Microsoft Agent Framework updates address those needs across .NET and Python. Here’s how to use them—from connecting an agent to your application to running and debugging longer-lived workflows.
+Sign in with az login. Set FOUNDRY_PROJECT_ENDPOINT to your Foundry project endpoint and FOUNDRY_MODEL to your deployed model name.
+Install the packages for the AG-UI and memory examples:
+pip install --pre agent-framework-foundry agent-framework-ag-ui azure-identity aiohttp fastapi uvicorn
+For CodeAct, also install the Hyperlight integration on a supported platform:
+pip install --pre agent-framework-hyperlight
+For the memory example, set FOUNDRY_MEMORY_STORE_NAME to an existing Foundry memory store configured with supported chat and embedding model deployments. See Foundry managed semantic memory for setup and .NET examples.
+Create a new Blazor project and install the required dependencies:
+dotnet new blazor -n FoundryAgUi
+cd FoundryAgUi
+dotnet add package Azure.Identity
+dotnet add package Azure.AI.Projects --prerelease
+dotnet add package Microsoft.Agents.AI.Foundry --prerelease
+dotnet add package Microsoft.Agents.AI.Hosting.AGUI.AspNetCore --prerelease
+A useful agent interface should communicate more than the final answer. Users need to see progress, understand tool activity, approve actions, and interact with results.
+AG-UI provides an open, event-based protocol for that interaction. Microsoft Agent Framework’s integration lets you expose an agent through an AG-UI endpoint and connect compatible frontends, including applications built with CopilotKit or the new Blazor AI components for creating agentic user interfaces in .NET.
+Save the following as app.py and run uvicorn app:app –reload:
+import os
+from contextlib import asynccontextmanager
+
+from fastapi import FastAPI
+from agent_framework import Agent
+from agent_framework.ag_ui import add_agent_framework_fastapi_endpoint
+from agent_framework.foundry import FoundryChatClient
+from azure.identity.aio import AzureCliCredential
+
+credential = AzureCliCredential()
+agent = Agent(
+    client=FoundryChatClient(
+        project_endpoint=os.environ["FOUNDRY_PROJECT_ENDPOINT"],
+        model=os.environ["FOUNDRY_MODEL"],
+        credential=credential,
+    ),
+    name="ResearchAssistant",
+    instructions="Help users research topics and explain your findings.",
+)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    async with credential, agent:
+        yield
+
+app = FastAPI(lifespan=lifespan)
+add_agent_framework_fastapi_endpoint(app, agent, "/ag-ui")
+Learn more: Quickstart: Build agents using the Responses API.
+The integration translates agent execution into AG-UI events for streaming responses, tool activity, and other supported interactions.
+Recent Python work extends beyond chat: workflow checkpointing and resumption, improved approval continuity, shared and predictive state updates, and optional A2UI integration for agent-generated interfaces.
+GitHub: Python AG-UI package and quickstarts · Interactive examples
+This example uses the same Foundry configuration, agent name, instructions, and /ag-ui endpoint as the Python example. Replace Program.cs with the following and run dotnet run:
+using Azure.AI.Projects;
+using Azure.Identity;
+using Microsoft.Agents.AI;
+using Microsoft.Agents.AI.Hosting.AGUI.AspNetCore;
+
+string endpoint = Environment.GetEnvironmentVariable("FOUNDRY_PROJECT_ENDPOINT")
+    ?? throw new InvalidOperationException("FOUNDRY_PROJECT_ENDPOINT is not set.");
+string model = Environment.GetEnvironmentVariable("FOUNDRY_MODEL")
+    ?? throw new InvalidOperationException("FOUNDRY_MODEL is not set.");
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAGUIServer();
+
+AIAgent agent = new AIProjectClient(
+    new Uri(endpoint), new AzureCliCredential())
+    .AsAIAgent(
+        model: model,
+        name: "ResearchAssistant",
+        instructions: "Help users research topics and explain your findings.");
+
+var app = builder.Build();
+app.MapAGUIServer("/ag-ui", agent);
+await app.RunAsync();
+The updated .NET support for AG-UI uses the new AG-UI .NET SDK, which provides abstractions for the AG-UI events as well as client and server support based on Microsoft.Extensions.AI.
+The .NET hosting integration remains in preview. Both languages support interactive agent experiences, but their capabilities are not identical—use the language-specific examples rather than assuming feature parity.
+These minimal endpoints also need application security before deployment: authenticate callers and authorize access to their sessions. A thread ID identifies a conversation; it does not establish who may access it.
+Docs & Samples: AG-UI Integration with Agent Framework, Agent Framework AG-UI samples for .NET
+AG-UI connects agents to interactive frontends. The new Python agent and workflow channels packages address another integration problem: exposing the same agent logic through different protocols and surfaces.
+The packages provide helpers for OpenAI Responses, Telegram, A2A, and MCP. Those serve different purposes: messaging users, serving API clients, communicating with other agents, and exposing capabilities as tools.
+Shared session helpers keep the agent-facing code small. For example, inside an async function:
+from agent_framework_hosting import AgentState
+
+state = AgentState(agent)
+
+session = await state.get_or_create_session("demo-session")
+result = await agent.run(
+    "Summarize the research we have collected.",
+    session=session,
+)
+await state.set_session("demo-session", session)
+
+print(result.text)
+Your application owns the mapping between a channel’s identity and an authorized session, along with storage and concurrency policy. The fixed session ID above is for a local demonstration—not a production identity strategy.
+This separation lets developers reuse agent logic without surrendering control over application routing, authentication, or persistence.
+GitHub: Responses hosting sample · Telegram hosting sample
+Deep dive: Introducing agent and workflow channels
+Conversation history preserves what was said. Longer-term memory helps an agent bring useful information into a new conversation without replaying the entire transcript. Memory in Foundry Agent Service integrates with Microsoft Agent Framework through FoundryMemoryProvider, which retrieves relevant memories before a run and submits conversation information for asynchronous memory extraction afterward.
+The following Python example connects both model inference and memory to your Foundry project. Save this as memory_demo.py:
+import argparse
+import asyncio
+import os
+
+from agent_framework import Agent, InMemoryHistoryProvider
+from agent_framework.foundry import FoundryChatClient, FoundryMemoryProvider
+from azure.ai.projects.aio import AIProjectClient
+from azure.identity.aio import AzureCliCredential
+
+async def main(message: str) -> None:
+    async with (
+        AzureCliCredential() as credential,
+        AIProjectClient(
+            endpoint=os.environ["FOUNDRY_PROJECT_ENDPOINT"],
+            credential=credential,
+            allow_preview=True,
+        ) as project_client,
+    ):
+        memory = FoundryMemoryProvider(
+            project_client=project_client,
+            memory_store_name=os.environ["FOUNDRY_MEMORY_STORE_NAME"],
+            scope="demo-user",
+            update_delay=0,
+        )
+        async with Agent(
+            client=FoundryChatClient(
+                project_client=project_client,
+                model=os.environ["FOUNDRY_MODEL"],
+            ),
+            instructions="Use relevant remembered preferences when helping the user.",
+            context_providers=[
+                memory,
+                InMemoryHistoryProvider(load_messages=False),
+            ],
+            default_options={"store": False},
+        ) as agent:
+            response = await agent.run(
+                message, session=agent.create_session()
+            )
+            print(response.text)
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("message")
+    asyncio.run(main(parser.parse_args().message))
+First record a preference:
+python memory_demo.py "For project updates, I prefer a short summary followed by action items."
+After memory extraction has completed, start a separate process to ask for that preference:
+python memory_demo.py "How should you format my next project update?"
+Each invocation creates a fresh session with the same memory scope. Service-side response storage and local transcript loading are disabled, so the second invocation does not replay the first conversation. Memory extraction is asynchronous: update_delay=0 starts processing without a batching delay but does not guarantee immediate recall.
+For production, derive the scope from authenticated application identity rather than accepting an arbitrary user-supplied identifier. Use an appropriate production credential, apply your application’s memory retention and deletion policies, and evaluate recall quality.
+Azure Cosmos DB remains an alternative through the Python-preview CosmosMemoryContextProvider integration, with hybrid vector and full-text retrieval. See the Cosmos DB memory package and technical deep dive.
+Some agent tasks involve many small, chainable operations. Asking the model to select a tool, inspect the result, and select another tool at every step can add unnecessary latency and token consumption.
+CodeAct lets the model express suitable sequences as a program and receive a consolidated result.
+This Python example uses a pure calculation tool and a Foundry-connected model client. Save it as codeact_demo.py and run python codeact_demo.py.
+import asyncio
+import os
+
+from agent_framework import Agent, tool
+from agent_framework.foundry import FoundryChatClient
+from agent_framework_hyperlight import HyperlightCodeActProvider
+from azure.identity.aio import AzureCliCredential
+
+@tool
+def line_total(unit_price_cents: int, quantity: int) -> int:
+    """Calculate a line total in cents."""
+    return unit_price_cents * quantity
+
+async def main() -> None:
+    async with AzureCliCredential() as credential:
+        codeact = HyperlightCodeActProvider(
+            tools=[line_total],
+            approval_mode="never_require",
+        )
+        async with Agent(
+            client=FoundryChatClient(
+                project_endpoint=os.environ["FOUNDRY_PROJECT_ENDPOINT"],
+                model=os.environ["FOUNDRY_MODEL"],
+                credential=credential,
+            ),
+            name="OrderCalculator",
+            instructions="Use execute_code to combine calculations when useful.",
+            context_providers=[codeact],
+        ) as agent:
+            response = await agent.run(
+                "Calculate the combined total for 12 items at 250 cents each "
+                "and 8 items at 175 cents each."
+            )
+            print(response.text)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+HyperlightCodeActProvider supplies the execution tool and instructions. Registered tools are available to generated code through call_tool(…).
+The isolation boundary matters: Hyperlight isolates model-generated code; registered application tools execute in your application’s runtime. Those tools retain their own permissions and responsibilities. This example permits automatic execution because its only tool performs arithmetic. Actions requiring individual approval should remain explicitly approval-gated.
+The CodeAct walkthrough reports approximately 50% lower latency and more than 60% lower token usage in its evaluated workload. Treat those as workload-specific results and measure the tradeoff in your own application.
+GitHub: Python Hyperlight package and platform prerequisites · .NET CodeAct samples
+A longer timeout does not make an agent resilient. Long-running work needs recoverable execution state, a way to reconnect to results, and clear behavior when a process stops.
+Agent Framework’s integration with hosted agents in Foundry Agent Service connects workflow checkpoints and agent sessions to resilient background responses.
+After constructing a workflow, configure its Responses host:
+from agent_framework_foundry_hosting import ResponsesHostServer
+from azure.ai.agentserver.responses import ResponsesServerOptions
+
+workflow_agent = workflow.as_agent(name="report-workflow")
+
+server = ResponsesHostServer(
+    workflow_agent,
+    options=ResponsesServerOptions(resilient_background=True),
+)
+
+server.run()
+The complete Python sample builds a countdown workflow so recovery is easy to observe. You can submit a background request, interrupt the server, restart it, and reconnect to the response.
+For that sample, the request body is:
+{
+  "input": "Count down from 20",
+  "background": true,
+  "store": true,
+  "stream": true
+}
+GitHub: Python resilient long-running workflow
+The corresponding .NET integration uses AddFoundryResponses:
+using Microsoft.Agents.AI;
+using Microsoft.Agents.AI.Foundry.Hosting;
+using Microsoft.Agents.AI.Workflows;
+
+AIAgent agent = workflow.AsAIAgent(
+    id: "report-workflow",
+    name: "report-workflow",
+    includeWorkflowOutputsInResponse: true);
+
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddFoundryResponses(
+    agent,
+    configure: options => options.ResilientBackground = true);
+
+var app = builder.Build();
+app.MapFoundryResponses();
+
+await app.RunAsync();
+On recovery, the host reloads persisted state and selects the workflow checkpoint associated with the saved response. A restarted process must reconstruct matching workflow and executor identities.
+Recovery does not imply exactly-once execution of external effects. An interrupted step may run again. If a tool sends an email, charges a payment, or writes to another service, design that operation to tolerate retries—for example, through downstream idempotency keys.
+GitHub: .NET resilient workflow with deployment instructions · Local recovery and idempotency demonstration
+For Azure Functions, the Durable extension for Agent Framework provides a separate durable-execution path. See the Azure Functions samples for that hosting model.
+We’re also extending the development lifecycle in VS Code. Foundry Toolkit support will let developers start a long-running agent, leave the interaction, and reconnect to inspect progress or results without starting the work again.
+These capabilities are composable. You can connect an AG-UI frontend, attach memory, evaluate CodeAct, or adopt resilient workflow hosting without treating every feature as a prerequisite.
+Explore the Microsoft Agent Framework repository, choose a sample for your language and execution environment, and build from there. The goal is an agent whose work users can follow—and whose behavior developers can understand, recover, and improve.
+The post What’s new in Microsoft Agent Framework: Interactive experiences, memory, and resilient execution appeared first on Microsoft Agent Framework.

@@ -1,0 +1,284 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 5.28,
+    "end_seconds": 34.92,
+    "text": "Hey everybody, very excited to be chatting with you today. Uh like Harrison said, I'm Ben. I'm the product manager. I work on our product engine, which is our agent for agent engineering. Um what I want to do today is is walk you through the process that we have at LangChain of developing and improving our agents through engine, right? This this agent for engineering, agent engineering I should say. Now, the process of building agents we're very familiar with. It's very"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 32.6,
+    "end_seconds": 61.36,
+    "text": "challenging. Everything from the identification of errors as you manually look through traces, as you try to cluster them together based on the different problems that you identify, this kind of root cause analysis for those problems, the spinning up of fixes, the writing of evals. This entire process from start to finish can be very challenging. And so, what we've built in engine is a product and a tool that handles each step of this process,"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 59.4,
+    "end_seconds": 87.16,
+    "text": "that works to identify the different issues that you might find within your traces, that creates deployable fixes for each one of those identified issues, creates ready-to-use evals for you to run offline and ensure that these fixes work appropriately without regressing, and additional regression detection for any of the issues that might crop back up again after you've attempted to fix them previously."
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 85.28,
+    "end_seconds": 112.4,
+    "text": "So, we're really excited about engine. We launched it in and in May at our Interop in San Francisco. And since then, engine has scanned over 70 million traces and has created over 21,000 issues for the many customers that are that are using it today. We're really excited about this progress, but we've had a lot of time and a lot of effort spent on making engine much better than the version that we released in May as our public beta."
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 110.88,
+    "end_seconds": 140.84,
+    "text": "And so, like I said, the the hope of today's little talk and session that I have is I want to walk you through this process that our team has followed for making Engine better and for making this a product that is faster, stronger, cheaper, um and and go beyond what we have today within this existing agent development life cycle and what's automated today. The number one thing that I want to talk about actually is the process for for evaluating Engine. As we have been"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 138.2,
+    "end_seconds": 167.28,
+    "text": "building this very complex agent, it's been very hard to create these these evals for Engine as well. And the reason that it's so hard for Engine is because of the many complex tasks that are handled by this agent. And so to run you through, you know, some of the tasks that are handled, Engine will identify these offending or problematic traces and cluster them together after identifying a root cause. It will write a readable issue description for a"
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 164.8,
+    "end_seconds": 194.64,
+    "text": "human to read through and and parse. It will investigate that issue and and compare the traces to the actual source code of your agent to create a fix. It will create data set examples using the offending inputs that it found in production and by creating these ground truth reference outputs. It will monitor for regressions to ensure that this problem doesn't happen again. And so I'm running through all these different stages of this agent and the work that it does. And each one of these tasks is"
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 192.32,
+    "end_seconds": 219.68,
+    "text": "very different from the last. And so in order for us to ensure that Engine performs well and that we can make it better and cheaper, we need to be evaluating these separately. And so we have created unique benchmarks for each one of these tasks. And so for example, we have created a unique benchmark for identifying these offending traces to that that allows us to test Engine and understand how well"
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 217.52,
+    "end_seconds": 244.56,
+    "text": "is it able to identify problematic traces. And so in order for for us to assess this adequately, the benchmark that we've generated uh is a set of of traces with seeded problems within them. And so it's it's like finding a needle in a haystack of traces, and we just test Engine's ability to find these problematic traces. Now, that benchmark is separate from another one that's very"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 242.8,
+    "end_seconds": 272.0,
+    "text": "similar, which is Engine's ability to cluster those traces by root cause. For this benchmark, we provide Engine that the agent with a set of known errors traces, as well as a series of existing issues. And we evaluate Engine's ability to match these known error traces to the the set of issues or to create new issues. And so, these are just just a couple of the benchmarks that we've generated. But like I said, for each one of these various tasks, we have to create new"
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 270.6,
+    "end_seconds": 300.16,
+    "text": "benchmarks and ensure that Engine is performing and is firing on all cylinders for each one of these different tasks that it handles. And so, the something interesting that I want to highlight as we talk about these benchmarks is that there there it really is there are two sides to this coin, where we have eval that we need to ensure these these benchmarks that we've created that help us to test very specific components of the agent's run. But we also want to ensure that those"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 297.68,
+    "end_seconds": 327.36,
+    "text": "those benchmarks are faithful to what we would see in a production environment, which is the other side of that coin. And so, in order to ensure that any of the changes that we find very effective against our benchmarks really are effective in a production environment, we dog food Engine. We try our own products a lot. And we have many different agents that we build at LangChain, including go-to-market agents that handle a bunch of go-to-market related like sending outbound, doing prospect research."
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 325.0,
+    "end_seconds": 352.16,
+    "text": "And we also have coding agents that are invoked via Slack or via GitHub. And so, each of these agents that we have built, we run Engine on top of. And Engine will find errors, it will send those those issues to our Slack. We can investigate them. The teams that are working on on these go-to-market agents or the coding agents can tell us that it you know, Engine has found really valuable issues or something is wrong with this description. And it really helps us to"
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 349.68,
+    "end_seconds": 379.28,
+    "text": "balance out this process that we have had on the the benchmarking and the evaluating of Engine on these specific tasks. But maybe the most interesting of these of this dog fooding is that we actually run Engine on top of Engine. So, as Engine investigates traces for our go-to-market agents and for our coding agents, it produces traces. And those traces are scanned by another instance of Engine. We call it the the meta Engine."
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 376.88,
+    "end_seconds": 405.24,
+    "text": "And we've we've uh hooked up this meta Engine to send us Slack notifications in the same way. And so, our team gets notified when our own product is acting up in a little way, or something might have failed, or or there's a you know, a suboptimal response in one of the the uh outputs that Engine has. And so, it's actually becoming one of the primary ways that we identify opportunities for growth on Engine, and our team is constantly monitoring this this Slack"
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 401.4,
+    "end_seconds": 430.56,
+    "text": "feed of notifications with these issues. I want to highlight a couple of interesting uh just notes and kind of thoughts that we've had as we have been uh working on improving Engine, specifically around kind of our our use of different models. Um something interesting is that different tasks obviously require different levels of intelligence. Something that I have been surprised by is it it may seem obvious that, you know, if you use a"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 428.12,
+    "end_seconds": 456.6,
+    "text": "not a frontier intelligence model, that it will be cheaper. But I I've also found that for specific tasks that we run Engine on, using these non-frontier models actually can be more effective. If it's a {quote} unquote dumb task, it's sometimes better to use a dumber or a smaller model as opposed to these state-of-the-art models that are really expensive and and uh really bulky. And so, we we constantly play around with swapping out the models that are used for the different tasks that are handled by Engine."
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 455.48,
+    "end_seconds": 483.04,
+    "text": "Another quick point that I want to make is is our team is totally reliant on the LangSmith platform. We spend a lot of our time looking through traces manually whenever we have a very specific problem. We also, as I mentioned, rely on this feed of engine issues that are produced. But we also use engine for our experiments platform. And so we can have this this store of record of the different experiments that we run, and we can see how our cost and"
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 481.48,
+    "end_seconds": 510.56,
+    "text": "our performance upon our different benchmarks is changing over time. And so as we've been working on improving this process and making engine better, as we've been building these benchmarks and then hill climbing against those benchmarks, we've been able to achieve much better scores against the different benchmarks. And so Harris had mentioned this in his keynote that we have two times better error identification against IssueBench, which is our our kind of primary benchmark for identification of issues."
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 508.8,
+    "end_seconds": 538.44,
+    "text": "And then we also test the fixes that engine proposes against a a series of these industry standards industry standard coding benchmarks. And then we also pair that with benchmarks that we have designed specifically for these agent-related issues where we've seen engine get a lot better as well. So these are cool numbers, but what does that actually mean? It ultimately means more issues identified for our customers that are using engine. It means increased"
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 536.16,
+    "end_seconds": 566.12,
+    "text": "accuracy in our description and our root cause analysis of the problems that we've identified. And it means much faster resolution times for the teams that are building agents on top of LangSmith. Now, what I've talked about so far is kind of like the the process of designing evals and some of the results that we've seen in the aggregate. But what I want to do is is talk about a specific way that we've modified our harness and we've modified engine to more adequately find these issues."
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 565.0,
+    "end_seconds": 594.12,
+    "text": "And I'm going to do so with this this little visual here. And so I have this this circle up on the screen which you can imagine within the circle it contains the complete set of of problems that might exist as you're building agents. So any any little dot within this circle is a kind of problem that you can envision within the agent building problem space. Now, when we first launched Engine, our RV1 that we launched in May, you can uh you can imagine that Engine"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 592.16,
+    "end_seconds": 620.44,
+    "text": "captured a portion of those problems. Now, I'd like to imagine that it's a bigger circle than what we have in this visual, but it captured a portion of the problems that are that are you know, that exist for engineers building agents, but not all of them. And as we have worked to evaluate and to iterate against our our benchmarks, we have expanded what Engine in its in its previous state is able to do. But, there's still a portion of this"
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 617.88,
+    "end_seconds": 647.44,
+    "text": "agent problem space that Engine in its architecture from our V1 version would never really be able to to identify. And that's because our first version These are this is the representation of these broader improvement opportunities. And this is because in our first version of Engine, we ensured that Engine was really excellent at finding errors in a specific trace. Whether that's a hallucination, whether that's a broken tool call, whether"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 645.24,
+    "end_seconds": 673.16,
+    "text": "that's looping tool calls, context explosion, right? These are all problems that are very visible from a single trace, and Engine as it pours through traces does investigation, it can find multiple traces with that problem, cluster them together based on root cause. But, often times it's difficult to find errors um with just a single trace. And there are some kinds of errors that that may appear the same at first glance. So, let's say between September 1st and"
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 670.88,
+    "end_seconds": 693.84,
+    "text": "September 14th, our team has swapped out a new model for our agent, and we see that the cost and latency are pretty much the same, even though we were expecting to see a huge drop in cost or a huge drop in latency. And if I look at traces if I look at what trace A versus trace B, these might look like the exact same thing, and no change is recognizable. And even if I see that in trace A, we"
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 691.56,
+    "end_seconds": 721.0,
+    "text": "only had six tool calls, or in trace B, we only had 19 tool calls. These look about the same. These look not problematic, I should say. But the ability for Engine or an agent engineer to determine that the tool calls from from one step to the next has increased massively is a huge indication that something might be wrong. Maybe this new model has just gone haywire and it's it's deciding to call tools far more than it should. And so, this kind of"
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 718.6,
+    "end_seconds": 746.88,
+    "text": "uh context across across traces, an understanding of the history of your agent and the traces that it produces, is one of the kinds of problems that we've gotten much better at identifying with Engine. These kind of metric-related trends that we want to track and ensure Engine is able to catch. The other kind of problem that we have uh uh become much more capable of, this is These are two of of several of what we've worked on,"
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 745.16,
+    "end_seconds": 769.32,
+    "text": "is the ability for Engine to detect inefficient paths as it works to identify a problem as it works to identify or or to meet the demands of a of a customer request. Let's say that that 5% of the time that your agent is handling a very normal request, it goes on a side quest and starts calling all sorts of tool calls or starts looking at all sorts of sources of data that it shouldn't. This is important for your team to know that"
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 767.56,
+    "end_seconds": 797.4,
+    "text": "some amount of time it's taking an inefficient path that you should be aware of, that you should work to to contain. And so, problems like this are examples of the kinds of problems that we've gotten much better at finding in Engine V2. Now, what I've talked about so far uh with our improvements to Engine have been uh improvements to the existing functionality within Engine as it as it finds issues, as it proposes fixes, and"
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 794.92,
+    "end_seconds": 824.72,
+    "text": "as it proposes evals. And what we want Engine to do is really to cover the entire agent development life cycle from this finding of issues, from the creation of fixes, but also through the testing of those fixes and the deploying of those fixes. And what we've been asking ourselves since our first launch is how can we actually test for our users? Right now, we create a a proposed fix and we hand you the evals and let you experiment on that."
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 822.84,
+    "end_seconds": 845.04,
+    "text": "But the vision that we have for Engine is the finding of problems, the fixing of those problems, and the testing of that fix all autonomously. And this is what we we are releasing with our validated fixes as part of Engine. And what I want to do is walk you through how this actually works. Harrison spoke to this a little bit in the keynote and I want to get into some of the nitty-gritty here. Engine still finds issues as it does"
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 843.4,
+    "end_seconds": 871.2,
+    "text": "today. It finds an issue about tool looping and then identifies specific inputs that it's seen in production that have broken your agent in some way. Now, to verify that this problem is real, we actually send those same inputs to your production version of your agent to verify that it is still broken in your production version. We want to confirm this is a this is an ongoing problem and reproduce the the bug as you would in software. After we've identified and confirmed"
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 869.6,
+    "end_seconds": 898.36,
+    "text": "this is a real problem, we will then propose a fix and spin that up in a preview branch and in a preview deployment available on our our LangSmith deployments platform. And we will run those same breaking inputs against this previewed fix version of your agent so that we can can confirm that whatever fix Engine has spun up really solves the problem that identified and that those breaking inputs are no longer breaking in this proposed version of your agent."
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 896.84,
+    "end_seconds": 922.92,
+    "text": "And after verifying that this fix is effective for those inputs, we want to look at a broader set of inputs like the ones that you have in a LangSmith data set. And so you can configure the different data sets that you have on LangSmith and so the Engine will run evals against the existing inputs that have been breaking your agent as well as the the broader range of inputs that you want to ensure do not regress. And so what you end up with is now much"
+  },
+  {
+    "segment_id": "s-0036",
+    "start_seconds": 919.56,
+    "end_seconds": 946.92,
+    "text": "more than uh a kind of proposed issue and a hint at what you might want to solve and a hint at how you might solve it. And instead you get a verified issue that we know is still breaking your agent and you get a verified fix that we know addresses the problem and does not regress against other examples. I'm really excited about this. I think this is like our our kind of first steps into continual learning and this process of continually making your agent better"
+  },
+  {
+    "segment_id": "s-0037",
+    "start_seconds": 945.24,
+    "end_seconds": 974.12,
+    "text": "and more capable while still allowing for a human to be in the loop and monitoring the different changes that are proposed. So as was mentioned earlier, this is available in private beta right now. This is available to our LangSmith deployment customers. We are looking to expand that, but we'd love for you to to join our waitlist and try out this new ability to validate these fixes via engine. Now the other thing that Harrison mentioned is this ability to red team"
+  },
+  {
+    "segment_id": "s-0038",
+    "start_seconds": 972.04,
+    "end_seconds": 1001.32,
+    "text": "your agent. I think about this as a way to preemptively identify issues. Today the issues that engine catches are ones that have already reached production and they already have a trace for you to go and analyze and that means that it's likely affected a user in some way. There are also ways that that we can try to break your agent before it ever actually touches a user. And so this red teaming functionality for engine proactively creates hypotheses for for"
+  },
+  {
+    "segment_id": "s-0039",
+    "start_seconds": 999.76,
+    "end_seconds": 1028.88,
+    "text": "potential inputs that might break your agent based on your agent system prompt or other details of the harness or the context that are available and tries to figure out what might cause for an unsatisfactory output from your agent and against your production deployment of the agent will hit that hit that deployment with these different inputs and monitor the different responses. And so if there are any, you know, unsatisfactory responses that are created, engine will cluster these"
+  },
+  {
+    "segment_id": "s-0040",
+    "start_seconds": 1026.68,
+    "end_seconds": 1055.48,
+    "text": "together in a in a similar issue, packaged up with a proposed fix and if you're also using our our validated fixes functionality with a validated fix to address that before it ever actually actually hits a customer as well. Again, really excited about this. This is available in private beta again to our LangSmith deployments customers and would love for you to try it out and give us your feedback. And all of this that I've just been talking about is all part of Engine V2."
+  },
+  {
+    "segment_id": "s-0041",
+    "start_seconds": 1053.72,
+    "end_seconds": 1080.68,
+    "text": "And as we're launching it and announcing it today, we're already thinking about and already working on Engine V3. And I want to give you a kind of taste of what we're looking at. And the first is that we're we're absolutely looking to expand the access to these validated fixes that we're running as well as this ability to red team against your agent for different deployment stacks. We want to make this more broadly available and we're thinking about that today how we can hit the different"
+  },
+  {
+    "segment_id": "s-0042",
+    "start_seconds": 1079.28,
+    "end_seconds": 1108.4,
+    "text": "endpoints and and the different deployments of your agents today to make these available. At the same time, Engine today is really good at identifying eval examples to be added to your data sets based on issues it's identified, whether that's issues that have been red teamed against and are found proactively, or whether it's issues that have been identified in production. We find these these great inputs that are added to your regression test cases. But what we want Engine to become better"
+  },
+  {
+    "segment_id": "s-0043",
+    "start_seconds": 1107.4,
+    "end_seconds": 1134.8,
+    "text": "at is creating a a baseline set of evals for you to run against to ensure that all of the different behaviors that you would expect out of your agent are not regressing as you make changes to the model or changes to the harness. And lastly, the one that I'll talk on here is is kind of a a North Star for us as we build Engine, which is that that we want to make broader changes broader proposals, I should say, to your"
+  },
+  {
+    "segment_id": "s-0044",
+    "start_seconds": 1133.2,
+    "end_seconds": 1161.04,
+    "text": "agent's harness and to the models that are used for different tasks. That would mean that Engine is no longer finding these specific fixes or tweaks or optimizations to your harness, but rather it's saying that this entire model is is too bulky, it's too expensive for your agent. You should try this one. And we've actually validated this model against your evals and can confirm it's faster and it's cheaper. And the reason this is kind of coming after is because we want this whole flow"
+  },
+  {
+    "segment_id": "s-0045",
+    "start_seconds": 1158.72,
+    "end_seconds": 1188.36,
+    "text": "of being able to identify gaps in your agent's traces, as well as the ability to experiment on. So that instead of a very loose recommendation of of now using a model A as opposed to model B, you have a verified claim that this model A is going to perform much better against your e-vals. Now, the last quick thing that I'll add in here uh that Harrison mentioned is we do have engine available in our in our self-hosted deployments"
+  },
+  {
+    "segment_id": "s-0046",
+    "start_seconds": 1186.28,
+    "end_seconds": 1210.44,
+    "text": "um via bring your own key. This is going to be available in our next release of our self-hosted um which we are really excited about. So, very very fun to chat with you all about engine V2 and the progress that we've made, as well as kind of what we're thinking about for engine V3. We have a lot of really awesome customers that have been trying engine today, that have been giving us great feedback, and that are accelerating their agent development"
+  },
+  {
+    "segment_id": "s-0047",
+    "start_seconds": 1208.88,
+    "end_seconds": 1214.36,
+    "text": "process, and we would love for you to join this list. So, thank you."
+  }
+]

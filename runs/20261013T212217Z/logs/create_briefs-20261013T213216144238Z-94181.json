@@ -1,0 +1,89 @@
+{
+  "stage": "create_briefs",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 59,
+  "output_count": 3,
+  "started_at": "2026-10-13T21:28:24Z",
+  "finished_at": "2026-10-13T21:32:16Z",
+  "elapsed_seconds": 232.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-sonnet-5",
+      "calls": 1,
+      "input_tokens": 37975,
+      "output_tokens": 2306,
+      "cost_usd": 0.13197879999999998,
+      "cost_is_estimate": true
+    },
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-opus-5",
+      "calls": 1,
+      "input_tokens": 301614,
+      "output_tokens": 12278,
+      "cost_usd": 1.9092735,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 2.041252,
+  "cost_is_estimate": true,
+  "errors": [
+    {
+      "message": "accepted evidence lacks kinds ['podcast']; the series cannot cover every input type",
+      "code": "kind_coverage"
+    },
+    {
+      "message": "02-c1: quote not found in feed:f52921adc97fb1dc: 'Our experiments refute that broad hypothesis on the Terminal-Bench tasks we test'",
+      "code": "validation"
+    },
+    {
+      "message": "02-c3: quote not found in feed:9d93024f8db90c5c: 'placeholder'",
+      "code": "validation"
+    },
+    {
+      "message": "02-c4: quote not found in feed:9d93024f8db90c5c: 'placeholder2'",
+      "code": "validation"
+    }
+  ],
+  "extra": {
+    "validation": {
+      "quotes_exact": 24,
+      "quotes_repaired": 5,
+      "evidence_dropped": 3,
+      "claims_dropped": 2,
+      "version_fixed": 2
+    },
+    "attempts": 1,
+    "accepted_items": 23,
+    "publishers": 8,
+    "missing_kinds": [
+      "podcast"
+    ],
+    "evidence_items_used": [
+      "feed:1599ed0f74596729",
+      "feed:2dc5d7317eb84740",
+      "feed:414c680e0dfe5f85",
+      "feed:6c73e7b163f057af",
+      "feed:6dfb9f1cb365f38e",
+      "feed:8df33797c8dcce10",
+      "feed:99e1782a514f91f4",
+      "feed:9d93024f8db90c5c",
+      "feed:aed891eb1cf0d9a5",
+      "feed:bd1136d0fcfd6f13",
+      "feed:c1ef8fadeca3e5ad",
+      "feed:eaac866ece437024",
+      "feed:ee6df3f002868714",
+      "feed:f52921adc97fb1dc",
+      "youtube:-a2oTS9J67U",
+      "youtube:3ZlQk4-knWM",
+      "youtube:U7ZYBCcdJPg",
+      "youtube:gDRCpTMCqEU",
+      "youtube:zlD-CkLVKtU"
+    ]
+  }
+}

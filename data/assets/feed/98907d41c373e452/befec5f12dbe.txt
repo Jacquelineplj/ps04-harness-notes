@@ -1,0 +1,24 @@
+As AI teams scale their evaluation workflows, the cost of running those evaluations can add up. LLM-as-a-Judge evaluations often rely on powerful frontier models, even when smaller, less expensive models may be sufficient for the task.
+The challenge is knowing where a lower-cost model can deliver reliable results without compromising evaluation quality.
+Arize AX now supports Together AI as an AI provider for evaluations, making it easier to test open models, compare performance, and explore opportunities to reduce evaluation costs without configuring custom endpoints.
+Together AI provides access to a broad selection of open models through an OpenAI-compatible API. With this integration, teams can use supported Together AI models for LLM-as-a-Judge evaluations, data labeling, and model comparisons in the Arize AX Playground.
+Agent evaluations help teams measure and improve AI application quality. But running evaluations at scale introduces its own costs, particularly when every test requires an additional call to an expensive model.
+Consider a team using a frontier model to evaluate thousands of customer support responses for correctness. Each evaluation adds to the overall cost of operating the AI system.
+A smaller open model might be able to handle the same evaluation task at a lower cost. Before making the switch, however, the team needs to understand how closely its judgments align with the existing evaluator and whether it reliably identifies the same failures.
+With Together AI configured as an AI provider in Arize AX, teams can test open models against their existing evaluation criteria and compare results. If a lower-cost model delivers sufficiently reliable judgments, it may be a better fit for running evaluations at scale.
+For more on this approach, see our guide to LLM-as-a-Judge evaluations.
+The integration adds Together AI models to existing Arize AX evaluation workflows, giving teams more options to balance evaluation quality and cost.
+Use Together AI models to evaluate and label your data. Arize AX supports custom LLM-as-a-Judge evaluators that score application outputs against criteria you define.
+Test different models and prompts in the Arize AX Playground to understand how they respond to the same inputs.
+Test whether smaller, less expensive models can produce sufficiently reliable judgments for evaluation tasks currently handled by more expensive models.
+Connect Together AI directly to AX without building or maintaining a custom model integration.
+These workflows are useful for teams looking to reduce evaluation costs or explore open models as alternatives to proprietary options.
+Rather than selecting models based on benchmark scores or pricing alone, teams can evaluate performance against their own data and determine whether the potential savings justify a change.
+In Arize AX, navigate to Settings → AI Providers, select Together AI, and enter your Together AI API key.
+Once connected, you can use supported Together AI models to run evaluations, generate labels, and compare model performance in the Playground.
+For additional configuration details, see the Together AI provider integration documentation.
+As evaluation workloads grow, choosing the right model can have a meaningful impact on AI spend.
+With Together AI in Arize AX, teams can test lower-cost open models, compare evaluation results, and make informed decisions about where to optimize their evaluation spend.
+And evaluation costs are only part of the picture. For teams looking to optimize AI spend in production, Arize AX also offers Cost Agent, a managed agent that analyzes production traces to identify inefficient model choices, redundant calls, and other opportunities to reduce costs.
+Get started with Arize AX for free
+The post Together AI integration: Evaluate open models and optimize evaluation costs in Arize AX appeared first on Arize AI.

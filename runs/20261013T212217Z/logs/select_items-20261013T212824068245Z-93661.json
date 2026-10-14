@@ -1,0 +1,37 @@
+{
+  "stage": "select_items",
+  "status": "completed",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 59,
+  "output_count": 59,
+  "started_at": "2026-10-13T21:24:23Z",
+  "finished_at": "2026-10-13T21:28:24Z",
+  "elapsed_seconds": 241.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-sonnet-5",
+      "calls": 10,
+      "input_tokens": 350784,
+      "output_tokens": 25560,
+      "cost_usd": 0.8789913000000001,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 0.878991,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {
+    "decisions": {
+      "accept": 23,
+      "reject": 32,
+      "defer": 4
+    },
+    "batches": 10,
+    "failed_batches": 0,
+    "fallback_decisions": 0
+  }
+}

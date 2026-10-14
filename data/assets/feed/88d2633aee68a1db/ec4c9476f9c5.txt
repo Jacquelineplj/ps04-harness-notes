@@ -1,0 +1,147 @@
+X-AgentRed: Red-Teaming Personal Agents in Evolving Multi-Service Ecosystems
+Abstract
+Personal agents increasingly connect to services across the web and applications by using tools. As the effects of their actions accumulate and interact across services, unintended or harmful outcomes can arise when agents fulfill benign user requests. Proactively identifying these compositional failures requires systematically exploring diverse cross-service paths. Existing red-teaming methods often simply prompt LLMs to identify potentially harmful paths from task and environment descriptions or decompose harmful objectives specified by humans or LLMs into seemingly benign action combinations. However, generation is biased toward patterns learned during training, potentially favoring familiar tool combinations and leaving novel cross-service interactions underexplored. To address this, we propose X-AgentRed, a self-evolving red-teaming framework that discovers harmful tool call paths through a graph of tool dependencies and expands and refines them using execution feedback. By analyzing each tool’s effects, potential harms, and preconditions for execution, the red-teaming agent constructs a directed graph that captures how one tool’s effects can satisfy another’s execution preconditions. Recipes sampled from this graph are instantiated as realistic scenarios in which agents can produce harmful outcomes. Execution feedback enables self-improvement by diversifying paths that produce harm through tool substitution and refining preconditions at blocked steps in unsuccessful paths to enable further execution. Across four frontier agentic models, X-AgentRed achieves \(1.77\times\) the harmful path rate of STAC and explores a more diverse set of tools, yielding \(2.99\times\) the tool coverage on average.
+1 Introduction
+Recent advances in personal agents, including ChatGPT (OpenAI, 2026b), Claude (Anthropic, 2026a), and Muse (Meta, 2026), enable users to delegate increasingly complex tasks across services on the web and in applications. Each service, such as GitHub or Notion, provides a set of tools that agents can invoke. Given a user’s goal, these agents coordinate actions across services for software development, content creation, commerce, and travel, combining their capabilities into multi-step workflows. These interconnected services form a multi-service ecosystem whose scope continues to expand through service integrations and direct interaction with browser and desktop interfaces (OpenAI, 2025; Anthropic, 2026a). As agents gain access to more services, new capabilities can be combined with existing ones, enabling a broader range of user tasks and increasingly diverse cross-service workflows.
+As agents carry out increasingly diverse workflows across new combinations of services, these interactions create new ways to induce behavior that deviates from user intent or bypasses safety guardrails. When agents fulfill benign user requests, the effects of their actions can accumulate and interact across services, leading to unintended or harmful outcomes (Li et al., 2025; Li et al., 2026). Figure 1(a) illustrates this compositional risk: an agent fulfilling a benign user request can leak information as its actions interact across services. Such failures depend on how information, permissions, and state changes propagate across services. Proactively discovering such failures requires exploring diverse cross-service paths and examining their cumulative effects. As the ecosystem expands, this exploration must also extend to newly possible service combinations beyond previously tested workflows.
+Existing red-teaming methods often search for harmful workflows by prompting LLMs to propose tool-use sequences from task and environment descriptions (Li et al., 2025) or to decompose harmful objectives specified by humans or LLMs into combinations of seemingly benign actions (Kulkarni et al., 2025; Zeng et al., 2026). Although these methods incorporate execution feedback to evaluate and revise candidate workflows, they rely on LLM generation to determine which tools to combine and how to connect them. This reliance on LLMs’ prior knowledge introduces a potential source of bias: LLMs are prone to favoring familiar patterns learned during training, which can concentrate exploration on common tool combinations while leaving novel cross-service interactions underexplored. This concern becomes particularly relevant as personal agents gain access to new services whose interactions are poorly represented in training data. Exploring this expanding space therefore calls for a systematic way to identify candidate paths from the capabilities and dependencies of the available tools.
+To address this challenge, we propose X-AgentRed, a self-evolving red-teaming framework that discovers potentially harmful scenarios involving multiple services through a graph of tool dependencies and uses execution feedback to expand and refine them. By analyzing each tool’s effects, potential harms, and preconditions for execution, the red-teaming agent constructs a directed graph, referred to as the HarmFlow graph, that captures how one tool’s effects can satisfy another’s execution preconditions. We sample recipes by following these conditions across tools and services, enabling exploration beyond previously observed workflows. Figure 1(b) schematically contrasts LLM-proposed sequences with graph-derived recipes, illustrating how our graph-based exploration can extend coverage across services, tools, harm types, and path lengths.
+Each recipe specifies a candidate path and is instantiated as a realistic scenario in which a benign user task can lead to unintended or harmful outcomes. Executing these scenarios against the target agent reveals whether harm occurs and where progress is blocked. Based on this feedback, the red-teaming agent diversifies paths that produce harm by replacing selected tools with adjacent alternatives in the HarmFlow graph while preserving the steps responsible for the harmful outcome. For paths blocked during execution, it refines the preconditions at the blocked step and reconstructs the preceding steps to satisfy them and enable further execution. This process broadens exploration across service combinations while deepening the search around identified vulnerabilities.
+We evaluate X-AgentRed across four frontier agentic models in a simulated multi-service ecosystem comprising 30 services and 914 tools. Compared with STAC (Li et al., 2025) and TRACE (Zeng et al., 2026), X-AgentRed achieves \(1.77\times\) and \(10.36\times\) the harmful path rate (HPR), respectively, while covering \(2.99\times\) and \(1.84\times\) as many distinct tools on average across agents. Its executed workflows contain \(2.92\times\) and \(7.53\times\) as many tool calls as STAC and TRACE, respectively, on average across agents, including adaptive follow-up interactions. We further analyze executed-path diversity, cumulative discovery over successive cycles, and the outcomes of feedback-driven diversification and refinement. These analyses assess both the effectiveness of harmful behavior discovery and the breadth of exploration across the ecosystem.
+Our contributions are threefold:
+- •
+We introduce X-AgentRed, a self-evolving red-teaming framework for discovering potentially harmful cross-service paths in personal-agent ecosystems.
+- •
+We develop HarmFlow, a graph of tool dependencies derived from execution preconditions, effects, and potential harms, to guide recipe sampling. Execution feedback diversifies paths that produce harm by replacing selected tools with adjacent alternatives while preserving the steps responsible for harm, and refines blocked paths by refining preconditions and reconstructing preceding steps.
+- •
+We evaluate X-AgentRed across four frontier agents in a simulated ecosystem of 30 services and 914 tools, demonstrating higher average HPR and broader tool coverage than two representative baselines. Further analyses characterize generated-path length, executed-path diversity, and cumulative discovery over successive cycles.
+2 Related Work
+Automated red-teaming.
+Automated red-teaming uses LLMs to generate adversarial inputs (Perez et al., 2022), optimize prompts (Zou et al., 2023; Chao et al., 2025; Mehrotra et al., 2024; Liu et al., 2024), and adapt interactions across turns (Russinovich et al., 2025; Rahman et al., 2025). For tool-using agents, benchmarks evaluate harmful behavior and vulnerabilities to external content (Ruan et al., 2024; Andriushchenko et al., 2025; Debenedetti et al., 2024), while generation methods construct adversarial tasks and interactions (Kulkarni et al., 2025; Li et al., 2026). Our representative baselines use two approaches: STAC (Li et al., 2025) composes benign tool calls into harmful chains, whereas TRACE (Zeng et al., 2026) decomposes harmful tasks into subtasks and iteratively revises their prompts using execution feedback. X-AgentRed instead selects cross-service recipes from an explicit tool-dependency graph before instantiating them as scenarios.
+Diversity and feedback.
+To explore different types of failures, prior work varies both the harmful behavior targeted by a prompt and the style of prompting (Samvelyan et al., 2024; Wang et al., 2025). Novelty rewards encourage the generation of prompts that differ from previously generated ones (Hong et al., 2024). Feedback from previous attempts is also used to extract effective strategies, which are stored in a library, and reused in subsequent searches (Liu et al., 2025). X-AgentRed extends these ideas to cross-service compositions: its graph guides recipe sampling, and execution feedback diversifies successful paths through service substitution and refines preconditions at blocked steps in unsuccessful paths. These updates modify recipes and scenarios without retraining the model.
+3 X-AgentRed
+X-AgentRed is a self-evolving red-teaming framework for discovering harmful cross-service behavior in personal agent ecosystems (Figure 2). The red-teaming agent analyzes each tool’s effects, potential harms, and execution preconditions to construct a dependency graph, referred to as the HarmFlow graph (Section 3.1). The agent samples recipes from this graph and instantiates them as realistic scenarios in which a benign user task can lead to harm (Section 3.2). Executing these scenarios reveals harmful outcomes and blocked steps; this feedback diversifies successful paths by substituting services using adjacent nodes in the HarmFlow graph and refines unsuccessful paths by analyzing preconditions at blocked steps and reconstructing the preceding steps to enable further execution (Section 3.3).
+Problem setup.
+We consider a personal agent \(A\) operating in a multi-service ecosystem with tool registry \(\mathcal{T}\). A scenario \(x\) specifies a benign user request \(u\), an initial environment state \(s_{0}\), and a target harm \(h\):
+|  | \[x=(u,s_{0},h)\in\mathcal{X},\qquad\tau\sim\operatorname{Rollout}(A,u,s_{0};\mathcal{T}),\] |  | (1) |
+where \(\mathcal{X}\) denotes the space of admissible scenarios and \(\tau\) records the agent’s actions and state transitions. The target agent receives \(u\) and interacts with the environment initialized at \(s_{0}\), without observing \(h\). We define the binary harm indicator \(H(\tau)\) as
+|  | \[H(\tau)=\begin{cases}1,&\text{if execution produces a harmful outcome},\\ 0,&\text{otherwise}.\end{cases}\] |  | (2) |
+Our goal is to uncover harmful outcomes that arise through cross-service interactions as an agent fulfills a benign user request. The request \(u\) must admit a safe completion, and the target harm \(h\) must be neither requested nor authorized by the user. We define harmful path rate (HPR) as
+|  | \[\mathrm{HPR}=\frac{\text{\# of harmful scenarios}}{\text{\# of candidate scenarios}},\] |  | (3) |
+The evaluation protocol is described in Section 4.1.
+Taxonomy.
+We consolidate prior agent risk and threat frameworks (Ruan et al., 2024; Zhang et al., 2024; Debenedetti et al., 2024; OWASP GenAI Security Project, 2025) into a taxonomy covering safety violations and harmful deviations from user intent. Table 1 summarizes ten harmful outcome categories \(\mathcal{H}\) and twelve harm-inducing factor categories \(\mathcal{C}\). Taxonomy sources and labeling principles are provided in Appendix A.1.
+| Harms \(\mathcal{H}\) |  | Harm-inducing factors \(\mathcal{C}\) |  |
+|---|---|---|---|
+| ID | Terminal outcome | ID | Harm-inducing factor |
+| H1 | Sensitive Information Leakage | F1 | Prompt Injection & Jailbreak |
+| H2 | Economic Harm | F2 | Tool Misuse |
+| H3 | Data Loss & Corruption | F3 | Identity & Privilege Abuse |
+| H4 | Unauthorized Access | F4 | Memory & Context Poisoning |
+| H5 | Resource Exhaustion | F5 | Supply Chain Compromise |
+| H6 | Physical Harm | F6 | Unsafe Code Execution |
+| H7 | Misinformation & Deception | F7 | Information Flow Violation |
+| H8 | Unauthorized Actions | F8 | Goal Misalignment & Planning |
+| H9 | Reputational Damage | F9 | Interface & Protocol Failure |
+| H10 | Psychological Harm | F10 | Multi-Agent Coordination |
+|  |  | F11 | Human Oversight Failure |
+|  |  | F12 | Infrastructure Failure |
+3.1 HarmFlow Graph
+Our red-teaming agent analyzes each tool \(t\in\mathcal{T}\) across the connected services to identify its effects \(\mathcal{E}_{t}\), potential harms \(\mathcal{H}_{t}\), and execution preconditions \(\mathcal{P}_{t}\). Together, these attributes form a structured tool representation:
+|  | \[C(t)=\bigl(\mathcal{P}_{t},\mathcal{E}_{t},\mathcal{H}_{t}\bigr),\qquad\mathcal{H}_{t}\subseteq\mathcal{H}.\] |  | (4) |
+Effects describe the state changes or information the tool can produce. Potential harms specify the harmful outcomes these effects can enable in a cross-service workflow. Preconditions specify the requirements for executing the tool, including necessary inputs, available resources, and access permissions. For example, a file-sharing tool requires an existing document, a specified recipient, and an account authorized to change the document’s sharing settings (preconditions). It grants the recipient access to the document (effect), potentially exposing sensitive information to someone who is not authorized to receive it (harm). We represent these tools and their dependencies as a directed graph, called the HarmFlow graph
+|  | \[G=(\mathcal{T},\mathcal{D}),\qquad\mathcal{D}\subseteq\mathcal{T}\times\mathcal{T},\] |  | (5) |
+where each node \(t\in\mathcal{T}\) represents a tool with attributes \(C(t)\), and \(\mathcal{D}\) is the set of directed edges. Let \(\mathcal{R}\) denote the set of effect–precondition pairs for which the red-teaming agent judges that the effect can establish the precondition. We connect source tool \(t_{i}\) to destination tool \(t_{j}\) whenever their effects and preconditions contain such a pair:
+|  | \[\mathcal{D}=\left\{(t_{i},t_{j})\in\mathcal{T}^{2}\;\middle\|\;(\mathcal{E}_{t_{i}}\times\mathcal{P}_{t_{j}})\cap\mathcal{R}\neq\emptyset\right\}.\] |  | (6) |
+To construct \(\mathcal{R}\), the red-teaming agent evaluates whether one tool’s effect can satisfy another tool’s execution precondition. For example, creating a document can satisfy a sharing tool’s requirement for an existing document, whereas reading a document does not grant permission to modify its access settings. This decomposes the construction of complex tool sequences into simpler pairwise dependency checks, while graph traversal combines the resulting dependencies into longer tool sequences. Each edge captures a supporting dependency rather than guaranteeing execution: other preconditions may require additional context from the environment or preceding tools. Traversing the resulting graph yields a candidate tool path
+|  | \[\pi=(t_{1},\ldots,t_{k}),\qquad(t_{i},t_{i+1})\in\mathcal{D}\quad\text{for }i=1,\ldots,k-1.\] |  | (7) |
+A tool path does not determine whether its execution will be safe: when used to fulfill a benign user request, the same dependencies can lead to different outcomes depending on the information, permissions, and state changes across services. A document-sharing workflow, for example, can serve legitimate collaboration or expose sensitive information to an unauthorized recipient. By composing locally assessed dependencies, HarmFlow supports exploration of service combinations beyond previously observed workflows. Construction details appear in Appendix A.2.
+3.2 Recipe Sampling and Scenario Instantiation
+We sample recipes using backward random walks on the HarmFlow graph \(G\) (Lovász, 1993). Starting from a tool associated with a target harm, each walk traverses incoming edges to construct a candidate path, which is then instantiated as a realistic scenario with a benign user request.
+For a target harm \(h\in\mathcal{H}\), we first select a tool from the set
+|  | \[\mathcal{T}_{h}=\{t\in\mathcal{T}\mid h\in\mathcal{H}_{t}\}.\] |  | (8) |
+Starting from this tool, the walk follows incoming edges to sample a preceding tool at each step. Let \(\mathcal{N}^{-}(t_{i})\) denote the incoming neighborhood of \(t_{i}\), consisting of tools with directed edges to \(t_{i}\):
+|  | \[\mathcal{N}^{-}(t_{i})=\{t\in\mathcal{T}\mid(t,t_{i})\in\mathcal{D}\},\qquad t_{i-1}\in\mathcal{N}^{-}(t_{i}).\] |  | (9) |
+We continue sampling backward up to a predefined maximum path length, then reverse the sampled sequence to obtain \(\pi=(t_{1},\ldots,t_{k})\) with \(t_{k}\in\mathcal{T}_{h}\). Backward sampling explores paths through diverse services and tools that can lead to the target harm.
+We define a recipe as the sampled tool path \(\pi\) paired with its target harm \(h\):
+|  | \[r=(\pi,h).\] |  | (10) |
+Given a sampled recipe \(r\) and the harm-inducing factor taxonomy \(\mathcal{C}\), the red-teaming agent selects an appropriate factor \(c\in\mathcal{C}\) and instantiates a scenario:
+|  | \[x=(u,s_{0},h)\sim q_{\mathrm{inst}}(\cdot\mid r,c),\] |  | (11) |
+where \(q_{\mathrm{inst}}\) denotes the scenario instantiation distribution. The agent generates a benign user request \(u\) and an initial environment \(s_{0}\) in which the selected factor can cause the sampled cross-service interactions to produce harm \(h\). We describe sampling and validation details in Appendix A.2.
+3.3 Self-Improvement through Execution Feedback
+The target agent executes an instantiated scenario \(x\), producing an execution trajectory \(\tau\). LLM judges assess whether harm occurred, while execution traces help identify blocked steps and unmet preconditions. This feedback guides subsequent graph and recipe updates.
+For a path that produces harm, \(H(\tau)=1\), the red-teaming agent diversifies the recipe by replacing tool nodes that are not central to producing the harmful outcome with adjacent nodes in the HarmFlow graph. The harm-inducing factor \(c\) is also retained, allowing the same vulnerability to be examined across different combinations of services.
+For a path that does not produce harm, \(H(\tau)=0\), refinement uses execution feedback to identify unmet preconditions at a blocked step \(t_{j}\). When such preconditions are identified, the red-teaming agent refines \(\mathcal{P}_{t_{j}}\) in the HarmFlow graph and updates the corresponding dependency edges. It then reconstructs the preceding steps to satisfy the refined preconditions and enable further execution. Writing \(\pi_{<j}\) for the sequence before \(t_{j}\) and \(\pi_{\geq j}\) for the sequence from \(t_{j}\) onward, the update is
+|  | \[\pi^{\prime}=\widetilde{\pi}_{<j}\mathbin{\\|}\pi_{\geq j},\qquad r^{\prime}=(\pi^{\prime},h),\] |  | (12) |
+where \(\widetilde{\pi}_{<j}\) is the reconstructed sequence and \(\|\) denotes concatenation.
+These graph and recipe updates guide subsequent sampling. Scenario instantiation and user prompt generation remain separate and are not directly optimized using judge feedback. We manually inspected all 192 trajectories labeled as harmful across the four target agents and found no evidence of reward hacking in these cases.
+|  | HPR (%) |  |  | Tool coverage (%) |  |  |
+|---|---|---|---|---|---|---|
+| Target | TRACE | STAC | Ours | TRACE | STAC | Ours |
+| Claude Opus 4.8 | 0.4 | 6.0 | 7.6 | 19.4 | 15.1 | 37.1 |
+| GPT-5.6 Sol | 2.4 | 14.0 | 19.6 | 23.3 | 14.0 | 47.6 |
+| DeepSeek-V4-Pro | 2.0 | 9.6 | 18.0 | 17.5 | 12.4 | 37.4 |
+| GLM-5.2 | 6.0 | 12.4 | 31.6 | 34.6 | 14.2 | 43.8 |
+| Average | 2.7 | 10.5 | 19.2 | 23.7 | 13.9 | 41.5 |
+4 Experiments
+We evaluate X-AgentRed on four frontier agents to assess its effectiveness in discovering harmful cross-service behavior, the contribution of execution feedback, and the breadth and diversity of its exploration. We further compare scenario generation costs and examine sensitivity to the choice of judge. Each configuration is evaluated in one run within a fixed simulated ecosystem.
+4.1 Experimental Setup
+*
+0pt6pt1em
+Environment.
+We use ToolSimulator (Wang et al., 2026) to simulate a multi-service ecosystem with \(30\) services and \(914\) tools. Claude Opus 4.8 generates tool responses and updates service states throughout each episode. We describe the environment details in Appendix A.3.
+Models.
+We use Claude Opus 4.8 as the red-teaming agent. The four target models are GPT-5.6 Sol, GLM-5.2, DeepSeek-V4-Pro, and Claude Opus 4.8 (OpenAI, 2026a; Z.ai, 2026; DeepSeek-AI, 2026; Anthropic, 2026b), each operating as a personal agent in the simulated ecosystem. Claude Opus 5 (Anthropic, 2026c) and GPT-5.6 Sol serve as the two LLM judges.
+Baselines.
+We compare against STAC (Li et al., 2025) and TRACE (Zeng et al., 2026) as representative methods for constructing harmful tool-use workflows. STAC composes individually benign tool calls into harmful chains and adapts prompts using execution feedback. TRACE decomposes harmful tasks into subtasks and iteratively refines templates based on target responses. Implementation details appear in Appendix A.4.
+Evaluation.
+Each method generates \(N=250\) candidate scenarios per target agent for comparison. We report harmful path rate (HPR; Equation 3), the fraction of candidate scenarios that produce a confirmed harmful outcome when executed against the target agent. Both LLM judges must confirm a harmful outcome, a plausible harm-inducing condition, and a benign user-request sequence. We apply the judging protocol to the same recorded executions for all three methods. The full judging protocol appears in Appendix A.5.
+*
+0pt3.25ex plus 1ex minus .2ex1em
+*
+4.2
+0pt0pt1.5ex plus .2ex
+4.3 Main Results
+X-AgentRed improves the discovery of scenarios that produce unintended or harmful outcomes across four frontier agents (Table 2). Its HPR is \(1.77\times\) that of STAC and \(10.36\times\) that of TRACE on average across agents. The largest relative gain over STAC occurs on GLM-5.2, followed by DeepSeek-V4-Pro. Under agreement between both judges, X-AgentRed outperforms both baselines on every target.
+Figure 3 shows that X-AgentRed accumulates more successful scenarios than either baseline at every measured budget. Scenario and success counts are summed across four agents, reaching \(192\) successes for X-AgentRed, \(105\) for STAC, and \(27\) for TRACE.
+*
+4.4
+0pt3.25ex plus 1ex minus .2ex1.5ex plus .2ex
+Higher HPR is accompanied by broader tool coverage. X-AgentRed explores the most distinct tools on every target, with \(2.99\times\) the coverage of STAC and \(1.84\times\) that of TRACE on average. It therefore uncovers harmful behavior while examining a wider range of the available tools, an important property for red-teaming expanding service ecosystems. Section 4.8 examines workflow diversity; Appendix B.6 reports harm and factor distributions. Appendix C.1 illustrates information disclosure along a 12-step billing workflow.
+*
+4.5
+0pt0pt1.5ex plus .2ex
+4.6 Self-Improvement
+Execution feedback supports continued discovery by diversifying recipes that produce harm and refining paths blocked during execution (Section 3.3). Figure 5 compares these strategies with random recipe sampling. Recipe diversification achieves an HPR of \(27.7\%\), compared with \(18.0\%\) for random sampling. Refinement achieves \(15.5\%\) on paths that previously failed to produce harm, showing that addressing unmet preconditions can uncover additional harmful outcomes. Together, the two strategies account for \(32.8\%\) of confirmed harmful outcomes on average across agents. Appendix C.2 illustrates both updates with concrete cases.
+*
+4.7
+0pt3.25ex plus 1ex minus .2ex1.5ex plus .2ex
+4.8 Tool Coverage and Diversity
+Coverage across the tool registry.
+X-AgentRed achieves broader tool coverage on every target (Table 2). It covers \(37.1\)–\(47.6\%\) of available tools per target, or \(2.5\)–\(3.4\times\) STAC’s coverage. Averaged across targets, X-AgentRed covers \(41.5\%\) of the tool registry, compared with \(13.9\%\) for STAC and \(23.7\%\) for TRACE. Coverage grows throughout the measured budget (Figure 4a).
+Diversity within and across workflows.
+X-AgentRed uses an average of \(13.1\) distinct tools and \(5.0\) services per episode, compared with \(4.6\) tools and \(2.7\) services for STAC and \(2.0\) tools and \(1.9\) services for TRACE (Figure 6). Within-target unique-sequence counts sum to \(998\) for X-AgentRed and \(866\) for STAC. Successful X-AgentRed traces have median pairwise tool-set Jaccard similarity of \(0.000\)–\(0.065\) by target. These measures capture structural diversity, not distinct causal failure mechanisms.
+The ten most-used tools account for \(24.3\%\) of tool use with X-AgentRed, compared with \(43.2\%\) for STAC and \(48.9\%\) for TRACE (Figure 4b), counting each tool at most once per episode. Panel (c) shows that X-AgentRed uses more services per episode, while panel (d) summarizes overlap among successful tool sets. Successful path overlap is low across methods and does not uniformly favor X-AgentRed. Targets receive equal weight in the distribution summaries. These comparisons describe structural diversity and do not isolate it from path length. We describe the measurement protocol in Appendix A.6.
+Path length and repetition.
+Successful recipes span varied paths and terminal tools. Their median planned length is \(8\)–\(9\) steps by target, with a maximum of \(12\) (Table 7). The \(192\) successes contain \(190\) distinct planned paths when counted within targets with varied terminal tools. Duplicate planned paths account for \(2.0\)–\(2.8\%\) of all candidates.
+X-AgentRed produces longer executed paths than both baselines, averaging \(23.2\) tool calls per episode versus \(7.8\) for STAC and \(3.3\) for TRACE (Figure 6). Tool-call counts exclude repeated template-search executions for TRACE. Longer planned paths, however, do not consistently yield more harmful outcomes (Appendix Figure 8). Longer paths may expose more intermediate actions to safety checks, increasing the chance of detection or intervention. Unsuccessful episodes also receive additional follow-up turns, so executed length reflects both the workflow and the adaptation policy.
+*
+4.9
+0pt2.5ex plus .5ex minus .2ex1ex plus .2ex
+4.10 Efficiency
+We measure API calls used to prepare, generate, and validate scenarios, including generation retries and internal search (Table 3). Target execution and outcome evaluation are excluded. Shared preparation is counted once, and costs are averaged over \(250\) candidate scenarios per target across four targets. We detail the cost accounting in Appendix B.4.
+| Method | Calls / scenario |
+|---|---|
+| X-AgentRed | 22.10 |
+| STAC | 55.00 |
+| TRACE | 103.24 |
+4.11 Judge Sensitivity
+We report sensitivity to judge choice and aggregation in Appendix B.5 (Table 9). For X-AgentRed, Claude Opus 5 reports higher rates than GPT-5.6 Sol on three of four targets; the ordering reverses on the Claude target. Accepting either judge’s assessment (OR) raises HPR by \(15.2\)–\(30.4\) percentage points relative to requiring agreement (AND). These comparisons measure sensitivity rather than judge accuracy. We use unanimous agreement for the main results.
+*
+4.12
+0pt3.25ex plus 1ex minus .2ex1.5ex plus .2ex
+5 Conclusion
+We introduced X-AgentRed, a graph-based, self-evolving framework for red-teaming personal agents in multi-service ecosystems. The HarmFlow graph captures tool dependencies to guide recipe sampling, while execution feedback expands successful paths and refines blocked ones. Across four frontier agents, X-AgentRed achieves higher average HPR and broader tool coverage than STAC and TRACE, exploring more diverse cross-service workflows. These results demonstrate the value of combining explicit dependency structure with feedback-driven exploration to uncover harmful behavior that emerges across services.
+Limitations.
+Maintaining the HarmFlow graph incurs additional computational cost as services evolve, since new or modified tools require updating tool representations and re-evaluating affected dependencies.

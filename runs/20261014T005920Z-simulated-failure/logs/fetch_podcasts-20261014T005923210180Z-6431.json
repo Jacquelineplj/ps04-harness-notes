@@ -1,0 +1,41 @@
+{
+  "stage": "fetch_podcasts",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261014T005920Z-simulated-failure",
+  "input_count": 6,
+  "output_count": 3,
+  "started_at": "2026-10-14T00:59:20Z",
+  "finished_at": "2026-10-14T00:59:23Z",
+  "elapsed_seconds": 3.0,
+  "tools": [
+    "httpx",
+    "feedparser"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [
+    {
+      "message": "simulated collector failure (SIMULATE_COLLECTOR_FAILURE=podcasts); remaining sources not collected",
+      "source_id": "practical-ai-podcast",
+      "simulated": true
+    }
+  ],
+  "extra": {
+    "sources": {
+      "latent-space-podcast": {
+        "status": "ok",
+        "candidates": 3
+      }
+    },
+    "counters": {
+      "entries_seen": 234,
+      "skipped_no_audio": 0,
+      "skipped_beyond_lookback": 0,
+      "skipped_too_long": 0,
+      "skipped_keyword_filter": 2
+    },
+    "failed_sources": 1,
+    "simulated": true
+  }
+}

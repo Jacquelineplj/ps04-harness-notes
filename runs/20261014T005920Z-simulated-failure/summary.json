@@ -1,0 +1,300 @@
+{
+  "run_id": "20261014T005920Z-simulated-failure",
+  "mode": "live",
+  "label": "simulated-failure",
+  "as_of_date": "2026-10-14",
+  "stop_after": "collect",
+  "previous_run_id": "20261014T005413Z-inject-withheld",
+  "replay_of": null,
+  "status": "failed",
+  "started_at": "2026-10-14T00:59:20Z",
+  "elapsed_seconds": 562.0,
+  "summarized_at": "2026-10-14T01:08:42Z",
+  "counts": {
+    "discovered": 66,
+    "discovered_by_kind": {
+      "feed": 49,
+      "youtube": 14,
+      "podcast": 3
+    },
+    "duplicate_observations": 0,
+    "extracted": 59,
+    "new": 5,
+    "changed": 0,
+    "unchanged": 54,
+    "corpus": 76,
+    "eligible": 73,
+    "excluded": 3,
+    "excluded_by_reason": {
+      "outside_window": 3,
+      "unknown_date": 0,
+      "future_date": 0,
+      "invalid_date": 0
+    },
+    "accepted": null,
+    "rejected": null,
+    "deferred": null,
+    "briefs": null,
+    "articles": null,
+    "video_scripts": null
+  },
+  "coverage": {
+    "collected_eligible": {
+      "items": 73,
+      "by_kind": {
+        "feed": 43,
+        "youtube": 15,
+        "podcast": 15
+      },
+      "independent_publishers": 17,
+      "publishers": {
+        "ai-engineer": 5,
+        "arize": 5,
+        "arxiv": 6,
+        "changelog": 3,
+        "deepmind": 5,
+        "dwarkesh": 1,
+        "huggingface": 6,
+        "interconnects": 1,
+        "langchain": 4,
+        "latent-space": 11,
+        "microsoft": 3,
+        "mlops-community": 3,
+        "openai": 4,
+        "pragmatic-engineer": 1,
+        "simon-willison": 8,
+        "software-engineering-daily": 2,
+        "thoughtworks": 5
+      },
+      "meets_minimums": true
+    },
+    "cited_in_briefs": null,
+    "collection": {
+      "mode": "live",
+      "replay_of": null,
+      "simulated_failure": "podcasts",
+      "collectors": {
+        "feeds": {
+          "exit_code": 0,
+          "candidates": 49,
+          "status": "ok",
+          "simulated": false
+        },
+        "youtube": {
+          "exit_code": 0,
+          "candidates": 14,
+          "status": "ok",
+          "simulated": false
+        },
+        "podcasts": {
+          "exit_code": 1,
+          "candidates": 3,
+          "status": "failed",
+          "simulated": true
+        }
+      },
+      "injected": null,
+      "merged_candidates": 66,
+      "invalid_lines": 0
+    },
+    "coverage_complete": false
+  },
+  "failed_or_incomplete_stages": [
+    {
+      "stage": "fetch_podcasts",
+      "status": "completed_with_errors",
+      "errors": 1
+    },
+    {
+      "stage": "collect_sources",
+      "status": "completed_with_errors",
+      "errors": 1
+    },
+    {
+      "stage": "extract_content",
+      "status": "completed_with_errors",
+      "errors": 7
+    },
+    {
+      "stage": "run",
+      "status": "completed_with_errors",
+      "errors": 0
+    },
+    {
+      "stage": "collector:podcasts",
+      "status": "exit 1",
+      "simulated": true
+    }
+  ],
+  "simulated_failures": [
+    {
+      "stage": "fetch_podcasts",
+      "message": "simulated collector failure (SIMULATE_COLLECTOR_FAILURE=podcasts); remaining sources not collected"
+    }
+  ],
+  "stages": {
+    "fetch_feeds": {
+      "status": "completed",
+      "finished_at": "2026-10-14T00:59:25Z",
+      "elapsed_seconds": 5.0,
+      "input_count": 10,
+      "output_count": 49,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "fetch_youtube": {
+      "status": "completed",
+      "finished_at": "2026-10-14T01:00:29Z",
+      "elapsed_seconds": 69.0,
+      "input_count": 5,
+      "output_count": 14,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "fetch_podcasts": {
+      "status": "completed_with_errors",
+      "finished_at": "2026-10-14T00:59:23Z",
+      "elapsed_seconds": 3.0,
+      "input_count": 6,
+      "output_count": 3,
+      "errors": 1,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "collect_sources": {
+      "status": "completed_with_errors",
+      "finished_at": "2026-10-14T01:08:42Z",
+      "elapsed_seconds": 562.0,
+      "input_count": 66,
+      "output_count": 73,
+      "errors": 1,
+      "cost_usd": null,
+      "cost_is_estimate": null,
+      "receipts": 1
+    },
+    "extract_content": {
+      "status": "completed_with_errors",
+      "finished_at": "2026-10-14T01:08:42Z",
+      "elapsed_seconds": 493.0,
+      "input_count": 66,
+      "output_count": 59,
+      "errors": 7,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "store_upsert": {
+      "status": "completed",
+      "finished_at": "2026-10-14T01:08:42Z",
+      "elapsed_seconds": 493.0,
+      "input_count": 59,
+      "output_count": 59,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "store_list": {
+      "status": "completed",
+      "finished_at": "2026-10-14T01:08:42Z",
+      "elapsed_seconds": 0.0,
+      "input_count": 0,
+      "output_count": 76,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 2
+    },
+    "filter_items": {
+      "status": "completed",
+      "finished_at": "2026-10-14T01:08:42Z",
+      "elapsed_seconds": 0.0,
+      "input_count": 76,
+      "output_count": 73,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "select_items": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "create_briefs": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "write_articles": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "write_video_scripts": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "check_content": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "create_series": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "prepare_package": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "run": {
+      "status": "completed_with_errors",
+      "finished_at": "2026-10-14T01:08:42Z",
+      "elapsed_seconds": 562.0,
+      "input_count": null,
+      "output_count": null,
+      "errors": 0,
+      "cost_usd": null,
+      "cost_is_estimate": null,
+      "receipts": 1
+    }
+  },
+  "models": {},
+  "tools": [
+    "bash",
+    "faster-whisper (small)",
+    "feedparser",
+    "httpx",
+    "jq",
+    "pymupdf",
+    "python-dateutil",
+    "sqlite3",
+    "trafilatura",
+    "yt-dlp",
+    "yt-dlp 2026.08.19"
+  ],
+  "costs": {
+    "known_usd": 0.0,
+    "estimated_usd": 0.0,
+    "total_including_estimates_usd": 0.0,
+    "unknown_cost_stages": [
+      "collect_sources",
+      "run"
+    ],
+    "basis": "Model costs come from the Claude Code CLI's list-price estimate (subscription use is not billed per token); local compute is reported as 0."
+  },
+  "review": null,
+  "human_decision": null,
+  "package": null,
+  "published_links": null,
+  "remaining_manual_actions": [
+    "repair the failed stage(s) and rerun the series (drafts are incomplete)"
+  ],
+  "notes": [
+    "counts are null for stages that did not run and 0 for measured empty results",
+    "collection was incomplete; coverage limitations are listed under failed_or_incomplete_stages",
+    "inspection run stopped after the collect stage by request; no publication was attempted"
+  ]
+}

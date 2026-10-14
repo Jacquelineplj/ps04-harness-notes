@@ -1,0 +1,686 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 1.87,
+    "end_seconds": 28.91,
+    "text": "Welcome to the Practical AI Podcast, where we break down the real-world applications of artificial intelligence and how it's shaping the way we live, work, and create. Our goal is to help make AI technology practical, productive, and accessible to everyone. Whether you're a developer, business leader, or just curious about the tech behind the buzz, you're in the right place. Be sure to connect with us on LinkedIn, X, or Blue Sky to stay up to date with"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 28.91,
+    "end_seconds": 56.74,
+    "text": "episode drops, behind the scenes content and AI insights. You can learn more at PracticalAI.fm. Now, onto the show. Welcome to another episode of the Practical AI podcast. This is Daniel Weitnack. I am CEO at Prediction Guard and I'm joined as always by my co-host, Chris Benson, who is a principal AI and autonomy research engineer. How you doing, Chris?"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 56.74,
+    "end_seconds": 85.06,
+    "text": "Hey, doing great today. How's it going? It's going great. And I know this is going to be a a great conversation for a few different reasons today. One of those being our guest is one of the speakers at the upcoming Midwest AI Summit, which is gonna be amazing. There's gonna be a bunch of amazing speakers there. I'm gonna do a bit of MCing, see if I don't mess that up. Would encourage our listeners to check that out. October 15th in Indianapolis,"
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 85.06,
+    "end_seconds": 114.58,
+    "text": "you can get 20% off with Practical AI 20, so check that out. So amazing speaker, gonna be at the Midwest AI Summit. Also a fellow podcaster, which is great. One of the hosts of Cloud Foundry Weekly and a tech marketing whiz at Broadcom Tanzu VMware. So welcome, Nick, great to have you. Thanks for having me, great to be on the show. Yeah."
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 114.58,
+    "end_seconds": 142.74,
+    "text": "Also excited to see all in person in Indianapolis. Yeah, it's gonna be fun. We're representing the good representation of the Silicon Prairie here. I like it. So, yeah, Nick, I know you're going to be talking. One of the things I thought was cool about your talk at the Midwest AI Summit is you bring in this concept of taking agents.md and shipping that to a production environment"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 142.74,
+    "end_seconds": 168.38,
+    "text": "where you run an actual agent in an quote, enterprise environment, which seems to be really fascinating. We recently had on someone from the Agentech AI Foundation who is kind of stewarding the model context protocol and agents.md and those sorts of things. So very relevant kind of carry on from that conversation."
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 168.38,
+    "end_seconds": 198.14,
+    "text": "But I'm wondering as we set that up, what exactly does it mean to be operating in an enterprise environment? So the customers that you're working with, your kind of day-to-day, what makes an enterprise environment an enterprise environment? What are some of the concerns or characteristics of that type of environment? I know you're always experimenting. You do a lot of home lab stuff as well."
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 198.14,
+    "end_seconds": 226.88,
+    "text": "So always have a whole range of experience and working in different sorts of environments. So yeah, if you could just help us understand from a general perspective, what does that mean when you say kind of enterprise? Right. So yeah, if we think about the enterprise, we think about a few things. One, let's just assume you're gonna have not internet, limited or no internet access. And I've been at VMware Tanzia for about five years."
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 226.88,
+    "end_seconds": 248.7,
+    "text": "And before that, I was at one of these large enterprises for about 14 years. So when we had vendors come in, it would always be like, they would always assume that we could just go to the internet and it was always like, well, try again, cause that's not gonna work here. So that's kind of always like the biggest hurdle where you're gonna be regulated and or, you're not gonna,"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 248.7,
+    "end_seconds": 273.06,
+    "text": "What you can do at home is not going to be what you can do at work, so to speak. So you're going to be highly regulated. You're going to have to deal with potential like PCI or SOX compliance or HIPAA or FIPS or, and I could probably go on and on about all the different compliance tiers that you'd have to deal with. So it's just a whole different ballgame where you could potentially do something that has dramatic consequences."
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 273.06,
+    "end_seconds": 300.42,
+    "text": "And you have a highly controlled, highly regulated environment where even some of the customers I work with, they actually have the real air gap. We're carrying in things physically into the data center because there is no internet access type of thing. So it's a wild world, but it frustrates a lot of, I think, new folks to the enterprise space. But if you've been in it a while, you know how to deal with it and how to handle it type of thing."
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 300.42,
+    "end_seconds": 326.52,
+    "text": "And I guess people have been dealing with these types of environments for quite a a while, right? Because there've been enterprises for quite a while. Maybe just give us a sense of like leading up to AI agents, and we'll talk about agents here in a second, but leading up to AI agents, like what were some of the ways that you could, I guess, ease, you know,"
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 326.52,
+    "end_seconds": 354.48,
+    "text": "put some ointment on those pains of working in that sort of environment? How would you get an application into that sort of environment or have it be enterprise ready quote unquote. And then we can shift and talk about what changes with agents. Yeah. So, I mean, I think, so, you know, I currently work for a few more Tainzu and we run a platform or a platform as a service, you know, geared for private cloud, whether that be on your"
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 354.48,
+    "end_seconds": 379.12,
+    "text": "like on your own bare metal in your data center, or you could deploy it on a private the cloud and your own like VPC on a hyperscaler, that type of thing. But we think about that, we wanna in the scope of an enterprise, you have all these regulations, controls, et cetera, you wanna make that path to production kind of the least resistant and easiest path. And if you make that path to production like all the check boxes and everything good to go,"
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 379.12,
+    "end_seconds": 405.34,
+    "text": "that's gonna be a highly adopted path. So the whole concept of Tainzy platform and it's actually based on an open source project called Cloud Foundry, which is, I mean, predates Kubernetes and Docker. So, 2011-ish is when it kind of started originally out of VMware and spun out and then became part of an open source project. So it's been around and battle tested and seen a lot of things where you have that concept of like, I just want to take my code"
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 405.34,
+    "end_seconds": 433.66,
+    "text": "and send it to the platform. And the platform is going to know like the best practices for it's going to build a container for the developer so the developer doesn't have to worry about like, securing the container or anything like that. the platform would take care of that. It will handle ingress, like certs, certificates, all the load balancers, all of those things just handle health monitoring, potentially even kind of sandboxing the apps from each other. Something that maybe some of these labs may learn from,"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 433.66,
+    "end_seconds": 462.78,
+    "text": "but so that the apps can escape type of thing. And if the app needs services like a database, or messaging, middleware, any type of thing, even maybe a large language model, it can what we call bind or it kind of connect to a service on the fly. And that's all kind of handled underneath the cover. So it's just a few commands, like you push bind the scale your app with just a few simple constructs. And that's how you go to production."
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 462.78,
+    "end_seconds": 487.9,
+    "text": "And what we see with enterprises, once that path, like once they take this like the sustainability platform, it's been certified, they're all these different standards. it's just kind of like an unlock for these enterprises because it's so easy and so simple to use and they don't have to, you know, they don't have to recertify everything. It's just like this framework that they can use to get apps into production. And then the biggest thing is that you want these, the enterprises or the businesses,"
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 487.9,
+    "end_seconds": 512.38,
+    "text": "they don't want their developers, you know, hand crafting a new platform or a new way to deploy apps for every sub team and have like a hundred different snowflakes, right? They want the same repeatable pattern across the board so that they can audit it and secure it and have their developers actually spend time writing the business logic versus like fiddling with infrastructure. So that's kind of like the whole premise behind, you know, the whole platform is sort of construct and you know, it gains a platform."
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 512.38,
+    "end_seconds": 539.22,
+    "text": "And as you can imagine, go ahead. No, no, go ahead, finish up and then I'll follow up, all good. Okay. As you could imagine, those principles when we're talking about apps could probably play nicely into this agent world that we're living in. So it sounds like you're drawing a lot of commonality between kind of traditional app development and all of the structure that we're all used to, that we've been doing forever."
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 539.22,
+    "end_seconds": 564.38,
+    "text": "And kind of now we're into the sygentic world and maybe people have been thinking about that in a different way, but it sounds like you've really kind of said, and correct me if I'm wrong, I'm gonna get to throw something out there. Like it's kind of the same thing in the sense of, there are differences, but agents and apps should sort of be treated the same way? Is that, am I getting that correctly in terms of, of how you're structuring that?"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 564.38,
+    "end_seconds": 587.14,
+    "text": "And that maybe people need to look at what they've been doing for years and make that work for agents in the same way? Is that, is that fair? Yeah, I mean, I think it's a pretty fair assessment. And we're starting to see that more and more just within our customer base. And, you know, even like, if you think about like apps back in the day, like someone would write some app on their laptop and like run out their laptop,"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 587.14,
+    "end_seconds": 607.58,
+    "text": "but it's like, we can't just run it on, like you gotta get it off your laptop somewhere. And the same thing with agents. You're like, I got this, I've got all these agents around my laptop, if I shut my lid, everything stops. Like I don't really want that to happen, right? I want them to run 24 seven, 365 and do all the work I give them. So yeah, I think that's kind of precisely what we're going with. So I guess then it begs the question,"
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 607.58,
+    "end_seconds": 635.26,
+    "text": "why are people kind of throwing out what maybe their intuition, like in certain ways people are saying, Oh, we have agents now we need to do something totally different, which is maybe driven by some things that make an agent not an app, not just a sort of simple application, but also it doesn't necessarily mean, you know, obviously we have to throw out everything we've learned about"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 635.46,
+    "end_seconds": 663.58,
+    "text": "platform engineering and I am and how to deploy things. So from your from your mindset, What where does the kind of agent equals just another app? Where might that fall apart or what are the kind of unique characteristics that you're dealing with on the agentic side? Yeah on the deployment pathway that you might not have had to consider before or at least are considering in a new way Well, I mean I think some of the biggest differences, right?"
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 663.58,
+    "end_seconds": 685.46,
+    "text": "We're like you talk about cloud foundry and tainty platform It was kind of based on this premise of a 12 factor application where like storage and state are a little You know decoupled cleanly from the actual apps You could like you know I can I can scale up to a thousand instances and be fine and you handle session state and things The traditional harnesses or agents were kind of built originally just like I've got file system access"
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 685.46,
+    "end_seconds": 707.78,
+    "text": "And I can just write a bunch of MD files and that's like my memory everything's great They're like well you start to get into a cloud cloud world that things spin up and down and are ephemeral you're going to want to save those MD files somewhere. They're going to go off into the ether. So that's probably the, I think the biggest challenge when we start talking about how do we take the app deployment methodology, right?"
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 707.78,
+    "end_seconds": 732.42,
+    "text": "And then push that into like an agent running on a kind of a cloud platform per se. It's probably the biggest challenge. And then just kind of getting the fact that there's some valid use cases for like your laptop or whatever. but then also as we're starting to see more and more, like enterprise is what agents to be on demand and like usable kind of in a like say in a CI CD pipeline or like on, you know, within part of their, you know,"
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 732.42,
+    "end_seconds": 752.74,
+    "text": "e-commerce suite or just normal applications. And you want those to be kind of really close to the apps, right? Cause if you're, if you have them way off, you know, even just from a pure networking perspective, if you have, you know, the agent or the LLM or whatever that's like, you know, 30 hops away from the microservice that's trying to call it, there's, you know, physics that are going to add on to all of that latency and potentially at scale even"
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 752.74,
+    "end_seconds": 774.02,
+    "text": "be problematic. So they kind of want to collate all the, co-locate the intelligence with the app and the data as close as possible. That's what we've seen too. That's something that I didn't expect really because some of these responses, you're kind of long, but it's like what we've seen with our customers at scale, like we want to get the LLMs and the agents closer to us and our actual apps using them and the people using them as well."
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 774.02,
+    "end_seconds": 796.7,
+    "text": "And not to mention if you're using some of these SaaS providers, they're maybe not the most reliable in terms of what traditional enterprises expect and demand. So you can't just have them going offline for hours because even at my past job, the very first thing I did there was work on a warehouse inventory system. And let's just say it was for a large retailer that was a grocery retailer in the US."
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 796.7,
+    "end_seconds": 823.62,
+    "text": "And I was an intern out of college and the app was older than me at the time, still older than me. And it was a bunch of like, you know, C and shell scripts on Unix systems. And if that thing went down, like within five minutes, like the warehouse was backing up trucks, like on the interstate. So it's like, you have to like, the scale of enterprise versus just, you know, how, you know, like consumer is completely different scale."
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 823.62,
+    "end_seconds": 852.48,
+    "text": "So that's why some of all the things were trying to make them a little bit more enterprise grade and more used to what these enterprises expect from software. Some mornings, as I'm drinking my morning coffee, I listen to live news updates to figure out what's going on in the world. And it seems like recently everyone is talking about AI kill switches. But the reality is that there is no one AI kill switch."
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 852.48,
+    "end_seconds": 877.52,
+    "text": "We've moved from models to agents. Those agents are connected to multiple models. They have an agent harness, they're connected to MCP servers and tools. And those agents are acting within a fleet, delegating to one another and interacting with one another. In that environment, what you don't have is a single kill switch that solves all of your problems. But that doesn't mean that you can't exert your control."
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 877.52,
+    "end_seconds": 906.88,
+    "text": "You just have to exert that control across various layers of that stack through of course component input, output safeguards, but also controls on agents tied to their agent identity, things that track tool misuse or memory poisoning or goal drift, et cetera. And what we're providing at Prediction Guard, the company that I lead personally, is an AI control plane that you self-host"
+  },
+  {
+    "segment_id": "s-0036",
+    "start_seconds": 906.88,
+    "end_seconds": 936.32,
+    "text": "in your own infrastructure that gives you that control plane or control layer for the relevant stack that agents operate on top of. I'd encourage you to check out what we're doing at predictionguard.com slash practical AI. Go ahead and book a call with myself and the team to learn more about how you can gain control of the agents operating in your environment and exert zero trust principles"
+  },
+  {
+    "segment_id": "s-0037",
+    "start_seconds": 936.32,
+    "end_seconds": 965.6,
+    "text": "in the way that you operate those agents. So check us out at predictionguard.com slash practical AI, that's predictionguard.com slash practical AI. So Nick, I would love to dive back. I want to kind of build on what you've been sharing so far. And part of that is that we're all diving into this multi-agentic world where some late last year, you'd have an agent."
+  },
+  {
+    "segment_id": "s-0038",
+    "start_seconds": 966.48,
+    "end_seconds": 994.86,
+    "text": "And then for most people, I think getting into multi-agents, it was probably developers and the environments that the AI providers were making available and you had multiple agents working on a project. But now we're really seeing with these work products and other things that have come out, we're seeing agents really multiplying across many different contexts and with a lot of different"
+  },
+  {
+    "segment_id": "s-0039",
+    "start_seconds": 994.86,
+    "end_seconds": 1022.98,
+    "text": "utility and it's moved out of being just frontier services and we're now doing that with our hosted agents as well that we're running. And so, like this multi-agentic world has just taken off in a very short amount of time. And as you're, as if I'm kind of, I guess I'm asking if you can kind of paint a picture as you start scaling this out in the enterprise and what that looks like."
+  },
+  {
+    "segment_id": "s-0040",
+    "start_seconds": 1022.98,
+    "end_seconds": 1051.74,
+    "text": "Like, like, could you describe, you know, and we have analogies as you've pointed out with with kind of the traditional software development world and the containers and all the, you know, and how you're structuring deployment and stuff. Could you talk a little bit about what that looks like, kind of paint a picture so that somebody can really get that in their head, me first of all, about what that multi-agent world looks like when you were doing all these right things"
+  },
+  {
+    "segment_id": "s-0041",
+    "start_seconds": 1051.74,
+    "end_seconds": 1077.38,
+    "text": "that you need to do in the enterprise? Yeah, so I think that the first thing that we want to focus on is that the enterprise needs to get whatever technology approved throughout their system. And then we are providing a harness called the Tainzo agent build pack, and that helps through that process. So our existing customers already have our customer, you know, we're already approved so that we can help provide them those tools."
+  },
+  {
+    "segment_id": "s-0042",
+    "start_seconds": 1077.38,
+    "end_seconds": 1091.22,
+    "text": "And we just make that process just another app to play it on the on the platform. So I probably haven't covered they said, I'll explain what a build pack is, right? So when you, when you, yeah, I was about to, I was about to ask you that if you can kind of dive into what the specifics of each of those things does."
+  },
+  {
+    "segment_id": "s-0043",
+    "start_seconds": 1091.24,
+    "end_seconds": 1108.22,
+    "text": "Sure. So when I would do demos before AI and before, you know, like a year or two ago or whatever, we would always take like a Java app and it was like a simple kind of like, you know, music album called a spring music or whatever. But we take that Java code to be like a jar file like compiled Java code and we're like, all right, now we're going to take this."
+  },
+  {
+    "segment_id": "s-0044",
+    "start_seconds": 1108.22,
+    "end_seconds": 1127.12,
+    "text": "We have a little simple manifest file that tells us what the, what the name of the app is, how many, how much resources to give it. And we just run a command called cf push. And that would then just take that code, the jar file, and upload it to the platform. And the platform would be like, oh, it's a Java app. So I'm going to use the Java build pack. And the build pack is basically a kind of a command set"
+  },
+  {
+    "segment_id": "s-0045",
+    "start_seconds": 1127.12,
+    "end_seconds": 1153.6,
+    "text": "to make a best practice container based off that use case. So the Java build pack knows to do all the JVM memory calculators, do the JDK and the certificates, and everything that's best practiced around Java in a container on a cloud platform. And that would be great. And then we would attach a database and all these things and show how that scales. Now we've taken that same concept and then said, hey, we're going to have this agent. We're going to just see if push an agent."
+  },
+  {
+    "segment_id": "s-0046",
+    "start_seconds": 1153.6,
+    "end_seconds": 1175.0,
+    "text": "And instead of machine-readable code, we have human-readable language, the agents MD. So basically you tell what the agent it's going to do and then you just push it to the platform and it starts up within a minute type of thing. And you can scale it up and push as many agents as you want. And I think the coolest thing that I've seen is that once we're on the platform, then we can run models on the platform."
+  },
+  {
+    "segment_id": "s-0047",
+    "start_seconds": 1175.0,
+    "end_seconds": 1196.44,
+    "text": "So obviously a lot of our customers are air-gapped, and some of them were smart enough to buy GPUs a few years ago. So some of them have lots of GPUs that can run all these local models and have a great experience. Some are wishing that they bought GPUs and hardware as the pricing of all this hardware goes through the roof. But then they can run local models and then tie the agent to that."
+  },
+  {
+    "segment_id": "s-0048",
+    "start_seconds": 1196.44,
+    "end_seconds": 1223.16,
+    "text": "Or if they don't have, they might have a contract with one of their cloud providers or one of their approved LLM's of choice. And we can register that. And then that kind of gave us a simple, here's your out-of-box agent with chat experience. And then along the way, we've done a lot of things with MCP, the model context protocol. I probably, you guys covered that on the show before, but it's basically a way for an app to talk to an LLM, very high level."
+  },
+  {
+    "segment_id": "s-0049",
+    "start_seconds": 1223.16,
+    "end_seconds": 1249.54,
+    "text": "So that's become useful as well as we then give the agent tools via MCP servers. And even at Broadcom, the only way approved way to use for our developers is to deploy MCP servers on Tainzy Platform so that we have a whole set of MCP servers that are approved and hosted and they're kind of secured and maintained because they are very similar to applications as well. And then we have a concept of the MCP gateway service that kind of registers that and"
+  },
+  {
+    "segment_id": "s-0050",
+    "start_seconds": 1249.54,
+    "end_seconds": 1272.1,
+    "text": "cures all those, the service so then we can then extend the gateway to that agent. So then the gateway, the agent now has like secure access to a runtime, you know, battle test runtime. It can talk to an LLM that's approved and get tools via and gateway. And then we're starting to add in like the memory service as well to have a kind of a shared memory service. So we're kind of expanding all that out where we're seeing"
+  },
+  {
+    "segment_id": "s-0051",
+    "start_seconds": 1272.1,
+    "end_seconds": 1293.14,
+    "text": "all those best practice at Flicycle. Go to, you know, see a push, go, here's an agent, here's all the things it wants to do. And then it can be a security review agent. And like one of the things I showed, I was at a, I think a week or two ago, I can't quite remember, I was in Las Vegas for a conference, so we were exploring and I had like a five phase demo where I walked through this."
+  },
+  {
+    "segment_id": "s-0052",
+    "start_seconds": 1293.14,
+    "end_seconds": 1315.8,
+    "text": "And maybe I'll show a little bit of this at the Midwest Summit here. But push the agent, bind all these services. But the end goal was like the boss level was like, all right, now we have these agents sitting in there and I can hook them up to a repo with an event listener or a web hook and say, all right, now do issue five on my repo. Do you have a security review on this repository?"
+  },
+  {
+    "segment_id": "s-0053",
+    "start_seconds": 1315.8,
+    "end_seconds": 1337.76,
+    "text": "And then it sends it off to the agent via web hook. And like, oh, the Tainzu agent, it just fires up from the platform. It gets a request and it just immediately pulls down the repo and starts doing a security review. And then publishes or pushes up to the issue that I created on GitHub and says, this is a security review. So you can see how that flow would be really useful an enterprise where maybe on every Git commit,"
+  },
+  {
+    "segment_id": "s-0054",
+    "start_seconds": 1337.76,
+    "end_seconds": 1365.02,
+    "text": "you just have all these agents spinning up on the fly that could be a security review agent, potentially like a style or code quality review agent or potentially even like a, I don't know, maybe a design review agent all firing up on the fly as things call. So it's kind of like, and then they all have their, they're all in their own little sandbox and everything's proper, right? Because part of the platform for a while, it's been like this very secured container runtime"
+  },
+  {
+    "segment_id": "s-0055",
+    "start_seconds": 1365.02,
+    "end_seconds": 1387.22,
+    "text": "where we have the, you know, they can't talk to each other unless you've enabled them so they can't go to the internet. Unless it's enabled, they can't, you know, escalate otherwise they only get access to what you give them. So it's kind of that benefit as well. And then obviously they're containerized, they don't have access to the underlying host system as well. So that, you know, as we've seen, you know, some of these things of uncerturbed agents forms,"
+  },
+  {
+    "segment_id": "s-0056",
+    "start_seconds": 1387.22,
+    "end_seconds": 1415.7,
+    "text": "I think we have some remedies here that some of these, some of these AI labs could maybe take into account and then implement some best practices. that's flown throughout the past two decades. The unplanned swarms, the swarms that you don't necessarily want. I actually have a two second follow up. And that is, it's for my benefit. And, you know, we've talked a lot on the show over various episodes about agents, you know, using MCP to get access to different apps and services"
+  },
+  {
+    "segment_id": "s-0057",
+    "start_seconds": 1415.7,
+    "end_seconds": 1440.62,
+    "text": "and tools and stuff like that out there. We haven't really talked about what an MCP gateway is. And I was wondering if you could share that for a moment, just as a detail because that's kind of the one little new piece of architecture that we've never touched on on the show. Sure. Yeah, so if you think about it, MCP Gateway is a way to easily control and scale access to MCP servers, especially within your in a cloud, I guess, platform."
+  },
+  {
+    "segment_id": "s-0058",
+    "start_seconds": 1440.62,
+    "end_seconds": 1464.0,
+    "text": "So we may have like 30 or 40 MCP servers that we run or I don't even know how many it is, right? And then those get bound, those get registered and bound to certain specific MCP So maybe there's a cut, you know, and the MCP gateway is something we can spin up on the fly on on the platform There are many different MCP gateways out there. There's many different AI gateways out there Some of them are like the same one in the same"
+  },
+  {
+    "segment_id": "s-0059",
+    "start_seconds": 1464.58,
+    "end_seconds": 1487.3,
+    "text": "But you basically register MCP servers to this gateway and the gateway kind of controls Access so to speak and regulates that so you may say like you can bind to this gateway and you only get these these these MCP servers, you only get these MCP tools within it, that type of thing. So it's a way to easily abstract all the different MCP servers that may be an organization and kind of direct them into a certain,"
+  },
+  {
+    "segment_id": "s-0060",
+    "start_seconds": 1487.3,
+    "end_seconds": 1509.96,
+    "text": "either a certain agent, or we even have a flow where like you can take, we'll take those MCP gateways that we run that front all of our MCP servers. And then you can say, hey, go give me a way to connect this to my cursor or my cloud code or my whatever. And then it just injects it in there. And then then your local agent has all the tools that are approved as well for your organization. And then it's just like a simple click"
+  },
+  {
+    "segment_id": "s-0061",
+    "start_seconds": 1509.96,
+    "end_seconds": 1531.44,
+    "text": "and then it just registers. And then like depending on the MCP server helps the handle the office as well. Cause some of them are like, well, if it's my, if I'm using the GitHub MCP server, I want to pass my end user credentials all the way through to that MCP server. Cause I don't want, you know, I don't want it just to be like, well, here's our generic service account for the entire organization. And every GitHub action is going to be, you know,"
+  },
+  {
+    "segment_id": "s-0062",
+    "start_seconds": 1531.44,
+    "end_seconds": 1552.88,
+    "text": "seen by that one account. and you have to have the individual identity pass through. So you have the concept of like SSO and sign in as well for an identity for agents or humans running their agents on their desktop. So that's kind of a quick level of you. And then a great way about that too is because it's all flowing through that gateway, we get metrics out of it. So we can see all the tool calls and all the events happening"
+  },
+  {
+    "segment_id": "s-0063",
+    "start_seconds": 1552.88,
+    "end_seconds": 1582.68,
+    "text": "coming from the agents to the MCP servers and back and forth. So you kind of see what's happening, especially if maybe if there's something unexpected We're like, well, this one agent made 200,000 tool calls to delete repo. Like, oh, like maybe we should alert on that. Like that's probably not good. Yeah. So, another visibility or metric to see what agents are doing and what tool calls are doing as well. So I guess hopefully that made sense because that's how I understand it. Right? Yeah."
+  },
+  {
+    "segment_id": "s-0064",
+    "start_seconds": 1582.68,
+    "end_seconds": 1611.4,
+    "text": "That was great. And there were a couple of things that you mentioned in there I think are additionally worth digging into. you kind of have this, if I'm understanding right, in part of the build pack that you're working on, part of that centers around kind of pushing an agents.md file. You mentioned like people have these MD files hanging around. You mentioned memory, you mentioned identity. I'm wondering if you could kind of help us understand,"
+  },
+  {
+    "segment_id": "s-0065",
+    "start_seconds": 1612.48,
+    "end_seconds": 1641.0,
+    "text": "like if I have, if I'm working on my laptop, right, and I'm using a certain agent harness. I may have an MD file that is kind of generic. And then I have files that are created by the agent that it uses that are only corresponding to my single agent. And then I have memory and then calls into other things. As you're pushing this off the laptop, now I imagine taking that off,"
+  },
+  {
+    "segment_id": "s-0066",
+    "start_seconds": 1641.0,
+    "end_seconds": 1668.4,
+    "text": "like what belongs in an agents.md file And what is, like as you're giving that example, right? You may have one agent in the platform that is a security reviewer for, that does security reviews, right? When you spin that agent up, does each instance of that, each session have a unique identity? What is the, what's unique about that session"
+  },
+  {
+    "segment_id": "s-0067",
+    "start_seconds": 1668.4,
+    "end_seconds": 1696.08,
+    "text": "and the data that is generated by that session versus maybe the things that are always static? like I'm not sure if the agent stat MD is always static. So could you help us understand like, which are the static elements, what's developing over time, how is that like state of the agent spread across, you know, the implementation, I guess. Sure, yeah. So if you think about it, like in, I guess in, in this specific implementation, the agents build pack is basically like the,"
+  },
+  {
+    "segment_id": "s-0068",
+    "start_seconds": 1696.08,
+    "end_seconds": 1724.6,
+    "text": "the boilerplate code of what you want the agent or app to do. So like I'll do demos and I'll have it be like your pirate, like one of my demos is like you're a, you're a Gira, like you're a senior software engineer. You're gonna watch this Gira like a page or I forgot the terminology here. Basically watch this Gira queue and look for any inbound tickets. As inbound tickets come in, review them and like, make sure that they're a good quality."
+  },
+  {
+    "segment_id": "s-0069",
+    "start_seconds": 1724.6,
+    "end_seconds": 1747.02,
+    "text": "And like here's all these different things that you wanna do and like don't do any of this. So it's more of a very simple agent somebody where it's just telling this agent what it should do and how it should act. And then you can call that and like, all right, well, like, Ticket 500 came in, it was poorly documented and update that Gira ticket and whatever, and then you can add fun things like talk like a pirate. So it's like, all right, make Gira, Ticket 500"
+  },
+  {
+    "segment_id": "s-0070",
+    "start_seconds": 1747.02,
+    "end_seconds": 1773.26,
+    "text": "is terrible, right? Like go back and update it, that type of thing. So that's kind of where the static part of it is. And then the memory service we have, you can attach it, you can have, potentially memory of a certain project. So we kind of envision each set of teams to have their own multiple set of agents, right? And it could be like, well, team A's agents have the access to team A's memory. So as they come up, they know all of this historical data"
+  },
+  {
+    "segment_id": "s-0071",
+    "start_seconds": 1773.26,
+    "end_seconds": 1800.54,
+    "text": "of like the architecture of the application, the what's been done before, like the roadmap, that type of thing. So as it spins up and does like a security review, it can make proper decisions and proper guidance. So that, you know, as you kind of build your local agents and kind of give them memory and they become smarter, that memory service as you have agents spin up and down, they just immediately know what's happened before, know how to proceed."
+  },
+  {
+    "segment_id": "s-0072",
+    "start_seconds": 1802.64,
+    "end_seconds": 1830.28,
+    "text": "As you heard at the beginning of this episode, some amazing people like Nick, who's the guest on this episode, are joining us at the Midwest AI Summit October 15th in Indianapolis, Indiana. Nick is going to come talk about what it looks like to deploy AI agents in real world environments. And we've got a bunch of other amazing speakers talking about how AI enabled teams work,"
+  },
+  {
+    "segment_id": "s-0073",
+    "start_seconds": 1830.28,
+    "end_seconds": 1859.96,
+    "text": "how to make decisions about what to say yes to and what to say no to in relation to AI, and much more super practical and amazing talks. Plus there's going to be an AI engineering lounge where you can actually sit down with folks like myself, I'll be there. Get review on your AI architecture, your stack, your roadmap, etc. towards the rollout of things like agents or other AI technology."
+  },
+  {
+    "segment_id": "s-0074",
+    "start_seconds": 1859.96,
+    "end_seconds": 1881.44,
+    "text": "This is a practical, amazing event that you don't want to miss. There'll be great food, great people, great networking and practical value. Do not miss this. It's October 15th in Indianapolis, Indiana. And you can use the code practicalai20 to get 20% off registration."
+  },
+  {
+    "segment_id": "s-0075",
+    "start_seconds": 1881.44,
+    "end_seconds": 1908.24,
+    "text": "So go to midwestaisummit.com and use the code practicalai20 to get 20% off registration. Before we were going into break, I think I may have cut you off. You were just starting to say something. You want to dive back into that real quick? No, I think I covered it. Hopefully I answered the question again. That's no problem. Okay."
+  },
+  {
+    "segment_id": "s-0076",
+    "start_seconds": 1908.24,
+    "end_seconds": 1937.16,
+    "text": "So really, I really, like this has been really good for helping me trying to conceptualize, you know, how all this fits together. I think I had some understanding, but you've gotten a level of detail. I wanna ask you as we are looking forward, I have several questions that are really kind of driving my thinking, you've got me thinking creatively based on what you've said. So as you look at, you know, we talked about MCP,"
+  },
+  {
+    "segment_id": "s-0077",
+    "start_seconds": 1938.16,
+    "end_seconds": 1966.2,
+    "text": "there are new things coming out, things like, you know, there's the A2A, which is the agent to agent protocol, and organizations are starting to look at that, and they already have their MCP servers maybe, but they're trying to get the structure and kind of bring the sanity around it that you've been talking about, you know, that then they kind of go, oh, okay, it's not so different from what we've already know, But as this is evolving very fast"
+  },
+  {
+    "segment_id": "s-0078",
+    "start_seconds": 1966.2,
+    "end_seconds": 1995.6,
+    "text": "and you have things like these new protocols, do you have any guidance on how to start integrating this constant flow of change in, in terms of first on the technology, and I'll hit the other half of that afterwards. But as you're trying to bring things in and make it work, and have you guys kind of thought about how to structure that? Yeah, I think it's, I mean, I guess we'll just say, take baby steps from everything, right? because especially when we talk about the enterprise scope,"
+  },
+  {
+    "segment_id": "s-0079",
+    "start_seconds": 1996.96,
+    "end_seconds": 2026.16,
+    "text": "they can be a lot slower to adopt some of these newer technologies. So you kind of layer that on and like, you don't have to necessarily adopt all of these things at once, you can maybe just get a simple agent running. And for most places, just getting access to an LLM is still the biggest hurdle, a secured approved. So, and then potentially going through the AI council, or their committee, right? Like everything must run through the council and be approved."
+  },
+  {
+    "segment_id": "s-0080",
+    "start_seconds": 2026.16,
+    "end_seconds": 2048.04,
+    "text": "If you know, like most, you know, if you're not, if you've never worked in an enterprise, most large enterprises have a council or committee for everything, right? Yeah, so it's like, well, we shall go to the committee and we shall present our idea and we'll wait six months and see what has the result been, right? So you just kind of have to work through the councils and the committees and all that fun. But once you finally get something approved, just iterate and you're like,"
+  },
+  {
+    "segment_id": "s-0081",
+    "start_seconds": 2048.04,
+    "end_seconds": 2074.04,
+    "text": "don't try to boil the ocean, make baby steps and get progress. And then as you'll, like, and you'll learn the technologies, then the next step will just kind of be obvious. Like, well, I can make the agent better if I get some MCP servers, get them tools. All right. And then we've got to get these tools approved and then add on to that. And then, you know, and some of these guardrails help, you know, of Tainzy Plougham help enterprises bring these tools to light"
+  },
+  {
+    "segment_id": "s-0082",
+    "start_seconds": 2074.04,
+    "end_seconds": 2102.32,
+    "text": "because it's not just, you know, all this random stuff downloaded from the internet, right? which that can be its own danger nowadays. So having some guardrails in place is a good thing. If you have experience with some of these platforms or apps running before, take that experience and that knowledge and kind of bring it forward and utilize your existing people and skills, I think too. I think a lot of times, do I see organizations like a new technology"
+  },
+  {
+    "segment_id": "s-0083",
+    "start_seconds": 2102.32,
+    "end_seconds": 2124.34,
+    "text": "will come up and like a new team will be built and that new team will decree, There's so much other really skilled people that could help. And it's always kind of a friction too. So try to get the teams to work together too and not just have the new team doing all the new things. And then the teams that've been there all the while have that, like that's always another constant flow. So try to break those silos down as well to help get people"
+  },
+  {
+    "segment_id": "s-0084",
+    "start_seconds": 2124.34,
+    "end_seconds": 2151.84,
+    "text": "up to speed and get through that process. Having worked in multiple enterprises myself, I think that last point, I think I've seen that multiple times. across different organizations. And, you know, how do you bridge that? I think part of it, you know, you have, you kind of have every organization has its own politics. They all have kind of the different structures. It's really common to say new tech, new team there."
+  },
+  {
+    "segment_id": "s-0085",
+    "start_seconds": 2151.84,
+    "end_seconds": 2181.1,
+    "text": "But then I think people recognize, you know, why, you know, that kind of, you'll see that. And sometimes you'll see a reconciliation. But it always seems like a little bit of a struggle when that happens to try to, you know, do you have any thoughts around as you're, as you're trying to do that, you know, you may have, you know, a lot of big organizations have, you know, they're very like one, one business unit, maybe almost like in a different universe"
+  },
+  {
+    "segment_id": "s-0086",
+    "start_seconds": 2181.1,
+    "end_seconds": 2206.9,
+    "text": "from another business unit sometimes. And, and so how do you get that kind of cross adoption where you're taking advantage of maybe both the new teams that may be there, but also some of the old structure teams and you're trying to spread the capability across the larger organization in a useful way. Do you have any guidance? I imagine it can't"
+  },
+  {
+    "segment_id": "s-0087",
+    "start_seconds": 2206.9,
+    "end_seconds": 2229.18,
+    "text": "be that different from the more traditional app dev side, but I think this is a struggle that a lot of boards are facing right now. Yeah, well, I think, yeah, so I mean, it goes, I think a lot both ways. So if you have the new team, right, the new team can look, the responsibility of the new team is like engage every other team because they have a lot of people that can help you out and achieve your goal. Right."
+  },
+  {
+    "segment_id": "s-0088",
+    "start_seconds": 2229.18,
+    "end_seconds": 2255.78,
+    "text": "Because the new team probably most likely has a very stressful and like, like, you know, like adopt AI everywhere or before it was like, go cloud everywhere. Right. Like those goals are like not quite easy to get going in an enterprise. So the new team needs to like, you know, they potentially run, you know, office hours, weekly office hours, reach out to their other teams. You know, maybe before, you know, like, like a lunch and learn if you're in the office"
+  },
+  {
+    "segment_id": "s-0089",
+    "start_seconds": 2255.78,
+    "end_seconds": 2277.0,
+    "text": "and have people in the office, that type of thing. And just have like a forum for people to come in and learn and get started and like ask questions and not, you know, like, hey, like, I saw this, you know, this post about, you know, this new platform or this new AI thing. How do I get started? Is there any documentation or what can I do to get started? And just kind of have like an open and like, you know,"
+  },
+  {
+    "segment_id": "s-0090",
+    "start_seconds": 2277.0,
+    "end_seconds": 2301.82,
+    "text": "very welcoming place to get started to bring in the folks. And then if you're on some of the, you know, let's say not new teams or teams that then are a while, be engaging and reach out to those teams. Cause a lot of the new people are gonna need help. And like, you know, there may be under stress. So it's just breaking that down. And then I think with this iteration, right, it's gonna happen a lot faster. And I think people just naturally wanna work together."
+  },
+  {
+    "segment_id": "s-0091",
+    "start_seconds": 2301.82,
+    "end_seconds": 2323.48,
+    "text": "because I think I was at VMware Explorer and I did a few talks and I started every talk with like, all right, let's get us a show of hands in the room. Who has used one of these tools like in at work like cursor, Claude code, whatever. And pretty much the entire room and all of them went up. And I was like, well, that's a lot more than I expected. So like the adoption rate, even at the traditional like platform or developer engineer"
+  },
+  {
+    "segment_id": "s-0092",
+    "start_seconds": 2323.48,
+    "end_seconds": 2350.18,
+    "text": "and you know, or just infrastructure admin at some of these personas is well into that scope. So the entire enterprise I think is picking up on this really fast. And the more collaboration I think it just will help out. So just office hours, reach out, be proactive. And I guess if you're on, be mindful or be open to change. This is just in general, what I've seen before."
+  },
+  {
+    "segment_id": "s-0093",
+    "start_seconds": 2350.18,
+    "end_seconds": 2375.18,
+    "text": "And if you're resistant and resist the change, and that's going to get you labeled and put off the side. But if you're, you may be at a, you may have your own opinions, but if you present them in a way that kind of is, let's say, maybe open-minded per se, you have a better chance at some of those, those key learnings that you've, you've dealt with her at your career to actually be applied in the new way as well. That makes sense. Um, I'm curious."
+  },
+  {
+    "segment_id": "s-0094",
+    "start_seconds": 2375.18,
+    "end_seconds": 2403.02,
+    "text": "I want to, I want to circle back for a moment on something you said, um, as we're talking about kind of spreading across, um, my mind goes to security, uh, because I know in, you know, In my industry, security is a pretty big deal. We do have air gap things and stuff like that. That's what we do in defense. But as you're thinking about that, one of the topics that is a really common topic now is kind of going back a few weeks."
+  },
+  {
+    "segment_id": "s-0095",
+    "start_seconds": 2403.02,
+    "end_seconds": 2432.48,
+    "text": "We covered it in depth on a previous episode. The whole open AI, the swarms got out, hugging face, that whole thing. I'll refer people back if they're not familiar with it to our episode recently that covered that. And, but that is top of mind. It's not only top of mind for security, but it's top of mind for legal, it's top of mind for comms, as they're thinking about what do we do in something like this where to happen"
+  },
+  {
+    "segment_id": "s-0096",
+    "start_seconds": 2432.48,
+    "end_seconds": 2461.34,
+    "text": "in our org, whatever that org is. And can you talk a little bit about, as you've kind of brought the enterprise structure up to date to deal with agents, and we're beyond just the traditional software and app world and we're taking some of the same lessons and reapplying them in a new context here. Can you talk a little bit about how that helps on the security side? If for the folks out there that are really,"
+  },
+  {
+    "segment_id": "s-0097",
+    "start_seconds": 2461.34,
+    "end_seconds": 2484.3,
+    "text": "that's their job is to keep things from really going awry. Can you talk for a moment about keeping things in the box, if you will? Yes, sure. And then I guess I'll put a disclaimer. These are all could be suggestions to help out with If you really dig into some of the hugging face stuff, it's a little scary. So I'm not to say that we're better than all of the iLabs or anything like that."
+  },
+  {
+    "segment_id": "s-0098",
+    "start_seconds": 2484.3,
+    "end_seconds": 2509.82,
+    "text": "But if you look at some of the things where how that kind of got started is where they started getting out of the sandbox, right? And then they found things that we're like, they could get access to. Having monitoring control around what those apps or agents can do is something that's been in mind for all enterprise apps, right? So like having, you know, kind of guard rails, even like network zones, like, Hey, this is a highly regulated zone. It's super locked down."
+  },
+  {
+    "segment_id": "s-0099",
+    "start_seconds": 2509.82,
+    "end_seconds": 2531.5,
+    "text": "Like even just like traditional firewall would have potentially blocked a lot of this stuff. Right. So it's kind of key like a lot of the core enterprise learning to kind of maybe take that for like, you know, the old team versus new team. It's like, well, guys, you could have just, you know, I don't know had some basic controls and like, I think they even talked about like their monitoring wasn't working and they weren't really monitoring it and like you had all these agents swarms."
+  },
+  {
+    "segment_id": "s-0100",
+    "start_seconds": 2531.5,
+    "end_seconds": 2560.56,
+    "text": "Then, of course, then I got to the Artifactory, which then found the weak link, and the Artifactory had the Internet access, and somehow they magically zero-dade the Artifactory instance multiple times. Not to say that we could prevent everything, but you take these core enterprise technologies that maybe would have helped out a little bit of just agent control, like hardened sandbox-type constructs, very locked-down network controls. I would have helped a little bit potentially,"
+  },
+  {
+    "segment_id": "s-0101",
+    "start_seconds": 2560.56,
+    "end_seconds": 2585.74,
+    "text": "just monitoring what's in the agent, make sure that the agents start somehow injecting tools that they're not supposed to have. I'm not sure if that was an issue or not, but when you talk about an application, the whole dependency stack is always up to grabs. So you wanna make sure that the dependency stack, the container, everything is in the whole OS and the whole platform is trying to patch and reliable as possible. So I think the key thing is obviously,"
+  },
+  {
+    "segment_id": "s-0102",
+    "start_seconds": 2585.74,
+    "end_seconds": 2610.08,
+    "text": "we had the whole mind bending effective that they somehow made this messaging board on Artifactory and then they got deleted and they recreated it. So there's that factor, which I think everybody's a little like that goes into the whole AI is gonna kill us thing that happened over the weekend, right? Versus just do some basic security and basic stuff, right? Just to clarify that was a social media post less people misinterpret that. Yes, sorry, sorry. Yeah, that's a quite, yeah."
+  },
+  {
+    "segment_id": "s-0103",
+    "start_seconds": 2610.08,
+    "end_seconds": 2638.08,
+    "text": "If you're not on AI Twitter or AIX, there's a lot of posts around, you know, somebody left anthropic and a bunch of anthropic people started posting around that they're afraid that there's a greater than 10% chance that AI is going to take out humanity over the weekend slash Friday. And then that started up a lot of conversation, let's just say. So that's what I was referring to. A bit. Yeah. Okay. I guess that's useful. I appreciate that."
+  },
+  {
+    "segment_id": "s-0104",
+    "start_seconds": 2638.08,
+    "end_seconds": 2667.48,
+    "text": "We like to finish off by kind of giving you kind of a free form question and that is kind of toward the future as you are doing your job and running your podcast and talking to people and kind of building up your perspective on where things are going with this. We like to ask guests to go ahead and get crazy and prognosticate just a bit and we"
+  },
+  {
+    "segment_id": "s-0105",
+    "start_seconds": 2667.48,
+    "end_seconds": 2693.44,
+    "text": "don't hold you to it. Like really the way we do this is when you're kind of just letting your mind wander and you're thinking about these things in the back of your mind, you go into bed at night, having a glass of wine, whatever it is you do to chill out, what do you think things are going? Like what, and you can choose the timeframe that you like, but I really like to think like what do you think is coming? What's next?"
+  },
+  {
+    "segment_id": "s-0106",
+    "start_seconds": 2693.44,
+    "end_seconds": 2722.48,
+    "text": "What should orgs be having a thought toward for the future, even if we're not there yet today? Any thoughts on what that future looks like as we close out? Oh boy, that could be many things. But I think from an enterprise perspective, I think we'll see a lot of team change, and role change, not even just an enterprise. The whole, from the business side, things are gonna change a lot, right? because you're starting to see,"
+  },
+  {
+    "segment_id": "s-0107",
+    "start_seconds": 2722.48,
+    "end_seconds": 2745.64,
+    "text": "and I was going through old episodes of my podcast this year and just some of the old, this is the start of this year and there's just now, I was like, wow, has a lot has changed. And like, can't imagine, like, can you like, you know, imagine a couple of years from now how much, the rate of changes now, it's accelerating, definitely. So it's hard to imagine that, but I definitely think from a business perspective, we're gonna see like a radical change in like how,"
+  },
+  {
+    "segment_id": "s-0108",
+    "start_seconds": 2745.64,
+    "end_seconds": 2769.56,
+    "text": "how, you know, development and, you know, product management and everything changes or everything kind of, you know, there's gonna be like new roles get created, you know, orgs are gonna change, I think. And I think for the good too, because I think like there's always a fear of job loss, but I find that I have, and I've heard this echoed across many personal experiences, I am like working harder than I ever have, because I have all these agents and they like, they need stuff for me."
+  },
+  {
+    "segment_id": "s-0109",
+    "start_seconds": 2769.56,
+    "end_seconds": 2795.56,
+    "text": "And I'm constantly like, and I'm doing building things that I always wanted to build, but just never had the time to. So I feel like we're all gonna be busy And maybe we need to not get too crazy with the agents, but it's hard for me because it's fascinating. It's really enjoyable. So doing a lot of things with automation, I can only imagine what these agents are going to be like in the next six months in terms of what they can do for you."
+  },
+  {
+    "segment_id": "s-0110",
+    "start_seconds": 2795.56,
+    "end_seconds": 2817.08,
+    "text": "I think we'll see a lot with voice coming to play and maybe even a new style of interaction with the computer as well. So that will be interesting as well. And then obviously I think, Did you see the posts like hugging face, had little robot things on sale? Yes. Yeah. Yeah. So like a little, little micro duck things or whatever. I did. I was like, I was like, I took my wife. I was like, maybe we should get one of these."
+  },
+  {
+    "segment_id": "s-0111",
+    "start_seconds": 2817.08,
+    "end_seconds": 2843.36,
+    "text": "She's like, she's like, you have enough toys. You just stop. Yeah. Well, I may have ordered a few for the family and I'm like, those things are going to be awesome. So like, like robotics and things like, you know, I think the LLM is great and wonderful, but there's so many more possibilities where we could go that I guess like for humanity, right? as long as we don't prevent the Terminator scenario. It'll be great, right? So, absolutely. Yeah. Well, great. I appreciate you painting that."
+  },
+  {
+    "segment_id": "s-0112",
+    "start_seconds": 2843.36,
+    "end_seconds": 2870.96,
+    "text": "That helps a lot. Yeah, the rate of change is just insane now. And I agree with you. I think it's going to get faster and faster. But great way to end the show. A lot of fun. I always love to hear what people say when we're asking about kind of where they think things are going. Thank you for coming on the show today. It was a great conversation. I learned so much. Really appreciate that. And I hope people tune in to Cloud Foundry Weekly"
+  },
+  {
+    "segment_id": "s-0113",
+    "start_seconds": 2870.96,
+    "end_seconds": 2898.88,
+    "text": "to hear you talking more about these topics. And they should definitely go to the Midwest Summit and hear your talk. I was there last year, did a talk. I won't be there this year. So I'll have to see if I can get a hold of the video of it or something. But anyway, thanks for coming on Pratt & Pleiades today. Thanks for having me. Alright, that's our show for this week."
+  },
+  {
+    "segment_id": "s-0114",
+    "start_seconds": 2898.88,
+    "end_seconds": 2926.2,
+    "text": "If you haven't checked out our website, head to practicalai.fm and be sure to connect with us on LinkedIn, X, or Blue Sky. You'll see us posting insights related to the latest AI developments and we would love for you to join the conversation. Thanks to our partner, Prediction Guard, for providing operational support for the show. Check them out at predictionguard.com. Also, thanks to Breakmaster Cylinder for the beats and to you for listening. That's all for now. But you'll hear from us again next week."
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "stage": "select_items",
+  "status": "completed",
+  "run_dir": "runs/20261014T005413Z-inject-withheld",
+  "input_count": 68,
+  "output_count": 68,
+  "started_at": "2026-10-14T00:54:42Z",
+  "finished_at": "2026-10-14T00:59:20Z",
+  "elapsed_seconds": 278.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-sonnet-5",
+      "calls": 12,
+      "input_tokens": 447012,
+      "output_tokens": 30031,
+      "cost_usd": 1.0875987,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 1.087599,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {
+    "decisions": {
+      "accept": 30,
+      "reject": 37,
+      "defer": 1
+    },
+    "batches": 12,
+    "failed_batches": 0,
+    "fallback_decisions": 0
+  }
+}

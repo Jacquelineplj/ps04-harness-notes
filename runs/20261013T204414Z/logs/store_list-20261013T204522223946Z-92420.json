@@ -1,0 +1,18 @@
+{
+  "stage": "store_list",
+  "status": "completed",
+  "run_dir": "runs/20261013T204414Z",
+  "input_count": 0,
+  "output_count": 0,
+  "started_at": "2026-10-13T20:45:22Z",
+  "finished_at": "2026-10-13T20:45:22Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "sqlite3"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {}
+}

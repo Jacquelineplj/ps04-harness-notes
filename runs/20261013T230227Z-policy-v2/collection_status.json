@@ -1,0 +1,28 @@
+{
+  "mode": "replay",
+  "replay_of": "runs/20261013T213636Z-podcasts-expanded",
+  "simulated_failure": null,
+  "collectors": {
+    "feeds": {
+      "exit_code": null,
+      "candidates": 49,
+      "status": "replayed",
+      "simulated": false
+    },
+    "youtube": {
+      "exit_code": null,
+      "candidates": 14,
+      "status": "replayed",
+      "simulated": false
+    },
+    "podcasts": {
+      "exit_code": null,
+      "candidates": 11,
+      "status": "replayed",
+      "simulated": false
+    }
+  },
+  "injected": null,
+  "merged_candidates": 74,
+  "invalid_lines": 0
+}

@@ -1,0 +1,69 @@
+{
+  "stage": "create_briefs",
+  "status": "completed",
+  "run_dir": "runs/20261013T213636Z-podcasts-expanded",
+  "input_count": 67,
+  "output_count": 3,
+  "started_at": "2026-10-13T22:48:42Z",
+  "finished_at": "2026-10-13T22:53:43Z",
+  "elapsed_seconds": 301.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-sonnet-5",
+      "calls": 4,
+      "input_tokens": 218275,
+      "output_tokens": 8545,
+      "cost_usd": 0.6664753,
+      "cost_is_estimate": true
+    },
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-opus-5",
+      "calls": 1,
+      "input_tokens": 362977,
+      "output_tokens": 12944,
+      "cost_usd": 2.248685,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 2.91516,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {
+    "validation": {
+      "quotes_exact": 27,
+      "quotes_repaired": 2,
+      "evidence_dropped": 0,
+      "claims_dropped": 0,
+      "version_fixed": 0
+    },
+    "attempts": 1,
+    "accepted_items": 27,
+    "publishers": 12,
+    "missing_kinds": [],
+    "evidence_items_used": [
+      "feed:1599ed0f74596729",
+      "feed:2dc5d7317eb84740",
+      "feed:414c680e0dfe5f85",
+      "feed:6dfb9f1cb365f38e",
+      "feed:8df33797c8dcce10",
+      "feed:993bc19082d2d062",
+      "feed:9d93024f8db90c5c",
+      "feed:aed891eb1cf0d9a5",
+      "feed:bd1136d0fcfd6f13",
+      "feed:e7a482afdd6942d5",
+      "feed:eaac866ece437024",
+      "feed:ee6df3f002868714",
+      "feed:f52921adc97fb1dc",
+      "podcast:8d8927fb57f7e934",
+      "youtube:-a2oTS9J67U",
+      "youtube:3ZlQk4-knWM",
+      "youtube:U7ZYBCcdJPg",
+      "youtube:gDRCpTMCqEU"
+    ]
+  }
+}

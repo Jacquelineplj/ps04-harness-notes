@@ -1,0 +1,22 @@
+{
+  "stage": "create_series",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": null,
+  "output_count": null,
+  "started_at": "2026-10-13T21:24:23Z",
+  "finished_at": "2026-10-13T21:35:40Z",
+  "elapsed_seconds": 677.0,
+  "tools": [
+    "bash"
+  ],
+  "models": [],
+  "cost_usd": null,
+  "cost_is_estimate": null,
+  "errors": [
+    {
+      "message": "content checks failed (review.json passed=false)"
+    }
+  ],
+  "extra": {}
+}

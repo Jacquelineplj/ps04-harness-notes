@@ -1,0 +1,29 @@
+{
+  "stage": "filter_items",
+  "status": "completed",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 61,
+  "output_count": 59,
+  "started_at": "2026-10-13T21:24:23Z",
+  "finished_at": "2026-10-13T21:24:23Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "python-dateutil"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "as_of_date": "2026-10-13",
+    "window_start": "2026-09-14",
+    "window_end": "2026-10-13",
+    "excluded": 2,
+    "exclusion_reasons": {
+      "outside_window": 2,
+      "unknown_date": 0,
+      "future_date": 0,
+      "invalid_date": 0
+    }
+  }
+}

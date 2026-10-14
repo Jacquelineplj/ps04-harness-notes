@@ -1,0 +1,50 @@
+{
+  "stage": "fetch_youtube",
+  "status": "completed",
+  "run_dir": "runs/20261013T213636Z-podcasts-expanded",
+  "input_count": 5,
+  "output_count": 14,
+  "started_at": "2026-10-13T21:36:36Z",
+  "finished_at": "2026-10-13T21:37:43Z",
+  "elapsed_seconds": 67.0,
+  "tools": [
+    "yt-dlp 2026.08.19"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "sources": {
+      "ai-engineer-youtube": {
+        "status": "ok",
+        "candidates": 5
+      },
+      "anthropic-youtube": {
+        "status": "ok",
+        "candidates": 0
+      },
+      "langchain-youtube": {
+        "status": "ok",
+        "candidates": 4
+      },
+      "openai-youtube": {
+        "status": "ok",
+        "candidates": 3
+      },
+      "latent-space-youtube": {
+        "status": "ok",
+        "candidates": 2
+      }
+    },
+    "counters": {
+      "entries_seen": 54,
+      "skipped_short": 9,
+      "skipped_live": 0,
+      "skipped_beyond_lookback": 7,
+      "metadata_failures": 0
+    },
+    "failed_sources": 0,
+    "simulated": false
+  }
+}

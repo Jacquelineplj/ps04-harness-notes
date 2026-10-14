@@ -1,0 +1,75 @@
+{
+  "run_id": "20261014T014037Z-second-live",
+  "as_of_date": "2026-10-14",
+  "packaged_at": "2026-10-14T02:07:56Z",
+  "review_id": "d80442f42353367539000c26cc34f6746a0067cb6e0a659e48198a8fcbe15bc2",
+  "approved_by": "Lingjie Pan",
+  "approved_at": "2026-10-14T02:07:56Z",
+  "pieces": [
+    {
+      "piece_id": "01",
+      "title": "The Harness Moved Up a Layer: What Changed in Agent Infrastructure This Month",
+      "article": "runs/20261014T014037Z-second-live/package/01-article.md",
+      "video_script": "runs/20261014T014037Z-second-live/package/01-video-script.md",
+      "sources": "runs/20261014T014037Z-second-live/package/01-sources.md",
+      "youtube_description": "runs/20261014T014037Z-second-live/package/01-youtube-description.txt",
+      "claim_count": 8,
+      "evidence_items": [
+        "feed:1599ed0f74596729",
+        "feed:414c680e0dfe5f85",
+        "feed:7e289d45dfc4cd8f",
+        "feed:9d93024f8db90c5c",
+        "feed:bd1136d0fcfd6f13",
+        "feed:ee6df3f002868714",
+        "podcast:0c2623edf3feabfb"
+      ]
+    },
+    {
+      "piece_id": "02",
+      "title": "Which Harness Claims Survive Contact With Method",
+      "article": "runs/20261014T014037Z-second-live/package/02-article.md",
+      "video_script": "runs/20261014T014037Z-second-live/package/02-video-script.md",
+      "sources": "runs/20261014T014037Z-second-live/package/02-sources.md",
+      "youtube_description": "runs/20261014T014037Z-second-live/package/02-youtube-description.txt",
+      "claim_count": 8,
+      "evidence_items": [
+        "feed:2dc5d7317eb84740",
+        "feed:6dfb9f1cb365f38e",
+        "feed:bd1136d0fcfd6f13",
+        "feed:ee6df3f002868714",
+        "feed:f52921adc97fb1dc",
+        "podcast:93a1c773317f1e28",
+        "youtube:U7ZYBCcdJPg"
+      ]
+    },
+    {
+      "piece_id": "03",
+      "title": "What To Change in Your Harness, and What To Watch",
+      "article": "runs/20261014T014037Z-second-live/package/03-article.md",
+      "video_script": "runs/20261014T014037Z-second-live/package/03-video-script.md",
+      "sources": "runs/20261014T014037Z-second-live/package/03-sources.md",
+      "youtube_description": "runs/20261014T014037Z-second-live/package/03-youtube-description.txt",
+      "claim_count": 9,
+      "evidence_items": [
+        "feed:6dfb9f1cb365f38e",
+        "feed:8df33797c8dcce10",
+        "feed:9d93024f8db90c5c",
+        "feed:bd1136d0fcfd6f13",
+        "feed:ee6df3f002868714",
+        "podcast:8d8927fb57f7e934",
+        "youtube:-a2oTS9J67U",
+        "youtube:3ZlQk4-knWM",
+        "youtube:U7ZYBCcdJPg"
+      ]
+    }
+  ],
+  "publication_links": "runs/20261014T014037Z-second-live/package/publication_links.json",
+  "manual_steps": [
+    "Produce each video in Google Vids or HeyGen from package/NN-video-script.md (Visual/On-screen text/Narration per scene); an avatar is optional. Export MP4.",
+    "Publish each package/NN-article.md on Substack with shareable (free) access; keep the Sources section and the AI-assistance line.",
+    "Upload each video to YouTube (public or unlisted) using package/NN-youtube-description.txt as the description; add the Substack link to it.",
+    "Add the YouTube link to the corresponding Substack article.",
+    "Fill substack_url and youtube_url for every piece in package/publication_links.json; rerun `bash run.sh --package RUN_DIR` to refresh the summary (links are preserved)."
+  ],
+  "note": "Videos are not rendered and nothing is published by this pipeline; see MANUAL_STEPS.md."
+}

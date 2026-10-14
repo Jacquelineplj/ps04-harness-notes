@@ -1,0 +1,37 @@
+{
+  "stage": "select_items",
+  "status": "completed",
+  "run_dir": "runs/20261014T014037Z-second-live",
+  "input_count": 73,
+  "output_count": 73,
+  "started_at": "2026-10-14T01:42:31Z",
+  "finished_at": "2026-10-14T01:47:39Z",
+  "elapsed_seconds": 308.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-sonnet-5",
+      "calls": 13,
+      "input_tokens": 275905,
+      "output_tokens": 28266,
+      "cost_usd": 1.1648171999999999,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 1.164817,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {
+    "decisions": {
+      "accept": 27,
+      "reject": 45,
+      "defer": 1
+    },
+    "batches": 13,
+    "failed_batches": 0,
+    "fallback_decisions": 0
+  }
+}

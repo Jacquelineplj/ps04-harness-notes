@@ -1,0 +1,28 @@
+{
+  "stage": "collect_sources",
+  "status": "failed",
+  "run_dir": "runs/20261013T204414Z",
+  "input_count": 69,
+  "output_count": 0,
+  "started_at": "2026-10-13T20:44:14Z",
+  "finished_at": "2026-10-13T21:22:17Z",
+  "elapsed_seconds": 2283.0,
+  "tools": [
+    "jq",
+    "bash"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [
+    {
+      "message": "workflow aborted after extraction and store upsert: 'PIPESTATUS[2]: unbound variable' (bash 3.2 resets PIPESTATUS after the assignment that read element 0). corpus.jsonl and eligible.jsonl were never written; 60 items were stored. Fixed in workflows/collect_sources.sh by capturing PIPESTATUS into an array in one statement. This receipt was written after the fact to record the failure honestly.",
+      "code": "workflow_bug",
+      "written_post_hoc": true
+    }
+  ],
+  "extra": {
+    "written_post_hoc": true,
+    "recovery": "a new live run (next run directory) reused the stored transcripts; see SUBMISSION.md"
+  }
+}

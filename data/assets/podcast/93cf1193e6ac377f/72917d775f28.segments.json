@@ -1,0 +1,548 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 0.0,
+    "end_seconds": 26.98,
+    "text": "The Python code that gets written for code mode is honestly like hard to review. Like, you know, anytime that the agent is writing code mode stuff, I look at it and I'm like, I, it doesn't like that is gobbly goo code. I don't understand. It looks good to me. I hope it works. And then like the next day I get an email that is like, like, hey, my agent is telling me that the Markdown docs on AWS are, are trying to do an injection of potentially"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 26.98,
+    "end_seconds": 53.04,
+    "text": "malicious like rollback rollback. We didn't our matrix wasn't big enough James are gonna be given a talk at agent con North America on October 22nd and 23rd in San Jose, California I would love to know what you're talking about"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 53.64,
+    "end_seconds": 80.26,
+    "text": "Awesome. Yeah, super excited to be there. Yeah, so my talk is gonna be about some of the things that kind of come later in your mcp creation Journey because you know, it's easy to build an mcp server and throw it out there but then, you know, as it's out there, as I've built some NCP servers, you know, discovered that there's some things that you're gonna want like down the road, you know? And so this is really exploring some of those sorts of things."
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 80.26,
+    "end_seconds": 107.7,
+    "text": "And so I can go into these some details on what those look like. But yeah, this is a general idea is like, like, you know, not day one with MCP, building MCP servers, but like day 10, you know, these are some things that you're gonna have to think about down the road. So this is like the MCP builder 201 course. Maybe even like 301 or 401. It's nice. Yeah, we're gonna get into some more advanced patterns and maybe not quite 401."
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 107.7,
+    "end_seconds": 134.66,
+    "text": "What was the call it 301? Yeah, yeah. And for MCP server creators. Yeah, yeah. This is, if you're not building MCP servers, like not to talk for you. Yeah, it's very deep into the MCP server creation. Okay, well, talk to me about some of the anti-patterns of building MCP servers or the... Yeah, well, really, we're going to focus on the patterns for these. So, you know, I'm sure there's many talks on the anti-patterns, but we're going to talk"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 134.66,
+    "end_seconds": 163.38,
+    "text": "about the patterns for, you know, what your MCP servers are likely going to need to do down the road. So one example of that is that oftentimes the agent, when it makes calls to an MCP you as the MCP server have no idea, like, okay, this call fired off to my MCP server, this call fired off to my MCP server, this fire, like you have no correlation across those different calls. And so there's no way for your server to know,"
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 163.38,
+    "end_seconds": 192.62,
+    "text": "like, okay, this is like one agent session, you know, based on one prompt from the user. And then how do you actually then correlate those together? And this can be really helpful for understanding, like, how is my MCP server actually getting used? Is it producing the best results that it can for the agent? And this is the kind of observability stuff that when you really wanna tune your tool descriptions, your data schemas, your input parameters,"
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 192.76,
+    "end_seconds": 218.26,
+    "text": "all those sorts of things, when you really wanna get that thing dialed, you're gonna need this kind of information to be able to see the journey that an agent is making with your MCP server. So there's a way that you can actually do this and we'll talk about all the details in the session about that. There's almost this performance aspect of it where you've got the system performance, but then you've got the actual,"
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 218.26,
+    "end_seconds": 246.66,
+    "text": "is it responding and making it very agent friendly in a way too, right? So there's that performance side of things. Yeah, I think that a lot of it does come down to possible areas of optimization And that's what you're really trying to discover because generally the agents, what they do is they decide they want to call an MCP server. So they make the call, get the response, send it back to the LLM, and they keep doing this, right? You know, you've seen that"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 246.74,
+    "end_seconds": 273.22,
+    "text": "agentic loop just going in circles, you know, trying all these different tools, exploring around. And in oftentimes this can be really inefficient because all these round trips to LLM, you know, take a long time or expensive. And so maybe what you're trying to discover through this observability is do I need like an aggregate tool that's going to take potentially 10 tool calls and roll that all into a single tool call that the agent can make instead?"
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 273.22,
+    "end_seconds": 300.38,
+    "text": "And so you're trying to through observability discover those places for optimization where you can make the agent more efficient. And you really only know that when you can create correlation across requests so that then you can look at them, you know all the things that happen in a given session. Well, it is funny how you're mentioning you've got your agents that are hitting the MCP server various times. And unless you really take it a step further and try to figure out, is"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 300.38,
+    "end_seconds": 329.02,
+    "text": "this the same session or is this a different session? Then you're not really going to realize that this agent was trying to do X. I made it 10 times more difficult because I had it making 10 different calls. Yeah. And if I can abstract that up a few levels, recognize its intent, and just create the server so that that intent is only one call, that's going to be a much nicer experience."
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 329.02,
+    "end_seconds": 356.76,
+    "text": "Yep, absolutely. Yeah, and then likely in a real system, what you're going to do is build out evals. And so you're going to take the observability data that you've uncovered, and you're going to ultimately get to a set of evals that then will give you actual data around, okay, use the agent was trying to do this without this like aggregate tool or whatever the solution you come up with is, here's how many turns it took with the LLM, here's how many tokens it took."
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 356.76,
+    "end_seconds": 383.3,
+    "text": "And then you set up another arm in your Eval that is, okay, now do it with this new tool that's this aggregate thing. And then you see, okay, did the agent choose that path? Did I have the right tool description? So it decided to go the shortcut instead of the long way. And then did I use less tokens, less turns, those sorts of things. And so they could definitely influence the eval system that you would hopefully have in place around your MCPs or as well."
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 383.3,
+    "end_seconds": 412.4,
+    "text": "One thing that we've been seeing a bunch of at all of these different MCP cons, MCP dev summits is the advent of an MCP gateway. Have you thought about adding that into your talk? Is that one of the patterns that you're going to discuss? I, we won't talk about gateways. I'm sure there will be many talks about gateways. You definitely can use a gateway to, to start to potentially do these optimizations automatically."
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 412.76,
+    "end_seconds": 438.04,
+    "text": "And one of the things which maybe we'll talk a little bit about in, in the talk is this idea that if you know, if you know input and output schemas to your MCP servers, which input schemas that you have to know those, but output schemas are optional. When you know actually both and you put something between the agent like a gateway But something between the agent and your MCP server then you can actually"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 438.84,
+    "end_seconds": 463.32,
+    "text": "Automatically discover the right optimizations that you can do and so this is you know You take it instead of doing it manually with correlations and evils and all that kind of stuff you can actually have a self Self-optimizing gateway in the middle But I think to do that well, you do need to turn on output schemas because you really need to understand the shape of the things and how they fit together."
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 463.32,
+    "end_seconds": 488.8,
+    "text": "And like, okay, this shape is going to be able to go into this form. I know the output scheme of that. And then I know that the next sequence of things then takes parameters from that thing and feeds into this thing. into this thing. And so maybe not all use cases require those output schemas, but I think when you have them, you could have a more automatically updating, optimizing gateway in the middle."
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 488.8,
+    "end_seconds": 515.24,
+    "text": "Yeah, it's funny you mentioned that because Sean Smith at the last agent con in EU in Amsterdam last week, he was talking about that, like the self optimizing MCP servers where they just recognize, oh, we could be better. We could be better here. And it is a little bit more, his whole take was, it's much more nuanced than you would think, but it is possible. And I think that kind of is echoing what you're saying right now."
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 515.24,
+    "end_seconds": 543.96,
+    "text": "Yeah, I think we're just beginning to uncover some of the approaches that we could use for this. The, we took kind of a tangent generally in the industry where we said, Okay, MCP, the way that it gets used in this like, like very heavy weight, you know, back and forth process with the LLM, it's really inefficient. So this was like this backlash against MCP, like MCP wastes all these tokens."
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 543.96,
+    "end_seconds": 570.36,
+    "text": "And so many of the use cases that I saw where people were making this point, like the MCP is inefficient. What they were doing was they would, let's say they had a tool that was get customer by customer ID or something like that. and then they would go into their agent and say, okay, give me all the customers that I've emailed in the last 60 days or whatever. And so then they show that the agent's like, it does an initial query,"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 570.36,
+    "end_seconds": 598.96,
+    "text": "and then it goes through and calls getCustomer 100 times. And of course that's gonna use a lot of tokens and be slow. And the solution to this is very obvious, just have a tool that is getCustomers, and takes a parameter that is all the IDs that it wants. And it's like, it's not MCPs fault that you have inefficient tools that are making the agent do all these round trips, that can be solved. And we don't have to go to code mode in these really complex solutions."
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 598.96,
+    "end_seconds": 627.16,
+    "text": "It's like just look at how your tools are being used and discover the ways that you could create more efficient tool usage. It's not MCPs. That's right. Like having done that optimization. There's so many pieces, especially in the beginning where we were exploring and we're trying to figure out the best ways to do it. And you recognize that, man, we just like built a lot of pretty crappy MCP servers."
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 627.16,
+    "end_seconds": 654.76,
+    "text": "And MCP was the scapegoat. It wasn't the people that built the MCP servers that were the scapegoats. Exactly. Yeah, and I mean, I've built those terrible MCP servers and it's like, which didn't, no better, you know, initially it's like, cool. Like I was able to connect my agent to this thing. Awesome. That's step one, right? And then we got to get to step seven, where we add the efficiencies and make things more optimized."
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 654.76,
+    "end_seconds": 679.6,
+    "text": "And I think it's okay that we go on that journey of like, what do they say in coding? Like, I don't know, something about how you, first you make it work, then you make it fast or something like that. Yeah. Yeah, and then you make it cheap. Yeah, that's right. Hopefully. Some of us never get to that third step. Yeah, yeah. That's right. Yeah. So I think there's lots of areas that we can for improvement."
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 679.64,
+    "end_seconds": 709.6,
+    "text": "And yeah, I hope that my talk will help people see some of the patterns that will help them get there. How about with the new MCP release in July, that 728 aka MCP 2.0 having to now support two different MCP servers? And I've heard talk from folks where they said, yeah, the migration was seamless. It was easy. We bumped everything up and we're good. And then I've heard other talks where it's like,"
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 709.6,
+    "end_seconds": 738.8,
+    "text": "that was us. We can enforce all the migrations we want, but what happens when I have a gateway and now I'm pinging to external MCP servers that are not following the new update. So now I have to simultaneously support both of them. Is there any patterns that you've been able to decipher from that? It's definitely a challenge in an area. And we won't go into it in my talk, but I do have a firsthand experience with exactly this."
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 738.8,
+    "end_seconds": 768.4,
+    "text": "And it's hard. It's mostly hard on the library, like gateway and library author side of things. So I maintain an implementation of MCP. And so I had to deal with this and I use that implementation and a variety of MCP servers. And so I had to be able to support the dual era MCP do the like negotiation of the protocol, both on the server side and the client side. And, you know, thank God I like had"
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 768.4,
+    "end_seconds": 796.32,
+    "text": "AI helping me do this. And I had now the MCP compliance test suite is really helpful for for getting the agent to you know, know what success looks like and be able to iterate and get there. And so but but once the library and the like gateways and those sort of things solve the the negotiation and the to well, there are a stack and all that kind of stuff. Like once it's solved in the libraries that you're using, then as an MCP"
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 796.32,
+    "end_seconds": 824.52,
+    "text": "server or client, like, you like it's totally transparent to you, which is nice. Like, like you as the MCP server author, you don't you don't have to think about the actual underlying protocol. And, and as long as you're the library that you're built on is doing the right thing, then then you should be good. So see, I think it is is nice that most most MCP server authors really shouldn't have to deal with the pain of the underlying protocol, which"
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 824.52,
+    "end_seconds": 849.44,
+    "text": "is the way that it should be. And I'm, you know, thankfully the MCP contributors have been able to put the burden where it should be, which is on the library author side and not paying the actual server creators with this stuff. So what are some other patterns that you want to highlight? I don't know if we'll go too deep in the talk, but one of the things that I've been exploring"
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 850.48,
+    "end_seconds": 874.16,
+    "text": "in my day job is I work at AWS and working on agent experience. So how do we make the experience of AWS agent friendly? And one of the things that we're looking at is right now we have like like a code mode MCP server that enables essentially just let's the agent throw some Python at it"
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 874.16,
+    "end_seconds": 900.74,
+    "text": "that's like sequence these AWS API calls together and do all these things. And it works like the agent can write the code and do all that. But I think there's a better option and it relates to what we'll talk about in the talk of like, like creating MCP servers that that can provide better optimization. But then also one of the downsides of the code mode"
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 900.74,
+    "end_seconds": 929.22,
+    "text": "is the user verification of what's gonna happen. Like when you're having your agent talking to AWS, like you wanna be careful, you know? You wanna probably review like what the agent is gonna go do on your infrastructure. And so the Python code that gets written for code mode is honestly like hard to review. Like, you know, anytime that the agent is writing code mode stuff, I look at it and I'm like,"
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 929.22,
+    "end_seconds": 957.4,
+    "text": "I doesn't like that is gobbly code. I don't understand. I hope it works. I hope it works. Send it here. Send it. And so what I'm exploring is, can we essentially have a low code mode that is not full Python code, but is a very constrained DSL for the sequence of operations that the agent wants to perform. And then can we make it so that the human can look at it"
+  },
+  {
+    "segment_id": "s-0036",
+    "start_seconds": 957.4,
+    "end_seconds": 982.48,
+    "text": "and understand what's gonna happen? And can we make it so that the schema for that, the grammar and schema for that is validatable so that the agent can then do a step where it says, okay, here's the code mode that I, you know, here's my plan. Now let me validate that against the actual schema that is available so that it doesn't actually try to do things that aren't gonna work. Cause what often happens in code mode is it gets,"
+  },
+  {
+    "segment_id": "s-0037",
+    "start_seconds": 982.48,
+    "end_seconds": 1005.9,
+    "text": "you know, step two of 10 and fails because it tried to access something, some property of something that wasn't actually there. And so, you know, this happens all the time. And so can it actually do a validation step against the schema and get like, like very clear feedback on like, okay, you know, you wrote this low code, you know, DSL that you're tried to access this property that property doesn't actually exist. Here's what you should do instead."
+  },
+  {
+    "segment_id": "s-0038",
+    "start_seconds": 1005.9,
+    "end_seconds": 1035.34,
+    "text": "then the agent can try again. And then by the time that the agent has verified the code, the human has reviewed it. Boom, we send off this like sequence of operations. And so, so that's part of what I'm exploring is how do we, how do we enable this, this kind of better code mode? And it relates definitely to the, the, the talk that I'm giving on like, as an MCP server, how could you potentially expose a low code mode that he doesn't"
+  },
+  {
+    "segment_id": "s-0039",
+    "start_seconds": 1035.34,
+    "end_seconds": 1064.1,
+    "text": "requires sandboxing allows you to interpret the actions. And then as the like potentially the fallback for when the agent's like, okay, I see all the things that I can call, but let me just write code. If you could offer this like low code approach instead of a full code approach, hopefully that would be a better agent experience. But yeah, so that's part of the day job."
+  },
+  {
+    "segment_id": "s-0040",
+    "start_seconds": 1064.1,
+    "end_seconds": 1090.78,
+    "text": "You know what it reminds me of is back when LLMs first came out, there was a guy that came into the community and he was saying, look, I was able to get LLMs. And this was before like the coding use case became very popular. And what he said was I was able to get LLMs to create their own code, but it's not any code that we as humans know."
+  },
+  {
+    "segment_id": "s-0041",
+    "start_seconds": 1090.78,
+    "end_seconds": 1119.74,
+    "text": "it's basically just saying, if you were to create this, you know, like here's what I want to be done. How would you in a almost like pseudo code way, explain it? And so the LLMs were able to talk to each other in a way that was like this pseudo code that they understood. And when you read it, you kind of were like, ah, I guess that kind of works. Absolutely worthless for like compiling or any of that, you know? But for the agents, well,"
+  },
+  {
+    "segment_id": "s-0042",
+    "start_seconds": 1119.74,
+    "end_seconds": 1149.4,
+    "text": "they weren't really called agents back then. It was just straight LLM calls. For the LLM calls, they were like, yeah, I understand, I get it. Yeah, and that's exactly what I've been looking at. It's not the agent to agent case, but if you give the LLM a language grammar and you give it a schema and you give it a goal, it actually is really good at coming up with the language that you've told it to fit things into. And maybe not surprisingly,"
+  },
+  {
+    "segment_id": "s-0043",
+    "start_seconds": 1149.4,
+    "end_seconds": 1177.56,
+    "text": "that it's a language model. So, you know, if you tell it, here's my grammar, here's my schema, give me, do this, then it's actually pretty darn good at that task. So yeah. Have you seen the website 2027.dev? No, no, it's a... Okay, so these folks, I love what they're doing. They're basically eval-ing how agents work with the tools that are out there"
+  },
+  {
+    "segment_id": "s-0044",
+    "start_seconds": 1177.56,
+    "end_seconds": 1207.44,
+    "text": "and how well the agent experience is with all these developer tools. So they'll kind of like see how fast is the agent able to do what you normally do with these tools. So if it's like railway, it's been up and, you know, host a website or if it is, I think they were using like Snowflake, it's like how does the agent work when it's trying to write different queries? And they give, they basically"
+  },
+  {
+    "segment_id": "s-0045",
+    "start_seconds": 1207.44,
+    "end_seconds": 1235.04,
+    "text": "have a whole thing. I think it's like benchmarks.27.dev or around there. Yeah. Relent to my day job for sure. But exactly. Like you gotta have the data. It's like you just don't know until you have the data. It's like, does any of this make anything better? And it's like, I don't know. Like you gotta have the emails, you gotta have the data. And then you can actually know. And then you, there's very easy. See, here's a really cool thing about where we're at with this,"
+  },
+  {
+    "segment_id": "s-0046",
+    "start_seconds": 1235.04,
+    "end_seconds": 1264.08,
+    "text": "is that we actually can get data like never before because when a developer is just like on their CLI or in their IDE doing things, whatever, there was no way as a like vendor to measure, you know, their productivity essentially. Yeah. Now, very easy to measure token usage and how long something takes, right? And so now with evals, we can get really good data on user task, what tools did it use? How long did it take? How many tokens did it take? Where was it successful?"
+  },
+  {
+    "segment_id": "s-0047",
+    "start_seconds": 1264.08,
+    "end_seconds": 1291.92,
+    "text": "And we can now have good data around all that, which is absolutely amazing. So I'm hopeful that all this results in so much better end user developer experience, like agent experience is just saying that, okay, we wanna make users in their agents more productive. And so now we can measure that and see are we actually doing it, which is exciting. Well, the fun part that I've been thinking about a lot"
+  },
+  {
+    "segment_id": "s-0048",
+    "start_seconds": 1291.92,
+    "end_seconds": 1318.76,
+    "text": "is how you can optimize the act of improving the Asian experience. So I always go down these rabbit holes of like, you know, if you're looking at the benchmarks and you're looking at the companies or the products that are very low in the Asian experience score, why is that? And oftentimes it's not as clear as like, oh, just they don't have LLM. Text on their website because right now, mostly everybody has that."
+  },
+  {
+    "segment_id": "s-0049",
+    "start_seconds": 1318.76,
+    "end_seconds": 1345.0,
+    "text": "it's things that you wouldn't necessarily expect and you also have to almost like work with the agent to see why is this hard for you? Where are you getting stuck right now? Totally, yeah. So that's a task that I do a lot is I take a transcript from an eval and I give it to the alum and I say like root cause analysis on where it went wrong. Like why did it choose that tool? Why did it give that tool that parameters?"
+  },
+  {
+    "segment_id": "s-0050",
+    "start_seconds": 1345.0,
+    "end_seconds": 1373.14,
+    "text": "Like, you know, and it can do it. like, which is amazing that you can take a transcript from an e-mail and actually get really good root cause analysis on it. Are you, cause a lot of times where I get frustrated is some of the thinking steps get fiscated from the user. How are you doing it? Is it with open source models or is it through the labs? Like, how can you see some of these thinking steps?"
+  },
+  {
+    "segment_id": "s-0051",
+    "start_seconds": 1373.14,
+    "end_seconds": 1401.54,
+    "text": "Yeah, in my case, I use different agents in different models and that's part of the matrix of things. And so some of the models and agents that I'm using do expose the thinking steps. And so probably in those cases, I'm able to get a better root cause analysis of what happened, but that's not universal. And so it could be that this agent in this model that is not exposing thinking, like I'm not able to solve its problem on why it went"
+  },
+  {
+    "segment_id": "s-0052",
+    "start_seconds": 1401.54,
+    "end_seconds": 1426.46,
+    "text": "wrong, but then you kind of hope that, okay, if I solve it for this one over here, then hopefully I solve it for this one, but that may not be true. And so, like with the evals we can get the data, it doesn't necessarily mean that we're gonna be able to get to the root cause and solve the issues. Like I was just, I've been playing with Jav the last few days and was trying to- You and everybody. Yeah, me and everybody is so fun."
+  },
+  {
+    "segment_id": "s-0053",
+    "start_seconds": 1426.46,
+    "end_seconds": 1453.54,
+    "text": "So probably talk to my Jav and the agent con talk. Cause you know, it's required. But I was trying to like root cause something with Jeff and it took writing hundreds of evils to try to get to root cause of what was going on, which luckily with Jeff, it's you know, they're inexpensive fast and cheap. But yeah, this was like hundreds of actual arms in my evils"
+  },
+  {
+    "segment_id": "s-0054",
+    "start_seconds": 1459.38,
+    "end_seconds": 1487.62,
+    "text": "that I ran many times. So it was, you know, it was burning through, you know, like four cents of Jeff usage. Yeah, the draw, that's good. It's so cheap. Yeah, exactly four cents. Yeah, exactly, that's hundreds. That's a whole lot of Jeff. Right, a whole lot of Jeff. And you know, like the other piece that I wonder about with your job and the agent experience is how much are you eval-ing the harnesses?"
+  },
+  {
+    "segment_id": "s-0055",
+    "start_seconds": 1487.62,
+    "end_seconds": 1514.52,
+    "text": "And how much are you changing harnesses and what you're doing on that level too, because on one level it's the models, but then on the other level, and what folks would call the inner harness, the outer harness, all of that fun stuff. I do almost all of my testing in a harness, and the reason is that in my case, the experience that I'm trying to make better is the user that's in a code assistant in a harness, and so I need the system prompt,"
+  },
+  {
+    "segment_id": "s-0056",
+    "start_seconds": 1514.52,
+    "end_seconds": 1543.4,
+    "text": "I need the loop that the harness has, And so that almost universally my eval testing is in a harness. And then I have to have many arms for different models and different thinking levels. And it's just like the matrix gets massive real quick. But I learned a lesson on this just recently. So we on AWS documentation,"
+  },
+  {
+    "segment_id": "s-0057",
+    "start_seconds": 1543.4,
+    "end_seconds": 1570.72,
+    "text": "we have the marked down versions of the documentation. And we have the agent toolkit for AWS, which is, you know, the agent tools and CLI setups and MCP and all that kind of stuff for AWS. And we wanted to put a line in the markdown documentation that said like, like, hey, you know, we've got this agent toolkit for AWS and you can set it up and it'll make your life easier."
+  },
+  {
+    "segment_id": "s-0058",
+    "start_seconds": 1570.72,
+    "end_seconds": 1595.96,
+    "text": "And so I did some evals on that, like, okay, let's, let's add this to the documentation. And this was not on the live site, but just on like a testing site added this, this like line and, and immediately the agent was like, was like, this is, this looks like an injection attack. And so like, like classified, classified me just like adding this line into the documents. I'm like, okay, I'm glad, I'm glad I didn't add that to production."
+  },
+  {
+    "segment_id": "s-0059",
+    "start_seconds": 1595.96,
+    "end_seconds": 1623.08,
+    "text": "But then I wrote all these evals to be like, is there anything that we can put into the markdown to just like let the user know like, like, hey, you know, you'll have a better experience if you use this agent toolkit for AWS. And so I had, you know, hundreds of different variations of different different markdown snippets to include around these through a small matrix. And this is the important one."
+  },
+  {
+    "segment_id": "s-0060",
+    "start_seconds": 1623.08,
+    "end_seconds": 1649.4,
+    "text": "run it through a small matrix of, of, uh, harnesses and models. And we thought we got to something that, that looked good. And it was like, you know, the evals are like, yep, the agents aren't flagging it is malicious or, um, distracting or an advertisement. And, you know, sometimes the agent surfaces it to the user and says, Hey, you should use the agent toolkit. And so I thought we had something to get. So we rolled it out to production, this little snippet."
+  },
+  {
+    "segment_id": "s-0061",
+    "start_seconds": 1649.4,
+    "end_seconds": 1678.08,
+    "text": "and it was very carefully created to not trigger all the things. We rolled it out and then the next day I get an email that is like, hey, my agent is telling me that the Markdown docs on AWS are trying to do an injection of something potentially malicious. I'm like, rollback, rollback. We didn't know our matrix wasn't big enough. And so we rolled that back and now we're working on"
+  },
+  {
+    "segment_id": "s-0062",
+    "start_seconds": 1678.08,
+    "end_seconds": 1706.12,
+    "text": "Hopefully something that the agents will be more happy with. So yeah, be careful with these sorts of things. 100% because it's like, wow, you're trying to help, you're trying to make it much more valuable. But then if you're not thorough in your evals and that matrix and you're not trying to get as much data as you can before you put it out, you can have these potentially difficult situations."
+  },
+  {
+    "segment_id": "s-0063",
+    "start_seconds": 1706.12,
+    "end_seconds": 1734.1,
+    "text": "And that's just for, again, like I'm looking at agent experience on so many different levels. And as you are, I'm sure with the models, the harnesses, and then you're saying, well, we can also optimize these MCP servers. Yeah. Yeah. Yeah. Exactly. Yeah. There's just so much now. And so it's, uh, yeah, it's, it's hard because the, the matrix or the matrices are getting massive for what you really need to, to test."
+  },
+  {
+    "segment_id": "s-0064",
+    "start_seconds": 1734.1,
+    "end_seconds": 1760.74,
+    "text": "And then there's, you know, all the combinatorial things. It's like, okay, the user has the MCP server. They have the CLI. They have the MCP server, not the CLI. You know, like, like, and then what documentation pages get fetched and like it gets really massive to. So yes, we can get the data and it could cost a lot of money to get the data because, you know, all of these evals in this giant"
+  },
+  {
+    "segment_id": "s-0065",
+    "start_seconds": 1760.74,
+    "end_seconds": 1788.94,
+    "text": "matrix of combinatorial things like that you really should be doing. Um, those are all expensive LLM calls. So yeah. Again, enter Jeff to the rescue. Yeah. I think it's an area that will be really interesting to see. The Jeff helps just on the judge side. So it doesn't necessarily help on like, I still need to like actually execute this task in an agent."
+  },
+  {
+    "segment_id": "s-0066",
+    "start_seconds": 1788.94,
+    "end_seconds": 1818.54,
+    "text": "And until those agents switch over to Jav or something like it is being the loop harness part of it, then we're still gonna use a lot of tokens just to run a test in a harness, like actually have the harness do something. So on the judge side we'll save some by having Jav, take a transcript or whatever and judge it. But on the actual execution side, we're still gonna be in the harness. So still, I saw one pattern."
+  },
+  {
+    "segment_id": "s-0067",
+    "start_seconds": 1818.54,
+    "end_seconds": 1847.78,
+    "text": "actually I was talking to some folks last week and they were saying look we have decided that we're going to expose five tools maximum on our MCP servers. The four are going to be like the most common use cases like you were talking about. And then the fifth is going to be basically a tool search so that it can go a little bit deeper and reach"
+  },
+  {
+    "segment_id": "s-0068",
+    "start_seconds": 1847.78,
+    "end_seconds": 1877.3,
+    "text": "those ones that are not exposed on that first glance. Have you seen any creative ways? I know that Cloudflare got popular, whatever, when they, I think they were calling it. Did they're like code mode? Yeah, yeah, yeah. With the two tools. Yeah, so it's a really interesting time in figuring out like what is the right architecture? And of course it depends. So in the case of AWS, we have something like 16,000 APIs or something like that."
+  },
+  {
+    "segment_id": "s-0069",
+    "start_seconds": 1877.3,
+    "end_seconds": 1905.18,
+    "text": "Like we can't model all those as a tool. Like, like that's just not even a viable option. Like you're there. I think you'd break every agent on the planet if we, if we had 16,000 tools that got returned to you know, when you said list tools on your MCP server. And so that's just not even an option. And so we initially with our MCP server, we had a tool that was like execute API call or something like that, which is, uh, was essentially"
+  },
+  {
+    "segment_id": "s-0070",
+    "start_seconds": 1905.18,
+    "end_seconds": 1933.78,
+    "text": "like, like making a CLI call. it was in the shape of the AWS CLI call. And that worked okay, but what we found through looking at these things was that a lot of times we needed sequential operations. We needed to provide the agent a way to do sequential operations. So we added something like code mode, the code mode tool. And then we actually deprecated the like single call one where like the agent can just write, you know, if it only wants to call one API"
+  },
+  {
+    "segment_id": "s-0071",
+    "start_seconds": 1933.78,
+    "end_seconds": 1960.7,
+    "text": "it can write the Python to do that. And so, yeah, that's where the AWS MTP server is today is, essentially just has just code mode. And that's because the API surface is just too large to cover. But that's where I'm exploring the idea of the DSL with the grammar, with the schema, you know, all those validation with something that's human-reviewable is being a low code mode, code mode."
+  },
+  {
+    "segment_id": "s-0072",
+    "start_seconds": 1960.7,
+    "end_seconds": 1989.26,
+    "text": "So, yeah, so currently exploring that is an alternative, but at least today it's just the MCP server is just code mode. And have you thought about trying to scope down different MCP servers so potentially you just have an MCP server for DynamoDB? And it's really good at that. Yeah. We have looked at that and there is some of that that exists, we have a bunch of, we've got our main MCP server"
+  },
+  {
+    "segment_id": "s-0073",
+    "start_seconds": 1989.26,
+    "end_seconds": 2019.26,
+    "text": "and then we've got all the community or like, like, I don't know, broader ecosystem, MCP servers. And so those are up on the AWS labs, GitHub, and there are more point oriented MCP servers. And so that does exist. I think it's not totally clear, like, should those get rolled in somehow and do like, like provide a search across those? Because part of the challenge is discoverability then. It's like people install the AWS MCP server."
+  },
+  {
+    "segment_id": "s-0074",
+    "start_seconds": 2019.26,
+    "end_seconds": 2046.66,
+    "text": "And then like, then they, I don't know, I think I'd assume that then I've kind of got everything I need, but I don't because then there's these other MCP servers. And so there's, I guess this balance of like ease of use, discoverability, functionality, not, you know, bloating things too much. And, you know, for the people that don't want to use Dynamo, then, but they get the Dynamo tool, like, I don't know. It's like having such a big API service,"
+  },
+  {
+    "segment_id": "s-0075",
+    "start_seconds": 2046.66,
+    "end_seconds": 2074.7,
+    "text": "definitely creates some additional challenges. Yeah, 100%. That's what I was just thinking, like how do you optimize for that? And it really, I haven't, I'm still on the fence on what I think about this idea of we're gonna have the one agent to rule them all and it'll be able to just kind of sprawl its other agents and build the agents on the fly and all that fun stuff."
+  },
+  {
+    "segment_id": "s-0076",
+    "start_seconds": 2074.7,
+    "end_seconds": 2103.54,
+    "text": "or we're gonna have very like domain specific agents and we're gonna have thousands of them or hundreds of thousands of them, right? And it's probably not one or the other. It's some kind of a blur in between. But when I think about it's like monolith versus microservices is like, both, yes, no, it depends. Yeah, it's like monolith or microservices. Yes, that's, I want them."
+  },
+  {
+    "segment_id": "s-0077",
+    "start_seconds": 2103.54,
+    "end_seconds": 2132.74,
+    "text": "So, but I do think like in a way when you tell me about some of these difficulties of the MCP server and having a gigantic AWS MCP server, then if you created smaller MCP servers for the different services, you would want those domain specific agents so that they could have those specific MCP servers that you could call that agent and it would know, like, all right, cool."
+  },
+  {
+    "segment_id": "s-0078",
+    "start_seconds": 2132.74,
+    "end_seconds": 2161.82,
+    "text": "I'm just like the DynamoDB agent and I know exactly what I need to do here. Yeah, yeah. Yeah, at least today our MCP server is not itself an agent but if it did become one and then we exposed like agent as tool, then yeah, then maybe there's some other things that we could do there. Also, a year ago, Tool Search Tool was not something that even existed. And so now with Tool Search existing,"
+  },
+  {
+    "segment_id": "s-0079",
+    "start_seconds": 2161.82,
+    "end_seconds": 2189.78,
+    "text": "that opens up some additional opportunities. And then maybe like you're saying, like having a tool search built into the MCP server and can we make that work? And then the skills and skills over MCP or maybe another piece to this as well is like, like maybe we use skills as the orchestrator to then be able to know what tools to call or something like that. And so, so yeah, I think we're,"
+  },
+  {
+    "segment_id": "s-0080",
+    "start_seconds": 2189.78,
+    "end_seconds": 2214.56,
+    "text": "there's still a lot to kind of figure out what the most optimal patterns are around all of this. And so it's fun to do all the exploration and figure out like, what's actually going to work for our users and make their experience great. And how can we evolve it and get data? And yeah, there's just so much fun stuff. And not get prompt injection warnings when you do. Yeah. Yeah. Try not to break things in the process. Yeah."
+  },
+  {
+    "segment_id": "s-0081",
+    "start_seconds": 2215.12,
+    "end_seconds": 2243.58,
+    "text": "There was a big one that was kind of like a reoccurring theme that I've seen across these MCP dead summits that we've been doing. And that's how folks are doing off with their MCP servers. Have you thought about that? Because I imagine, like you were saying, you don't want to be so willy-nilly with your AWS account that can get out of hand really quickly if you give it the wrong permissions and the wrong authentication to the wrong people. Yeah."
+  },
+  {
+    "segment_id": "s-0082",
+    "start_seconds": 2244.3,
+    "end_seconds": 2274.24,
+    "text": "Yeah, definitely is an area that we're trying to figure out what the most optimal options are. The AWS MCP server does support OAuth now, which is cool, because you OAuth, you, you give it an account that specifically has the permissions to be able to be like used from MCP. And then you, you likely experienced AWS user would then lock down that particular role to only be able"
+  },
+  {
+    "segment_id": "s-0083",
+    "start_seconds": 2274.24,
+    "end_seconds": 2301.14,
+    "text": "to do certain things. It's like, maybe I only want read operations and so with IAM and AWS, you can actually set that up and be like, okay, the account that I'm giving the MCP OOS server can only do these things. And that would be, you know, a good approach to generally to lock things down. When you've OOS from an agent, there is no concept in agents of like multiple profiles, which maybe that's a future need on"
+  },
+  {
+    "segment_id": "s-0084",
+    "start_seconds": 2301.18,
+    "end_seconds": 2328.9,
+    "text": "MCP. But that's one of the challenges is that most of the time when you're working with AWS, you've got different profiles and you know, this profile, you know, it can do this and this profile can do these other things. And from the AWS CLI, you can toggle those profiles. And so we do have a way, whether you're using AWS CLI to toggle profile, or there's a proxy that we have for the AWS MCP server that allows that supports"
+  },
+  {
+    "segment_id": "s-0085",
+    "start_seconds": 2328.9,
+    "end_seconds": 2358.56,
+    "text": "multiple profiles. So when you're using OAuth, you can't toggle profiles. But when you're using this like SIGV4 proxy for the AWS MTP server, you can actually toggle profiles. And so it, yeah, it's a complex space when you get into auth and security, but I think we're trying to make sure that we're supporting the different use cases of, you know, what users need and how they work with AWS and how they want to maintain security and least, least privilege and all those sorts of things. So."
+  },
+  {
+    "segment_id": "s-0086",
+    "start_seconds": 2358.56,
+    "end_seconds": 2380.52,
+    "text": "Well, and sometimes it's just knowing that I can do that. Like you said, I didn't realize I could do it and I didn't read the documentation or I didn't see that update. And then I hear you stay at now and I go, oh, sweet. Well, I'm going to do it that way. Like I didn't realize I could do it with the CLI. Yeah. Yeah. Yeah. And there's skills that point to the CLI and tell it to use the CLI."
+  },
+  {
+    "segment_id": "s-0087",
+    "start_seconds": 2380.52,
+    "end_seconds": 2404.52,
+    "text": "And so, yeah, it's part of the challenge is that because things are moving fast, we have lots of different ways to do things. And so what is best for every user, it depends, you know, and some users like they just want the easier route. And so MCP will off like, like great, like other, other people's want to, you know, manage their skills manually and use the AWS CLI and use profiles and, you know, have a more, more, you know, advanced use case."
+  },
+  {
+    "segment_id": "s-0088",
+    "start_seconds": 2404.52,
+    "end_seconds": 2429.52,
+    "text": "And so, so yeah, as usual with complex things, it depends. And so we're trying to help, you know, make sure that people have what they need and can do things in the ways that work for them. Well, James, dude, I'm so excited for your talk and I appreciate you coming on here explaining it to me for anybody that's listening You can come and see James give his talk at agent con North America in San Jose October 22nd and 23rd"
+  },
+  {
+    "segment_id": "s-0089",
+    "start_seconds": 2429.52,
+    "end_seconds": 2459.5,
+    "text": "And as a special gift, I realized I've got a discount code for you. You can use the discount code community 25 for 25% off and the ticket prices are gonna go up at the end of this month September So go ahead and get that before they go up. Yeah. Oh, and I said, do a shout out. So I'm on the technical committee for the agent AI foundation and we've got these work groups, which are great ways to get involved into kind of specific topic areas."
+  },
+  {
+    "segment_id": "s-0090",
+    "start_seconds": 2459.5,
+    "end_seconds": 2488.68,
+    "text": "And we're going to in San Jose at agent con beginning the work groups together. And you know, I'm looking forward through the technical committee to be interacting with the work group members. So yeah, like shout out, like join work groups, like they're public on the Agent2KI Foundation website now. Join the work groups, join us at AgentCon. We'll get some good in-person time there to talk through all the fun areas that agents relate to, like the things we've just been talking about. Yeah."
+  },
+  {
+    "segment_id": "s-0091",
+    "start_seconds": 2488.68,
+    "end_seconds": 2493.24,
+    "text": "Excellent, dude. Well, I look forward to it. I'll see you soon. Sounds good. Thank you."
+  }
+]

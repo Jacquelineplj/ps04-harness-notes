@@ -1,0 +1,55 @@
+{
+  "stage": "fetch_podcasts",
+  "status": "completed",
+  "run_dir": "runs/20261014T014037Z-second-live",
+  "input_count": 6,
+  "output_count": 11,
+  "started_at": "2026-10-14T01:40:39Z",
+  "finished_at": "2026-10-14T01:40:46Z",
+  "elapsed_seconds": 7.0,
+  "tools": [
+    "httpx",
+    "feedparser"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "sources": {
+      "latent-space-podcast": {
+        "status": "ok",
+        "candidates": 3
+      },
+      "practical-ai-podcast": {
+        "status": "ok",
+        "candidates": 2
+      },
+      "mlops-community-podcast": {
+        "status": "ok",
+        "candidates": 3
+      },
+      "se-daily-podcast": {
+        "status": "ok",
+        "candidates": 1
+      },
+      "pragmatic-engineer-podcast": {
+        "status": "ok",
+        "candidates": 1
+      },
+      "dwarkesh-podcast": {
+        "status": "ok",
+        "candidates": 1
+      }
+    },
+    "counters": {
+      "entries_seen": 1429,
+      "skipped_no_audio": 2,
+      "skipped_beyond_lookback": 0,
+      "skipped_too_long": 1,
+      "skipped_keyword_filter": 12
+    },
+    "failed_sources": 0,
+    "simulated": false
+  }
+}

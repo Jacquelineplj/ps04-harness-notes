@@ -1,0 +1,26 @@
+{
+  "run_id": "20261013T212217Z",
+  "started_at": "2026-10-13T21:22:17Z",
+  "as_of_date": "2026-10-13",
+  "mode": "live",
+  "previous_run_id": "20261013T204414Z",
+  "label": null,
+  "replay_of": null,
+  "inject_file": null,
+  "simulated_failures": null,
+  "policy_sha256": "103dee64a10d9c26e9a7166421942220df35f85084838f23ce590f4683576d2c",
+  "prompts_sha256": {
+    "create_briefs.md": "697a95ab3c8a6cb1c50f6ffb7b38f7ffd9ef7dd2404728c4f58d8ff7fff6ada4",
+    "select_items.md": "1b129461cb116683cb7f09d17a5cd6f9ac7500b66452b708d3dba4e3ae7b68c7",
+    "write_articles.md": "e72ee5082ebbedc3fae980d88c3933d2764972ce09936b369ac7d9c92f904650",
+    "write_video_scripts.md": "c70bd8233d7c86097c641d9ce3aa851b9d7deb549ea21a4c8aedef744d67bcbe"
+  },
+  "sources_sha256": "bca3041a8746b386ef4bc535578b079457f14c46160a72e92625d57a32644f7c",
+  "tool_versions": {
+    "python": "3.12.8",
+    "yt-dlp": "2026.08.19",
+    "claude_cli": "2.1.293 (Claude Code)",
+    "git_commit": null
+  },
+  "llm_provider": "claude-cli"
+}

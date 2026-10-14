@@ -1,0 +1,72 @@
+{
+  "stage": "create_briefs",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261014T014037Z-second-live",
+  "input_count": 73,
+  "output_count": 3,
+  "started_at": "2026-10-14T01:47:39Z",
+  "finished_at": "2026-10-14T01:53:03Z",
+  "elapsed_seconds": 324.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-sonnet-5",
+      "calls": 6,
+      "input_tokens": 223603,
+      "output_tokens": 11811,
+      "cost_usd": 0.9678507999999999,
+      "cost_is_estimate": true
+    },
+    {
+      "provider": "claude-cli",
+      "model": "claude-opus-5",
+      "calls": 1,
+      "input_tokens": 181776,
+      "output_tokens": 11893,
+      "cost_usd": 2.115075,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 3.082926,
+  "cost_is_estimate": true,
+  "errors": [
+    {
+      "message": "02-c3: quote not found in feed:6c73e7b163f057af: 'related experience yields no stable transfer: it does not improve either tool pr'",
+      "code": "validation"
+    }
+  ],
+  "extra": {
+    "validation": {
+      "quotes_exact": 24,
+      "quotes_repaired": 1,
+      "evidence_dropped": 1,
+      "claims_dropped": 1,
+      "version_fixed": 0
+    },
+    "attempts": 1,
+    "accepted_items": 27,
+    "publishers": 13,
+    "missing_kinds": [],
+    "evidence_items_used": [
+      "feed:1599ed0f74596729",
+      "feed:2dc5d7317eb84740",
+      "feed:414c680e0dfe5f85",
+      "feed:6dfb9f1cb365f38e",
+      "feed:7e289d45dfc4cd8f",
+      "feed:8df33797c8dcce10",
+      "feed:9d93024f8db90c5c",
+      "feed:bd1136d0fcfd6f13",
+      "feed:ee6df3f002868714",
+      "feed:f52921adc97fb1dc",
+      "podcast:0c2623edf3feabfb",
+      "podcast:8d8927fb57f7e934",
+      "podcast:93a1c773317f1e28",
+      "youtube:-a2oTS9J67U",
+      "youtube:3ZlQk4-knWM",
+      "youtube:U7ZYBCcdJPg"
+    ]
+  }
+}

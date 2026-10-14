@@ -1,0 +1,28 @@
+{
+  "mode": "live",
+  "replay_of": null,
+  "simulated_failure": "podcasts",
+  "collectors": {
+    "feeds": {
+      "exit_code": 0,
+      "candidates": 49,
+      "status": "ok",
+      "simulated": false
+    },
+    "youtube": {
+      "exit_code": 0,
+      "candidates": 14,
+      "status": "ok",
+      "simulated": false
+    },
+    "podcasts": {
+      "exit_code": 1,
+      "candidates": 3,
+      "status": "failed",
+      "simulated": true
+    }
+  },
+  "injected": null,
+  "merged_candidates": 66,
+  "invalid_lines": 0
+}

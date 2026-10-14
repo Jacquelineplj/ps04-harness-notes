@@ -1,0 +1,152 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 1.52,
+    "end_seconds": 29.44,
+    "text": "Hello, I'm very excited to give this talk today at AI engineer NYC 2026. Um, this is a collaboration between Spannic and Neo4j. Spannic I am the founder of. It was founded in June 2026. Neo4j is a graph database in based in Sweden Malmu and um special thanks here at Zam who is the collaborator on Neo4j's side. This"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 27.68,
+    "end_seconds": 56.8,
+    "text": "is about every building is a balance sheet and a spatial memory for real world assets. The largest asset class on earth is real estate and it's about 400 trillion globally in size and um this is more than global equities depth on gold combined. If we look on the right you see a lot of squares each square is about 1 trillion uh in worth. And you can see the residential part is the"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 54.24,
+    "end_seconds": 80.0,
+    "text": "biggest. It's around 300 trillion. Then you can see the commercials around 60 trillion and then agriculture around 50 trillion. And uh today we will focus more on the commercial side. But all of this um real estate is impacted by essentially a gap. And the gap is that our financial books uh where we have"
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 76.4,
+    "end_seconds": 106.32,
+    "text": "lending and insuranceances and um mortgages all of this is bookkept um and this is updated every quarter. But the actual underlying assets which is the real estate that they are based on um they're not updated every quarter. In fact, they're only updated maybe every few years, maybe just before the financial instrument for the for the"
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 102.4,
+    "end_seconds": 131.84,
+    "text": "real estate is being created. And also maybe again once it needs a modification or a new financial instrument on top of it, maybe in in year five is a re realistic time frame. But between year 0 and year five, you really don't have an update on the building state or the real estate state. So that means that while"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 129.36,
+    "end_seconds": 158.16,
+    "text": "the book closes so many times, there's really a black box or maybe something that is based on some pictures and some PDFs about the building. And this is a real gap. Um and uh you can see it. So according to crawl um they did a research with 1500 properties essentially 70% of the buildings are underinsured and uh why exactly that is"
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 155.44,
+    "end_seconds": 182.72,
+    "text": "um I don't exactly know it didn't conclude but my read is that the the record is quite old and it's maybe also not as detailed so the insurance is not very highly specified and really fulfilling the needs of the real estate and >> [snorts] >> uh this impact packs around 4 trillion US commercial mortgages and um yeah every one of them rests on the building."
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 180.48,
+    "end_seconds": 209.52,
+    "text": "Uh so the question what would it take to make a building as queryable as a ledger and a ledger here can be give you an answer in milliseconds but a building today is giving you only an answer after a site visit and even then maybe in like some nodes PDFs very dispersed and intransparent not unified um so this is where the idea comes in where every walk becomes a memory and uh"
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 207.28,
+    "end_seconds": 234.64,
+    "text": "how this works is you just take a offtheshelf sensor. You walk the space and you map it and you can see it up there actually being created. That was me going through a conference hall and the whole walk or the whole scan here took literally just walking through it and a minute later you had the scan. Um so you walk through the property whoever that is property management etc can be equipped with it. They map it and"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 232.53,
+    "end_seconds": 260.64,
+    "text": "[clears throat] as they map it you get all the assets in the building being recognized and stored in a database which is building below. This is the graph database and um so this is then has a semantic meaning which means we can really understand the space and as we walk it again um both walks are kept so walk on Monday and a Monday next year or in the next quarter and these are now"
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 258.08,
+    "end_seconds": 287.44,
+    "text": "aligned on a time axis. So we have a space, we know what's in the space and we know the evolution of the space according to every every time we walk it and we measure it. And this is all kept as a graph. Graph have a bunch of technical benefits, but one of them is they're extremely flexible in what information you want to gather and how you want to connect it. And so this can be hyper personal personalized to each"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 283.68,
+    "end_seconds": 312.88,
+    "text": "asset to each to each property. Um yeah and uh so now what is it that a record has to answer? So these are not vision questions they are ledger questions. You really want to know in a property or in the real estate what has changed. So two walks of one space compare object by object and and surrounding by surrounding. You also want to know when it has changed. So"
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 311.04,
+    "end_seconds": 340.0,
+    "text": "every observation carries and captures where it came from. And you also want to know who needs to know information or deltas that have happened that we have now observed. So when you find something with evidence, for example, structural damages or maybe for fire insurance that fire extinguishers are um off of um yeah, they have expired then you need to"
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 337.6,
+    "end_seconds": 365.04,
+    "text": "know that and you need to be informed and counteract on it or maybe the insurance can know and they can in increase their premiums by the performance of the upkeep of the property. So, hyper individualized insurance. Um, and here's really how it looks. So, this is just me walking through a kitchen captured twice. Once on the left and once on the right. And you can see"
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 362.16,
+    "end_seconds": 391.2,
+    "text": "you just walk the space. You directly get the map. And um, and as you walk the same space, they're being recognized as the same space. And you can align them between the same space in a time period A and a time period B. and you have a timeline. And once you have a map, you can now use it as an AI ready asset, which means that you can chat with it, you can talk"
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 389.12,
+    "end_seconds": 416.96,
+    "text": "with it, you can ask questions against it. For example, here I ask where can I heat myself and in the map the answer is being given to the radiator or is there a glass or mug to drink from in a kitchen? It it points you to the glasses and mugs in the kitchen. Um so this is very powerful because it makes the map from pixels into something we can work with. Um and now also the"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 415.04,
+    "end_seconds": 444.88,
+    "text": "change detection. So this were two passes we made of this kitchen or of this space and we can really now connect these two and ask what is the delta between them? What has changed in this environment? And in this case um these three chairs in the middle have been displaced. And you can see when you chat with the with the asset with your data, you can actually identify the delta and get the ground source reference to the actual capture. So you have proof of it"
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 442.88,
+    "end_seconds": 471.68,
+    "text": "changing. Um so what does this all mean? It means that you have now a building that is an AI ready data asset. So there's one record of what it what is there and you can connect it to any downstream task. So on the left we have this conference scan that I made and then you can now check over time any repair that needs to be happening or some maintenance or some"
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 468.32,
+    "end_seconds": 497.2,
+    "text": "compliance checks or insurance or maybe interior design changes or maybe even you have some robotics that you want to place there and it's like a digital twin for it to use. So let's check the insurance. Um when you walk the building when the policy starts you have like a first initial state of the property and on based on this you can do a hyperpersonalized insurance policy and"
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 494.4,
+    "end_seconds": 522.24,
+    "text": "as you walk it again at renewal you now see the delta and upkeep and so on and the insurance pol insurance insurance company can actually measure the performance of the property for relevant fact against its policies and give a very hyperpersonalized insurance policy. which means a very efficient premium um to ensure such property and insure it in the right way."
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 520.24,
+    "end_seconds": 548.08,
+    "text": "Uh yeah and these are the numbers behind that. So the business case here for the insurance for example would be um that the insurance pays for what it can verify and uh so currently what insurers know is that one in three commercial buildings are on the books with the wrong construction class. uh 35 to 60% of the buildings uh in a specific case for example for the hurricane premium"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 545.6,
+    "end_seconds": 573.6,
+    "text": "can actually get a deduction of of such percentage if it's a certified building certified building means it has certain compliance standards and that you can check from such a AI digital um asset of the of the asset and you also see that 70 73% of the insurers agree that they claim fewer uh claims for hurricane"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 570.56,
+    "end_seconds": 597.76,
+    "text": "damage if they have been checked and certified against the building. And just this is just one such certification you can do automatically with AI plus a lot of other certification in inside of the building that qualifies maybe for such programs. But yeah, all three of them essentially depend on somebody knowing the building and and the state of the building. Um"
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 596.0,
+    "end_seconds": 625.12,
+    "text": "and that's it. That's essentially the talk. I think that the real estate class is very big and it really needs to be transparent and there's a huge inefficiency happening today that I think with the new insights of what AI is capable to do and we can make much more transparent and create a really new hyper customized market around around assets. Thank you very much. Um, if you want to find out"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 623.12,
+    "end_seconds": 629.76,
+    "text": "more, please visit my website spannic.com. And thank you for your attention."
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "stage": "check_content",
+  "status": "completed",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 3,
+  "output_count": 1,
+  "started_at": "2026-10-13T21:35:40Z",
+  "finished_at": "2026-10-13T21:35:40Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "python"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "passed": false,
+    "errors": 1,
+    "warnings": 9,
+    "review_id": "2e2b11a74519923747939611a0aeef1c1ad92e44f9fef9e3a14c1904449fc8c0"
+  }
+}

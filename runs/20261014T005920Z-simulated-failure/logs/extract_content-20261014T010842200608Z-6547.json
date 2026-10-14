@@ -1,0 +1,77 @@
+{
+  "stage": "extract_content",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261014T005920Z-simulated-failure",
+  "input_count": 66,
+  "output_count": 59,
+  "started_at": "2026-10-14T01:00:29Z",
+  "finished_at": "2026-10-14T01:08:42Z",
+  "elapsed_seconds": 493.0,
+  "tools": [
+    "httpx",
+    "trafilatura",
+    "yt-dlp",
+    "faster-whisper (small)",
+    "pymupdf"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [
+    {
+      "message": "unprocessable: insufficient_text: 789 chars via html",
+      "item_id": "feed:1ce341749cd1d883",
+      "url": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 448 chars via html",
+      "item_id": "feed:e6734b2c11074d76",
+      "url": "https://simonwillison.net/2026/Oct/13/web-edit"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 443 chars via html",
+      "item_id": "feed:04d6208c687016cf",
+      "url": "https://latent.space/p/nyc2026"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/higgsfield-longer-videos-voice: HTTP 403 for https://openai.com/index/higgsfield-longer-videos-voice",
+      "item_id": "feed:8d45898e533e591d",
+      "url": "https://openai.com/index/higgsfield-longer-videos-voice"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/sophos: HTTP 403 for https://openai.com/index/sophos",
+      "item_id": "feed:570fe3204556675e",
+      "url": "https://openai.com/index/sophos"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/asana-browser-agent: HTTP 403 for https://openai.com/index/asana-browser-agent",
+      "item_id": "feed:9bf93d58cc35db99",
+      "url": "https://openai.com/index/asana-browser-agent"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/oracle: HTTP 403 for https://openai.com/index/oracle",
+      "item_id": "feed:db7b9e6fe248e314",
+      "url": "https://openai.com/index/oracle"
+    }
+  ],
+  "extra": {
+    "counters": {
+      "reused": 16,
+      "fetched": 50,
+      "caption_items": 0,
+      "whisper_items": 1,
+      "media_downloaded": 1,
+      "transcribed_seconds": 3600.0,
+      "unprocessable": 3,
+      "failed": 4,
+      "thin": 3,
+      "malformed_lines": 0,
+      "duplicates": 0
+    },
+    "mode": "live",
+    "retain_media": true,
+    "whisper_model": "small",
+    "max_transcribe_seconds": 3600,
+    "cost_basis": "local compute only"
+  }
+}

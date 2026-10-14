@@ -1,0 +1,21 @@
+{
+  "stage": "run",
+  "status": "completed",
+  "run_dir": "runs/20261013T213636Z-podcasts-expanded",
+  "input_count": null,
+  "output_count": null,
+  "started_at": "2026-10-13T21:36:36Z",
+  "finished_at": "2026-10-13T22:57:10Z",
+  "elapsed_seconds": 4834.0,
+  "tools": [],
+  "models": [],
+  "cost_usd": null,
+  "cost_is_estimate": null,
+  "errors": [],
+  "extra": {
+    "mode": "live",
+    "exit_code": 0,
+    "collect_exit": 0,
+    "series_exit": 0
+  }
+}

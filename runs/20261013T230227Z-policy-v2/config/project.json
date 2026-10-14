@@ -1,0 +1,30 @@
+{
+  "publication_name": "Harness Notes",
+  "topic": "Engineering the harness around AI agents: context management, tool protocols (including MCP), sandboxing and permissions, memory, evaluation and benchmarks, multi-agent orchestration, and observability",
+  "audience": "Engineers and technical leads building agent products or agent infrastructure (coding agents, computer-use agents, agent SDKs and frameworks, MCP servers). They already understand tool calling, context windows, evals, and sandboxing basics; they want evidence-based reading on what changed and what to do about it.",
+  "central_question": "What changed this month in how AI agent harnesses are built, evaluated, and operated, and which of those changes should practitioners act on?",
+  "language": "en",
+  "voice": "Skeptical, evidence-first, practitioner-to-practitioner. Separates announcements from measured results, labels interpretation as interpretation, names uncertainty plainly, and never manufactures disagreement.",
+  "series": {
+    "01": "What changed, and which developments matter most to this audience?",
+    "02": "Which claims withstand scrutiny, and where are the evidence or interpretations in tension?",
+    "03": "What do these developments imply for the audience, and what should they watch next?"
+  },
+  "scope": {
+    "includes": [
+      "harness design: agent loops, context management, compaction, memory, planning and sub-agent orchestration",
+      "tool interfaces and protocols: MCP, tool search, function calling conventions, computer use",
+      "safety rails in the harness: sandboxing, permissions, approvals, guardrails, prompt-injection defenses",
+      "evaluation of agents: benchmarks, eval harnesses, trajectory analysis, cost and latency measurement",
+      "operating agents in production: observability, tracing, reliability, cost control, deployment patterns",
+      "research results that change how harnesses should be built"
+    ],
+    "excludes": [
+      "model releases or benchmark scores with no harness or integration implication",
+      "consumer product news, funding and hiring news, conference marketing",
+      "generic prompt-engineering tips, beginner tutorials, listicles",
+      "policy and regulation unless it changes what a harness must enforce"
+    ]
+  },
+  "return_reason": "Each edition is a dated, evidence-linked digest: readers can see exactly which sources changed the picture since the last edition, which vendor claims held up, and what to watch next."
+}

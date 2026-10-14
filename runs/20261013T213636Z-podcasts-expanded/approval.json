@@ -1,0 +1,7 @@
+{
+  "review_id": "c67a0c15e80c4821f91956c5066a8f671598c9fbe34f64006a57d0795825caef",
+  "decision": "approve",
+  "reviewer": "Lingjie Pan",
+  "reviewed_at": "2026-10-14T00:53:35Z",
+  "notes": "Approved after human review recorded in editorial_review.md. Corrections applied before approval (see corrections.jsonl): attribution of the harness experiment to Naresh Jain instead of Martin Fowler in briefs, article 02 and script 02; removed a reference to a non-existent previous edition in article 03; trimmed articles 02/03 and script 02 to the length targets without removing claims. Remaining warnings (normalised PDF quotes, narration at the upper bound) were reviewed and accepted."
+}

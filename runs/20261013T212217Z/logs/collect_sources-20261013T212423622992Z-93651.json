@@ -1,0 +1,32 @@
+{
+  "stage": "collect_sources",
+  "status": "completed",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 69,
+  "output_count": 59,
+  "started_at": "2026-10-13T21:22:18Z",
+  "finished_at": "2026-10-13T21:24:23Z",
+  "elapsed_seconds": 125.0,
+  "tools": [
+    "jq",
+    "bash"
+  ],
+  "models": [],
+  "cost_usd": null,
+  "cost_is_estimate": null,
+  "errors": [],
+  "extra": {
+    "exit_codes": {
+      "feeds": 0,
+      "youtube": 0,
+      "podcasts": 0,
+      "extract": 0,
+      "upsert": 0,
+      "list": 0,
+      "filter": 0
+    },
+    "merged_candidates": 69,
+    "invalid_lines": 0,
+    "mode": "live"
+  }
+}

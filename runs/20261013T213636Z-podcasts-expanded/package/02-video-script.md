@@ -1,0 +1,124 @@
+# Which Claims Held Up: Harnesses, Judges, and the Gap Between Passing and Working
+
+Runtime target: about 4 minutes 15 seconds (roughly 620 narration words)
+
+---
+
+**1. Hook**
+
+Visual: Dark slide, single line of white text. Behind it, a slow b-roll loop of a terminal printing green "PASSED" lines.
+
+On-screen text: Passing tests certify work that did not happen
+
+Narration: The strongest agent results published this month are negative or conditional, and they all point at the same uncomfortable thing: our standard success signals — passing tests, clean tool calls, one good run — routinely certify work that did not actually happen. Three measured results landed within days of each other; read together they settle the argument about whether harness machinery is worth its cost. The real conflicts are elsewhere: LLM judges, and whether agent self-improvement transfers at all.
+
+---
+
+**2. Naresh Jain's harness experiment**
+
+Visual: Quote card — "Thoughtworks, 'Are Harnesses Worth the Cost?', 13 October 2026." Below it, a two-bar chart labelled "Frontier model: tokens" with a short bar and a bar ten times longer.
+
+On-screen text: 10.5× tokens. 7× cost. Same 10/10.
+
+Narration: Naresh Jain published a harness experiment on martinfowler.com on the thirteenth of October. He had a coding agent build the same API service twice — once with a behavioral harness of architectural contracts and deterministic test feedback, once without. For the frontier model, the harness burned about ten and a half times as many tokens, took nearly three times as long, and cost about seven times more — and both conditions passed all ten runs. [1] He reports being surprised; this contradicted his starting hypothesis. [1]
+
+---
+
+**3. The same harness on a cheaper model**
+
+Visual: Same chart style, now labelled "Cost-optimized model: accepted runs." Bar moves from 3 to 10. Caption: "33% lower cost per run than unharnessed frontier."
+
+On-screen text: 3 of 10 → 10 of 10
+
+Narration: Then the same harness on a cost-optimized model took it from three of ten accepted runs to ten of ten — at thirty-three percent lower cost per run than the unharnessed frontier model. [2] Same machinery, opposite verdict. Worth noting: this is ten paired runs on one greenfield Java service with an unusually detailed brief, and Jain says so himself; it also cannot separate the guides from the sensors, because both were added together. [2]
+
+---
+
+**4. ThinkingBox: pass@1 versus every attempt**
+
+Visual: Side-by-side bars. Kimi-K3: 93.89% at least once / 13.41% all twenty. Claude Opus 5: lower first bar / 47.53% all twenty. Source strip: "ThinkingBox via Hugging Face, 3 October 2026."
+
+On-screen text: Two leaderboards, two different winners
+
+Narration: ThinkingBox attacks the same gap from the measurement side. It reports that single-attempt accuracy and every-attempt reliability rank models differently: Kimi-K3 solves nearly ninety-four percent of tasks at least once, but only thirteen percent on all twenty attempts, while Claude Opus 5 solves fewer at least once and forty-seven percent consistently. [3] Sharper still — Claude Opus 5.5 scored higher on average than Opus 5, and passed exactly the same two hundred and forty-one tasks on all twenty attempts. [4] Caveat: these tasks are synthetic reconstructions and the costs are list-price estimates. [3]
+
+---
+
+**5. The pre-registered negative**
+
+Visual: Clean scoreboard graphic. "Independent retry: 17/25. Snapshot branching: 6/25." Footer: "arXiv, 9 October 2026 — pre-registered."
+
+On-screen text: Retry 17/25. Snapshots 6/25.
+
+Narration: The Daytona snapshot paper is the cleanest of the three, because it was pre-registered. The authors expected that branching from promising sandbox snapshots would beat plain independent retry under a matched token budget. On their harder Terminal-Bench subset, retry solved seventeen of twenty-five task-seeds and snapshot search solved six. [5] Perfect state restoration was never the bottleneck. Selection was.
+
+---
+
+**6. The disagreement that dissolves**
+
+Visual: Three source logos converging into one text box reading: "Does it supply information the model or repo lacks?"
+
+On-screen text: One conditional, not three verdicts
+
+Narration: Read separately, those look like three competing verdicts on harness machinery. We think they are one conditional: added machinery pays when it supplies information the model or the repository does not already have, and costs when it does not. [9] Jain says a version of this himself — what changes with model capability is not whether independent sensors are needed, but when they run. The snapshot paper draws the same line from the other side: full-machine restoration matters most when progress lives outside the repository, in databases, packages, or running services. [9] That synthesis is ours, not any single source's.
+
+---
+
+**7. The judge problem**
+
+Visual: Quote card — "Arize, 12 October 2026: 'The LLM judge looked like the easy part. It was wrong a lot of the time.'" Beside it, `page_down` versus `PageDownTool` in monospace.
+
+On-screen text: Agreement went up. Validity did not.
+
+Narration: Here is where sources conflict. Arize re-ran a widely circulated tone experiment and found the original confounded tone with brevity instructions. Delete only the brevity words, and Opus's apparent fifty-five percent saving falls to fifteen, and GPT-4o's threatening saving vanishes entirely. [6] Then two independent Arize posts converge on the judge being the weak link: one says the judge was wrong a lot of the time because one tool is named two ways, the other cites a study where a rude wrapper shifted a judge's severity, not its judgement. [7] Arize sells eval tooling — read the incentive; the method is checkable regardless.
+
+---
+
+**8. Memory's missing evidence**
+
+Visual: Slide: "MC-EvoBench, arXiv, 9 October 2026 — built to audit self-improvement." Below: "No stable transfer. One seed. All intervals include zero."
+
+On-screen text: No stable transfer
+
+Narration: And against the industry's confidence in memory-driven agents: MC-EvoBench was built specifically to audit experience-driven self-improvement, and reports that related experience yielded no stable transfer — it improved neither tool probe, its one small gain hinged on a single seed, and all confidence intervals included zero. [8] But that rests on five seeds per probe with wide intervals, and the authors note that most runs ended before later capabilities were ever observed. [8] The absence of transfer may be partly an absence of measurement.
+
+---
+
+**9. Takeaway and limits**
+
+Visual: Three-line checklist slide, then end card with the article title and "Sources linked in description."
+
+On-screen text: Measure every-attempt. Audit your judge.
+
+Narration: So: stop treating a single passing run as evidence. If your agent touches real records, measure every-attempt reliability rather than pass@k. [3] If you are adding harness machinery, ask what information it supplies that the model lacks, and be ready for the answer "none" on a frontier model. [1] And before you optimise against an LLM judge, read its decisions against the traces. [7] Honest limitation: none of this has been independently replicated, and no enterprise operator has reported these effects at production scale. Full article and every source is linked in the description.
+
+---
+
+Description: A skeptical read of this month's agent-harness evidence — Naresh Jain's harness experiment, ThinkingBox's reliability split, the pre-registered snapshot result, Arize on LLM judges, and MC-EvoBench on self-improvement — and why the apparent disagreement about harness cost is really one conditional. Read the full article for the complete argument and caveats; all sources are linked below.
+
+---
+*Estimated runtime: 5.3 minutes at 150 words per minute. As of 2026-10-13. AI-assisted script from reviewed sources; the presenter may be an AI avatar.*
+
+## Sources
+
+- **[1]** (reported fact) Naresh Jain (writing on martinfowler.com) reports that a behavioral harness made no observable difference to a frontier model's acceptance rate (10/10 either way) while using about 10.5 times as many tokens and costing about 7 times more.
+  - thoughtworks, *Are Harnesses Worth the Cost?* (2026-10-13): [https://martinfowler.com/articles/are-harnesses-worth-the-cost.html](https://martinfowler.com/articles/are-harnesses-worth-the-cost.html) — "For GPT-6 Sol, the harness used about 10.5 times as many tokens, took nearly 3 times as long, and cost about 7 times more, yet both conditions succeeded in all 10 runs."
+- **[2]** (reported fact) The same experiment found the harness took a cost-optimized model from 3 of 10 accepted runs to 10 of 10, at 33% lower cost per run than the unharnessed frontier model.
+  - thoughtworks, *Are Harnesses Worth the Cost?* (2026-10-13): [https://martinfowler.com/articles/are-harnesses-worth-the-cost.html](https://martinfowler.com/articles/are-harnesses-worth-the-cost.html) — "But a cost-optimized model, GPT-6 Luna, succeeded in only 3 of 10 unharnessed runs and all 10 with the harness. While adding the harness increased token usage and runtime for Luna, the harnessed Luna runs achieved the same 10-for-10 reliability as GPT-6 Sol while costing 33% less per run ($0.273 vs $0.406)."
+- **[3]** (reported fact) ThinkingBox reports that single-attempt accuracy and every-attempt reliability rank models differently: Kimi-K3 solves 93.89% of tasks at least once but only 13.41% on all 20 attempts, while Claude Opus 5 solves fewer at least once but 47.53% consistently.
+  - huggingface, *The Agent Said It Was Done. The Database Disagreed.* (2026-10-03): [https://huggingface.co/blog/microsoft/thinkingbox](https://huggingface.co/blog/microsoft/thinkingbox) — "Kimi-K3 is also among the least consistent. Just 68 of 507 tasks, 13.41%, succeed in all 20 attempts. Claude Opus 5 inverts this. It solves fewer tasks at least once (79.09%; 106 defeat it entirely) but completes 47.53% of the benchmark on every single attempt."
+- **[4]** (reported fact) ThinkingBox also reports that a newer model raised headline accuracy without adding any dependable tasks: Claude Opus 5.5 scored higher than Opus 5 on average yet passed exactly the same 241 tasks on all 20 attempts.
+  - huggingface, *The Agent Said It Was Done. The Database Disagreed.* (2026-10-03): [https://huggingface.co/blog/microsoft/thinkingbox](https://huggingface.co/blog/microsoft/thinkingbox) — "It passes exactly the same number of tasks on all 20 attempts: 241. Half a point of headline accuracy bought no additional dependability at all."
+- **[5]** (reported fact) The snapshot-search paper's own pre-registered comparison refuted its hypothesis: independent retry solved 17/25 task-seeds while snapshot branching solved 6/25 under a matched token budget.
+  - arxiv, *Returning to Development States: When Full Sandbox Snapshots Help Coding Agents* (2026-10-09): [https://arxiv.org/abs/2610.13841](https://arxiv.org/abs/2610.13841) — "and independent retry. On our pre- registered harder Terminal-Bench subset, retry solves 17/25 tasks while snapshot-based search solves 6/25, establishing that reliable restoration alone is not suffi- cient to improve"
+- **[6]** (reported fact) Arize's re-run of a published tone experiment found the original comparison confounded tone with brevity instructions; deleting only the brevity words cut Opus's apparent 55% saving to 15% and eliminated GPT-4o's threatening saving entirely.
+  - arize, *Does being rude to AI work? What 6 models revealed* (2026-10-13): [https://arize.com/blog/does-being-rude-to-ai-work](https://arize.com/blog/does-being-rude-to-ai-work) — "I ran it again with only the brevity words deleted, against a baseline with no prefix at all, and most of the rudeness discount vanished. Opus’s very rude saving fell from 55% to 15%. GPT-4o’s threatening saving went from 22% to nothing."
+- **[7]** (our inference) Two independent Arize posts converge on LLM judges being the weak link: one reports the judge 'was wrong a lot of the time' because of naming inconsistencies, the other reports a cited study finding tone shifts a judge's severity rather than its judgement.
+  - arize, *How to test agent tool descriptions with Harbor and Phoenix* (2026-10-12): [https://arize.com/blog/how-to-test-agent-tool-descriptions-with-harbor-and-phoenix](https://arize.com/blog/how-to-test-agent-tool-descriptions-with-harbor-and-phoenix) — "The LLM judge looked like the easy part. It was wrong a lot of the time. TRAIL calls the same tool page_down in one place and PageDownTool in another, so a correct reply could be graded against the wrong spelling."
+  - arize, *Does being rude to AI work? What 6 models revealed* (2026-10-13): [https://arize.com/blog/does-being-rude-to-ai-work](https://arize.com/blog/does-being-rude-to-ai-work) — "it looked “more consistent with a shift in the judge’s severity operating point—its overall scoring leniency—than with improved judgment.” They flag tone as “a potential validity threat when absolute relevance labels matter.”"
+- **[8]** (reported fact) MC-EvoBench, built to audit experience-driven self-improvement, reports that related experience yielded no stable transfer, with its one positive contrast driven by a single seed and all intervals including zero.
+  - arxiv, *MC-EvoBench: Auditing Experience-Driven Self-Improvement in Minecraft Agents* (2026-10-09): [https://arxiv.org/abs/2610.13829](https://arxiv.org/abs/2610.13829) — "while related experience yields no stable transfer: it does not improve either tool probe, its small wood-species gain hinges on one seed, and all intervals include zero."
+- **[9]** (our inference) Where sources appear to disagree about whether harness machinery pays for itself, the disagreement resolves into a shared conditional: added machinery helps only when it supplies information the model or the repository does not already have.
+  - thoughtworks, *Are Harnesses Worth the Cost?* (2026-10-13): [https://martinfowler.com/articles/are-harnesses-worth-the-cost.html](https://martinfowler.com/articles/are-harnesses-worth-the-cost.html) — "What changes with model capability is not whether independent sensors are needed, but when they run."
+  - arxiv, *Returning to Development States: When Full Sandbox Snapshots Help Coding Agents* (2026-10-09): [https://arxiv.org/abs/2610.13841](https://arxiv.org/abs/2610.13841) — "It matters most when important progress lives outside the repository, such as in databases, installed packages, running services, generated artifacts, or other machine state that cannot be recovered from Git or source files alone."
+  - microsoft, *From Specialist Agents to Distributed Skills over MCP* (2026-09-16): [https://devblogs.microsoft.com/agent-framework/from-specialist-agents-to-distributed-skills-over-mcp](https://devblogs.microsoft.com/agent-framework/from-specialist-agents-to-distributed-skills-over-mcp) — "Loading a whole provider avoids a separate per-tool loading step but supplies schemas that may not all be used; a smaller initial context is not automatically a faster or cheaper conversation."

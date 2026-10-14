@@ -1,0 +1,23 @@
+{
+  "stage": "check_content",
+  "status": "completed",
+  "run_dir": "runs/20261013T213636Z-podcasts-expanded",
+  "input_count": 3,
+  "output_count": 1,
+  "started_at": "2026-10-13T22:57:10Z",
+  "finished_at": "2026-10-13T22:57:10Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "python"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "passed": true,
+    "errors": 0,
+    "warnings": 8,
+    "review_id": "6b83efea616ec5f724c1d7376faa2757fd74653633019edc21e2649c9e8ac36a"
+  }
+}

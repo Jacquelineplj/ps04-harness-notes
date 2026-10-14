@@ -1,0 +1,126 @@
+{
+  "review_id": "2e2b11a74519923747939611a0aeef1c1ad92e44f9fef9e3a14c1904449fc8c0",
+  "passed": false,
+  "issues": [
+    {
+      "piece_id": "01",
+      "artifact": "runs/20261013T212217Z/articles/01.md",
+      "severity": "warning",
+      "message": "article body is 930 words; target 600-900 excluding sources"
+    },
+    {
+      "piece_id": "03",
+      "artifact": "runs/20261013T212217Z/articles/03.md",
+      "severity": "warning",
+      "message": "article body is 915 words; target 600-900 excluding sources"
+    },
+    {
+      "piece_id": "03",
+      "artifact": "runs/20261013T212217Z/video_scripts/03.md",
+      "severity": "warning",
+      "message": "narration is 780 words (~5.2 min); target 450-750 for 3-5 minutes"
+    },
+    {
+      "piece_id": "01",
+      "artifact": null,
+      "severity": "warning",
+      "message": "2 quote(s) were normalised to the retained wording; verify they still support the claims"
+    },
+    {
+      "piece_id": "01",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "3 quote(s) were normalised to the retained wording; verify they still support the claims"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "2 claim(s) were dropped during brief validation for lack of locatable evidence"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "03",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": null,
+      "artifact": null,
+      "severity": "error",
+      "message": "cited evidence across the series lacks input kind(s): ['podcast']"
+    }
+  ],
+  "as_of_date": "2026-10-13",
+  "checked_at": "2026-10-13T21:35:40Z",
+  "stats": {
+    "errors": 1,
+    "warnings": 9,
+    "evidence_refs": 39,
+    "publishers_per_piece": {
+      "01": [
+        "arize",
+        "huggingface",
+        "latent-space",
+        "microsoft",
+        "thoughtworks"
+      ],
+      "02": [
+        "ai-engineer",
+        "arize",
+        "arxiv",
+        "latent-space",
+        "thoughtworks"
+      ],
+      "03": [
+        "ai-engineer",
+        "arize",
+        "arxiv",
+        "huggingface"
+      ]
+    },
+    "kinds_cited": [
+      "feed",
+      "youtube"
+    ],
+    "article_words": {
+      "01": 930,
+      "02": 888,
+      "03": 915
+    },
+    "narration_words": {
+      "01": 624,
+      "02": 730,
+      "03": 780
+    },
+    "perspectives_per_piece": {
+      "01": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "02": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "03": [
+        "commercial",
+        "practitioner",
+        "research"
+      ]
+    }
+  }
+}

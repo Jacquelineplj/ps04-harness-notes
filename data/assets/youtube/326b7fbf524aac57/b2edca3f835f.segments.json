@@ -1,0 +1,242 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 5.2,
+    "end_seconds": 26.96,
+    "text": "Hi everyone, I'm Victor. I'm a product manager here at LangChain. I primarily focus on our runtime products, and today we're going to talk about deploying mission-critical agents into production. We're going to start first with like a little refresher on what Deep Agents are, and then we'll talk about Managed Deep Agents and why we're so excited about them. So the first place we always love to start with this is: what is"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 26.96,
+    "end_seconds": 50.72,
+    "text": "an agent? It's a question we get a lot, and the core idea of an agent is it's a model using tools in order to complete a task, and this is based on the ReAct-style agents that have become popular over a year ago, and that's based on like reason and action. So they're going to use tools, they're going to reason over it to accomplish a task for you. The next question we often get is: what is a harness?"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 50.72,
+    "end_seconds": 75.76,
+    "text": "So a harness is basically everything else that we bake in to create the agent. So that can be skills, it can be tools, context, subagents, really all of these different things that we put into an agent in order for it to accomplish a task. Why do we do this? Like, why do we go through all the effort of building a harness, building an agent, and going through all this development? And that's to get the model the right context at the right time."
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 75.76,
+    "end_seconds": 97.6,
+    "text": "So a lot of times when we're building an agent, we know that the model is only as powerful as the context that we give it. And we need to always be able to get it the right context at the right time. Deep Agents is a customizable harness that we can build for any domain-specific task. So we took a lot of the learnings of coding agents and different harnesses that are out there in the wild, and we've really put it into this very customizable"
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 97.6,
+    "end_seconds": 124.16,
+    "text": "base harness that you can use for virtually any use case. The anatomy of a deep agent is really comprised of four core areas. The first being the execution environment. And this is really core to the philosophy of Deep Agents, is we sort of abstract away the file system for the agent. So us as developers, we can define sort of this wall between your model and the files it interacts with through a virtual file system. That file system can actually live anywhere."
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 124.16,
+    "end_seconds": 147.52,
+    "text": "It could be S3 files. It could even be a sandbox where your agent can write and execute code, or its lighter-weight cousin, a code interpreter or a REPL. What's really cool about this too is this helps with context management. So things like progressive disclosure of skills, doing things like cross-thread memory. So you want to remember things about agents or about users across threads, you can do that with the file system. We can do things like summarization."
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 147.52,
+    "end_seconds": 175.76,
+    "text": "So as our context grows and grows, we're able to summarize that previous conversation, compact it down, and store it in the file system. And then we can also offload context. So let's say we retrieve like a very large tool response, we can actually offload that into the file system rather than directly loading that into our model's context window. The third kind of key area is delegation. So delegation is the ability for the model to plan, reason over that plan, and"
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 175.76,
+    "end_seconds": 198.56,
+    "text": "then kick off subagents to execute things. And then lastly is human in the loop. Human in the loop is very core to everything that we do here at LangChain. This conference is actually named after the interrupt function, which is a function of LangGraph. Deep Agents is built on top of that LangGraph runtime. So you have that ability to interrupt and pause for execution. So a good example of taking a deep agent into production is a customer of ours,"
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 198.56,
+    "end_seconds": 226.96,
+    "text": "which is Madrigal. Madrigal has a ton of different use cases, but primarily focuses on a pharmaceutical research agent. And this is for their pharmaceutical researchers to be able to load in a domain-specific harness that is able to reason over a certain knowledge base for that particular researcher's domain, synthesize all of those results, and respond back with a cohesive report with cited sources and all of that. They were able to build all of this with Deep Agents, and a task that used to"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 226.96,
+    "end_seconds": 251.76,
+    "text": "take them weeks, to spin up a new agent for a researcher, now just takes a few hours by putting this all into the Deep Agents harness and deploying it onto LangSmith. Cool. So, let's talk about like what it takes to take an agent from something that works locally and actually put it into production. So, there's kind of like three core areas of building an agent. The first is the business logic, and this is what we think is the most important"
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 251.76,
+    "end_seconds": 274.72,
+    "text": "thing for developers and for teams to bring, is this core idea of like their expertise and the different instructions and skills that your agent might use. The second is the harness itself, which we talked about, as Deep Agents gives our agent the ability to use files and do context management and all these wonderful things. And the third area is going to be infrastructure. So infrastructure is probably the more boring area, but the most important"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 274.72,
+    "end_seconds": 294.48,
+    "text": "area when you talk about actually taking an agent and putting into production in a way that others can use it. Cool. So one of the first things that we do when we're building an agent, right, is we're prototyping it locally. We get it running locally on our machine and it works great, and we're really excited, and then we want to go and actually share this with everyone else. This is actually a very, very valuable stage."
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 294.48,
+    "end_seconds": 316.08,
+    "text": "This is where we can kind of prove the magic of the agent, right? That the agent can actually do what we're designing it for. What happens then is we try to go into production, and now we need to think about a lot of different things, right? We need to think about where people are going to use this agent, the different surfaces you might want your agent to be used from, how you're going to reconcile where those different surfaces are entering into your actual runtime."
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 316.08,
+    "end_seconds": 336.32,
+    "text": "You need to be able to queue up the runs so that your agent can kind of serve them reasonably. You need to be able to establish streaming. You need to do all these different things in order to have this agent run reliably in production. And it requires kind of different things that your team has to consider from an infrastructure standpoint. With Managed Deep Agents, we wanted to make this process very, very easy."
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 336.32,
+    "end_seconds": 360.8,
+    "text": "So what we've done is we've sort of bundled together the harness and the infrastructure to make it really, really easy for your teams to work on primarily the business logic and actually improving your agents with evals, with traces, with Engine, and iterating on your actual agent logic rather than focusing on the infrastructure and the harness-level stuff. So this is kind of what it looks like. That previous graph of all these different boxes that you had to manage yourself now becomes very easy with"
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 360.8,
+    "end_seconds": 387.2,
+    "text": "Managed Deep Agents. It runs on our proven LangSmith Deployment for things like streaming, checkpointing, auth handlers, things of that nature. It integrates directly with LangSmith Sandboxes for all of that sandbox control when you need agents to run and execute code. It also uses Context Hub, which we'll talk about a little bit later, but allows us to kind of coordinate on instructions and skills with business users and iterate on things. And then of course, it plugs into our LLM Gateway and traces"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 387.2,
+    "end_seconds": 409.52,
+    "text": "as well. And what's really nice is, on the left side you'll see this agent interface, is we do a really good job of allowing you to use your agent from different interfaces and reconcile those. So since we're handling all of this infrastructure, we now can make it really easy for you as a developer to define the agent. So rather than kind of defining it in your own logic, we can go ahead and give you this folder structure in order to define things."
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 409.52,
+    "end_seconds": 432.48,
+    "text": "So your agent will live in like the agent.ts or agent.py. So this works for Python or TypeScript. Your instructions, skills, tools, identity, all of these different primitives that you need to add to the agent itself will live in different folders or different files in your directory. Getting started is really easy. So, all we're going to do is run mda init and give our agent a name. That'll scaffold this project directory for us."
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 432.48,
+    "end_seconds": 453.68,
+    "text": "After we add in all of that logic, we can then go ahead and run mda dev. And that's going to start up a local Agent Server for us, which is the same server that powers LangSmith Deployment. So you're able to test everything out locally and make sure that it's working as intended. And then once you're ready to actually go into production, all you need to do is run mda deploy. And that's going to go ahead and deploy it onto LangSmith's managed infrastructure."
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 453.68,
+    "end_seconds": 480.72,
+    "text": "This makes it really, really easy to go from an idea to a prototype, something that works locally, and then into production. Cool. So let's take a look at an actual example of an agent that you might want to build, something that people in your organization might use. This is sort of an example that we use a lot internally here at LangChain, which is our go-to-market agent, and it's something that anyone in our organization can interact with in order to do anything related to go-to-market."
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 480.72,
+    "end_seconds": 500.64,
+    "text": "So, we're going to ask it to prep me for a certain meeting and draft an email for me to review, and that kind of gets sent into this GTM agent. The way that this looks and the way that we can design this agent is really quite easy. This now all maps to different files. So again, our agent definitions at the beginning, the sort of playbook for how we wanted to do different things, can live in both the instructions and the"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 500.64,
+    "end_seconds": 525.2,
+    "text": "skills, and then all of the connections to different business systems like Salesforce, Gong, all these other sort of platforms, lives in tools, and then we can define how users authenticate and how we remember things about users in the other two files. So, one of the core things that, when we talk about building agents with customers, there's kind of four scary things that then get brought up when you bring it into production, is how do we identify who's asking this agent to do what,"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 525.2,
+    "end_seconds": 547.92,
+    "text": "prep for the email or prep for the meeting? Whose data is it going to use? Which memory is it going to be able to reference or edit? And then lastly, what happens if it is actually missing access when that run gets initiated? So jumping into the first one, this is something that we thought about a lot with Managed Deep Agents, is being able to reconcile the callers between different surface areas. So we have first-class support for different channels in"
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 547.92,
+    "end_seconds": 568.56,
+    "text": "Managed Deep Agents. You can really easily just create a Slack application, go ahead and use this agent, but you also might want to expose this agent in your web UI or your web application or your own platform. And you don't want to have to have a user always like re-authenticate and re-go through the permissioning over and over again. So what we did is built a very nice auth handler that will help you reconcile those users, and you can have them reconcile across these different surface"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 568.56,
+    "end_seconds": 592.0,
+    "text": "areas, and that all gets passed into the runtime for the managed deep agent quite easily. The second is: whose account should it use? So as a developer, we might want to define certain connections, certain tools that your agent can use, and connect them in a certain way. So we might want to say, okay, when it uses our CRM tool, for example, we always want it to use the user's credentials. So we want to have it operate on behalf of the caller."
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 592.0,
+    "end_seconds": 615.6,
+    "text": "So, if I'm in a DM with this agent and I say, \"Prep me for this meeting,\" it's then going to be able to use my Salesforce credentials and go and access that. There's other scenarios where you might want your agent to have its own agent-scoped credentials or be able to have service account credentials. We make this really easy in Managed Deep Agents with this connections primitive. So, all you need to do is define these connections, upload tokens. If they're user-based, we'll actually handle that for you."
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 615.6,
+    "end_seconds": 641.82,
+    "text": "And how we handle that is really easily mid-task. So since we have built-in human in the loop in Deep Agents and in the LangGraph runtime, what happens is when you make a request and the agent doesn't have a particular token for a particular user and it's an on-behalf-of token, it's actually able to really easily pause, ask the user to go ahead and authenticate. They'll click the link, everything proceeds as normal, and this will happen indefinitely, since we have the interrupts checkpointed."
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 642.32,
+    "end_seconds": 665.2,
+    "text": "The second, or the third kind of core area that becomes interesting is memory. There's a lot of different approaches to memory, and we wanted to have really good defaults for this. So the first kind of convention is agent-level memory, or procedural memory. We have a really great way for your agent to be able to take and remember certain procedural things about users in Managed Deep Agents. The second is user-level memory. So personal preferences that I tell the agent about myself."
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 665.2,
+    "end_seconds": 687.84,
+    "text": "And it's really important that your agent is able to kind of take these different types of memory. And this is where control starts to come into place. So, one thing that we've built into Managed Deep Agents is allowing you to define the access control based on the channel that it's calling from. So, if I'm in a Slack DM, for example, it can use my personal memories. It can use my personal credentials. It can take personal memories about me, and that's totally fine."
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 687.84,
+    "end_seconds": 715.2,
+    "text": "But if I'm talking in a shared channel with my other co-workers, I probably don't want it to be able to unveil certain information about me. So, as a developer, I can define those sort of primitives if I need to. Another really nice part of Managed Deep Agents is we get version control for our agent context with Context Hub. So we're able to store all of our instructions, skills, and memory inside of a Context Hub repo. And that will allow us to collaborate in the surface"
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 715.2,
+    "end_seconds": 741.2,
+    "text": "within LangSmith, which is really great for kind of iterating on different things like instructions, having version control over it, promoting it to production, things of that nature. Promoting it to production, though, can be scary. So, one thing that we built into Managed Deep Agents that we've really spent a lot of time on was its integration with Harbor as an eval framework. So, I know we've talked about Harbor today, but we really think it's a great way for running evals."
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 741.2,
+    "end_seconds": 763.68,
+    "text": "But what we found from customers is that it can be a bit difficult to get started with. So, we wanted to make it really easy for Managed Deep Agents. If you run this mda eval init, it'll go ahead and initialize a Harbor environment for you. Help you set up the tasks, help you set up the checks. All of that will get traced into LangSmith and show up in your LangSmith experiments tab, and you're able to kind of improve your agent over time."
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 763.68,
+    "end_seconds": 784.8,
+    "text": "You can rerun the same tasks and you can actually hill-climb your agent right in your own machine. One of the things that we're announcing today is our integration with Parallel. So, we're really excited to announce this integration. It's going to be free during our public beta. So, please feel free to go ahead and use it. But the way that it works is essentially you can just go ahead and add this tool to your managed deep agent."
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 784.8,
+    "end_seconds": 809.52,
+    "text": "You don't have to add any Parallel API keys, anything like that. It'll all kind of work just out of the box. So, we're really excited about partnering with Parallel on this for Managed Deep Agents. So something that we've really, really enjoyed was working not only internally with our own agent use cases, like our go-to-market agent, Open SWE, which is like a software factory type agent, and iterating on that for Managed Deep Agents, but also working with a lot of our customers."
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 809.52,
+    "end_seconds": 836.08,
+    "text": "And we wanted to highlight two customers in particular. Zahid from Kyth was instrumental in really helping us getting started with some of the primitives of collaborating with no-code users, with business users. Also setting up how connections and memory will work. So, it's been really great working with Zahid, and we value him as a partner. Additionally, Derek from Consensus has been really, really great to see how he's actually used Managed Deep Agents in a way that we really intended"
+  },
+  {
+    "segment_id": "s-0036",
+    "start_seconds": 836.08,
+    "end_seconds": 861.2,
+    "text": "it to be used. So, him and his team of developers kind of go around the org there at Consensus, and they build out different deep agent use cases for different parts of the org. And because Managed Deep Agents handles all of the infrastructure, they're able to really easily kind of go and deploy these agents. And they've been able to really rapidly increase the amount of agents that are being used across Consensus, which is really exciting. So what's new as of today in Managed Deep Agents?"
+  },
+  {
+    "segment_id": "s-0037",
+    "start_seconds": 861.2,
+    "end_seconds": 886.4,
+    "text": "The first is HTTP channels. And the primitive here allows you to basically define your own custom channels. So we have great pre-built integrations for Slack, for example, but we know that you might want to use your agents in a variety of different ways across a variety of different surfaces. So we make it very easy for you now to define how your agent responds to certain events, where it then responds to those events for you. So it's very, very easy now with the new HTTP channels."
+  },
+  {
+    "segment_id": "s-0038",
+    "start_seconds": 886.4,
+    "end_seconds": 909.68,
+    "text": "We also added much better APIs for accessing your sandbox's file system. So not only can the agent access the file system, but you as a user can now access it from your front ends in different places. The third is user-scoped memories. So as I mentioned, we thought a lot about user-scoped memories and how to do it reliably and safely, and that's now available in Managed Deep Agents. And then of course connections, which is how we're going to actually authenticate"
+  },
+  {
+    "segment_id": "s-0039",
+    "start_seconds": 909.68,
+    "end_seconds": 933.04,
+    "text": "and define that as developers, is now available. The second to last is file transfers in Slack. So very commonly you're going to want to collaborate on files. You maybe want an agent to create a PowerPoint for you, create a PDF. You want to be able to iterate on it right within Slack, and that is now first-class in Managed Deep Agents. And lastly, the built-in search with Parallel that I just mentioned. Awesome. Thank you all for joining today."
+  },
+  {
+    "segment_id": "s-0040",
+    "start_seconds": 933.04,
+    "end_seconds": 942.24,
+    "text": "We're really excited to announce Managed Deep Agents in our 0.8 release, and we can't wait to see what you build with it and build your domain-specific agents. Thank you."
+  }
+]

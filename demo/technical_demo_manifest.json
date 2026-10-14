@@ -1,0 +1,55 @@
+{
+  "duration_seconds": 279.3483958333333,
+  "presentation": "AI-narrated rendered evidence walkthrough, not a live screen recording",
+  "scenes": [
+    {
+      "scene": 1,
+      "heading": "0:00\u20130:40 \u2014 Purpose and architecture",
+      "narration": "Harness Notes is a publication for engineers building AI agent infrastructure. It asks what changed in agent harness design, which claims survive scrutiny, and what engineers should build or watch next. The output is a connected three-piece series, with an article and a video script generated from the same brief for each piece. The architecture separates collection, retained evidence, editorial decisions, writing, review, and the production handoff. That separation lets me inspect a decision or repair one stage without silently replacing the evidence behind an already reviewed article.",
+      "duration_seconds": 34.09470833333334,
+      "source": "SUBMISSION.md / Architecture"
+    },
+    {
+      "scene": 2,
+      "heading": "0:40\u20131:25 \u2014 Entry point and contracts",
+      "narration": "run.sh snapshots the configuration and prompts and records the execution date. The collection workflow gathers feeds, YouTube items, and podcasts, extracts text or timestamped transcripts, upserts the evidence store, and applies the thirty-day publication window. JSON Lines streams connect the components. Each stage writes a receipt describing counts, errors, timing, and available cost information. The series workflow asks the model to make explicit accept, reject, or defer decisions, then creates three briefs, articles, and scripts. Content checks run before a separate human approval gate. Packaging checks that the approval matches the fingerprint of the current reviewed inputs.",
+      "duration_seconds": 42.54604166666667,
+      "source": "run.sh; workflows/collect_sources.sh; workflows/create_series.sh"
+    },
+    {
+      "scene": 3,
+      "heading": "1:25\u20132:25 \u2014 Trace a claim into retained evidence",
+      "narration": "Here is a complete trace for claim 03-c9. The third article discusses the scale of the AWS tool surface and the difficulty of reviewing generated code-mode operations. The trace shows the claim in the brief, its uses in the article and video script, and the editorial decision that accepted the source. The source is the MLOps Community episode \u2018AWS Has 16,000 APIs. Can MCP Handle It?\u2019 The retained version has both a text file and a segment file. At 30 minutes 48 seconds, the speaker describes roughly sixteen thousand APIs. A separate segment at 15 minutes 1 second supports the point about reviewing generated Python. These are two distinct pieces of support. Keeping their exact passages prevents a broad summary from pretending that one quote establishes both claims.",
+      "duration_seconds": 47.63166666666667,
+      "source": "tools/trace_claim.sh ... 03-c9; package/03-sources.md"
+    },
+    {
+      "scene": 4,
+      "heading": "2:25\u20133:10 \u2014 Second run and duplicate handling",
+      "narration": "The first final live run uses October 13 UTC. The second uses October 14 UTC, although both started on October 13 in New York. These are different UTC execution dates, not a claim of twenty-four hours between runs. The second run discovered 74 candidates and extracted 67 items. All 67 were unchanged in the persistent store; no new or changed versions were found. All 25 media transcripts were reused. Intervening runs had already expanded the eligible corpus to 73 items. With policy version two, selection accepted 27, rejected 45, and deferred one. The new briefs cite three podcasts rather than one. Content checks pass, but human editorial approval is still pending. The labelled injected replay is an update demonstration, not a substitute for live collection.",
+      "duration_seconds": 51.5139375,
+      "source": "runs/20261014T014037Z-second-live/summary.json"
+    },
+    {
+      "scene": 5,
+      "heading": "3:10\u20133:50 \u2014 Failure visibility",
+      "narration": "This is a deliberately labelled failure test. The podcast collector stops after its first source, while feeds and YouTube complete. The workflow preserves usable results, and the summary says coverage is incomplete. The store may still contain older podcast evidence, so merely finding podcasts in the corpus would not prove this collection succeeded. Reporting current collector status alongside retained evidence makes that distinction visible. This run stops after collection and is not presented as a completed publication run.",
+      "duration_seconds": 30.323645833333334,
+      "source": "runs/20261014T005920Z-simulated-failure/summary.json"
+    },
+    {
+      "scene": 6,
+      "heading": "3:50\u20134:35 \u2014 Editorial correction and policy revision",
+      "narration": "One saved editorial correction changes the harness experiment attribution from Martin Fowler to Naresh Jain. The hosting site and the author are different; the correction was applied across the brief, article, and script before approval. Policy version two also clarified how to judge practitioner reports and podcast episodes. Replaying the same evidence gave thirty accepted items instead of twenty-seven, with fifty-two decisions identical and fifteen changed. Those changes include assignments to individual pieces, not just accept-versus-reject flips. The saved reasons let a reviewer evaluate whether the revised policy improved judgment.",
+      "duration_seconds": 37.2934375,
+      "source": "corrections.jsonl; policy-v2/decisions_diff.md"
+    },
+    {
+      "scene": 7,
+      "heading": "4:35\u20135:15 \u2014 Architectural tradeoff and handoff",
+      "narration": "The main storage tradeoff is SQLite for the index and content-addressed files for retained text and transcript segments. This keeps the index compact and makes evidence easy to inspect with ordinary tools. It also means the database alone is not a complete archive: the referenced asset files must travel with it. The production package contains numbered citations, source notes, article text, scene-based scripts, and YouTube descriptions. Rendering and publishing are separate operations. The submission must contain real accessible links; passing checks or producing a package does not mean anything has been published.",
+      "duration_seconds": 35.94495833333333,
+      "source": "data/store.py; package/manifest.json"
+    }
+  ]
+}

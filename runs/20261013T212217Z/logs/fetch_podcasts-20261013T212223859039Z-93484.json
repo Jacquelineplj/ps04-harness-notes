@@ -1,0 +1,46 @@
+{
+  "stage": "fetch_podcasts",
+  "status": "completed",
+  "run_dir": "runs/20261013T212217Z",
+  "input_count": 4,
+  "output_count": 6,
+  "started_at": "2026-10-13T21:22:18Z",
+  "finished_at": "2026-10-13T21:22:23Z",
+  "elapsed_seconds": 5.0,
+  "tools": [
+    "httpx",
+    "feedparser"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "sources": {
+      "latent-space-podcast": {
+        "status": "ok",
+        "candidates": 2
+      },
+      "practical-ai-podcast": {
+        "status": "ok",
+        "candidates": 2
+      },
+      "mlops-community-podcast": {
+        "status": "ok",
+        "candidates": 1
+      },
+      "se-daily-podcast": {
+        "status": "ok",
+        "candidates": 1
+      }
+    },
+    "counters": {
+      "entries_seen": 1266,
+      "skipped_no_audio": 0,
+      "skipped_beyond_lookback": 0,
+      "skipped_too_long": 0
+    },
+    "failed_sources": 0,
+    "simulated": false
+  }
+}

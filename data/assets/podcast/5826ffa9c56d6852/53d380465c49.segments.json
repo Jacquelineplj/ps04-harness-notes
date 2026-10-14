@@ -1,0 +1,416 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 5.3,
+    "end_seconds": 34.74,
+    "text": "So great to be here. What an exciting morning. So many cool announcements. I think the future of bioscience is being announced right here. So this is the modeling session. We are all modelers, so of course it's natural for us to talk about data. So to start out with, I think one of the things that I like to think about when it comes to data is, is there a scaling, how do you scale data properly?"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 34.74,
+    "end_seconds": 61.09,
+    "text": "And this has brought me to this question about the bitter lesson, but recast in the frame of data. So the bitter lesson for those of you who are not AI people is the statement that methods that scale win eventually. If you can just scale enough, it wins. And so my question, I'll start with Sal here, is there a bitter lesson for data? Yeah, I mean for sure."
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 61.09,
+    "end_seconds": 90.17,
+    "text": "I think that you obviously need the right data, right, like in order for it to work. So I think one misconception of scaling laws is that scaling laws are everywhere and they always exist. I think a lot of the work is actually finding that scaling law, right? So a lot of what we really do is trying to figure out, what's the situation where if you put more compute into it, if you put more data into it, you actually get a better result out."
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 90.17,
+    "end_seconds": 117.35,
+    "text": "The reason that's a great situation is then, once that happens, you can just turn the crank, like becomes an engineering problem, which is something I like. But that has to do with architecture, but it also very much has to do with data. So if you don't have the data with the right information statistics to solve the problem that you want, which is I think probably pretty obvious, like if you think about it for a second, like you're not going to get a model that has"
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 117.35,
+    "end_seconds": 144.85,
+    "text": "the capabilities and the understanding of you want. So you can only really pull the information from the data that you have and then use that to generate like to generalize beyond, right? Yeah. So when it comes to data collection, how do you think about what types of data modalities are best? And maybe a kind of related question is, do you think that modelers have a tendency to work on problems which are the data is available rather than maybe"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 144.85,
+    "end_seconds": 174.05,
+    "text": "the data that or the problem that solves your goal most? like maybe has the most impact for translational medicine? Oh, for sure. So I think that, like, I wouldn't speak for all modelers, but I'm lazy, so I'm going to work with what's available. And I think there is actually a good side and a bad side to this. And the good side is that I think when you're doing machine learning or conventional machine learning, you're really looking"
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 174.05,
+    "end_seconds": 202.93,
+    "text": "for the most pristine, high quality data examples that you can find. But when you actually, if you're like me, you're actually someone who goes and you're kind of like rooting around in the back room looking for two people's junk, like what's there? So a concrete example of this is when we train a protein language model, we train on metagenomic sequences, which are not the highest quality data. In fact, much of that data I can guarantee you isn't even"
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 202.93,
+    "end_seconds": 229.41,
+    "text": "like a real whole protein. And yet that makes the performance of the model go up for designing real proteins that work, that make for understanding proteins that we know are things. And so that's like the positive side of it. But that can lead you to a negative place where you say, well, let's just scale up the data that we can generate easily."
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 229.41,
+    "end_seconds": 257.73,
+    "text": "And I think that's not the necessary way to do it. And I think that's one of the things that's really exciting to me about what we're talking about here today with the VBI. It's really going out and saying, what is the data that we need to solve the problem? It's the right resources, but also the right community. I think that one thing that we do at, or we try and do at Biohub anyway, is to work"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 257.73,
+    "end_seconds": 284.29,
+    "text": "in the open, work with the community and move the whole community forward. And I think that's a really critical piece for this, because if you just have people who are building models, we're going to lean towards the data that exists. If you just have people who generate the data, they're going to lean towards the things that can be generated. But if you can work together as a community every step of the way in an open fashion,"
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 284.29,
+    "end_seconds": 311.39,
+    "text": "then you can actually figure out what is the data that we need, and then you can find that scaling law. What do you think, Sal, of Better Lesson for Data? Yeah. I think I was at DeepMind when Rich was with us and working and thinking about this idea of the Better Lesson. When Rich's, the thing that I took from"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 311.39,
+    "end_seconds": 337.81,
+    "text": "Rich's original lecture that he actually gave at DeepMind was not about the actual notion of whether data is useful or how should we think about machine learning. I think my take was that he was talking about something more conceptual. The conceptual thing that he was talking about is sometimes, when we are looking at problems,"
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 337.81,
+    "end_seconds": 367.43,
+    "text": "we think about solutions in a very religious way. I'm a modeler or I'm a data generation person. I think that is the bitter lesson, that if you approach the problem with that mindset, you might not succeed. The problem comes first, and you should be flexible in terms of your solution space. You should try both things. You should try to understand what is the problem that you're trying to solve,"
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 367.43,
+    "end_seconds": 395.17,
+    "text": "and if it requires modeling effort, do the modeling effort, and if it requires the data collecting more data, then collect data. But the thing that happened in machine learning in those times is people said, we are machine learning researchers, the data set is there, there is some training data, here's some test data, and we will just optimize the model and that is broken."
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 395.17,
+    "end_seconds": 421.61,
+    "text": "In the sense that if your eventual goal is to solve the problem, then you have to be able to look at both aspects of what goes into the process and what goes into the process is not just data or modeling. It's also about expertise. So the example that I have is like with Alpha Fold,"
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 421.61,
+    "end_seconds": 450.71,
+    "text": "we looked at what was possible with current existing datasets because we did not have the core expertise of now going to, or even the resources by the way, to say let's augment the PDB by a significant order of magnitude. It was just not, I mean, the amount of investment that organizations and scientists across the world"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 450.71,
+    "end_seconds": 478.39,
+    "text": "had put in to construct that data was invaluable. So there you have to sort of focus on well, getting the biggest bang out of your puck for by investing it in modeling. But in other areas, if you're sort of approaching, say, cell genomics, then we took the same approach and said, well, what can you do with cell budging? If you're looking at a sort of cell genomics, and there it was very clear that we,"
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 478.39,
+    "end_seconds": 505.73,
+    "text": "after a bunch of work that the data was not there yet, to be able to go after that grand ambition of building the virtual cell. So it just brings people together to focus on what are the actual challenges, if you want to advance science rather than being religiously following advances on data generation or in modeling. Cool. I really like that answer."
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 505.73,
+    "end_seconds": 532.99,
+    "text": "So what do you think the actionable takeaway is from this? I mean, always define the problem first and then figure out what solutions space to search over. But more broadly, how should the community be thinking about this as we go forward for the next generation of basically trying to solve translational medicine? Yeah, I think the advice that I give to anyone who is working, who is starting in"
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 532.99,
+    "end_seconds": 561.75,
+    "text": "the area is that think of yourself as a multidisciplinary person. Understand the problem first. Why are you working on this problem? What are we trying to achieve? And then think about what is it that will be needed, whether it's modeling, whether it will be compute scaling, whether it will be data generation. So understanding of that problem is extremely important. And of course, then you have to build your expertise in the house."
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 561.75,
+    "end_seconds": 587.35,
+    "text": "And there are also, it's not as if you don't have constraints. Maybe there are constraints. there is only a specific amount of data that you can generate, or there is a specific model size that you can afford to train, understand those constraints and stop and try to fail fast, and look at what are the approaches that are going to be feasible in the long term in getting you to that intercept,"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 587.35,
+    "end_seconds": 614.39,
+    "text": "the impact level that you're going after. Okay, cool. So this actually leads me right into my next question, which is when I look at the evolution of modeling, let's say AlphaFold 2 was essentially a work of art, like a bunch of very carefully handcrafted features. There was a lot of thought, very intentional thought done to every part of the solution."
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 614.39,
+    "end_seconds": 644.03,
+    "text": "Then I think some of Google or Alphabet's work has been still stays in that space, but it seems like the general consensus is to move to more scalable, more general strategies. Do you think that there's still a lot of artisanal craft solutions or problems that need that? Or are resources better spent on generally speaking, fixed resources, fixed money can go to compute, it can go to talent, it can go to data."
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 644.03,
+    "end_seconds": 672.95,
+    "text": "Should we be focusing on scale first? So, again, let's approach it from first principles. And even so, when you think about the arts and crafts of how do you construct a model to be better, I think it was not an accidental thing. We did a lot of experimentation, but there was a vision behind it that all this scientific"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 672.95,
+    "end_seconds": 701.43,
+    "text": "contusion that came from biophysics and biochemistry, that those interactions that amino acid residues are not just doing their own thing, they are being influenced by other residues. So let's bake that in. If you have learned something from the scientific community, use it. Use that information and try to encourage the model and give it that unfair advantage that it has."
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 701.43,
+    "end_seconds": 730.17,
+    "text": "And it does basically makes the model much more data efficient because it doesn't have to replicate everything. I also have to mention that curating good data is an art in itself. It's not as if you will say, well, put more data, if you replicate the same amount of data, you're not going anywhere. So it's not just about big data, it's about good data and actually understanding the coverage of"
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 730.17,
+    "end_seconds": 758.17,
+    "text": "what data is necessary for making progress in the problem is, in fact, I would say, a much interesting and much more challenging problem in itself. Yeah. Do you look like you have a thought, so what do you think? Yeah, I think I very much agree. I think as you, it really depends on, as you're saying, the problem to be solved. So if you have kind of a smaller amount of data,"
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 758.17,
+    "end_seconds": 786.65,
+    "text": "then certainly having more inductive bias in the model is going to help you. And you actually need that to get the results on smaller scales of data. As you get more and more data, you see that sometimes the model can find things that you didn't necessarily know about. And sometimes that inductive bias, if it wasn't exactly correct, can hold you back."
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 786.65,
+    "end_seconds": 814.89,
+    "text": "So there is definitely that tipping point, I think it's better. But I guess also I kind of object to your question too, because I think there's a lot of craft actually to the scaling part of things as well. So you need very, there's a lot of algorithmic work that actually goes into taking these models and training them on more data, putting more computing and then making them bigger. Like, and we see that not only is that from"
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 814.89,
+    "end_seconds": 841.01,
+    "text": "like an infrastructure perspective and making the models run inference faster. But we're actually seeing that things are going beyond transformers to more bespoke architectures that can. Well, I mean, I don't think we're in a post-transformer world in any way, shape, or form. But we're modifying those architectures, like in order to make them more fit for purpose and actually work better even at internet scale data."
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 841.01,
+    "end_seconds": 867.93,
+    "text": "So I think that's the project. Like as more and more data comes in, it's not only helping to curate that data and select, what is the next batch of information that we actually need? It's more information than data. How do you get that next batch of information that the models need? But then also at every step of the way,"
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 867.93,
+    "end_seconds": 897.65,
+    "text": "at every scale, what is the right architectures than to get the most out of that data? Cool. So if you think about the state of protein structure prediction right now, the news will say protein structure prediction has been solved. But then if you talk to my friends, they will all say, we have so much left to do here. So many things like function dynamics,"
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 897.65,
+    "end_seconds": 925.83,
+    "text": "and then design are still just wide open problems. It's been five this year since Alpha Fold 2 was announced, progress has been made. But I'm curious, Pushmi, what do you think? Is there another big leap being made here? Are there blockers in solving these problems? Do we not have the right data yet? Do we not have the right algorithms or ideas? Or is this something that we can see evolving in the future?"
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 925.83,
+    "end_seconds": 955.19,
+    "text": "and it's just a matter of time. Yeah. I think science, how it operates is basically by isolating something and then making progress a step by step. So when people say the protein folding problem has been solved, at a conceptual level, yes, there have been some advances. But I think it's also when you think about"
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 955.19,
+    "end_seconds": 984.51,
+    "text": "that narrative of proteins being the building blocks. Proteins are not blocks and they're not, sort of they don't act as blocks. I say proteins are the building blocks all the time, but actually I don't believe in it. Proteins are extremely complex. They are disordered. Their shape might change depending on the context. And like what Alpha-fold did, and in fact,"
+  },
+  {
+    "segment_id": "s-0036",
+    "start_seconds": 984.51,
+    "end_seconds": 1014.41,
+    "text": "like John and I, John Jumper and I basically used to sort of discuss this, like what are we trying to solve? We don't know what is the actual true ground state that proteins take and what is the actual distribution of structure that proteins take. What we are trying to do is basically, someone got a structure, deposited it in the PDB, and we are trying to replicate and get the same structure. That's what we did."
+  },
+  {
+    "segment_id": "s-0037",
+    "start_seconds": 1014.41,
+    "end_seconds": 1042.13,
+    "text": "And it just so happens that it's useful. But that does not mean that we have understood all of protein dynamics. So I think at the top level, it's easier to communicate that we have made progress. But the scientists among us and in this crowd, we know. And I think that's the really important thing for us to"
+  },
+  {
+    "segment_id": "s-0038",
+    "start_seconds": 1042.13,
+    "end_seconds": 1070.73,
+    "text": "understand and have that common ground that a lot of work needs to be done. And we have made progress and there's a lot to celebrate. But let's not stop the funding of protein structure prediction and protein dynamics because we are just getting started. So what do you think the biggest blocker, if there's one thing you could wave a magic wand and say, like we have more of blank, that would accelerate one of those things, function, dynamics, or design,"
+  },
+  {
+    "segment_id": "s-0039",
+    "start_seconds": 1070.73,
+    "end_seconds": 1100.73,
+    "text": "what would the magic wand be? What would you wave into existence? Oh, I've basically been then, so I'm a machine learning, my background is quite eclectic. I started as a security researcher, then went into computer vision, Bayesian theory, and finally, got into discriminative machine learning and deep learning and so on, and then AF according, and then finally science. So when you ask me that question, like my computer vision, the computer vision researcher in me was"
+  },
+  {
+    "segment_id": "s-0040",
+    "start_seconds": 1100.73,
+    "end_seconds": 1126.77,
+    "text": "super excited about cryoEM micrographs. I was like, what is this PDB data? I should be working at the source. I should be looking at the cryoEM micrographs. I don't want those structures. They must be missing out all the data. I should just directly operate at cryoEM micrographs. Now, getting models that can scale at that level with the right amount of data and can extract all the dynamics and"
+  },
+  {
+    "segment_id": "s-0041",
+    "start_seconds": 1126.77,
+    "end_seconds": 1154.45,
+    "text": "distributional information that is captured there would be an amazing thing. I tried it, but it requires more work, right? So work on it, but you believe that this is a route? This can give you, yeah. I think at some point of time, maybe people better than me would take a stab at it and we'll get somewhere. What do you think, Sal? Yeah, I think that it's really interesting because I think these models are,"
+  },
+  {
+    "segment_id": "s-0042",
+    "start_seconds": 1154.45,
+    "end_seconds": 1182.25,
+    "text": "I mean, they're quite useful, but they're not exactly the problem that most people want to solve. They solve a very specific purpose and then you can also use them to do, you can use them to design new proteins, right? Like for example, which is not the thing that you would kind of start with there. But like, so they're very useful. But I kind of think of the models that we build right now as,"
+  },
+  {
+    "segment_id": "s-0043",
+    "start_seconds": 1182.25,
+    "end_seconds": 1205.81,
+    "text": "you've got someone who's trying to understand how a bicycle works, and you're modeling a spoke on it. And you kind of have to, those models can get better and better over time, but a lot of what you really need to do is you need to move the models of like spokes to wheels to maybe whole bicycles because that's actually what people want to understand. Actually, I think to continue the analogy,"
+  },
+  {
+    "segment_id": "s-0044",
+    "start_seconds": 1205.81,
+    "end_seconds": 1233.77,
+    "text": "It seems like people want to use the model of the bicycle to design a part for a pickup truck or something like that. But I think that as we put these models more into the particular context which they're in, then we'll actually be able to learn more about these interactions on a broader sense. And that's really, I think,"
+  },
+  {
+    "segment_id": "s-0045",
+    "start_seconds": 1233.77,
+    "end_seconds": 1260.57,
+    "text": "where things are going to be going. But I agree with you. I think we should keep trying to work on holding models, because I think they're going to keep getting better and better. So with regards to design, there's a famous Feynman quote, that which I cannot create, I do not understand. Now we're in a world where it's really easy to create things without understanding them at all. So I'm curious what your feelings,"
+  },
+  {
+    "segment_id": "s-0046",
+    "start_seconds": 1260.57,
+    "end_seconds": 1286.73,
+    "text": "your thoughts are about how important it is to actually have models which can help humans understand things versus magical black boxes, which can effectively one-shot a picomole or binder or something like that. I mean, I think that we were designing things with magical black boxes long before AI came around."
+  },
+  {
+    "segment_id": "s-0047",
+    "start_seconds": 1286.73,
+    "end_seconds": 1316.39,
+    "text": "So in some sense, I think that's still useful. But I think that the understanding is really important. That's actually one of the big things I think about a lot with AI, because there's so much for these models to learn. As intelligence is getting cheaper and cheaper and more available, you can deploy it to learn more and more things about what's going on in the world. But then how do you actually pull that knowledge"
+  },
+  {
+    "segment_id": "s-0048",
+    "start_seconds": 1316.39,
+    "end_seconds": 1343.51,
+    "text": "out of the machine, so to speak, right? And so it's something that I can understand. Maybe that's just my esoteric curiosity. I think there's so many things to learn. I think lots of scientists really want to understand things, and the endpoints are maybe not as important. But then we are here to solve translational medicine as a problem, right? Yeah. I mean, I think you do have to like, the more you dig into things, the more"
+  },
+  {
+    "segment_id": "s-0049",
+    "start_seconds": 1343.51,
+    "end_seconds": 1369.55,
+    "text": "that you can find the right way to keep pushing them forward. So I think one thing that's really sailing it to me about this is I think the models actually have a lot more information in them than we know. So we've worked a lot on interpretability, for example, for our models. And you find a lot of information in there, which is, I think people know that protein"
+  },
+  {
+    "segment_id": "s-0050",
+    "start_seconds": 1369.55,
+    "end_seconds": 1399.31,
+    "text": "language models like learn some notion of structure within their representations. But we find information about functions. We find information about motions, right? And so I think there's a lot in there still to be unlocked even from the models that we have now, right? And I think that's important for us to understand how do these models work as we as we raise the capability,"
+  },
+  {
+    "segment_id": "s-0051",
+    "start_seconds": 1399.31,
+    "end_seconds": 1428.47,
+    "text": "at the end of the day, you expect a world model to come out of trying to compress all this information into the model. How does the model do its job? How does it design a protein? Well, it's compressed all the information from evolution into this model. So in addition to it being able to spit out something which is useful to us, there's certainly something to learn just by looking at what's inside."
+  },
+  {
+    "segment_id": "s-0052",
+    "start_seconds": 1428.47,
+    "end_seconds": 1457.39,
+    "text": "Yeah. What do you think, Prushmi? Design versus understand. So I have a different take on this in the sense that, I think when we think about models, I think some level of understanding is necessary. So I'll say what level of understanding is necessary. So Alpha Fold actually is not perfect. It's not perfect."
+  },
+  {
+    "segment_id": "s-0053",
+    "start_seconds": 1457.39,
+    "end_seconds": 1484.35,
+    "text": "It's 90 GTT, Alpha-4 was 90 GTT at that time on that set. But even if it was 95 GTT, but the PLDGT score was completely uncalibrated. Who would trust it? It would just magically give good answers, but suddenly tell you here's the answer very, very confident and you will"
+  },
+  {
+    "segment_id": "s-0054",
+    "start_seconds": 1484.35,
+    "end_seconds": 1510.03,
+    "text": "working on it for the next one year and finding out it was completely wrong. The calibration of the uncertainty measure was extremely important. So in that sense, we do understand and we actually made a lot of progress in understanding how does Alpha Fold 2 behaves. Now that's different from how did it work and find the solution."
+  },
+  {
+    "segment_id": "s-0055",
+    "start_seconds": 1510.03,
+    "end_seconds": 1536.67,
+    "text": "And there I agree with Sal that there's a notion of interpretability. Why did it work? Why did it give this answer? And I think if you think about it, Alpha-Vol-2 was at the highest level interpretable, because if you look at how, and this is its ability to generalize, and we did not sort of discover it before launching,"
+  },
+  {
+    "segment_id": "s-0056",
+    "start_seconds": 1536.67,
+    "end_seconds": 1564.51,
+    "text": "When we launched AlphaVol2 and made the weights available, people found out that it was a great disordered protein predictor. It could figure out which elements of the protein are disordered. So it just shows that it generalizes. Now, interpretability asks the question, interpretable by whom? If you're saying interpretable by a human rational system"
+  },
+  {
+    "segment_id": "s-0057",
+    "start_seconds": 1564.51,
+    "end_seconds": 1592.79,
+    "text": "the cognitive and computational limitations of the human brain, then no, Alpha-fold 2 is not interpretable. But if you are asking, is Alpha-fold 2 available, sort of interpretable, to a much larger and more sophisticated model as to how it works, maybe it is, we just don't get it, right? But I think if as users of Alpha-fold 2, we do need to understand what is it able"
+  },
+  {
+    "segment_id": "s-0058",
+    "start_seconds": 1592.79,
+    "end_seconds": 1618.59,
+    "text": "to do and what it is not able to do. So understanding the behavioral characterization and the strengths and limitations of the model. And I think that is extremely important. And we can't sort of just be using these models without having that behavioral characterization because otherwise it will sort of rather than being helpful harm us, right? So your take is that interpretability, strictly speaking, isn't necessary, but a"
+  },
+  {
+    "segment_id": "s-0059",
+    "start_seconds": 1618.59,
+    "end_seconds": 1646.83,
+    "text": "way of ensuring the model is trustworthy so humans can make actionable decisions is the thing that people should be focusing on. Exactly. And I also think that interpretability is also in the eyes of the beholder, like who is interpreting it? If it is a human scientist who isn't trying to interpret how the model is sort of going about and sort of how will it make this prediction? That's a different question from another much larger sort of LLM. If you give some of these large"
+  },
+  {
+    "segment_id": "s-0060",
+    "start_seconds": 1646.83,
+    "end_seconds": 1675.19,
+    "text": "frontier models of the future access to the activation layers and say, okay, tell me, can you predict what Alpha-fold will do? Maybe they will be able to predict and they will come up with the theory of how actually Alpha-fold 2 was interpreting and producing these results. Okay. That's the two-minute warning. So one last question for both of you, quick one. So there's a real chance that AI will make dramatic improvements in human health in the next,"
+  },
+  {
+    "segment_id": "s-0061",
+    "start_seconds": 1675.19,
+    "end_seconds": 1703.71,
+    "text": "for immediate future. I like quantitative predictions. Best guess, how long until we start seeing AI results in the clinic? Fishmeet, you want to start? I mean, the point is AI results in the clinic. It's an ill-posed. That's why it's not a, AI is being used today already in"
+  },
+  {
+    "segment_id": "s-0062",
+    "start_seconds": 1703.71,
+    "end_seconds": 1732.43,
+    "text": "every part of the drug discovery process. So if from that perspective, it's already there. But if you are asking me the question, when will we see that 10x acceleration or 100x acceleration in the timelines, then the other question is what are we accelerating? Is it doing lead optimization? Is it the target discovery? Is it sort of the preclinical or the tox sort of work?"
+  },
+  {
+    "segment_id": "s-0063",
+    "start_seconds": 1732.43,
+    "end_seconds": 1759.67,
+    "text": "So I think over the next sort of few years, and which is why this effort that we announced today is extremely important, we need to tackle some of these hard challenges of biology. And only then will we be able to get these true unlocks of acceleration that dramatically transforms how drug discovery will happen."
+  },
+  {
+    "segment_id": "s-0064",
+    "start_seconds": 1759.67,
+    "end_seconds": 1787.07,
+    "text": "So AI will be there in the clinic and will be impacting sort of things that go into the clinic all the time. But the actual sort of larger acceleration that will be unlocked only with a better understanding of the biological models that this effort is trying to sort of create. All right, thanks. So real quick question if we were almost out of time, but you?"
+  },
+  {
+    "segment_id": "s-0065",
+    "start_seconds": 1787.07,
+    "end_seconds": 1815.11,
+    "text": "Yeah, I mean, I'm tempted to literally put on my bio hat to answer this question. But I think it's really important to think about this. As you were saying, what does it mean to push the field forward? The thing that we really want to see is those outcomes. So when will it be that a drug that was made entirely by AI, by an AI or something? I don't know."
+  },
+  {
+    "segment_id": "s-0066",
+    "start_seconds": 1815.11,
+    "end_seconds": 1842.11,
+    "text": "It's hard to know that. But I do think we're going to see rapid progress here, very, very quickly, because all these tools are being used and stuff like that. And going back to your point about the basic, we need basic research. We need basic understanding. One thing I learned a long time ago in my career, actually back at Google is like sometimes it's easier"
+  },
+  {
+    "segment_id": "s-0067",
+    "start_seconds": 1842.11,
+    "end_seconds": 1870.79,
+    "text": "to approach a problem by looking at what is it going to take to make a 10x improvement rather than a 10% improvement. And that's not because that's necessarily an easier path. It's because it allows you to take a broader view and see some solutions that you haven't been approaching. And what is actually the path to do it? and you would go back and look from first principles. How are we going to do this? How are we going to really push this?"
+  },
+  {
+    "segment_id": "s-0068",
+    "start_seconds": 1870.79,
+    "end_seconds": 1899.63,
+    "text": "So I think both the approaches, both approaches, the 10% and the 10x are valuable, and we should do both. I'm just very happy that at Biohub, we have a very beautiful and lofty mission statement to cure all disease. if you want to do that, you really need to go and figure out, like what is the 10X approach?"
+  },
+  {
+    "segment_id": "s-0069",
+    "start_seconds": 1899.63,
+    "end_seconds": 1911.93,
+    "text": "So I think it's a really great opportunity to be able to do that. Awesome. Thank you both. Thank you for being in the literal hot seat. Thank you."
+  }
+]

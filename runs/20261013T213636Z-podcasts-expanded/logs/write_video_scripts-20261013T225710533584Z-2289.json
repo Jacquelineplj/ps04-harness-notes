@@ -1,0 +1,28 @@
+{
+  "stage": "write_video_scripts",
+  "status": "completed",
+  "run_dir": "runs/20261013T213636Z-podcasts-expanded",
+  "input_count": 3,
+  "output_count": 3,
+  "started_at": "2026-10-13T22:55:14Z",
+  "finished_at": "2026-10-13T22:57:10Z",
+  "elapsed_seconds": 116.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-haiku-5-5,claude-opus-5",
+      "calls": 3,
+      "input_tokens": 53928,
+      "output_tokens": 11425,
+      "cost_usd": 0.5434432,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 0.543443,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {}
+}
