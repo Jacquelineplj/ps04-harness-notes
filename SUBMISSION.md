@@ -3,7 +3,7 @@
 Complete this document with your project details and links. Keep the course instructions in [README.md](README.md) and the required contracts in [ARCHITECTURE.md](ARCHITECTURE.md).
 
 **Student:** Jacqueline Pan 
-**GitHub repository:** [Jacquelineplj/ps04-harness-notes](https://github.com/Jacquelineplj/ps04-harness-notes) (private; course-staff access must be granted)
+**GitHub repository:** [Jacquelineplj/ps04-harness-notes](https://github.com/Jacquelineplj/ps04-harness-notes) 
 
 ## Topic and Audience
 
