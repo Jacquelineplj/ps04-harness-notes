@@ -38,42 +38,42 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### AI is mass decompiling games. That's both awesome and scary.
 `feed:154a39176d886b3b`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: This is a link-blog post about AI-powered game decompilation and preservation, which has no harness design, tool protocol, sandboxing, evaluation, or production-operation implication for agent builders. It falls under the excluded 'general AI commentary' and out-of-scope 'mentions agents only in passing' categories.
 
 ### [AINews] AI Engineer NYC: Gemini 4 Argon, Vals AI Benchmarks
 `feed:1d5f8df4a8f95858`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: This is an AINews roundup/newsletter digest covering the Gemini 4 Argon GA launch and AI Engineer NYC conference; per policy, newsletter link roundups are secondary reporting and should be deferred/rejected when primary sources exist, and most content here (pricing, benchmark leaderboard confirmations, model launch news) lacks harness-design implications beyond passing mentions.
 
 ### LAGO: Language Agents with Reusable Growing Options
 `feed:265494f2f990955e`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '02']
 - Reason: Measured research on a multi-agent orchestration design: a meta-agent library of reusable 'options' tested on 500 SWE-bench Verified tasks, with a controlled 150-task comparison against mini-SWE-agent and Terminus 2 under matched policy/temperature/evaluator (60.3% vs 49.3%/57.3%) and an ablation isolating decomposition, reuse, and library contribution. This directly measures a harness design choice (sub-agent orchestration, option reuse) with method and comparison, squarely in scope.
 
 ### Tree Appreciator
 `feed:3e6e644f1b2b0e94`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: A short personal anecdote about building a game with the Claude iPhone app; it touches on no harness design, tool protocol, sandboxing, evaluation, or production operation topic in scope, and at ~1000 characters is close to the policy's exclusion for short, thin posts without technical content.
 
 ### Euler: Towards Human-Centered Multi-Agent Mathematical Discovery
 `feed:40c2e042484cc77c`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: Euler is a multi-agent framework for mathematical discovery addressing long-horizon context loss and verification, which touches harness concerns, but its focus is domain-specific (mathematical research workflows) rather than general harness design, and the brief excludes model-capability/domain-application papers without direct harness implication beyond a narrow case. The long-horizon context/memory problem it describes is generic but the paper's contribution is a math-specific representation, not a generalizable harness technique validated across domains.
 
 ### HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost
 `feed:504a28fcb44d1a3d`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: This is a climate-emulation model (weather simulation) announcement with no connection to agent harness design, tool protocols, evaluation of agents, or production operation of agents; it is out of scope entirely under the topic definition.
 
@@ -87,7 +87,7 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### Crossing the Threshold: How OpenAI and Anthropic Approach Autonomy and Safety in Financial Agents
 `feed:800e88b7ff797cb4`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '03']
 - Reason: Reports on conference keynotes from OpenAI and Two Sigma describing concrete permission/guardrail design choices for financial agents, including Two Sigma's specific controls to avoid 'approval fatigue' and OpenAI's framing of human-in-the-loop as a product design decision; this is directly in scope (permissions, approvals, guardrails in the harness) and offers practitioner detail beyond a model announcement. Evidence is vendor/practitioner conference commentary, not measured results, and should be labeled as such.
 
@@ -101,21 +101,21 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### Teaching Agents in their Own Style: Blackbox Teacher Distillation for Web Agents
 `feed:90ab5356a1b22683`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '02']
 - Reason: Research paper on distilling black-box teacher web agents into smaller open models via trajectory editing (WebKD), reporting 5.5-10.7pp gains over behavior cloning, outcome-RL, and teacher-editing baselines on named benchmarks (TimeWarp, OnlineMind2Web). Directly relevant to harness design for cost-efficient web agents, with described method and measured comparisons.
 
 ### EGCForest: Structured Agent Memory Organization for Enterprise Group Chats
 `feed:9af0a9d6b90c27e2`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '02']
 - Reason: Presents a concrete harness design for enterprise agent memory (EGCForest's channel/actor/artifact forests) with measured results on three enterprise-chat benchmarks, claiming up to 20.85-point accuracy improvement over MemOS. This is exactly the kind of memory-architecture research with described method and comparison that piece 02 can scrutinize and piece 01 can flag as a new development.
 
 ### DeltaStreamer: Towards Human-Like Agentic Streaming Video Understanding
 `feed:abdcb8a376289470`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: defer []
 - Reason: Proposes an agentic streaming-video memory framework (change-aware memory plus query-driven replay) with benchmark results on OVO-Bench and StreamingBench, which touches context/memory management relevant to harness design, but the opening text does not clearly connect to the audience's typical agent-harness concerns (tool use, coding/computer-use agents) and needs further reading to judge whether it generalizes beyond a narrow video-understanding niche.
 
@@ -129,14 +129,14 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection
 `feed:b76b11a1199f73b7`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: This describes an on-device fine-tuned Gemma model for scam detection, a consumer safety product collaboration with no harness design, tool protocol, agent evaluation, or orchestration implication. It is an announcement of a government partnership, out of scope per the policy's exclusion of material that mentions AI only in passing relative to harness concerns.
 
 ### Build your slide template
 `feed:d995256e997e50a5`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: This is a general guide to building slide templates (colour theory, typography, layout), with no connection to AI agent harness design, tool protocols, evaluation, or production operation; it falls under the policy's exclusion of generic how-to/tutorial content unrelated to the publication's scope.
 
@@ -178,7 +178,7 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### ActionOPD: Distilling Decisions, Not Tokens
 `feed:f6079d79e221ce0f`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: defer []
 - Reason: OPERATIONAL: no decision returned by the model for this item; deferred for human review, not an editorial judgement.
 
@@ -192,7 +192,7 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### Uber’s AI infra, from the inside
 `podcast:4e22e3d6436deca5`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '03']
 - Reason: Detailed practitioner account from Uber's distinguished engineer of internal systems built around coding agents -- including MCP Gateway, AI Guard, permissions, and the explicit claim that 'the harness is the easy part, what's hard is all the things around them' -- directly addresses production operation, permissions, and MCP tooling at scale. This is a deployed-system practitioner report with named internal systems (Minion, Codeinbox, Shepard), giving concrete evidence beyond a vendor pitch.
 
@@ -213,7 +213,7 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### I Spent Two Years Building the Median — Hariprasad Sudharshan
 `youtube:0JZy5AuuQzc`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: This is a founder's personal narrative about building a product (a 'median' app) over two years, with one passing mention of harness terminology (tools, context, orchestration, memory, MCP) but no technical detail, measurement, or design analysis of harness choices. It reads as entrepreneurship/product-building commentary, which the policy excludes as general commentary without harness implication.
 
@@ -227,14 +227,14 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### Rebuilding CI for AI-Scale Commit Volume — Gautam Korlam, SonarSource
 `youtube:7b9tov5Uc5s`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '03']
 - Reason: Describes concrete CI/build infrastructure bottlenecks caused by agent-scale commit volume (flaky tests, review becoming the dominant latency source per P90 measurement at Uber, need for compliance-recorded decisions on agent-authored code) drawing on the speaker's decade of build/merge infra experience at Uber and now Sonar. This is a practitioner report with a specific measurement claim (P90 review time dominance) relevant to production operation and reliability of agent-driven software delivery pipelines.
 
 ### How to Actually Tokenmaxx and Save Millions — Alvin Pane, OutRival
 `youtube:8g1N_a3h9H0`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '02']
 - Reason: Presents a specific evaluation methodology for prompt/model optimization at scale: an 'AA test' (ceiling test) to check whether production output is self-consistent before attributing changes to a prompt rewrite, plus statistical practice (confidence bounds crossing zero, per-category analysis) to validate whether a cheaper/optimized model is actually worse. This is a measured, method-described practitioner approach to agent evaluation and cost control, core to the eval/production-operation scope.
 
@@ -248,7 +248,7 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### Your AI Isn’t the Problem. Your Infrastructure Is. — Jiachen Jiang, Coder
 `youtube:Wb2v9Phhnns`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '03']
 - Reason: A Coder staff PM walks through three real/anonymized incidents of coding-agent failures (e.g., an agent causing damage via the 'lethal trifecta' of tool access, with insufficient logging to catch it in real time) and derives concrete harness mitigations: short-lived scoped credentials, isolated/ephemeral workspaces, and better real-time logging — this is exactly the sandboxing/permissions/observability practitioner-report content the brief seeks, based on direct incident accounts rather than abstract advice.
 
@@ -269,14 +269,14 @@ Selection: {'reject': 50, 'accept': 35, 'defer': 8}. The same policy v2 was used
 ### From Wet Lab to RL Env: 10,000 Drug-Discovery Campaigns in a Weekend — Ian Quigley, Leash Bio
 `youtube:hQSBJVreLms`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: reject []
 - Reason: This is a long-form conversation about drug discovery, RL environments for chemistry, and molecule generation at Leash Bio—it concerns AI-for-science research, not harness engineering (context management, tool protocols, sandboxing, memory, agent evals, or orchestration). It is out of scope as general AI/domain-science content with no harness implication.
 
 ### Paving the Road to Production: Governed Enterprise AI Agents — Harish Gaggar, Credit Karma
 `youtube:tZycGA_Fbfo`
 
-- Before: absent from previous eligible corpus 
+- Before: absent from previous eligible corpus
 - After: accept ['01', '03']
 - Reason: A Credit Karma senior staff engineer gives a practitioner report on moving agents to production, covering building internal MCP servers and gateways with security review of tools, LangGraph checkpointing per run/thread, a context optimizer that prunes payloads by token limit, memory, evals, and PII blocking before LLM calls. This is exactly the harness-engineering detail (MCP governance, context management, observability) the brief prioritizes, and the whole-episode rule applies since the sampled excerpts consistently show harness content.
 

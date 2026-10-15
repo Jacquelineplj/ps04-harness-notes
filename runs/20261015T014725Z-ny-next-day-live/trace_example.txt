@@ -8,7 +8,7 @@ USED IN articles/01.md: 3 line(s)
   > The strongest evidence this month is not an announcement. On the Pragmatic Engineer podcast released 14 October, Uber's engineers describe an MCP gateway that auto-generates MCP specs from their existing Thrift and Proto
   > None of the vendor announcements carry independent measurement. Microsoft's own trace comparison is labelled by its author as a three-pair illustration, not a controlled performance or quality study [01-c2]. The Uber and
 USED IN video_scripts/01.md: 3 line(s)
-  > **Narration:** The strongest evidence this month isn't an announcement. On the Pragmatic Engineer podcast, around twenty-nine minutes in, Uber's engineers describe an MCP gateway that auto-generates MCP specs from their 
+  > **Narration:** The strongest evidence this month isn't an announcement. On the Pragmatic Engineer podcast, around twenty-nine minutes in, Uber's engineers describe an MCP gateway that auto-generates MCP specs from their
   > **Narration:** Be honest about what we have. None of the vendor announcements carry independent measurement. Microsoft's own trace comparison is labelled by its author as a three-pair illustration, not a controlled study
 
 EVIDENCE item podcast:4e22e3d6436deca5 version 8ecc7bc4001b...
@@ -24,4 +24,3 @@ EVIDENCE item podcast:4e22e3d6436deca5 version 8ecc7bc4001b...
   retained text: data/assets/podcast/f8f4fd8cfa8a2e77/8ecc7bc4001b.txt | segments: data/assets/podcast/f8f4fd8cfa8a2e77/8ecc7bc4001b.segments.json
   segment s-0086 at 36:39-37:08: "Just couple of engineers using AI, they updated all of the skills in this repository to use the CLI pattern because it's more token efficient. Because if every skill says I want MCP ABC, MCP DEF, then if I install these two plugins, I'm going to have like six MCPs across these two always in my context and there is so much context load, right? like then we replaced all the skills with the CLI pattern."
   audience link: https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside
-
