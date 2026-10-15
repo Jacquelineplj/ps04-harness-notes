@@ -24,7 +24,7 @@ The three articles are free and public; the three companion videos were produced
 | 2 | Which Claims Held Up: Harnesses, Judges, and the Gap Between Passing and Working | [Read article](https://jacquelinepan.substack.com/p/which-claims-held-up-harnesses-judges) | [Watch video](https://youtu.be/bVXnraPti3g) |
 | 3 | What To Build Next: State Ownership, Staged Autonomy, and the Audit Trail You Don't Have Yet | [Read article](https://jacquelinepan.substack.com/p/what-to-build-next-state-ownership) | [Watch video](https://youtu.be/pKNdJ5zOlJA) |
 
-**Separate technical demonstration video:** [unlisted walkthrough](https://youtu.be/Xtke0Tbz18g) · [recording script](demo/technical_demo_script.md) · [AI-narrated manifest](demo/technical_demo_manifest.json). 4:39, showing rendered evidence cards rather than a live screen capture; it records the second run before the subsequent human approval.
+**Separate technical demonstration video:** [narrated walkthrough (Google Drive)](https://drive.google.com/file/d/1BbankDKDXPBOu0IHKyPOCsjyIaIJ_Huq/view?usp=sharing) — a narrated screen walkthrough of this repository and its runs, separate from the three audience-facing videos.
 
 ## Setup and Execution
 
