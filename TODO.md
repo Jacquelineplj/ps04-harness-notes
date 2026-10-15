@@ -7,7 +7,8 @@
 - [x] 4:39 AI 配音技术演示已发布为 Unlisted：https://youtu.be/Xtke0Tbz18g 。该演示使用保存产物的证据卡片，已如实标注制作方式。
 - [x] 第二次完整 live run：`runs/20261014T014037Z-second-live/`；0 new、0 changed、67 unchanged。
 - [x] 第二次 run 经用户明确复核批准并打包为 `ready_for_production`；检查为 0 errors / 5 warnings。
-- [x] 运行索引、运行表和决策对比已更新。两次 run 是不同 UTC 日期，但纽约本地开始日期相同，未声称间隔 24 小时。
+- [x] 已补纽约不同日期的完整 live run：`runs/20261015T014725Z-ny-next-day-live/`。纽约 10 月 14 日 21:47 启动，与首轮纽约 10 月 13 日相隔超过 24 小时；退出 0，新增 20 / 变化 2 / 未变化 45，3 briefs/articles/scripts，最终检查 0 errors / 3 warnings。时区证明、决策对比及运行索引已保存。
+- [ ] 若要批准打包或发布这次新稿，仍需本人审核并记录新的 approval.json；该轮目前为 `awaiting_review`。作业已发布的三组文章/视频仍使用此前批准版本，无需再发布一整套。
 - [x] 私有 GitHub 仓库已创建，初始版本已推送：https://github.com/Jacquelineplj/ps04-harness-notes 。
 - [x] 本次最终发布链接和制作记录已纳入最终提交并推送到上述 GitHub 仓库。
 - [ ] 给课程工作人员私有仓库访问权限：仍需工作人员的 GitHub 用户名。用户提供的 `Jacquelineplj` 已是仓库所有者。

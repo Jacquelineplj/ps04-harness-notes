@@ -1,0 +1,158 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 0.72,
+    "end_seconds": 29.52,
+    "text": "Hey everyone, I'm Alvin, the head of agent intelligence at OutReval. By now, everyone's heard of token maxing. People have built leaderboards inside companies for who's using the most AI tokens. At Meta, they even had a title for this, tooken legend, a badge of honor for whoever's burning the most compute. It's a funny meme, but if you're actually shipping a product, token usage is a bizarre measurement of success. Tokens"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 27.44,
+    "end_seconds": 55.28,
+    "text": "aren't the work. They're what you pay to get the work done. At OutRrival, our digital workers handle complex tasks over phone, text, and email. At the application layer, we're processing billions of tokens every single day. And when you operate at that scale, every redundant model call compounds into massive latency and millions of dollars in compute costs. Take a look at this prompt. I've built a synthetic proxy"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 53.12,
+    "end_seconds": 82.4,
+    "text": "that mirrors what structural bloat looks like in a pipeline. Let's pretend we're classifying customer intents for a fictional company called HarborBite. We've all seen one of these. It's got 20 edge cases, overly pedantic definitions, and a paragraph practically begging the model not to hallucinate. When you're sending this much text on every single request, millions of times a day, it isn't just a prompt anymore. It's a massive self-inflicted compute tax. If"
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 81.04,
+    "end_seconds": 109.12,
+    "text": "you want to give your agents more capabilities, you need the architectural headroom to do it. So today, we're reclaiming token maxing. It shouldn't be about burning the most tokens, but about extracting the maximum surface area of intelligence from the absolute minimum token payload. So here's how to actually token max. Let's get into the playbook. First, observe. You can't fix what you"
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 106.48,
+    "end_seconds": 136.0,
+    "text": "can't measure. Instrument your shared model client so each attempt becomes part of a trace connecting the model calls, tools, and retries for a single task. Record the prompt version, model settings, token usage, latency, and cost. Open telemetry is a great framework for tracking this. Now that you have that telemetry, you can actually build a benchmark of how"
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 133.52,
+    "end_seconds": 163.12,
+    "text": "production is behaving. But here's where most optimization efforts hit a wall. Let me tell you how it usually goes. You take your massive prompt, you hand it to a smaller, cheaper model, and you run it against a few thousand of those historical production examples. We did this. Our cheaper candidate model disagreed with our expensive production baseline about 18% of the time. So"
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 160.4,
+    "end_seconds": 189.28,
+    "text": "naturally, we threw it out. It wasn't good enough. But what does that 18% actually represent? Because language models in production are dealing with inherently ambiguous real life inputs, that 18% is actually a composite metric. It introduces a critical hidden variable, the baseline variance of the model itself."
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 186.32,
+    "end_seconds": 215.52,
+    "text": "When the input is messy, your production prompt will inevitably disagree with its own past decisions. So to isolate that hidden variable and understand what your rewrite actually changed, we asked a really dumb question. Does prod even agree with prod? We ran an AA test. We call this the ceiling test. We took our massive"
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 212.8,
+    "end_seconds": 242.72,
+    "text": "expensive production model and ran it three separate times on the same inputs and compared the answers. We discovered that it disagreed with itself roughly 7% of the time. Production's own agreement was only about 93%. So we were demanding a standard of perfection from the cheap candidate that our existing expensive system couldn't even hit. Once you establish that"
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 240.4,
+    "end_seconds": 269.68,
+    "text": "ceiling test benchmark, you finally have a measured baseline. Now you can start making the work cheaper. There are three technical levers I like to pull and they run in a sequence. The very first is caching. Specifically, structuring your prompts to maximize your prefix cache rate is a really easy and really effective way to bring down the cost to run given tasks."
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 267.44,
+    "end_seconds": 294.56,
+    "text": "The second lever is to actually shrink the footprint of the prompt itself. So, let's bring that Harborbite prompt example back up. This prompt is almost 5,000 tokens long. And why? Because over time, developers kept bolting on paragraphs of rules. For example, do not confuse enthusiasm with"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 290.64,
+    "end_seconds": 319.2,
+    "text": "authorization is one such example. Uh, plus massive hard-coded transcripts that were acting as worked examples. Nobody wants to be the one who deletes a line and breaks prod. So what do you do? You automate it. You turn prompting into a search problem. With a framework like DSPI, you can actually stop manually"
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 316.48,
+    "end_seconds": 346.16,
+    "text": "writing instructions. You define the exact interface contract, the inputs, the required output schema, and the scoring function. And then you hand it off to an optimizer like Jeepa. The optimizer treats your prompt as a search space. It runs against your benchmark attempting to match those historical labels. And it uses feedback on failures to revise the instructions."
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 343.44,
+    "end_seconds": 372.48,
+    "text": "It stripped out almost all of our long worked examples and replaced them with compact rules. A 51% reduction in instruction tokens with the same application contract. Now we can move to test whether quality holds. That is instant margin. The third lever is to actually downsize the model. Now that you have a tight prompt and a measurable"
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 370.0,
+    "end_seconds": 398.0,
+    "text": "search loop, you don't always need a massive frontier model. You can start aggressively cutting compute. There are two interesting strategies here. First, you can break a massive prompt into smaller components. you use a cheaper model to handle something like initial routing or data extraction and only wake up your expensive frontier models for heavy reasoning."
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 395.04,
+    "end_seconds": 423.6,
+    "text": "Second, you can use that exact same DSPI search loop we just built, but plug a smaller model into it. You let the smaller model search its own prompt space to match the benchmark answers generated by your large production model. You're essentially using Jeepa to teach a tiny model to match the task performance of a massive one for your specific data set. But the reality of optimization is not"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 422.0,
+    "end_seconds": 450.32,
+    "text": "quite so easy when it comes to these small models. Um if you're trying to compress the behavior of a large model into a smaller one, you'll notice that you introduce new points of failure and overfitting. Um, and in many of our downsizing experiments, uh, we found that the prompts weren't good enough to release, which brings us to the final hurdle. We've cut Harbor's prompt in"
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 447.6,
+    "end_seconds": 476.8,
+    "text": "half, but now we have to prove that we actually didn't break the product. Remember, these models are probabilistic. Production doesn't always agree with itself. And likewise, our new cheaper candidate is also going to have its own internal variance. So you run a massive shadow deployment on the exact same inputs and measure the system from three angles. Production against production,"
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 474.56,
+    "end_seconds": 501.92,
+    "text": "candidate against candidate, and candidate against production. There's a useful bit of math here. You take the disagreement between the two versions and subtract the average disagreement inside each one. What's left gives you a measure of how different their decision probabilities are. This is where that ceiling test pays off. We aren't guessing. We have a mathematical"
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 499.44,
+    "end_seconds": 528.08,
+    "text": "baseline for how much these answers move around when we haven't changed a thing. And here's the secret about that drift. Different doesn't automatically mean wrong. If your optimizer did his job, the distributions should be different because the cheaper prompt is actually doing a better job. We aren't necessarily trying to build a perfect clone of a production system that may already have some flaws baked into it."
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 526.4,
+    "end_seconds": 556.0,
+    "text": "So, you stop panicking about the raw differences, you pull the diffs, and you manually review some of them. Was the candidate better? Was production better? or were they just two different equally acceptable ways to handle an ambiguous input? For Harbor Bite, let's say the completed review confirmed 443 regressions, but it also found 2,463 outright improvements. That is almost six improvements for"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 553.44,
+    "end_seconds": 583.44,
+    "text": "every one regression from a prompt that is half the size. But you do not ship on a point estimate. You have to account for sampling noise. We measured a massive gain on this specific batch of requests, but we need to know exactly how much statistical confidence we can put behind it. So, we calculate a confidence interval around that net gain. You keep the comparison strictly paired, both versions answering"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 581.12,
+    "end_seconds": 610.96,
+    "text": "the exact same request, and you keep the repeated runs of the same conversations grouped together. To say the candidate is better, we want the lower confidence bound above zero. If the interval crosses zero, we need more evidence before making that claim. And one final sanity check is that you have to run this math on your critical categories separately. A great global average can actually uh silently hide that one vital"
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 608.4,
+    "end_seconds": 637.68,
+    "text": "customer intent is tanking. If your critical categories hold up and your lower confidence bound is above zero, you have your answer. Ship it and keep measuring. So this process is how you can replace the guesswork of prompt engineering with an explicit release rule. Cache the obvious stuff. Let an optimizer shrink your instructions. Rightize your model and use the ceiling"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 634.64,
+    "end_seconds": 661.28,
+    "text": "test to understand the variation. Then test whether quality holds. So here's your homework for Monday morning. Go pick your most expensive task. Measure your baseline variance. put it through a search loop and find out exactly how much bloat you're paying for. We need to reclaim token maxing. Let the rest of the industry fight for the high score on the leaderboard. The"
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 659.04,
+    "end_seconds": 665.24,
+    "text": "real token legends are the ones making every single token count."
+  }
+]

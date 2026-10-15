@@ -1,0 +1,87 @@
+{
+  "review_id": "cc4958ce5e311ae9e49a433e585657f33e3e8316ab7512a64ff0cd4fe7f5b736",
+  "passed": true,
+  "issues": [
+    {
+      "piece_id": "01",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "02",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    },
+    {
+      "piece_id": "03",
+      "artifact": null,
+      "severity": "warning",
+      "message": "interpretation, credibility judgements and tone require human review before approval"
+    }
+  ],
+  "as_of_date": "2026-10-15",
+  "checked_at": "2026-10-15T02:14:52Z",
+  "stats": {
+    "errors": 0,
+    "warnings": 3,
+    "evidence_refs": 46,
+    "publishers_per_piece": {
+      "01": [
+        "ai-engineer",
+        "arxiv",
+        "langchain",
+        "latent-space",
+        "microsoft",
+        "pragmatic-engineer",
+        "simon-willison"
+      ],
+      "02": [
+        "ai-engineer",
+        "arize",
+        "arxiv",
+        "huggingface"
+      ],
+      "03": [
+        "ai-engineer",
+        "arize",
+        "arxiv",
+        "huggingface",
+        "pragmatic-engineer"
+      ]
+    },
+    "kinds_cited": [
+      "feed",
+      "podcast",
+      "youtube"
+    ],
+    "article_words": {
+      "01": 877,
+      "02": 873,
+      "03": 868
+    },
+    "narration_words": {
+      "01": 683,
+      "02": 733,
+      "03": 723
+    },
+    "perspectives_per_piece": {
+      "01": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "02": [
+        "commercial",
+        "practitioner",
+        "research"
+      ],
+      "03": [
+        "commercial",
+        "practitioner",
+        "research"
+      ]
+    }
+  }
+}

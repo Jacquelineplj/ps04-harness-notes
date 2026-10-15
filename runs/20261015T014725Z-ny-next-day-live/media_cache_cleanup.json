@@ -1,0 +1,101 @@
+{
+  "removed": [
+    {
+      "path": "data/media/podcasts/40998be2b2505c5b.mp3",
+      "bytes": 58609579,
+      "retained_evidence_directory": "data/assets/podcast/40998be2b2505c5b",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/2b6820676b9e0cd4.mp3",
+      "bytes": 46951399,
+      "retained_evidence_directory": "data/assets/podcast/2b6820676b9e0cd4",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/2e4221c1b2cd26a8.mp3",
+      "bytes": 125953423,
+      "retained_evidence_directory": "data/assets/podcast/2e4221c1b2cd26a8",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/b95a3a86005d4a70.mp3",
+      "bytes": 45454632,
+      "retained_evidence_directory": "data/assets/podcast/b95a3a86005d4a70",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/124037516e6c730b.mp3",
+      "bytes": 53822085,
+      "retained_evidence_directory": "data/assets/podcast/124037516e6c730b",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/b65fc2d0ce74369b.mp3",
+      "bytes": 21706709,
+      "retained_evidence_directory": "data/assets/podcast/b65fc2d0ce74369b",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/765f965d523053ed.mp3",
+      "bytes": 88782965,
+      "retained_evidence_directory": "data/assets/podcast/765f965d523053ed",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/84d1898fb0776740.mp3",
+      "bytes": 51804346,
+      "retained_evidence_directory": "data/assets/podcast/84d1898fb0776740",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/466f830181b539fe.mp3",
+      "bytes": 28224515,
+      "retained_evidence_directory": "data/assets/podcast/466f830181b539fe",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/d074d9e878deca48.mp3",
+      "bytes": 80635058,
+      "retained_evidence_directory": "data/assets/podcast/d074d9e878deca48",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/af45c080e3766cc1.mp3",
+      "bytes": 42665018,
+      "retained_evidence_directory": "data/assets/podcast/af45c080e3766cc1",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/5826ffa9c56d6852.mp3",
+      "bytes": 30651080,
+      "retained_evidence_directory": "data/assets/podcast/5826ffa9c56d6852",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/518ad25c4dcbef2f.mp3",
+      "bytes": 47057100,
+      "retained_evidence_directory": "data/assets/podcast/518ad25c4dcbef2f",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/93cf1193e6ac377f.mp3",
+      "bytes": 39968599,
+      "retained_evidence_directory": "data/assets/podcast/93cf1193e6ac377f",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/ac1e4daae0eeb5bf.mp3",
+      "bytes": 50771041,
+      "retained_evidence_directory": "data/assets/podcast/ac1e4daae0eeb5bf",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    },
+    {
+      "path": "data/media/podcasts/d8116438c72efa27.mp3",
+      "bytes": 76957299,
+      "retained_evidence_directory": "data/assets/podcast/d8116438c72efa27",
+      "reason": "Regenerable raw audio cache removed to preserve disk space during new full run; retained transcripts and source URLs remain."
+    }
+  ],
+  "bytes_freed": 890014848
+}

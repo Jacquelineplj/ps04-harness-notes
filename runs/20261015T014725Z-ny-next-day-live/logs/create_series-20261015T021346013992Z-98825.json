@@ -1,0 +1,18 @@
+{
+  "stage": "create_series",
+  "status": "completed",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": null,
+  "output_count": null,
+  "started_at": "2026-10-15T01:58:00Z",
+  "finished_at": "2026-10-15T02:13:46Z",
+  "elapsed_seconds": 946.0,
+  "tools": [
+    "bash"
+  ],
+  "models": [],
+  "cost_usd": null,
+  "cost_is_estimate": null,
+  "errors": [],
+  "extra": {}
+}

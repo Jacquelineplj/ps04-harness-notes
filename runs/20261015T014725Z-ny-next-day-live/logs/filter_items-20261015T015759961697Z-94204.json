@@ -1,0 +1,29 @@
+{
+  "stage": "filter_items",
+  "status": "completed",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": 96,
+  "output_count": 93,
+  "started_at": "2026-10-15T01:57:59Z",
+  "finished_at": "2026-10-15T01:57:59Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "python-dateutil"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "as_of_date": "2026-10-15",
+    "window_start": "2026-09-16",
+    "window_end": "2026-10-15",
+    "excluded": 3,
+    "exclusion_reasons": {
+      "outside_window": 3,
+      "unknown_date": 0,
+      "future_date": 0,
+      "invalid_date": 0
+    }
+  }
+}

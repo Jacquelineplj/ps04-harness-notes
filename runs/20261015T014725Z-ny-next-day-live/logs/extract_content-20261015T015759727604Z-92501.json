@@ -1,0 +1,77 @@
+{
+  "stage": "extract_content",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": 74,
+  "output_count": 67,
+  "started_at": "2026-10-15T01:48:35Z",
+  "finished_at": "2026-10-15T01:57:59Z",
+  "elapsed_seconds": 564.0,
+  "tools": [
+    "httpx",
+    "trafilatura",
+    "yt-dlp",
+    "faster-whisper (small)",
+    "pymupdf"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [
+    {
+      "message": "unprocessable: insufficient_text: 789 chars via html",
+      "item_id": "feed:1ce341749cd1d883",
+      "url": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 448 chars via html",
+      "item_id": "feed:e6734b2c11074d76",
+      "url": "https://simonwillison.net/2026/Oct/13/web-edit"
+    },
+    {
+      "message": "unprocessable: insufficient_text: 443 chars via html",
+      "item_id": "feed:04d6208c687016cf",
+      "url": "https://latent.space/p/nyc2026"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/amp-beyond-coding: HTTP 403 for https://openai.com/index/amp-beyond-coding",
+      "item_id": "feed:57c3309db5bedcde",
+      "url": "https://openai.com/index/amp-beyond-coding"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/sentinelone: HTTP 403 for https://openai.com/index/sentinelone",
+      "item_id": "feed:004cd593adabcd24",
+      "url": "https://openai.com/index/sentinelone"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/third-moment-research: HTTP 403 for https://openai.com/index/third-moment-research",
+      "item_id": "feed:a8b8c31de898145e",
+      "url": "https://openai.com/index/third-moment-research"
+    },
+    {
+      "message": "RuntimeError: fetch failed for https://openai.com/index/block-ai-powered-security: HTTP 403 for https://openai.com/index/block-ai-powered-security",
+      "item_id": "feed:94ee28b93f9d2d83",
+      "url": "https://openai.com/index/block-ai-powered-security"
+    }
+  ],
+  "extra": {
+    "counters": {
+      "reused": 18,
+      "fetched": 56,
+      "caption_items": 6,
+      "whisper_items": 1,
+      "media_downloaded": 1,
+      "transcribed_seconds": 3600.0,
+      "unprocessable": 3,
+      "failed": 4,
+      "thin": 3,
+      "malformed_lines": 0,
+      "duplicates": 0
+    },
+    "mode": "live",
+    "retain_media": false,
+    "whisper_model": "small",
+    "max_transcribe_seconds": 3600,
+    "cost_basis": "local compute only"
+  }
+}

@@ -1,0 +1,488 @@
+[
+  {
+    "segment_id": "s-0001",
+    "start_seconds": 1.88,
+    "end_seconds": 31.56,
+    "text": "If I tell you the New York City tonight suddenly stops working, you tell me what could be possible reasons for no flights leaving JFK. The subway suddenly stops at the next station and stays there. None of your tap pay is working. The elevators you get in, they don't know which floor they are. The phones are not ringing. The Wall Street"
+  },
+  {
+    "segment_id": "s-0002",
+    "start_seconds": 29.8,
+    "end_seconds": 58.0,
+    "text": "and the entire world comes to a standstill. What could be the reason? Software. Unless otherwise, there is a software issue that affects the entire globe. There is nothing that can stop this modern world. This is how much the city of New York and our entire globe"
+  },
+  {
+    "segment_id": "s-0003",
+    "start_seconds": 54.0,
+    "end_seconds": 82.96,
+    "text": "is actually driven by unseen software. Not the AI kind of software that we mostly talk about. It's the traditional, deterministic, rule-based, reliable software that has brought the modern world to us. It is handcrafted for over 70 years by humans. I'm Hari. I'm the product person"
+  },
+  {
+    "segment_id": "s-0004",
+    "start_seconds": 81.36,
+    "end_seconds": 110.24,
+    "text": "who has built software for almost like two decades now. And I have this one genuine theory. If at all there is a new industry in the human history, it must be software industry. Because you take navigation, agriculture, construction, and even astronomy, we had this in different forms and shapes earlier. Now that it may be more sophisticated,"
+  },
+  {
+    "segment_id": "s-0005",
+    "start_seconds": 107.92,
+    "end_seconds": 136.28,
+    "text": "but they're nothing new to us. Today from getting to work to watching this video, from nuclear reactor to all the way to space station that drives the 125 trillion dollar economy the one common factor is software. So, it would be catastrophic if for some reason software stops, just like the Y2K."
+  },
+  {
+    "segment_id": "s-0006",
+    "start_seconds": 132.96,
+    "end_seconds": 162.52,
+    "text": "And our modern world was a lot to this kind of a software. The deterministic kind, where you trust it with your pacemaker and when you fly on your 747. So, if you look into the product here on the left side, you have the engineers. The engineers are hired"
+  },
+  {
+    "segment_id": "s-0007",
+    "start_seconds": 159.76,
+    "end_seconds": 186.88,
+    "text": "and they are the source of judgment for every product out there with their unique taste. And I'll go to an extent and call their belief systems and value systems are reflective in the software that they shipped. The tool chain owned deterministic rules all the way. The software that runs the world"
+  },
+  {
+    "segment_id": "s-0008",
+    "start_seconds": 185.04,
+    "end_seconds": 211.4,
+    "text": "and the tool chains next to it in a cross feedback loop where the assemblers built C, C built Unix, Unix built everything and then we built Kafka, Zookeeper, all the way up to Kubernetes that runs the world today. The only judgment in this picture is human judgment. And we all know how varied we are."
+  },
+  {
+    "segment_id": "s-0009",
+    "start_seconds": 209.04,
+    "end_seconds": 236.8,
+    "text": "And that variance is where every product edge originated. The block here is a high-level representation of the entire software industry and the world economy. Who has the IP? Where is the continuous loop? And how that loop where every brick on the tool chain helps us scale new heights."
+  },
+  {
+    "segment_id": "s-0010",
+    "start_seconds": 234.6,
+    "end_seconds": 263.96,
+    "text": "Whether the software is deterministic or probabilistic, that's a question. And hold this picture. Let's watch one card change. Which is, yes, in the age of AI, the engineers today are assisted or driven or sometimes they claim it's completely autonomous by models that I would call rented. The good thing is that it creates a"
+  },
+  {
+    "segment_id": "s-0011",
+    "start_seconds": 260.96,
+    "end_seconds": 288.52,
+    "text": "level playing field with everyone having equal access to the bleeding edge models and harnesses. Teams who cannot afford earlier to the talent pools of Google and Meta who handcrafted this modern software can now afford intelligence through APIs where it claims to have solved the software problem. Let's see whether"
+  },
+  {
+    "segment_id": "s-0012",
+    "start_seconds": 286.32,
+    "end_seconds": 315.84,
+    "text": "it really solved or what's happening. If you actually pay attention and look under the hood everything around the model, the hardness, the agents, the tools, the MCP are still the same old deterministic software. People who are building this would definitely know that the these are not AI products. These are the same old deterministic software built through"
+  },
+  {
+    "segment_id": "s-0013",
+    "start_seconds": 313.4,
+    "end_seconds": 342.8,
+    "text": "maybe the models. And what did not change and stay put is what's the outcome? At the end of the world day, the world requires software that does the same thing reliably every time. So, the final artifact is a deterministic software that drives the world economy as we know it."
+  },
+  {
+    "segment_id": "s-0014",
+    "start_seconds": 341.4,
+    "end_seconds": 370.44,
+    "text": "If that is the case, then what is the role of AI here? Its role is to one to accelerate the development of deterministic software at the lowest cost possible. And write deterministic software that never existed before because of budget not an interesting problem, hard problems. So, those are"
+  },
+  {
+    "segment_id": "s-0015",
+    "start_seconds": 368.44,
+    "end_seconds": 397.48,
+    "text": "the two use cases I see going to play out in the next 5 to 10 years. So, the bottom line is we will be using a probabilistic gear to crank out a reliable deterministic software by augmenting or somebody will go to an extent say replacing human judgment. Is it possible?"
+  },
+  {
+    "segment_id": "s-0016",
+    "start_seconds": 394.72,
+    "end_seconds": 423.04,
+    "text": "Where are we today? We will see in this talk. Who knows this person? I'm a big fanboy of him. He's a superhuman and his friends. Okay, now I see you will connect dots because you know the couple of men's there and he's part of the elite sub-10"
+  },
+  {
+    "segment_id": "s-0017",
+    "start_seconds": 422.0,
+    "end_seconds": 450.52,
+    "text": "club. Two of them are relatively well known, but all three are superhumans. Aren't they? So, in 2015 nine souls competed and the difference between them is only 27 hundredths of a second. And Gatlin lost the gold by 100th of a second. Can you believe it? It's not"
+  },
+  {
+    "segment_id": "s-0018",
+    "start_seconds": 448.0,
+    "end_seconds": 477.64,
+    "text": "comprehensible to human mind. The scientific measurements gave that, okay, that is how Usain Bolt won over Gatlin that night. On another night the order could be completely different. I still run those 100 meters and I take 10 13 seconds, not 10. How about you? That's the difference between us and these extraordinary athletes competing at the edge of human"
+  },
+  {
+    "segment_id": "s-0019",
+    "start_seconds": 476.12,
+    "end_seconds": 505.92,
+    "text": "capability. But as a fan boy, I will argue my favorites like I just did earlier. But I also speak to professionals in this game. And in their opinion, the gap is so tiny that the previous best or who holds the world record does not matter when they get onto the field. On a given day, anybody can beat anyone. I'm going to apply the same yardstick on"
+  },
+  {
+    "segment_id": "s-0020",
+    "start_seconds": 504.88,
+    "end_seconds": 534.24,
+    "text": "models to drive a couple of points. Six labs the recent study came out from Stanford a few dozen Elo points here and there. And the leaderboard is changing with every release cadence. And the popular question this week which model are you using and how smarter did you feel by using that model? Isn't that the great dinner table"
+  },
+  {
+    "segment_id": "s-0021",
+    "start_seconds": 531.28,
+    "end_seconds": 560.96,
+    "text": "argument these days? But I can tell you one thing, it is not necessarily a good boardroom argument. Why? Because often the emotional side of us, like the fan boy moment, peaks into meeting rooms. After all, we're all humans. I'm not saying don't compare models. All I'm saying is don't make a small moving frontier gap into your product roadmap as an"
+  },
+  {
+    "segment_id": "s-0022",
+    "start_seconds": 559.0,
+    "end_seconds": 587.2,
+    "text": "advantage. Let's dive a little bit deeper here because there are some numbers to unpack. Anthropic 1503 Mistral 1460 87 points here and there. It does not mean Anthropic is 87 points smarter than Mistral. Actually, the scores, the way we should read them, is relative rating derived from model comparison. It actually tells"
+  },
+  {
+    "segment_id": "s-0023",
+    "start_seconds": 586.04,
+    "end_seconds": 615.16,
+    "text": "us how these models rank relative to one another in that evaluation environment. It's not the absolute intelligence scale. But here is the elephant in the room. In all these conversations across multiple teams, I have seen multiple organizations, while we think we are comparing models, what I've observed is many times, they're not even comparing"
+  },
+  {
+    "segment_id": "s-0024",
+    "start_seconds": 612.28,
+    "end_seconds": 641.56,
+    "text": "models. We mistakenly compare the harness or the product for models. The Claude code versus Cursor or Codex isn't a model comparison. It's closer to comparing Jamaica versus USA. You're comparing an athlete and a training system around the athlete. So, the model is the athlete or the engine. It provides the underlying capability. The harness"
+  },
+  {
+    "segment_id": "s-0025",
+    "start_seconds": 638.16,
+    "end_seconds": 665.88,
+    "text": "determines how this engine is used. The tools, context, instructions, orchestration, memory, workflows, the MCP tool callings, that's the harness around it. The product determines why anyone should care because that's the end product. Today, you and I can rent the engine and very much all the harnesses that come"
+  },
+  {
+    "segment_id": "s-0026",
+    "start_seconds": 664.16,
+    "end_seconds": 692.56,
+    "text": "with engine. Some come tightly coupled, some are loosely coupled. So, if everybody has the same source, like we saw in the previous picture, where is the differentiation? The one that used to come, which made these different companies thrive in different areas, the source or the first principles of that is from the diversity and the"
+  },
+  {
+    "segment_id": "s-0027",
+    "start_seconds": 689.28,
+    "end_seconds": 716.0,
+    "text": "variance of their engineer minds. Given the model is rented, increasingly, what we are seeing is that once the capability is available to everyone, then what are we staring at? The model and the hardness do not care who is typing and from which part of the world. Or"
+  },
+  {
+    "segment_id": "s-0028",
+    "start_seconds": 713.84,
+    "end_seconds": 740.76,
+    "text": "whether you are a E6, E7, or a E1 engineer. Find at the same problem, same tools. It gives the next person what it gave you. And I want to call this answer as a median. And this median keeps changing with every release cadence, as we saw in the diagram there. The previous problems solved get into these LLMs, and then"
+  },
+  {
+    "segment_id": "s-0029",
+    "start_seconds": 739.32,
+    "end_seconds": 768.24,
+    "text": "incrementally, that's what these releases come one after another. Just like software cadence. I'm super simplifying here, but in a nutshell, that's what keeps the median moving up front, which is a good thing. So, at the same time, it's also a kind of a trap. Because it is good enough to ship,"
+  },
+  {
+    "segment_id": "s-0030",
+    "start_seconds": 765.24,
+    "end_seconds": 794.92,
+    "text": "but it is hard to tell apart that what the next person is going to be shipped. Because the next person or the competitor could have also shipped something similar or exactly the same. This could not have happened before 2023. The median product was expensive. You needed a team, time, stack. Today,"
+  },
+  {
+    "segment_id": "s-0031",
+    "start_seconds": 793.24,
+    "end_seconds": 820.6,
+    "text": "that solved problem is free. And the problem that is free is free for everyone. And you go out to the customer like how everybody goes out. And then this problem of so many products which are similar flooding the market then the distribution becomes the moat, not your product."
+  },
+  {
+    "segment_id": "s-0032",
+    "start_seconds": 818.36,
+    "end_seconds": 846.24,
+    "text": "So, what is that moat that you can create in this new environment? I'm going to quickly go through this GitHub's own number to reiterate the point that this model unharness are producing enormous amount of new software. And to me these are really good software."
+  },
+  {
+    "segment_id": "s-0033",
+    "start_seconds": 843.8,
+    "end_seconds": 872.6,
+    "text": "But the outcomes are similar. This is not crowd of copycats. Definitely not. It's a crowd of people who have arrived at the same answer because the source or the cookie cutter is the same. And the word that our industry choose for what they built is AI slop. The software AI slop. I want to take that word away from you and give you a new meaning to it."
+  },
+  {
+    "segment_id": "s-0034",
+    "start_seconds": 870.84,
+    "end_seconds": 899.8,
+    "text": "Let me be fair first. If you have been developing for a long time and you stumbled upon this AI assisted development it felt like magic, isn't it? Because we were taking a black box, pointing something to it. You would have definitely felt at some point in time, \"Oh, it did really well.\" Two weeks ago I shipped an iOS app. I've been a developer, but I've never dreamt of developing an app because remember we had lanes, embedded developer, app developer."
+  },
+  {
+    "segment_id": "s-0035",
+    "start_seconds": 900.64,
+    "end_seconds": 927.88,
+    "text": "AI today is making everyone a developer. To me that's a good thing and I mean it. The word slop is negative. And they use it without any empirical analysis. Here is why I feel that those 100,000 of repos and proliferation of AI assisted development is bringing new people into the field who has never developed. The success metrics for these new"
+  },
+  {
+    "segment_id": "s-0036",
+    "start_seconds": 925.04,
+    "end_seconds": 953.4,
+    "text": "products cannot be looked at from the lens of those experts. I would like to define the success of those million AI apps as long as they meet the success of their creators. Because who defines what a successful product looks like? For us, it could be something that brings a revenue. For someone else, it could be something that they can show it next to their colleagues that hey, see I've built this wonderful website."
+  },
+  {
+    "segment_id": "s-0037",
+    "start_seconds": 951.48,
+    "end_seconds": 981.16,
+    "text": "That's a success, too. And I've seen millions of people actually done that with lovable and Replit, which is cool. They are not AI snobs. What do you get when you point a good problem at a coding agent? Most times than not, today it's useful and the finished artifact"
+  },
+  {
+    "segment_id": "s-0038",
+    "start_seconds": 978.16,
+    "end_seconds": 1003.72,
+    "text": "may be similar because, you know, the same cutter went into the same dough. But most software developed this route is falling into what I call the median. I am not telling you to stop developing or shipping it. It's perfectly fine for internal consumption. The one caveat here is that stop counting this as a differentiating factor."
+  },
+  {
+    "segment_id": "s-0039",
+    "start_seconds": 1006.4,
+    "end_seconds": 1034.48,
+    "text": "But this median is lacking one thing. We need to also know the positives as well as the disadvantages. It's not a new problem. Back in '90s, everybody was trying to solve the search problem and most of them had the basic crawler and an index. And whoever is going to solve that problem really well or who has that novelty element"
+  },
+  {
+    "segment_id": "s-0040",
+    "start_seconds": 1032.56,
+    "end_seconds": 1061.84,
+    "text": "is going to rise up because that's a differentiating factor. So, today I say the median of most software that you can think of building is actually free. But, if you want to compete in the open market, you need that element of novelty. So, some credibility before I go further because I've spoke almost for a long time. I did not start building when the models"
+  },
+  {
+    "segment_id": "s-0041",
+    "start_seconds": 1059.84,
+    "end_seconds": 1088.28,
+    "text": "got better. I have built more than a dozens of applications in public and contributed to Lama index another repos. The last 3 years have been quite exciting and that brought me to this topic and tiring at the same time. I want to show you this because the project I'm going to show you are not hobbyist first attempts. I tried to solve a real-world problem and I ended up with a median. I never expected that."
+  },
+  {
+    "segment_id": "s-0042",
+    "start_seconds": 1090.2,
+    "end_seconds": 1119.12,
+    "text": "So, I want to coin few terms here. The build first reflex. When we all got excited with this AI and things, we stopped doing something which is back in the days when building was costly and difficult, I used to search more than I built. Today, it's flipped. You point a problem at a coding agent is more easier than going and searching and reading through those verbose whatever"
+  },
+  {
+    "segment_id": "s-0043",
+    "start_seconds": 1116.72,
+    "end_seconds": 1145.12,
+    "text": "comes out and making a decision. We don't want to make decisions anymore. And this is getting the new normal in our craft. So, what do we do? Let's ask the coding agent to build a rack system. And I call this the build first reflex. Open a problem, open an agent. Yeah, you get the scaffoldings in the first 2 minutes and I'm sure"
+  },
+  {
+    "segment_id": "s-0044",
+    "start_seconds": 1143.6,
+    "end_seconds": 1172.8,
+    "text": "if you've been used to this kind of development, you would do a demo in 2 hours, working demo. Where you give it to someone with rough edges, it works. And you could actually launch within 4 weeks. A real good product with support and everything. But only then you find out that, okay, I have built the 400th or 4,000th rag system. I took rag as an example here. So, I pointed the same problem and this"
+  },
+  {
+    "segment_id": "s-0045",
+    "start_seconds": 1171.08,
+    "end_seconds": 1199.92,
+    "text": "is what we got. And I asked, \"Hey, why did you build the nth rag system when more mature, feature-rich, open-source systems are available with thousands of stars and maturity? We could have just leveraged it. We should not have built it. 3 years ago, we wouldn't have built it.\" So, it accepted that, \"Hey, okay, I'm the culprit here. You said, 'Can you build?' I went ahead and built. If you had told"
+  },
+  {
+    "segment_id": "s-0046",
+    "start_seconds": 1198.96,
+    "end_seconds": 1228.48,
+    "text": "me this, then I would have done something different.\" The median rag is what actually built, which is a solved problem. But if you're building it for the first time, it's going to be exciting for you because you're going to feel that I gave a PDF, I pointing it to a back-end LLM, and I'm asking the questions. The chunking and all those factors, which I understand or do not understand, it's going to solve it for me, the vector DB, and I got a"
+  },
+  {
+    "segment_id": "s-0047",
+    "start_seconds": 1226.52,
+    "end_seconds": 1254.84,
+    "text": "solution. Small wins produce a lot of dopamine, and I fall for the same things as you are. And this is the verbose response. I defined that on the previous slide. Now, I'll stop talking about those trivial problems and show one of my applications. This one project is one of the representatives of the"
+  },
+  {
+    "segment_id": "s-0048",
+    "start_seconds": 1252.52,
+    "end_seconds": 1280.68,
+    "text": "first 2 years, where I developed a lot of apps. Like you all know, my build-first reflex kicks in. I did this a lot of times to coin this term. I built it by sacrificing going out to play. I skipped many socials and movie nights. And I was building like crazy. It was"
+  },
+  {
+    "segment_id": "s-0049",
+    "start_seconds": 1278.88,
+    "end_seconds": 1307.76,
+    "text": "like playing a game of chess where you are addicted to it. And I had every AI platform you could imagine. Max plan. Sometimes free. After all that effort, I finally soft launched. I'm a bit of a perfectionist. So, until then I was bombastic because I could see my idea"
+  },
+  {
+    "segment_id": "s-0050",
+    "start_seconds": 1305.16,
+    "end_seconds": 1334.88,
+    "text": "become something which is real in no time. Where as a product manager, it would have taken me a big team, architects. I was able to do it all alone. I was bombastic until I found out that I haven't calibrated to reality yet. The truth is my circle told me that they have seen similar calculators elsewhere."
+  },
+  {
+    "segment_id": "s-0051",
+    "start_seconds": 1335.56,
+    "end_seconds": 1365.12,
+    "text": "And before anyone thinks I stole from them or they from me, the surprising thing is that nobody copied from anybody. It's the same thing. It's a copycat work. When I analyzed some of those open and closed calculators, I found it same sometimes. Not even similar. And how could people across could arrive at similar"
+  },
+  {
+    "segment_id": "s-0052",
+    "start_seconds": 1363.0,
+    "end_seconds": 1391.56,
+    "text": "solution? Even if you look at the LLM routing, everywhere is converging. Like those models there, even solutions are converging. And competing for a tiny space. And it's like having same developers in your team and your competitors also have the same developers. So, you can build intuition only through building"
+  },
+  {
+    "segment_id": "s-0053",
+    "start_seconds": 1389.6,
+    "end_seconds": 1419.32,
+    "text": "and I'm sure you're able to those builders would agree with me. We now have something to recalibrate and find a successful path. So, after 2 years where I spent almost all time I was tired cuz I spent multiple Any exciting idea I had, I went ahead and built with a build first reflex. And almost every time I ended up with a crowded lane where there are already two or three people or I would"
+  },
+  {
+    "segment_id": "s-0054",
+    "start_seconds": 1417.44,
+    "end_seconds": 1445.52,
+    "text": "be the first and I would take a month off and come back there would be 60 similar products. And whoever has a better distribution is obviously going to uh win that battle. So, I would like to coin another new term. Okay, the build first then what? In the AI software development life cycle, a novelty budget."
+  },
+  {
+    "segment_id": "s-0055",
+    "start_seconds": 1443.2,
+    "end_seconds": 1472.24,
+    "text": "So, if you can get at least one unit of true novelty like how that page rank was for Google, you can cross this median at least for a good amount of time. You pick a problem and you want to be the best solution for the problem in the world, then you have a good chance of beating the crowd. For the first 2 years I spent, you know, my days and nights on architecture, agent design, prompt chains, skills, and"
+  },
+  {
+    "segment_id": "s-0056",
+    "start_seconds": 1470.4,
+    "end_seconds": 1500.28,
+    "text": "somebody would share, \"Hey, this is my Claude new workflow. That's my Claude new workflow.\" I did all those things. And most of the times than not, trust me, you would end up with similar outputs if not same. So, I had to rework my calculator that I showed you and this time I spent almost all of the time on how to differentiate and almost none on flaunting my Claude code or code skills which I used to do"
+  },
+  {
+    "segment_id": "s-0057",
+    "start_seconds": 1499.16,
+    "end_seconds": 1526.92,
+    "text": "earlier. Because that felt like magic. The median from model isn't opinionated. It is converged best practices. So I picked a lane and I treated it like a budget. After 2 years of burning several million tokens on many max plans, I feel everything else is free now. And the highest return of investment is"
+  },
+  {
+    "segment_id": "s-0058",
+    "start_seconds": 1524.88,
+    "end_seconds": 1552.56,
+    "text": "a novelty budget. So before the bill starts, name the one thing that is novel. If you don't have one, then you can take the median because there are a lot of people who have built the solution for the problem that you have and I'm sure of it. You tell me a problem for which there are no solutions. I'll go and find it for you. And then put this novelty plan as part of your road map and your project"
+  },
+  {
+    "segment_id": "s-0059",
+    "start_seconds": 1551.04,
+    "end_seconds": 1576.72,
+    "text": "planning. I do this now. And review it the way you actually review spending like a project. Honestly, if you cannot name the novelty in your project, then you should concede that it's a learning exercise. That's fine."
+  },
+  {
+    "segment_id": "s-0060",
+    "start_seconds": 1579.04,
+    "end_seconds": 1608.12,
+    "text": "Uh the failures, the learnings, and the mechanics to beat medians for 2 years, I came up with this four rules. And these are not side project rules. I want you to run them as your road map for the next quarter speeches. Because your products will definitely have a twin and sometimes it might be open source. Why take all the effort in building it? Leverage it, fork it."
+  },
+  {
+    "segment_id": "s-0061",
+    "start_seconds": 1605.92,
+    "end_seconds": 1634.8,
+    "text": "So one of the things is be highly opinionated. The AI assistants most of the times are going to give you a probable answers. Be it anything. And those things are going to be same for almost everybody. It might be similar, but that's in the spectrum of already solved. In the world of medians, an opinion is the cheapest novelty you could own."
+  },
+  {
+    "segment_id": "s-0062",
+    "start_seconds": 1633.0,
+    "end_seconds": 1662.96,
+    "text": "And go for it because the model cannot supply. Two. The prompt to production is a median path. And there's absolutely nothing wrong with it. If you feel that it's an internal consumption you want to build and your team has to use it, go for it. I'm all for it. And then the third. This is the most fascinating things. When AI says done,"
+  },
+  {
+    "segment_id": "s-0063",
+    "start_seconds": 1660.44,
+    "end_seconds": 1689.84,
+    "text": "then it means that to me, okay, AI has given its median product. I have to start working from here. That's the signal from any of your coding agents because your work begins there. And remember this. These coding agents so far has given the last great design for free. It's not going to invent the next"
+  },
+  {
+    "segment_id": "s-0064",
+    "start_seconds": 1686.68,
+    "end_seconds": 1713.96,
+    "text": "Kubernetes or Zookeeper or Kafka or whatever those building blocks are. It's going to do a scaffolding and it does a really good job in multiple places, but it's it's it's going to be the last great design for free. And what's your job? If you want to thrive, you need to find the next one. And here are some methods I found"
+  },
+  {
+    "segment_id": "s-0065",
+    "start_seconds": 1711.96,
+    "end_seconds": 1741.2,
+    "text": "useful. I've shared this method with multiple leaders across organizations and I've got good feedback on them. If you are leading and don't build now with this AI, this is exactly for you. You'll be seeing a bunch of demos. I'm sure you're bombarded with them every week. And it looks like a big deal because I've seen the instincts of leadership"
+  },
+  {
+    "segment_id": "s-0066",
+    "start_seconds": 1738.12,
+    "end_seconds": 1762.4,
+    "text": "were not calibrated because back when they were building their intuition the deliverable that they are seeing took them a quarter or more time and a team. Today a new engineer shows up and claims to have built the same that would have taken a team and a quarter uh to build it."
+  },
+  {
+    "segment_id": "s-0067",
+    "start_seconds": 1762.68,
+    "end_seconds": 1790.68,
+    "text": "So, it's one of the hardest time to be on deciding where to put your eggs on. Especially when you're not immersed in this tech. Because nobody can recalibrate by reading or watching YouTube or LinkedIn posts. You recalibrate by building. You build intuition by building. So, the playbook is simple. Three questions. It's not going to solve your problems, but these are good handy questions to ask."
+  },
+  {
+    "segment_id": "s-0068",
+    "start_seconds": 1789.68,
+    "end_seconds": 1817.8,
+    "text": "One. Who has already done this? This question forces the search because the world of exciting AI, we need to tame the build first reflex powered by AI. Two. What do we have that the next team or our competitors or another person in the team don't have?"
+  },
+  {
+    "segment_id": "s-0069",
+    "start_seconds": 1815.0,
+    "end_seconds": 1844.44,
+    "text": "This forces novelty as a first-class citizen into the minds of the team members. Because a better prompt, somebody would say, it's just going to throw you a median problem median solution. And third, where will this application live? In the age of exciting AI, forcing outcome-based thinking when everyone is high on building,"
+  },
+  {
+    "segment_id": "s-0070",
+    "start_seconds": 1843.08,
+    "end_seconds": 1870.8,
+    "text": "it's a way to show them the demo is the expensive way to find out if you have no distribution mode. And I applied all this rigorously in the last 1 year. And you may be asking, what happened to the one project that I was talking to you? >> [snorts] >> I asked these questions. Okay, if I have to be"
+  },
+  {
+    "segment_id": "s-0071",
+    "start_seconds": 1868.68,
+    "end_seconds": 1898.44,
+    "text": "providing that value, which is above median, then what stands between an open model and a token generating system? And what cost does an enterprise have to pay for it? Because open weights are at rage, but open weights are not open inferences. And I found that the hard way because there are 10 layers that sit between an"
+  },
+  {
+    "segment_id": "s-0072",
+    "start_seconds": 1896.92,
+    "end_seconds": 1925.6,
+    "text": "open weight and a system that generates these tokens. We take the labs for granted for providing us there is ML ops, there is SRE on a different scale altogether that the world has not seen. So, precision KV cache, uh batching, execution parallelism, and there are different slice and dices of them. So, some of them you have to hire experts."
+  },
+  {
+    "segment_id": "s-0073",
+    "start_seconds": 1924.36,
+    "end_seconds": 1953.52,
+    "text": "And I don't know where these experts come from because this is not a tech or a skill that the industry already has. And some of them, layer nine, is utilization. It is structural. You cannot buy it. So, unless like I said, you take one problem and want it to be the best at solving that particular problem, you're not going to cross the"
+  },
+  {
+    "segment_id": "s-0074",
+    "start_seconds": 1952.16,
+    "end_seconds": 1981.2,
+    "text": "median just by using these AI tools. And I searched and I found that none of the 244 calculator that I was showing you earlier did this. And I changed the entire application into kind of what the identical weights cost to run inside your enterprise versus"
+  },
+  {
+    "segment_id": "s-0075",
+    "start_seconds": 1978.72,
+    "end_seconds": 2007.2,
+    "text": "running it in the Neo cloud and taking tokens. That is what this calculator gives you. Because if you have open models and want to go and build it, then what's the difference? And received great feedback from a lot of enterprises who want to actually go that path because when people say open models, they're excited. For what?"
+  },
+  {
+    "segment_id": "s-0076",
+    "start_seconds": 2008.44,
+    "end_seconds": 2038.08,
+    "text": "Organizations considering deploying open weight models, the weights are free. But you may want to check. That's the QR code. So, scan it, put it into your workload, and see which way it goes for you. It's open source and free. So, here is where it all lands and ends. With the power of the LLMs on the"
+  },
+  {
+    "segment_id": "s-0077",
+    "start_seconds": 2036.84,
+    "end_seconds": 2064.96,
+    "text": "harness, the last 3 years building has got exponentially easier. But the changes and the dynamics of software development still hasn't changed at the end. The prompt-based median products are useful. I ship them, too. They're not slops. But they have little durability when they go to open competition."
+  },
+  {
+    "segment_id": "s-0078",
+    "start_seconds": 2063.44,
+    "end_seconds": 2092.48,
+    "text": "And they may survive if you have a huge distribution mode. So, the one attitude if you want to try thrive in this field is again I'm I may be repeating this, but take that one problem and pursue it with the intent of being the best at it in the entire world. Yeah, we may not be able to crack it, but that intent will definitely put you above median."
+  },
+  {
+    "segment_id": "s-0079",
+    "start_seconds": 2094.56,
+    "end_seconds": 2122.76,
+    "text": "The only question left is can your AI-assisted products thrive? I spent 2 years on the median, but that was education. It was worth every token I burnt it. I asked two questions at the start. What happens to the software? To me, the software that is running this 100 trillion-dollar economy, nothing happens to it. The world still runs on deterministic software, at least"
+  },
+  {
+    "segment_id": "s-0080",
+    "start_seconds": 2120.36,
+    "end_seconds": 2149.8,
+    "text": "for the foreseeable future, and it might always be. The age of AI means that we can write it more faster, but it is not going to take out the deterministic software. So, I would like to wrap up by saying that spend everything you have on one thing,"
+  },
+  {
+    "segment_id": "s-0081",
+    "start_seconds": 2150.2,
+    "end_seconds": 2165.56,
+    "text": "which is the novelty. Squeeze every vein, every ounce of your brain on novelty, because novelty is scarce, and the median is free. It's up to you to choose. Thank you."
+  }
+]

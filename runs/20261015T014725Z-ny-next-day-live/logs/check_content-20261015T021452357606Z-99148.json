@@ -1,0 +1,23 @@
+{
+  "stage": "check_content",
+  "status": "completed",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": 3,
+  "output_count": 1,
+  "started_at": "2026-10-15T02:14:52Z",
+  "finished_at": "2026-10-15T02:14:52Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "python"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {
+    "passed": true,
+    "errors": 0,
+    "warnings": 3,
+    "review_id": "cc4958ce5e311ae9e49a433e585657f33e3e8316ab7512a64ff0cd4fe7f5b736"
+  }
+}

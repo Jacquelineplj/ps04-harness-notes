@@ -1,0 +1,542 @@
+[run.sh] run 20261015T014725Z-ny-next-day-live (mode live, as of 2026-10-15) started; snapshots saved
+[collect_sources.sh] running collectors concurrently
+[collect_sources.sh] collectors finished: feeds=0 youtube=0 podcasts=0
+[collect_sources.sh] merged 74 valid candidates (0 invalid lines dropped)
+extract_content: feed:3e6e644f1b2b0e94: html (1019 chars)
+extract_content: feed:154a39176d886b3b: html (1534 chars)
+extract_content: feed:7e289d45dfc4cd8f: html (2613 chars)
+extract_content: feed:6451d923eed6bbe6: html (2098 chars)
+extract_content: feed:1ce341749cd1d883: unprocessable: insufficient_text: 789 chars via html
+extract_content: feed:e6734b2c11074d76: unprocessable: insufficient_text: 448 chars via html
+extract_content: feed:5ca8d6f055cb2e9f: html (956 chars)
+extract_content: feed:e8d8f43511a9291f: html (5779 chars)
+extract_content: feed:800e88b7ff797cb4: feed_content (6164 chars)
+extract_content: feed:1d5f8df4a8f95858: feed_content (16109 chars)
+extract_content: feed:9ee0cb7cc2b679d0: feed_content (47152 chars)
+extract_content: feed:9d93024f8db90c5c: feed_content (6803 chars)
+extract_content: feed:04d6208c687016cf: unprocessable: insufficient_text: 443 chars via html
+extract_content: feed:95b84c19524261fb: feed_content (7582 chars)
+extract_content: feed:57c3309db5bedcde: FAILED RuntimeError: fetch failed for https://openai.com/index/amp-beyond-coding: HTTP 403 for https://openai.com/index/amp-beyond-coding
+extract_content: feed:004cd593adabcd24: FAILED RuntimeError: fetch failed for https://openai.com/index/sentinelone: HTTP 403 for https://openai.com/index/sentinelone
+extract_content: feed:a8b8c31de898145e: FAILED RuntimeError: fetch failed for https://openai.com/index/third-moment-research: HTTP 403 for https://openai.com/index/third-moment-research
+extract_content: feed:94ee28b93f9d2d83: FAILED RuntimeError: fetch failed for https://openai.com/index/block-ai-powered-security: HTTP 403 for https://openai.com/index/block-ai-powered-security
+extract_content: feed:504a28fcb44d1a3d: html (4606 chars)
+extract_content: feed:53911f98c21c784f: html (6901 chars)
+extract_content: feed:ffd2818196374b7e: html (10362 chars)
+extract_content: feed:16b7810afb00bdc0: html (8205 chars)
+extract_content: feed:67f5f61696a2949d: html (6362 chars)
+extract_content: feed:bd1136d0fcfd6f13: html (19212 chars)
+extract_content: feed:40c2e042484cc77c: arxiv_html (59150 chars)
+extract_content: feed:abdcb8a376289470: arxiv_html (83552 chars)
+extract_content: feed:265494f2f990955e: arxiv_html (29078 chars)
+extract_content: feed:9af0a9d6b90c27e2: arxiv_html (35379 chars)
+extract_content: feed:90ab5356a1b22683: arxiv_html (121053 chars)
+extract_content: feed:f6079d79e221ce0f: arxiv_html (34052 chars)
+extract_content: feed:c1ef8fadeca3e5ad: feed_content (15220 chars)
+extract_content: feed:eaac866ece437024: feed_content (5871 chars)
+extract_content: feed:6dfb9f1cb365f38e: feed_content (23409 chars)
+extract_content: feed:dd3085f3c1c43466: feed_content (6472 chars)
+extract_content: feed:8df33797c8dcce10: feed_content (17689 chars)
+extract_content: feed:aed891eb1cf0d9a5: feed_content (17945 chars)
+extract_content: feed:3ace86d6695e6d67: feed_content (3889 chars)
+extract_content: feed:414c680e0dfe5f85: feed_content (10503 chars)
+extract_content: feed:6c73e7b163f057af: feed_content (7163 chars)
+extract_content: feed:d995256e997e50a5: html (15549 chars)
+extract_content: feed:290359d4a69601fa: html (50638 chars)
+extract_content: feed:ee6df3f002868714: html (26709 chars)
+extract_content: feed:fafe571b74e06e1f: feed_content (9061 chars)
+extract_content: feed:231ac6df8b60f0a8: html (16170 chars)
+extract_content: feed:b76b11a1199f73b7: html (4307 chars)
+extract_content: feed:1dc99b611b2499a3: html (7911 chars)
+extract_content: feed:d96a2391b623b2cb: html (22992 chars)
+extract_content: feed:4e31b829ae688591: html (15665 chars)
+extract_content: feed:2ee55c894d54d6ef: html (4665 chars)
+[youtube] Extracting URL: https://www.youtube.com/watch?v=0JZy5AuuQzc
+[youtube] 0JZy5AuuQzc: Downloading webpage
+[youtube] 0JZy5AuuQzc: Downloading visionos player API JSON
+[youtube] 0JZy5AuuQzc: Downloading m3u8 information
+[info] 0JZy5AuuQzc: Downloading subtitles: en-orig
+[info] 0JZy5AuuQzc: Downloading 1 format(s): 399+251-20
+[info] Writing video subtitles to: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/0JZy5AuuQzc/0JZy5AuuQzc.en-orig.json3
+The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies
+[download] Destination: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/0JZy5AuuQzc/0JZy5AuuQzc.en-orig.json3
+[download] Download completed
+extract_content: youtube:0JZy5AuuQzc: youtube_captions_auto (26166 chars)
+[youtube] Extracting URL: https://www.youtube.com/watch?v=tZycGA_Fbfo
+[youtube] tZycGA_Fbfo: Downloading webpage
+[youtube] tZycGA_Fbfo: Downloading visionos player API JSON
+[youtube] tZycGA_Fbfo: Downloading m3u8 information
+[info] tZycGA_Fbfo: Downloading subtitles: en-orig
+[info] tZycGA_Fbfo: Downloading 1 format(s): 399+251
+[info] Writing video subtitles to: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/tZycGA_Fbfo/tZycGA_Fbfo.en-orig.json3
+The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies
+[download] Destination: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/tZycGA_Fbfo/tZycGA_Fbfo.en-orig.json3
+[download] Download completed
+extract_content: youtube:tZycGA_Fbfo: youtube_captions_auto (28015 chars)
+[youtube] Extracting URL: https://www.youtube.com/watch?v=Wb2v9Phhnns
+[youtube] Wb2v9Phhnns: Downloading webpage
+[youtube] Wb2v9Phhnns: Downloading visionos player API JSON
+[youtube] Wb2v9Phhnns: Downloading m3u8 information
+[info] Wb2v9Phhnns: Downloading subtitles: en-orig
+[info] Wb2v9Phhnns: Downloading 1 format(s): 399+251-20
+[info] Writing video subtitles to: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/Wb2v9Phhnns/Wb2v9Phhnns.en-orig.json3
+The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies
+[download] Destination: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/Wb2v9Phhnns/Wb2v9Phhnns.en-orig.json3
+[download] Download completed
+extract_content: youtube:Wb2v9Phhnns: youtube_captions_auto (26831 chars)
+[youtube] Extracting URL: https://www.youtube.com/watch?v=8g1N_a3h9H0
+[youtube] 8g1N_a3h9H0: Downloading webpage
+[youtube] 8g1N_a3h9H0: Downloading visionos player API JSON
+[youtube] 8g1N_a3h9H0: Downloading m3u8 information
+[info] 8g1N_a3h9H0: Downloading subtitles: en-orig
+[info] 8g1N_a3h9H0: Downloading 1 format(s): 399+251-20
+[info] Writing video subtitles to: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/8g1N_a3h9H0/8g1N_a3h9H0.en-orig.json3
+The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies
+[download] Destination: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/8g1N_a3h9H0/8g1N_a3h9H0.en-orig.json3
+[download] Download completed
+extract_content: youtube:8g1N_a3h9H0: youtube_captions_auto (9493 chars)
+[youtube] Extracting URL: https://www.youtube.com/watch?v=7b9tov5Uc5s
+[youtube] 7b9tov5Uc5s: Downloading webpage
+[youtube] 7b9tov5Uc5s: Downloading visionos player API JSON
+[youtube] 7b9tov5Uc5s: Downloading m3u8 information
+[info] 7b9tov5Uc5s: Downloading subtitles: en-orig
+[info] 7b9tov5Uc5s: Downloading 1 format(s): 399+251-20
+[info] Writing video subtitles to: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/7b9tov5Uc5s/7b9tov5Uc5s.en-orig.json3
+The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies
+[download] Destination: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/7b9tov5Uc5s/7b9tov5Uc5s.en-orig.json3
+[download] Download completed
+extract_content: youtube:7b9tov5Uc5s: youtube_captions_auto (19676 chars)
+extract_content: youtube:oVKGKdIAgtg: youtube_captions_manual (14400 chars, reused)
+extract_content: youtube:XcsspzECTKA: youtube_captions_manual (18305 chars, reused)
+extract_content: youtube:Xe7c-7jyp28: youtube_captions_auto (2313 chars, reused)
+extract_content: youtube:S3l7U7gOsyY: youtube_captions_auto (21110 chars, reused)
+extract_content: youtube:G-9Y2xNiDKQ: youtube_captions_manual (2897 chars, reused)
+extract_content: youtube:IZXv6a78NDw: youtube_captions_manual (2226 chars, reused)
+extract_content: youtube:p5KxBTUncoE: youtube_captions_manual (2905 chars, reused)
+[youtube] Extracting URL: https://www.youtube.com/watch?v=hQSBJVreLms
+[youtube] hQSBJVreLms: Downloading webpage
+[youtube] hQSBJVreLms: Downloading visionos player API JSON
+[youtube] hQSBJVreLms: Downloading m3u8 information
+[info] hQSBJVreLms: Downloading subtitles: en-orig
+[info] Testing format 616
+[hlsnative] Downloading m3u8 manifest
+[hlsnative] Total fragments: 1283
+[download] Destination: /var/folders/wl/mx3m_wtd53q3pcb_5pmtvxx80000gn/T/tmplfats7a9.tmp
+[download] Download completed
+[info] hQSBJVreLms: Downloading 1 format(s): 616+251-2
+[info] Writing video subtitles to: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/hQSBJVreLms/hQSBJVreLms.en-orig.json3
+The extractor specified to use impersonation for this download, but no impersonate target is available. If you encounter errors, then see  https://github.com/yt-dlp/yt-dlp#impersonation  for information on installing the required dependencies
+[download] Destination: /Users/panpanlj/Desktop/harvard.nosync/mit1.125/ps04-main/data/media/youtube/hQSBJVreLms/hQSBJVreLms.en-orig.json3
+[download] Download completed
+extract_content: youtube:hQSBJVreLms: youtube_captions_auto (131825 chars)
+extract_content: youtube:BHiYomkfoGQ: youtube_captions_auto (83429 chars, reused)
+extract_content: podcast:ec31609f2b260a6c: whisper:small (59918 chars, reused)
+extract_content: podcast:405751dcc80abac3: whisper:small (63185 chars, reused)
+extract_content: podcast:ef6c31b1a483418d: whisper:small (40937 chars, reused)
+extract_content: podcast:fad37397a128b591: whisper:small (48847 chars, reused)
+extract_content: podcast:93444c3366986657: whisper:small (49978 chars, reused)
+extract_content: podcast:7e656fd23eccd91a: whisper:small (20308 chars, reused)
+extract_content: podcast:9fd5f57c4c2ba800: whisper:small (46235 chars, reused)
+extract_content: podcast:8d8927fb57f7e934: whisper:small (37409 chars, reused)
+extract_content: podcast:81f34c32ca0f8f68: whisper:small (58606 chars, reused)
+extract_content: podcast:4e22e3d6436deca5: downloading audio
+extract_content: loading faster-whisper model small (cpu/int8)
+extract_content: podcast:4e22e3d6436deca5: whisper:small (60150 chars)
+extract_content: podcast:93a1c773317f1e28: whisper:small (63710 chars, reused)
+extract_content: done: 67/74 items ({'reused': 18, 'fetched': 56, 'caption_items': 6, 'whisper_items': 1, 'media_downloaded': 1, 'transcribed_seconds': 3600.0, 'unprocessable': 3, 'failed': 4, 'thin': 3, 'malformed_lines': 0, 'duplicates': 0})
+[collect_sources.sh] extract=0 upsert=0 (67 items, 67 change records)
+filter_items: window 2026-09-16 .. 2026-10-15: 93 eligible, 3 excluded {'outside_window': 3, 'unknown_date': 0, 'future_date': 0, 'invalid_date': 0}
+[collect_sources.sh] list=0 filter=0 (93 eligible)
+select_items: batch 1: 6 items decided
+select_items: batch 2: 6 items decided
+select_items: batch 3: 6 items decided
+select_items: batch 4: 6 items decided
+select_items: batch 5: 6 items decided
+select_items: batch 6: 6 items decided
+select_items: batch 7: 6 items decided
+select_items: batch 8: 6 items decided
+select_items: batch 9: 6 items decided
+select_items: batch 10: 6 items decided
+select_items: batch 11: 6 items decided
+select_items: batch 12: 6 items decided
+select_items: batch 13: 6 items decided
+select_items: batch 14: 6 items decided
+select_items: batch 15: 6 items decided
+select_items: batch 16: 3 items decided
+select_items: {'accept': 35, 'reject': 50, 'defer': 8}
+[create_series.sh] select_items exit 0 (93 decisions)
+create_briefs: validation pass 1: {'quotes_exact': 25, 'quotes_repaired': 0, 'evidence_dropped': 0, 'claims_dropped': 0, 'version_fixed': 0}; 0 problems
+create_briefs: wrote 3 briefs ({'quotes_exact': 25, 'quotes_repaired': 0, 'evidence_dropped': 0, 'claims_dropped': 0, 'version_fixed': 0})
+write_articles: 01: 913 words, 8/8 claims cited
+write_articles: 02: 973 words, 9/9 claims cited
+write_articles: 03: 868 words, 9/9 claims cited
+write_video_scripts: 01: 683 narration words (~4.6 min), 8 claims cited
+write_video_scripts: 02: 733 narration words (~4.9 min), 9 claims cited
+write_video_scripts: 03: 723 narration words (~4.8 min), 9 claims cited
+[create_series.sh] write_articles exit 0, write_video_scripts exit 0
+check_content: passed=True errors=0 warnings=5 review_id=4fc9af4416a6
+{
+  "run_id": "20261015T014725Z-ny-next-day-live",
+  "mode": "live",
+  "label": "ny-next-day-live",
+  "as_of_date": "2026-10-15",
+  "stop_after": null,
+  "previous_run_id": "20261014T014037Z-second-live",
+  "replay_of": null,
+  "status": "awaiting_review",
+  "started_at": "2026-10-15T01:47:25Z",
+  "elapsed_seconds": 1581.0,
+  "summarized_at": "2026-10-15T02:13:46Z",
+  "counts": {
+    "discovered": 74,
+    "discovered_by_kind": {
+      "feed": 49,
+      "youtube": 14,
+      "podcast": 11
+    },
+    "duplicate_observations": 0,
+    "extracted": 67,
+    "new": 20,
+    "changed": 2,
+    "unchanged": 45,
+    "corpus": 96,
+    "eligible": 93,
+    "excluded": 3,
+    "excluded_by_reason": {
+      "outside_window": 3,
+      "unknown_date": 0,
+      "future_date": 0,
+      "invalid_date": 0
+    },
+    "accepted": 35,
+    "rejected": 50,
+    "deferred": 8,
+    "briefs": 3,
+    "articles": 3,
+    "video_scripts": 3
+  },
+  "coverage": {
+    "collected_eligible": {
+      "items": 93,
+      "by_kind": {
+        "feed": 56,
+        "youtube": 21,
+        "podcast": 16
+      },
+      "independent_publishers": 17,
+      "publishers": {
+        "ai-engineer": 10,
+        "arize": 5,
+        "arxiv": 12,
+        "changelog": 3,
+        "deepmind": 6,
+        "dwarkesh": 1,
+        "huggingface": 7,
+        "interconnects": 1,
+        "langchain": 4,
+        "latent-space": 14,
+        "microsoft": 3,
+        "mlops-community": 3,
+        "openai": 4,
+        "pragmatic-engineer": 2,
+        "simon-willison": 10,
+        "software-engineering-daily": 2,
+        "thoughtworks": 6
+      },
+      "meets_minimums": true
+    },
+    "cited_in_briefs": {
+      "items": 16,
+      "by_kind": {
+        "feed": 10,
+        "youtube": 5,
+        "podcast": 1
+      },
+      "independent_publishers": 9,
+      "publishers": {
+        "ai-engineer": 4,
+        "arize": 3,
+        "arxiv": 3,
+        "huggingface": 1,
+        "langchain": 1,
+        "latent-space": 1,
+        "microsoft": 1,
+        "pragmatic-engineer": 1,
+        "simon-willison": 1
+      },
+      "meets_minimums": null
+    },
+    "collection": {
+      "mode": "live",
+      "replay_of": null,
+      "simulated_failure": null,
+      "collectors": {
+        "feeds": {
+          "exit_code": 0,
+          "candidates": 49,
+          "status": "ok",
+          "simulated": false
+        },
+        "youtube": {
+          "exit_code": 0,
+          "candidates": 14,
+          "status": "ok",
+          "simulated": false
+        },
+        "podcasts": {
+          "exit_code": 0,
+          "candidates": 11,
+          "status": "ok",
+          "simulated": false
+        }
+      },
+      "injected": null,
+      "merged_candidates": 74,
+      "invalid_lines": 0
+    },
+    "coverage_complete": true
+  },
+  "failed_or_incomplete_stages": [
+    {
+      "stage": "extract_content",
+      "status": "completed_with_errors",
+      "errors": 7
+    },
+    {
+      "stage": "select_items",
+      "status": "completed_with_errors",
+      "errors": 6
+    }
+  ],
+  "simulated_failures": [],
+  "stages": {
+    "fetch_feeds": {
+      "status": "completed",
+      "finished_at": "2026-10-15T01:47:34Z",
+      "elapsed_seconds": 8.0,
+      "input_count": 10,
+      "output_count": 49,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "fetch_youtube": {
+      "status": "completed",
+      "finished_at": "2026-10-15T01:48:35Z",
+      "elapsed_seconds": 69.0,
+      "input_count": 5,
+      "output_count": 14,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "fetch_podcasts": {
+      "status": "completed",
+      "finished_at": "2026-10-15T01:47:40Z",
+      "elapsed_seconds": 14.0,
+      "input_count": 6,
+      "output_count": 11,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "collect_sources": {
+      "status": "completed",
+      "finished_at": "2026-10-15T01:57:59Z",
+      "elapsed_seconds": 633.0,
+      "input_count": 74,
+      "output_count": 93,
+      "errors": 0,
+      "cost_usd": null,
+      "cost_is_estimate": null,
+      "receipts": 1
+    },
+    "extract_content": {
+      "status": "completed_with_errors",
+      "finished_at": "2026-10-15T01:57:59Z",
+      "elapsed_seconds": 564.0,
+      "input_count": 74,
+      "output_count": 67,
+      "errors": 7,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "store_upsert": {
+      "status": "completed",
+      "finished_at": "2026-10-15T01:57:59Z",
+      "elapsed_seconds": 564.0,
+      "input_count": 67,
+      "output_count": 67,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "store_list": {
+      "status": "completed",
+      "finished_at": "2026-10-15T02:13:45Z",
+      "elapsed_seconds": 0.0,
+      "input_count": 0,
+      "output_count": 96,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 3
+    },
+    "filter_items": {
+      "status": "completed",
+      "finished_at": "2026-10-15T01:57:59Z",
+      "elapsed_seconds": 0.0,
+      "input_count": 96,
+      "output_count": 93,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "select_items": {
+      "status": "completed_with_errors",
+      "finished_at": "2026-10-15T02:03:41Z",
+      "elapsed_seconds": 341.0,
+      "input_count": 93,
+      "output_count": 93,
+      "errors": 6,
+      "cost_usd": 1.59614,
+      "cost_is_estimate": true,
+      "receipts": 1
+    },
+    "create_briefs": {
+      "status": "completed",
+      "finished_at": "2026-10-15T02:09:34Z",
+      "elapsed_seconds": 353.0,
+      "input_count": 93,
+      "output_count": 3,
+      "errors": 0,
+      "cost_usd": 3.946957,
+      "cost_is_estimate": true,
+      "receipts": 1
+    },
+    "write_articles": {
+      "status": "completed",
+      "finished_at": "2026-10-15T02:11:51Z",
+      "elapsed_seconds": 137.0,
+      "input_count": 3,
+      "output_count": 3,
+      "errors": 1,
+      "cost_usd": 0.822815,
+      "cost_is_estimate": true,
+      "receipts": 1
+    },
+    "write_video_scripts": {
+      "status": "completed",
+      "finished_at": "2026-10-15T02:13:45Z",
+      "elapsed_seconds": 114.0,
+      "input_count": 3,
+      "output_count": 3,
+      "errors": 0,
+      "cost_usd": 0.568798,
+      "cost_is_estimate": true,
+      "receipts": 1
+    },
+    "check_content": {
+      "status": "completed",
+      "finished_at": "2026-10-15T02:13:45Z",
+      "elapsed_seconds": 0.0,
+      "input_count": 3,
+      "output_count": 1,
+      "errors": 0,
+      "cost_usd": 0.0,
+      "cost_is_estimate": false,
+      "receipts": 1
+    },
+    "create_series": {
+      "status": "completed",
+      "finished_at": "2026-10-15T02:13:46Z",
+      "elapsed_seconds": 946.0,
+      "input_count": null,
+      "output_count": null,
+      "errors": 0,
+      "cost_usd": null,
+      "cost_is_estimate": null,
+      "receipts": 1
+    },
+    "prepare_package": {
+      "status": "not_run",
+      "receipts": 0
+    },
+    "run": {
+      "status": "completed",
+      "finished_at": "2026-10-15T02:13:46Z",
+      "elapsed_seconds": 1581.0,
+      "input_count": null,
+      "output_count": null,
+      "errors": 0,
+      "cost_usd": null,
+      "cost_is_estimate": null,
+      "receipts": 1
+    }
+  },
+  "models": {
+    "claude-cli:claude-sonnet-5": {
+      "calls": 23,
+      "input_tokens": 658118,
+      "output_tokens": 46133,
+      "cost_usd": 2.7712,
+      "cost_is_estimate": true
+    },
+    "claude-cli:claude-opus-5": {
+      "calls": 8,
+      "input_tokens": 357339,
+      "output_tokens": 35627,
+      "cost_usd": 4.1634,
+      "cost_is_estimate": true
+    }
+  },
+  "tools": [
+    "bash",
+    "faster-whisper (small)",
+    "feedparser",
+    "httpx",
+    "jq",
+    "llm:claude-cli",
+    "pymupdf",
+    "python",
+    "python-dateutil",
+    "sqlite3",
+    "trafilatura",
+    "yt-dlp",
+    "yt-dlp 2026.08.19"
+  ],
+  "costs": {
+    "known_usd": 0.0,
+    "estimated_usd": 6.9347,
+    "total_including_estimates_usd": 6.9347,
+    "unknown_cost_stages": [
+      "collect_sources",
+      "create_series",
+      "run"
+    ],
+    "basis": "Model costs come from the Claude Code CLI's list-price estimate (subscription use is not billed per token); local compute is reported as 0."
+  },
+  "review": {
+    "review_id": "4fc9af4416a6d700ebcfc3772636e7bba51b1d392f8b19d7863d33657796e421",
+    "passed": true,
+    "errors": 0,
+    "warnings": 5
+  },
+  "human_decision": null,
+  "package": null,
+  "published_links": null,
+  "remaining_manual_actions": [
+    "human editorial review of articles, scripts and decisions; record approval.json with the current review_id",
+    "bash run.sh --package RUN_DIR after approval"
+  ],
+  "notes": [
+    "counts are null for stages that did not run and 0 for measured empty results"
+  ]
+}
+[run.sh] run 20261015T014725Z-ny-next-day-live finished with exit 0, status awaiting_review

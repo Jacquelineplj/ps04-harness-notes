@@ -1,0 +1,56 @@
+{
+  "stage": "select_items",
+  "status": "completed_with_errors",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": 93,
+  "output_count": 93,
+  "started_at": "2026-10-15T01:58:00Z",
+  "finished_at": "2026-10-15T02:03:41Z",
+  "elapsed_seconds": 341.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-sonnet-5",
+      "calls": 16,
+      "input_tokens": 383867,
+      "output_tokens": 31621,
+      "cost_usd": 1.59614,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 1.59614,
+  "cost_is_estimate": true,
+  "errors": [
+    {
+      "message": "feed:e7a482afdd6942d5: no decision returned; fallback defer"
+    },
+    {
+      "message": "feed:e8d8f43511a9291f: no decision returned; fallback defer"
+    },
+    {
+      "message": "feed:eaac866ece437024: no decision returned; fallback defer"
+    },
+    {
+      "message": "feed:ee6df3f002868714: no decision returned; fallback defer"
+    },
+    {
+      "message": "feed:f52921adc97fb1dc: no decision returned; fallback defer"
+    },
+    {
+      "message": "feed:f6079d79e221ce0f: no decision returned; fallback defer"
+    }
+  ],
+  "extra": {
+    "decisions": {
+      "accept": 35,
+      "reject": 50,
+      "defer": 8
+    },
+    "batches": 16,
+    "failed_batches": 0,
+    "fallback_decisions": 6
+  }
+}

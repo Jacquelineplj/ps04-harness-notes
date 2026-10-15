@@ -1,0 +1,18 @@
+{
+  "stage": "store_list",
+  "status": "completed",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": 0,
+  "output_count": 76,
+  "started_at": "2026-10-15T01:48:35Z",
+  "finished_at": "2026-10-15T01:48:35Z",
+  "elapsed_seconds": 0.0,
+  "tools": [
+    "sqlite3"
+  ],
+  "models": [],
+  "cost_usd": 0.0,
+  "cost_is_estimate": false,
+  "errors": [],
+  "extra": {}
+}

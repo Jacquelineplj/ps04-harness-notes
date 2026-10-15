@@ -1,0 +1,27 @@
+{
+  "run_id": "20261015T014725Z-ny-next-day-live",
+  "started_at": "2026-10-15T01:47:25Z",
+  "as_of_date": "2026-10-15",
+  "mode": "live",
+  "previous_run_id": "20261014T014037Z-second-live",
+  "label": "ny-next-day-live",
+  "replay_of": null,
+  "inject_file": null,
+  "stop_after": null,
+  "simulated_failures": null,
+  "policy_sha256": "8cf9d5e3daeb2c1e5194e024b3140d2a5db972aa795453bd8d2fba5e5d265e99",
+  "prompts_sha256": {
+    "create_briefs.md": "7b0b9f562d37f6737c7606adcb45c83bbeaba3ef7cb592c467020428b56ec0c2",
+    "select_items.md": "1b129461cb116683cb7f09d17a5cd6f9ac7500b66452b708d3dba4e3ae7b68c7",
+    "write_articles.md": "4a3bca767f2ebce618686e5cc7b7364b2465393a59fcf1756a4a627ca6c4515f",
+    "write_video_scripts.md": "2a869cef092cdfb8d44bd2e0dfb2d4a31a2feb01e39e549a0bd92f9f0f9ee5cb"
+  },
+  "sources_sha256": "bca01541861a1f50f106a3c4547204f1593201aef70c7e05f7772b99affe1138",
+  "tool_versions": {
+    "python": "3.12.8",
+    "yt-dlp": "2026.08.19",
+    "claude_cli": "2.1.293 (Claude Code)",
+    "git_commit": "c8d5b0d"
+  },
+  "llm_provider": "claude-cli"
+}

@@ -1,0 +1,27 @@
+CLAIM 01-c4 [reported_fact]
+  Uber built an MCP gateway that auto-generates MCP specs from its existing Thrift and Protobuf IDL registry, and later projected those same MCP servers as CLIs for token efficiency.
+
+BRIEF 01: The harness grew a second layer: what changed in agent infrastructure this month
+  argument: The month's developments cluster around a single shift: the hard problems have moved out of the agent loop and into the layer that surrounds it — tool retrieval and reliability, orchestration topology, credential and identity delegation, and the source-control and CI plumbing that agent-scale output
+
+USED IN articles/01.md: 3 line(s)
+  > The strongest evidence this month is not an announcement. On the Pragmatic Engineer podcast released 14 October, Uber's engineers describe an MCP gateway that auto-generates MCP specs from their existing Thrift and Proto
+  > None of the vendor announcements carry independent measurement. Microsoft's own trace comparison is labelled by its author as a three-pair illustration, not a controlled performance or quality study [01-c2]. The Uber and
+USED IN video_scripts/01.md: 3 line(s)
+  > **Narration:** The strongest evidence this month isn't an announcement. On the Pragmatic Engineer podcast, around twenty-nine minutes in, Uber's engineers describe an MCP gateway that auto-generates MCP specs from their 
+  > **Narration:** Be honest about what we have. None of the vendor announcements carry independent measurement. Microsoft's own trace comparison is labelled by its author as a three-pair illustration, not a controlled study
+
+EVIDENCE item podcast:4e22e3d6436deca5 version 8ecc7bc4001b...
+  editorial decision: accept (pieces ['01', '03']) - Detailed practitioner account from Uber's distinguished engineer of internal systems built around coding agents -- including MCP Gateway, AI Guard, permissions, and the explicit claim that 'the harness is the easy part, what's hard is all t
+  stored version: podcast | pragmatic-engineer | Uber’s AI infra, from the inside | published 2026-10-14T17:06:56Z | retrieved 2026-10-15T01:47:39Z
+  retained text: data/assets/podcast/f8f4fd8cfa8a2e77/8ecc7bc4001b.txt | segments: data/assets/podcast/f8f4fd8cfa8a2e77/8ecc7bc4001b.segments.json
+  segment s-0069 at 29:19-29:47: "So what we did was because we already had good ideal registry across all of our services, whether they're using Thrift or Proto, since we have the ideal specs, we auto generate the MCP specs for any of these services. Just to add I guess, also don't know like Uber services either in a Thrift or Proto Buffers as strong contracts, right? Yeah. And like we initially we are just Thrift and later we added support for Proto Buff"
+  audience link: https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside
+
+EVIDENCE item podcast:4e22e3d6436deca5 version 8ecc7bc4001b...
+  editorial decision: accept (pieces ['01', '03']) - Detailed practitioner account from Uber's distinguished engineer of internal systems built around coding agents -- including MCP Gateway, AI Guard, permissions, and the explicit claim that 'the harness is the easy part, what's hard is all t
+  stored version: podcast | pragmatic-engineer | Uber’s AI infra, from the inside | published 2026-10-14T17:06:56Z | retrieved 2026-10-15T01:47:39Z
+  retained text: data/assets/podcast/f8f4fd8cfa8a2e77/8ecc7bc4001b.txt | segments: data/assets/podcast/f8f4fd8cfa8a2e77/8ecc7bc4001b.segments.json
+  segment s-0086 at 36:39-37:08: "Just couple of engineers using AI, they updated all of the skills in this repository to use the CLI pattern because it's more token efficient. Because if every skill says I want MCP ABC, MCP DEF, then if I install these two plugins, I'm going to have like six MCPs across these two always in my context and there is so much context load, right? like then we replaced all the skills with the CLI pattern."
+  audience link: https://newsletter.pragmaticengineer.com/p/ubers-ai-infra-from-the-inside
+

@@ -1,0 +1,28 @@
+{
+  "stage": "write_video_scripts",
+  "status": "completed",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": 3,
+  "output_count": 3,
+  "started_at": "2026-10-15T02:11:51Z",
+  "finished_at": "2026-10-15T02:13:45Z",
+  "elapsed_seconds": 114.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-opus-5",
+      "calls": 3,
+      "input_tokens": 41599,
+      "output_tokens": 11128,
+      "cost_usd": 0.5687975000000001,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 0.568798,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {}
+}

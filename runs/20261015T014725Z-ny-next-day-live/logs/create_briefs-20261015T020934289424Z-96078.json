@@ -1,0 +1,67 @@
+{
+  "stage": "create_briefs",
+  "status": "completed",
+  "run_dir": "runs/20261015T014725Z-ny-next-day-live",
+  "input_count": 93,
+  "output_count": 3,
+  "started_at": "2026-10-15T02:03:41Z",
+  "finished_at": "2026-10-15T02:09:34Z",
+  "elapsed_seconds": 353.0,
+  "tools": [
+    "llm:claude-cli"
+  ],
+  "models": [
+    {
+      "provider": "claude-cli",
+      "model": "claude-sonnet-5",
+      "calls": 7,
+      "input_tokens": 274251,
+      "output_tokens": 14512,
+      "cost_usd": 1.1751272,
+      "cost_is_estimate": true
+    },
+    {
+      "provider": "claude-cli",
+      "model": "claude-opus-5",
+      "calls": 1,
+      "input_tokens": 245684,
+      "output_tokens": 12600,
+      "cost_usd": 2.77183,
+      "cost_is_estimate": true
+    }
+  ],
+  "cost_usd": 3.946957,
+  "cost_is_estimate": true,
+  "errors": [],
+  "extra": {
+    "validation": {
+      "quotes_exact": 25,
+      "quotes_repaired": 0,
+      "evidence_dropped": 0,
+      "claims_dropped": 0,
+      "version_fixed": 0
+    },
+    "attempts": 1,
+    "accepted_items": 35,
+    "publishers": 12,
+    "missing_kinds": [],
+    "evidence_items_used": [
+      "feed:1599ed0f74596729",
+      "feed:265494f2f990955e",
+      "feed:2dc5d7317eb84740",
+      "feed:414c680e0dfe5f85",
+      "feed:6dfb9f1cb365f38e",
+      "feed:7e289d45dfc4cd8f",
+      "feed:8df33797c8dcce10",
+      "feed:9d93024f8db90c5c",
+      "feed:aed891eb1cf0d9a5",
+      "feed:bd1136d0fcfd6f13",
+      "podcast:4e22e3d6436deca5",
+      "youtube:U7ZYBCcdJPg",
+      "youtube:Wb2v9Phhnns",
+      "youtube:XcsspzECTKA",
+      "youtube:gDRCpTMCqEU",
+      "youtube:tZycGA_Fbfo"
+    ]
+  }
+}
