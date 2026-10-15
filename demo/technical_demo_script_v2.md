@@ -6,26 +6,25 @@
 **命令**：全部按顺序在 [demo_commands.sh](demo_commands.sh)，开在旁边整块复制粘贴；
 录前先跑一次 `bash demo/demo_commands.sh` 预热（只读，不改任何文件）。
 
-**时长**：旁白 655 词，11 条命令。145 词/分钟 + 每条约 4 秒停顿 ≈ **5:15**；慢到 135 词/分钟 ≈ 5:35，快到 155 ≈ 4:58。
+**时长**：旁白 607 词，11 条命令。145 词/分钟 + 每条约 4 秒停顿 ≈ **4:55**；慢到 135 词/分钟 ≈ 5:14，快到 155 ≈ 4:39。
 
 **录前**：终端 18pt / 120 列，编辑器 16pt，各占半屏；录时粘贴不要现场打字；
 Substack 第三篇先开好标签页；关通知，不要露出账号页、API key、书签栏。
 
 ---
 
-## 第 0 步 — 这是什么（0:00–0:27，无命令）
+## 第 0 步 — 这是什么（0:00–0:23，无命令）
 
 **操作**：编辑器打开 `SUBMISSION.md`，滚到 Architecture 的 mermaid 图，停住。
 
-> This is Harness Notes, a publication for people building AI agent infrastructure, and this
-> is the pipeline that makes it. It collects what was published in the last thirty days, keeps
-> the evidence it actually used, gets a model to decide what's worth covering and say why,
-> writes the pieces, checks them, then stops and waits for me. Everything after this is that
-> diagram, running.
+> This is the pipeline behind Harness Notes, a publication for people building AI agent
+> infrastructure. It has two halves. One collects sources and keeps the evidence they came
+> from. The other turns that evidence into three articles and three video scripts, checks
+> them, and stops for me to approve. Let me show you it running.
 
 ---
 
-## 第 1 步 — 入口（0:27–1:06）
+## 第 1 步 — 入口（0:23–0:58）
 
 **操作**：两条命令一起粘贴，等两段输出都出来再念。
 
@@ -35,15 +34,14 @@ ls run.sh workflows/*.sh collectors/*.sh processing/*.sh data/store.sh \
 sed -n '3,5p' run.sh
 ```
 
-> Sixteen separate programs, one job each, and two workflow scripts on top that just run them
-> in order and decide what to do when one of them breaks. There's a single way in, with three
-> modes: a normal run does everything; a replay reuses an earlier run's sources, so I can
-> change the editorial policy and compare the decisions without collecting all over again; and
-> packaging, which only happens after I've approved the drafts.
+> Sixteen separate programs, one job each, and two workflow scripts on top that run them in
+> order and decide what to do when one of them breaks. There's one way in, with the three modes
+> on screen. The one that matters most is replay: it reuses an earlier run's sources, so I can
+> change the editorial policy and compare the decisions without collecting everything again.
 
 ---
 
-## 第 2 步 — 一条论断追回到源头（1:06–1:52）
+## 第 2 步 — 一条论断追回到源头（0:58–1:40）
 
 ### 2.1
 
@@ -53,11 +51,10 @@ bash tools/trace_claim.sh runs/20261013T213636Z-podcasts-expanded 03-c9
 
 **操作**：输出较长，边念边向上滚回顶部，每一节在镜头里停一下。
 
-> Let me trace one claim all the way back. This is claim nine from the third article: someone
-> saying AWS has around sixteen thousand APIs, far too many to hand an agent as individual
-> tools. The trace walks it backwards — the claim as the brief wrote it, where the article and
-> the script use it, the decision that let the source in with the model's reason, and the two
-> pieces of transcript it rests on.
+> Let me trace one claim back to where it came from. This is claim nine from the third
+> article: someone saying AWS has around sixteen thousand APIs, far too many to hand an agent
+> as individual tools. The trace follows it backwards from the brief, through the editorial
+> decision that let the source in, down to the two pieces of transcript the claim rests on.
 
 ### 2.2
 
@@ -68,7 +65,7 @@ bash tools/trace_claim.sh runs/20261013T213636Z-podcasts-expanded 03-c9
 
 ---
 
-## 第 3 步 — 跑第二次会发生什么（1:52–3:11）
+## 第 3 步 — 跑第二次会发生什么（1:40–2:56）
 
 ### 3.1
 
@@ -79,11 +76,10 @@ jq -r '.counts | "new=\(.new) changed=\(.changed) unchanged=\(.unchanged)"' runs
 jq -r '.counts | "new=\(.new) changed=\(.changed) unchanged=\(.unchanged)"' runs/20261015T014725Z-ny-next-day-live/summary.json
 ```
 
-> Now the repeat runs. The second one looked at sixty-seven items again and found nothing new
-> and nothing changed. It reused twenty-five transcripts and didn't transcribe a single thing
-> twice. That's the point of keeping the evidence: downloading a page again doesn't mean the
-> page changed. The run after that, a day later, did find twenty new items and two real
-> changes.
+> Now what happens when I run it again. The second run looked at the same sixty-seven items
+> and found nothing new and nothing changed. It reused twenty-five transcripts and didn't
+> transcribe anything twice. Downloading a page again doesn't mean the page changed. The run
+> after that, a day later, did find twenty new items and two real changes.
 
 ### 3.2
 
@@ -100,14 +96,14 @@ sqlite3 data/evidence/evidence.sqlite "select version_id, first_run_id from vers
 diff data/assets/feed/d32c876482ebf166/{f7fb768c88d4,b4aca652c1f4}.txt | grep '^>' | fold -w 92 -s
 ```
 
-> And this is what actually changed: Simon Willison added a note crediting Piper and Sapling.
-> The version id comes from the title, the date, the text and the transcript, but deliberately
-> not from when I downloaded it. So fetching an unchanged page again gets the same id and
-> nothing new is stored, while a real edit like this one becomes a new version.
+> And this is what changed: Simon Willison added a note crediting Piper and Sapling. The
+> version id comes from the title, the date, the text and the transcript, but deliberately not
+> from when I downloaded it. So fetching an unchanged page again gets the same id and nothing
+> new is stored. A real edit like this one gets a new version.
 
 ---
 
-## 第 4 步 — 出错的时候（3:11–3:39）
+## 第 4 步 — 出错的时候（2:56–3:25）
 
 ```bash
 jq -r '.status + " :: " + .errors[0].message' runs/20261013T204414Z/logs/collect_sources-*.json
@@ -115,12 +111,12 @@ jq -r '.status + " :: " + .errors[0].message' runs/20261013T204414Z/logs/collect
 
 > This one's my favourite, because it went wrong. The first live run died four hours into
 > transcribing audio, on a bash quirk where reading one part of PIPESTATUS wipes the rest. The
-> sixty items already stored survived, this receipt says plainly that I wrote it after the
-> fact, and the next run picked up without transcribing anything twice.
+> sixty items it had already stored survived. This receipt says plainly that I wrote it after
+> the fact, and the next run picked up without transcribing anything twice.
 
 ---
 
-## 第 5 步 — 我改了什么，政策又改了什么（3:39–4:14）
+## 第 5 步 — 我改了什么，政策又改了什么（3:25–4:00）
 
 **操作**：两条命令一起粘贴。
 
@@ -133,12 +129,11 @@ head -5 runs/20261013T230227Z-policy-v2/decisions_diff.md
 > Martin Fowler, because the feed lists the site owner as the author, but the article is by
 > Naresh Jain. I caught it in review and fixed it before approving, and all forty-three edits
 > are saved with their before and after. That review is also where policy version two came
-> from: replaying the identical evidence under it, fifty-two decisions stayed put and fifteen
-> moved.
+> from. Replayed on the same evidence, fifty-two decisions stayed put and fifteen moved.
 
 ---
 
-## 第 6 步 — 我会为之辩护的取舍（4:14–5:15）
+## 第 6 步 — 我会为之辩护的取舍（4:00–4:55）
 
 ### 6.1
 
@@ -146,12 +141,11 @@ head -5 runs/20261013T230227Z-policy-v2/decisions_diff.md
 ls -l data/assets/feed/d32c876482ebf166/
 ```
 
-> Here's the tradeoff I'd defend. The index is a small database, but the text and transcripts
-> sit next to it as ordinary files named after the version hash, written once and never touched
-> again — these two are the versions you just saw. It costs me duplicated text, and the
-> database on its own isn't the archive. What I get is a citation pointing at a file nobody can
-> quietly edit underneath it. For a publication that promises you can go check the quote,
-> that's the trade I want.
+> Here's the tradeoff I'd defend. The index is a small database, but the text and the
+> transcripts sit next to it as ordinary files, named after the version hash, written once and
+> never touched again. These two are the versions you just saw. It costs me duplicated text,
+> and it means the database on its own isn't the archive. What I get is a citation that points
+> at a file nobody can quietly edit underneath it.
 
 ### 6.2
 
@@ -160,8 +154,8 @@ ls runs/20261013T213636Z-podcasts-expanded/package
 ```
 
 > And this is where the system stops. It matches my approval against a fingerprint of the
-> drafts I actually reviewed, hands over the articles, the scripts and the source notes, and
-> leaves making the videos and publishing them to me.
+> drafts I reviewed, hands over the articles, the scripts and the sources, and leaves making
+> the videos and publishing them to me.
 
 ---
 
